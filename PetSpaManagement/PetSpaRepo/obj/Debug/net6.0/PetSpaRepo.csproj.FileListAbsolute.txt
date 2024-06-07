@@ -1,0 +1,12 @@
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\bin\Debug\net6.0\PetSpaRepo.deps.json
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\bin\Debug\net6.0\PetSpaRepo.dll
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\bin\Debug\net6.0\PetSpaRepo.pdb
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.AssemblyInfoInputs.cache
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.AssemblyInfo.cs
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.sourcelink.json
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.dll
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\refint\PetSpaRepo.dll
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.pdb
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\ref\PetSpaRepo.dll
