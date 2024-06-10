@@ -5,11 +5,11 @@ VisualStudioVersion = 17.9.34321.82
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PRN211GroupProject", "PRN211GroupProject\PRN211GroupProject.csproj", "{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetSpaDAO", "PetSpaDAO\PetSpaDAO.csproj", "{47CC57C8-0265-44E1-A12A-2B24963E55C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSpaDAO", "PetSpaDAO\PetSpaDAO.csproj", "{47CC57C8-0265-44E1-A12A-2B24963E55C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetSpaBussinessObject", "PetSpaBussinessObject\PetSpaBussinessObject.csproj", "{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSpaBussinessObject", "PetSpaBussinessObject\PetSpaBussinessObject.csproj", "{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetSpaRepo", "PetSpaRepo\PetSpaRepo.csproj", "{1D58C42D-F0E1-48AC-B218-20A6E20AB531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSpaRepo", "PetSpaRepo\PetSpaRepo.csproj", "{1D58C42D-F0E1-48AC-B218-20A6E20AB531}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
