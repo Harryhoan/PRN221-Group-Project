@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
       "projectName": "PRN211GroupProject",
-      "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PetSpaManagement\\PRN211GroupProject\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -41,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -57,24 +61,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -83,7 +69,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

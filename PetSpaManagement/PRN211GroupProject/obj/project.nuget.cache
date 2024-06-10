@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yXrQOOD+y5J9hu0ftyr9M86jCOTnPAq20W1242XmnJjVTJHblAbht90lnqBCbDh6PdzT4fLDlC8aEUn56N30Ug==",
+  "dgSpecHash": "TQ47PpRjeScrMjIWcpjfd2wttzctZjccHWRwkOP4n5K10hwDUcwHZ8AxzwEoQlVpIPm0PxWD5phDmB/DCryT+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.31\\microsoft.netcore.app.host.win-x64.6.0.31.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
