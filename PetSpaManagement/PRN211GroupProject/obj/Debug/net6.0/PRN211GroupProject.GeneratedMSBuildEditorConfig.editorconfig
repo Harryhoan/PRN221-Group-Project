@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PRN211GroupProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Dell/Documents/NetBeansProjects/math-util-mvn/PRN221-Group-Project/PetSpaManagement/PRN211GroupProject/Pages/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dell/Documents/NetBeansProjects/math-util-mvn/PRN221-Group-Project/PetSpaManagement/PRN211GroupProject/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
