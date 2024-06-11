@@ -1,0 +1,79 @@
+﻿@page
+@model PRN211GroupProject.Pages.RegisterModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Your custom CSS -->
+    <style>
+        /* Your custom styles here */
+        body {
+            background-color: #f8f8f8;
+        }
+
+        .register-container {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+            .register-container h2 {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #333;
+            }
+
+        .register-form input[type="text"],
+        .register-form input[type="password"],
+        .register-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .register-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #232024;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .register-form button:hover {
+                background-color: #ff2121;
+            }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>
+            <div class="logo">
+                <a asp-page="/Index"><img src="assets/img/logo/logo.png" alt=""></a>
+            </div>
+        </h2>
+        <form class="register-form" action="register" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="login-link" style="justify-items">
+            <p>Already have an account? <a asp-page="Login">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>
