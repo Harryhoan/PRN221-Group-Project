@@ -63,7 +63,7 @@
                                             <li><a asp-page="/Index">Home</a></li>
                                             <li><a asp-page="/About">About Us</a></li>
                                             <li>
-                                                <a href="services.html">Services</a>
+                                                <a asp-page="/Services">Services</a>
                                                 <ul class="submenu">
                                                     <li><a asp-page="/Services/Bath">Bath</a></li>
                                                     <li><a asp-page="/Services/Nail">Nail Trimming</a></li>
@@ -72,7 +72,6 @@
                                                     <li><a asp-page="/Services/Massage">Massage Therapy</a></li>
                                                     <li><a asp-page="/Services/Teeth">Teeth Brushing</a></li>
                                                 </ul>
-
                                             </li>
                                             <li>
                                                 <a href="blog.html">Blog</a>
@@ -93,7 +92,7 @@
                                     </nav>
                                 </div>
                                 <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                        <a href="#" class="header-btn">Login</a>
+                                    <a asp-page="/Login" class="header-btn">Login</a>
                                 </div>
                             </div>
                         </div>

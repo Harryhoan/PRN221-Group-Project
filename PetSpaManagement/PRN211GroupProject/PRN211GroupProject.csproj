@@ -10,4 +10,8 @@
     <Folder Include="Pages\Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PetSpaService\PetSpaService.csproj" />
+  </ItemGroup>
+
 </Project>
