@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PetSpaDAO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ca3cac9fc0c7f8454a6b341952f6a79c20cf251")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43fa1885aa72f18e4b4ae9f3cf1df7f93e232fb1")]
 [assembly: System.Reflection.AssemblyProductAttribute("PetSpaDAO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PetSpaDAO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
