@@ -1,6 +1,8 @@
 # Build Folders
 bin/
 obj/
+Debug/
+Release/
 
 # User-specific files
 *.rsuser
@@ -59,3 +61,17 @@ node_modules/
 
 # Logs
 *.log
+
+# Configuration files
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
+/PetSpaManagement/PRN211GroupProject/obj/Debug/net6.0/project.razor.vs.bin
+/PetSpaManagement/PRN211GroupProject/obj/Debug/net6.0/apphost.exe
+/PetSpaManagement/PetSpaRepo/obj/PetSpaRepo.csproj.nuget.dgspec.json
+/PetSpaManagement/PetSpaRepo/obj/project.assets.json
+/PetSpaManagement/PetSpaRepo/obj/PetSpaRepo.csproj.nuget.g.props
+/PetSpaManagement/PetSpaDAO/obj/project.assets.json
+/PetSpaManagement/PetSpaDAO/obj/PetSpaDAO.csproj.nuget.g.props
+/PetSpaManagement/PetSpaDAO/obj/PetSpaDAO.csproj.nuget.dgspec.json
+/PetSpaManagement/PetSpaBussinessObject/obj/project.assets.json
