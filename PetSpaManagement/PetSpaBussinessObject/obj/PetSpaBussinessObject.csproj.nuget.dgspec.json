@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj": {}
+    "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj": {
+    "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
         "projectName": "PetSpaBussinessObject",
-        "projectPath": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\obj\\",
+        "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
