@@ -1,10 +1,21 @@
+using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
+using PetSpaDaos;
 using PetSpaService;
 
 namespace PRN211GroupProject
 {
     public class Program
     {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSession();
+            services.AddMemoryCache();
+            services.AddMvc();
+        }
+        
+
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +30,16 @@ namespace PRN211GroupProject
             builder.Services.AddScoped<IServiceService, ServiceService>();
             builder.Services.AddScoped<ISpotService, SpotService>();
             builder.Services.AddScoped<IVoucherService, VoucherService>();
-            builder.Services.AddSession();
+            builder.Services.AddDistributedMemoryCache(); // Required for session state
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(30); // Set session timeout
+                options.Cookie.HttpOnly = true; // Make the session cookie HttpOnly
+                options.Cookie.IsEssential = true; // Make the session cookie essential
+            });
+            builder.Services.AddDbContext<PetSpaManagementContext>(options =>
+      options.UseSqlServer(builder.Configuration.GetConnectionString("PetSpaManagement")));
+
             var app = builder.Build();
             if (!app.Environment.IsDevelopment())
             {
