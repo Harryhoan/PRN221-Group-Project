@@ -1,6 +1,8 @@
 # Build Folders
 bin/
 obj/
+Debug/
+Release/
 
 # User-specific files
 *.rsuser
@@ -59,3 +61,8 @@ node_modules/
 
 # Logs
 *.log
+
+# Configuration files
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
