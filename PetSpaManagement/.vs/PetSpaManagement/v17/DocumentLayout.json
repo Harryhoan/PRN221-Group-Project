@@ -1,114 +1,158 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\",
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\dell\\documents\\netbeansprojects\\math-util-mvn\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\admin\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\admin\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspadao\\petspadao.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\petspadao.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\billdetailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\billdetailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\available.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\available.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\spot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\spot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\pages\\about.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspadao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspadao\\petspamanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\petspamanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\services.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspadao\\petspadao.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\petspadao.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\billdetailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\billdetailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\available.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\available.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\spot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\spot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\about.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\about.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\petspabussinessobject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspabussinessobject\\petspabussinessobject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\petspabussinessobject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\prn211groupproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspadao\\petspamanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\petspamanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,11 +162,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Bookmark",
@@ -149,33 +209,144 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T01:38:12.253Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Register.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Register.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\Register.cshtml",
-              "ViewState": "AQIAADIAAAAAAAAAAADwvz8AAAAAAAAA",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Index.cshtml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-11T09:26:07.604Z",
+              "WhenOpened": "2024-06-13T01:38:12.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Delete.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T01:38:11.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Delete.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T01:38:11.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T01:38:11.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Details.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T01:38:11.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T01:38:11.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Edit.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T01:38:11.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T01:38:11.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Admin\\Service\\Create.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T01:38:10.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AccountDAO.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\AccountDAO.cs",
+              "RelativeDocumentMoniker": "PetSpaDAO\\AccountDAO.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\AccountDAO.cs",
+              "RelativeToolTip": "PetSpaDAO\\AccountDAO.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T01:17:00.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Login.cshtml",
               "ViewState": "AQIAADgAAAAAAAAAAADwv0EAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -183,11 +354,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewImports.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\_ViewImports.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -195,11 +366,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "About.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\About.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\About.cshtml",
               "ViewState": "AQIAAEsAAAAAAAAAAAAAACgAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -207,11 +378,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Index.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Index.cshtml",
               "ViewState": "AQIAAIkAAAAAAAAAAAAiwJUAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -219,24 +390,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAF4AAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-10T08:11:30.396Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Privacy.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Privacy.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Privacy.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -244,11 +414,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 23,
               "Title": "Services.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Services.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Services.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Services.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Services.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Services.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Services.cshtml",
               "ViewState": "AQIAADUAAAAAAAAAAAAAAEgAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -256,11 +426,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Error.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Error.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Error.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Error.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Error.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -268,11 +438,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Service.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Service.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Service.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Service.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T07:56:04.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PetSpaManagementContext.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaManagementContext.cs",
+              "RelativeDocumentMoniker": "PetSpaDAO\\PetSpaManagementContext.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaManagementContext.cs",
+              "RelativeToolTip": "PetSpaDAO\\PetSpaManagementContext.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T07:46:42.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Register.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Register.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Register.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\Register.cshtml",
+              "ViewState": "AQIAADIAAAAAAAAAAADwvz8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-11T09:26:07.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -280,11 +486,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 20,
               "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Login.cshtml.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Login.cshtml.cs",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\Login.cshtml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -292,11 +498,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PetSpaDAO",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaDAO.csproj",
+              "DocumentIndex": 24,
+              "Title": "PetSpaDAO.csproj",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaDAO.csproj",
               "RelativeDocumentMoniker": "PetSpaDAO\\PetSpaDAO.csproj",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaDAO.csproj",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaDAO.csproj",
               "RelativeToolTip": "PetSpaDAO\\PetSpaDAO.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -304,11 +510,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "Account.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Account.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Account.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\Account.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Account.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Account.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\Account.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -316,11 +522,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "Feedback.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Feedback.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Feedback.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\Feedback.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Feedback.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Feedback.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\Feedback.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -328,23 +534,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Service.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Service.cs",
-              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Service.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Service.cs",
-              "RelativeToolTip": "PetSpaBussinessObject\\Service.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T07:56:04.146Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 34,
               "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Role.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Role.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\Role.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Role.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Role.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\Role.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -352,11 +546,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 32,
               "Title": "Spot.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Spot.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Spot.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\Spot.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Spot.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Spot.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\Spot.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -364,11 +558,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 31,
               "Title": "jquery.js",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
               "RelativeDocumentMoniker": "PRN211GroupProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
               "RelativeToolTip": "PRN211GroupProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -376,11 +570,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "Available.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Available.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Available.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\Available.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Available.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Available.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\Available.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -388,11 +582,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "BillDetailed.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\BillDetailed.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\BillDetailed.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\BillDetailed.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\BillDetailed.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\BillDetailed.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\BillDetailed.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAA5wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -400,11 +594,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "Booking.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Booking.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Booking.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\Booking.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Booking.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Booking.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\Booking.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -412,11 +606,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 33,
               "Title": "Voucher.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Voucher.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Voucher.cs",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\Voucher.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Voucher.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Voucher.cs",
               "RelativeToolTip": "PetSpaBussinessObject\\Voucher.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAkwAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -424,11 +618,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 35,
               "Title": "About.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml.cs",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\About.cshtml.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\About.cshtml.cs",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\About.cshtml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -436,11 +630,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\_ViewStart.cshtml",
               "RelativeToolTip": "PRN211GroupProject\\Pages\\_ViewStart.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -448,23 +642,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "PetSpaManagementContext.cs",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaManagementContext.cs",
-              "RelativeDocumentMoniker": "PetSpaDAO\\PetSpaManagementContext.cs",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaManagementContext.cs",
-              "RelativeToolTip": "PetSpaDAO\\PetSpaManagementContext.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAmwC0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-10T07:46:42.414Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 36,
               "Title": "PetSpaBussinessObject.csproj",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
               "RelativeDocumentMoniker": "PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
               "RelativeToolTip": "PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -472,15 +654,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 37,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\appsettings.json",
               "RelativeDocumentMoniker": "PRN211GroupProject\\appsettings.json",
-              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\appsettings.json",
               "RelativeToolTip": "PRN211GroupProject\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-06-07T07:09:05.69Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 108,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a0c8e2a7-bd07-4d13-9e3c-855ecc9a027c}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1a46fd64-28d5-434c-8eb3-17a02d419b53}"
             }
           ]
         }

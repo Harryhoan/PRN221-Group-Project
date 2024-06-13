@@ -13,3 +13,18 @@ C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetS
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.pdb
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.genruntimeconfig.cache
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\ref\PetSpaBussinessObject.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\bin\Debug\net6.0\PetSpaBussinessObject.deps.json
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\bin\Debug\net6.0\PetSpaBussinessObject.runtimeconfig.json
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\bin\Debug\net6.0\PetSpaBussinessObject.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\bin\Debug\net6.0\PetSpaBussinessObject.pdb
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.csproj.AssemblyReference.cache
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.AssemblyInfoInputs.cache
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.AssemblyInfo.cs
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.sourcelink.json
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\refint\PetSpaBussinessObject.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.pdb
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\PetSpaBussinessObject.genruntimeconfig.cache
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaBussinessObject\obj\Debug\net6.0\ref\PetSpaBussinessObject.dll
