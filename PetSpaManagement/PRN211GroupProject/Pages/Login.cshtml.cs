@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using PetSpaRepo;
 using PetSpaService;
+using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
 
 namespace PRN211GroupProject.Pages
 {
@@ -23,7 +25,6 @@ namespace PRN211GroupProject.Pages
 
         public void OnGet()
         {
-
         }
 
         public void OnPost()
@@ -32,14 +33,14 @@ namespace PRN211GroupProject.Pages
 
             if (account != null)
             {
-                HttpContext.Session.SetString("Email", email);
+                HttpContext.Session.SetString("Email",email);
                 HttpContext.Session.SetInt32("RoleID", account.RoleId);
                 Response.Redirect("Index");
             }
             else
             {
-                errorMessage = "Login failed, your email or password is incorrect";
-                Response.Redirect("Login");
+                errorMessage = "Your email or password is incorrect.";
+                return;
             }
         }
 

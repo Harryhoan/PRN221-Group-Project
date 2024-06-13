@@ -1,82 +1,141 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\",
+  "WorkspaceRootPath": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspaservice\\servicesservice\\iserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\servicesservice\\iserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRN211GroupProject\\PRN211GroupProject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspaservice\\servicesservice\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\servicesservice\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\bin\\Debug\\net6.0\\PetSpaService.pdb||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PetSpaService\\bin\\Debug\\net6.0\\PetSpaService.pdb||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\bin\\Debug\\net6.0\\PetSpaDAO.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PetSpaService\\bin\\Debug\\net6.0\\PetSpaDAO.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspadao\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.AssemblyInfoInputs.cache||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.AssemblyInfoInputs.cache||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\PetSpaService.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRN211GroupProject\\bin\\Debug\\net6.0\\PetSpaService.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\PRN211GroupProject.deps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRN211GroupProject\\bin\\Debug\\net6.0\\PRN211GroupProject.deps.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\project.nuget.cache||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRN211GroupProject\\obj\\project.nuget.cache||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|c:\\users\\dell\\documents\\netbeansprojects\\math-util-mvn\\prn221-group-project\\petspamanagement\\petspadao\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petsparepo\\petsparepo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|solutionrelative:petsparepo\\petsparepo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\dell\\documents\\netbeansprojects\\math-util-mvn\\prn221-group-project\\petspamanagement\\petspaservice\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petsparepo\\servicerepository\\servicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|solutionrelative:petsparepo\\servicerepository\\servicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\dell\\documents\\netbeansprojects\\math-util-mvn\\prn221-group-project\\petspamanagement\\petspaservice\\ibillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\ibillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\dell\\documents\\netbeansprojects\\math-util-mvn\\prn221-group-project\\petspamanagement\\petspaservice\\ivoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\ivoucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspaservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petsparepo\\servicerepository\\iservicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|solutionrelative:petsparepo\\servicerepository\\iservicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspaservice\\voucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\dell\\documents\\netbeansprojects\\math-util-mvn\\prn221-group-project\\petspamanagement\\petspaservice\\voucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\voucherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspadao\\petspadao.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\petspadao.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspaservice\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\obj\\Debug\\net6.0\\PetSpaRepo.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PetSpaRepo\\obj\\Debug\\net6.0\\PetSpaRepo.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRN211GroupProject\\bin\\Debug\\net6.0\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfoInputs.cache||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfoInputs.cache||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\obj\\Debug\\net6.0\\PetSpaBussinessObject.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PetSpaBussinessObject\\obj\\Debug\\net6.0\\PetSpaBussinessObject.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspadao\\bookingdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\bookingdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspadao\\availabledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\availabledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspaservice\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspadao\\petspamanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\petspamanagementcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\available.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\available.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\billdetailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\billdetailed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\spot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\spot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\voucher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\petspabussinessobject\\petspabussinessobject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{096082C4-E508-4DCB-8D0C-E64C5B9D99C1}|PetSpaBussinessObject\\PetSpaBussinessObject.csproj|solutionrelative:petspabussinessobject\\petspabussinessobject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,27 +145,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -133,246 +176,428 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Edit.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T06:41:24.894Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Details.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T06:17:12.811Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "VoucherService.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\VoucherService.cs",
-              "RelativeDocumentMoniker": "PetSpaService\\VoucherService.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\VoucherService.cs",
-              "RelativeToolTip": "PetSpaService\\VoucherService.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:59:32.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Program.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Program.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Program.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Program.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:16:52.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:15:21.073Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ServiceDAO.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\ServiceDAO.cs",
-              "RelativeDocumentMoniker": "PetSpaDAO\\ServiceDAO.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\ServiceDAO.cs",
-              "RelativeToolTip": "PetSpaDAO\\ServiceDAO.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T04:06:38.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ServiceRepo.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "RelativeDocumentMoniker": "PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "RelativeToolTip": "PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T04:04:27.118Z",
+              "DocumentIndex": 0,
+              "Title": "PRN211GroupProject.csproj",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\PRN211GroupProject.csproj",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
+              "RelativeToolTip": "PRN211GroupProject\\PRN211GroupProject.csproj",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-13T07:53:22.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ServiceService.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\ServiceService.cs",
-              "RelativeDocumentMoniker": "PetSpaService\\ServicesService\\ServiceService.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\ServiceService.cs",
-              "RelativeToolTip": "PetSpaService\\ServicesService\\ServiceService.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:08:07.926Z",
-              "EditorCaption": ""
+              "Title": "PetSpaService.pdb",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\bin\\Debug\\net6.0\\PetSpaService.pdb",
+              "RelativeDocumentMoniker": "PetSpaService\\bin\\Debug\\net6.0\\PetSpaService.pdb",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\bin\\Debug\\net6.0\\PetSpaService.pdb",
+              "RelativeToolTip": "PetSpaService\\bin\\Debug\\net6.0\\PetSpaService.pdb",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002276|",
+              "WhenOpened": "2024-06-13T07:52:40.611Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T06:35:48.797Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "PetSpaDAO.dll",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\bin\\Debug\\net6.0\\PetSpaDAO.dll",
+              "RelativeDocumentMoniker": "PetSpaService\\bin\\Debug\\net6.0\\PetSpaDAO.dll",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\bin\\Debug\\net6.0\\PetSpaDAO.dll",
+              "RelativeToolTip": "PetSpaService\\bin\\Debug\\net6.0\\PetSpaDAO.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2024-06-13T07:51:30.991Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IServiceService.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\IServiceService.cs",
-              "RelativeDocumentMoniker": "PetSpaService\\ServicesService\\IServiceService.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\IServiceService.cs",
-              "RelativeToolTip": "PetSpaService\\ServicesService\\IServiceService.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:08:11.444Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "PetSpaService.dll",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.dll",
+              "RelativeDocumentMoniker": "PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.dll",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.dll",
+              "RelativeToolTip": "PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2024-06-13T07:51:29.078Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PetSpaRepo",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\PetSpaRepo.csproj",
-              "RelativeDocumentMoniker": "PetSpaRepo\\PetSpaRepo.csproj",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\PetSpaRepo.csproj",
-              "RelativeToolTip": "PetSpaRepo\\PetSpaRepo.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-13T07:08:58.439Z",
+              "Title": "PetSpaService.AssemblyInfoInputs.cache",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.AssemblyInfoInputs.cache",
+              "RelativeDocumentMoniker": "PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.AssemblyInfoInputs.cache",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.AssemblyInfoInputs.cache",
+              "RelativeToolTip": "PetSpaService\\obj\\Debug\\net6.0\\PetSpaService.AssemblyInfoInputs.cache",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002368|",
+              "WhenOpened": "2024-06-13T07:51:28.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T06:41:28.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T06:21:55.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Delete.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Delete.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Delete.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Delete.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Delete.cshtml.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T06:23:48.751Z",
-              "EditorCaption": ""
+              "DocumentIndex": 5,
+              "Title": "PetSpaService.dll",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\PetSpaService.dll",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\bin\\Debug\\net6.0\\PetSpaService.dll",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\PetSpaService.dll",
+              "RelativeToolTip": "PRN211GroupProject\\bin\\Debug\\net6.0\\PetSpaService.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2024-06-13T07:51:21.237Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T06:41:55.513Z",
+              "Title": "PRN211GroupProject.deps.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\PRN211GroupProject.deps.json",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\bin\\Debug\\net6.0\\PRN211GroupProject.deps.json",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\PRN211GroupProject.deps.json",
+              "RelativeToolTip": "PRN211GroupProject\\bin\\Debug\\net6.0\\PRN211GroupProject.deps.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-13T07:51:20.446Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T06:44:10.265Z",
+              "Title": "PRN211GroupProject.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfo.cs",
+              "RelativeToolTip": "PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfo.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:36:12.545Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AccountService.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\AccountService.cs",
-              "RelativeDocumentMoniker": "PetSpaService\\AccountService.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\AccountService.cs",
-              "RelativeToolTip": "PetSpaService\\AccountService.cs",
+              "DocumentIndex": 8,
+              "Title": "project.nuget.cache",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\project.nuget.cache",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\obj\\project.nuget.cache",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\project.nuget.cache",
+              "RelativeToolTip": "PRN211GroupProject\\obj\\project.nuget.cache",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002368|",
+              "WhenOpened": "2024-06-13T07:41:37.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\BookingService.cs",
+              "RelativeDocumentMoniker": "PetSpaService\\BookingService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\BookingService.cs",
+              "RelativeToolTip": "PetSpaService\\BookingService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:03:11.755Z",
+              "WhenOpened": "2024-06-13T07:48:42.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IBillService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\IBillService.cs",
+              "RelativeDocumentMoniker": "PetSpaService\\IBillService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\IBillService.cs",
+              "RelativeToolTip": "PetSpaService\\IBillService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:48:41.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IVoucherService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\IVoucherService.cs",
+              "RelativeDocumentMoniker": "PetSpaService\\IVoucherService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\IVoucherService.cs",
+              "RelativeToolTip": "PetSpaService\\IVoucherService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:48:40.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "VoucherService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\VoucherService.cs",
+              "RelativeDocumentMoniker": "PetSpaService\\VoucherService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\VoucherService.cs",
+              "RelativeToolTip": "PetSpaService\\VoucherService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:48:39.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ServiceDAO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\ServiceDAO.cs",
+              "RelativeDocumentMoniker": "PetSpaDAO\\ServiceDAO.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\ServiceDAO.cs",
+              "RelativeToolTip": "PetSpaDAO\\ServiceDAO.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAgwCgAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:33:11.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "IServiceRepo.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\IServiceRepo.cs",
-              "RelativeDocumentMoniker": "PetSpaRepo\\ServiceRepository\\IServiceRepo.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\IServiceRepo.cs",
-              "RelativeToolTip": "PetSpaRepo\\ServiceRepository\\IServiceRepo.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T04:04:32.387Z",
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.204\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AQIAAP0AAAAAAAAAAAAAwAkBAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-06-13T07:33:23.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PetSpaDAO.csproj",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaDAO.csproj",
+              "RelativeDocumentMoniker": "PetSpaDAO\\PetSpaDAO.csproj",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaDAO.csproj",
+              "RelativeToolTip": "PetSpaDAO\\PetSpaDAO.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-11T08:33:22.78Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IAccountService.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\IAccountService.cs",
-              "RelativeDocumentMoniker": "PetSpaService\\IAccountService.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\IAccountService.cs",
-              "RelativeToolTip": "PetSpaService\\IAccountService.cs",
+              "DocumentIndex": 16,
+              "Title": "PetSpaRepo.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\obj\\Debug\\net6.0\\PetSpaRepo.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "PetSpaRepo\\obj\\Debug\\net6.0\\PetSpaRepo.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\obj\\Debug\\net6.0\\PetSpaRepo.AssemblyInfo.cs",
+              "RelativeToolTip": "PetSpaRepo\\obj\\Debug\\net6.0\\PetSpaRepo.AssemblyInfo.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:03:36.771Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 108,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a0c8e2a7-bd07-4d13-9e3c-855ecc9a027c}"
+              "WhenOpened": "2024-06-13T07:34:11.64Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1a46fd64-28d5-434c-8eb3-17a02d419b53}"
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\appsettings.json",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\bin\\Debug\\net6.0\\appsettings.json",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\bin\\Debug\\net6.0\\appsettings.json",
+              "RelativeToolTip": "PRN211GroupProject\\bin\\Debug\\net6.0\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-13T07:36:33.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PRN211GroupProject.AssemblyInfoInputs.cache",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfoInputs.cache",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfoInputs.cache",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfoInputs.cache",
+              "RelativeToolTip": "PRN211GroupProject\\obj\\Debug\\net6.0\\PRN211GroupProject.AssemblyInfoInputs.cache",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002368|",
+              "WhenOpened": "2024-06-13T07:36:20.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "PetSpaBussinessObject.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\obj\\Debug\\net6.0\\PetSpaBussinessObject.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\obj\\Debug\\net6.0\\PetSpaBussinessObject.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\obj\\Debug\\net6.0\\PetSpaBussinessObject.AssemblyInfo.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\obj\\Debug\\net6.0\\PetSpaBussinessObject.AssemblyInfo.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:34:06.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BookingDAO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\BookingDAO.cs",
+              "RelativeDocumentMoniker": "PetSpaDAO\\BookingDAO.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\BookingDAO.cs",
+              "RelativeToolTip": "PetSpaDAO\\BookingDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:32:57.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AvailableDAO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\AvailableDAO.cs",
+              "RelativeDocumentMoniker": "PetSpaDAO\\AvailableDAO.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\AvailableDAO.cs",
+              "RelativeToolTip": "PetSpaDAO\\AvailableDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:32:56.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BillService.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\BillService.cs",
+              "RelativeDocumentMoniker": "PetSpaService\\BillService.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\BillService.cs",
+              "RelativeToolTip": "PetSpaService\\BillService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:25:20.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PetSpaManagementContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaManagementContext.cs",
+              "RelativeDocumentMoniker": "PetSpaDAO\\PetSpaManagementContext.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\PetSpaManagementContext.cs",
+              "RelativeToolTip": "PetSpaDAO\\PetSpaManagementContext.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAtwCIAAADaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T07:46:42.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Account.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Account.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Account.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Account.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:33:26.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Available.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Available.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Available.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Available.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Available.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:33:27.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Feedback.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Feedback.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Feedback.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Feedback.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T07:55:55.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Service.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Service.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Service.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Service.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T07:56:04.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Role.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Role.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Role.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T07:56:05.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Spot.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Spot.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Spot.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Spot.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Spot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T07:56:05.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "BillDetailed.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\BillDetailed.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\BillDetailed.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\BillDetailed.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\BillDetailed.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:33:28.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Booking.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Booking.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Booking.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Booking.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T08:33:28.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Voucher.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Voucher.cs",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\Voucher.cs",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\Voucher.cs",
+              "RelativeToolTip": "PetSpaBussinessObject\\Voucher.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA5wAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T07:54:02.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "PetSpaBussinessObject.csproj",
+              "DocumentMoniker": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+              "RelativeDocumentMoniker": "PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+              "ToolTip": "C:\\Users\\Dell\\Documents\\NetBeansProjects\\math-util-mvn\\PRN221-Group-Project\\PetSpaManagement\\PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+              "RelativeToolTip": "PetSpaBussinessObject\\PetSpaBussinessObject.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-07T07:13:03.706Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -19,12 +19,12 @@ namespace PetSpaService
         public Account GetAccountByEmail(string Email, string password)
         {
             Account account = repo.GetAccountByEmail(Email);
-            if (account.Pass.Equals(password))
+            if (account != null && account.Pass.Equals(password))
             {
                 return account;
 
             }
-            return account;
+            return null;
         }
         public List<Account> GetAllAccount() => AccountDAO.Instance.GetAllAccount();
     }

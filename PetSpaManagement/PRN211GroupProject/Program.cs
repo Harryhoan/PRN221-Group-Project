@@ -1,7 +1,6 @@
 using PetSpaBussinessObject;
-using PetSpaRepo.AdminServiceRepo;
+using PetSpaDaos;
 using PetSpaService;
-using PetSpaService.AdminServiceService;
 
 namespace PRN211GroupProject
 {
