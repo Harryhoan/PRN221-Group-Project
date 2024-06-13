@@ -10,3 +10,9 @@ C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetS
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\refint\PetSpaRepo.dll
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.pdb
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\ref\PetSpaRepo.dll
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\bin\Debug\net6.0\PetSpaBussinessObject.dll
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\bin\Debug\net6.0\PetSpaDAO.dll
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\bin\Debug\net6.0\PetSpaDAO.pdb
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\bin\Debug\net6.0\PetSpaBussinessObject.pdb
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.csproj.AssemblyReference.cache
+C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaRepo\obj\Debug\net6.0\PetSpaRepo.csproj.Up2Date

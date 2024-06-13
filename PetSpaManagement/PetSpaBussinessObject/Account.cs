@@ -14,6 +14,7 @@ namespace PetSpaBussinessObject
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string Email { get; set; } = null!;
+        public string Pass { get; set; } = null!;
         public bool Status { get; set; }
         public int CountVoucher { get; set; }
         public int RoleId { get; set; }
