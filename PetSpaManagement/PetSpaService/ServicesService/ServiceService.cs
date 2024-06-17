@@ -26,5 +26,6 @@ namespace PetSpaService.AdminServiceService
         public List<Service> GetServiceList() => ServiceDAO.Instance.GetServiceList();
 
         public void UpdateService(Service service) => ServiceDAO.Instance.UpdateService(service);
+
     }
 }

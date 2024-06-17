@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspadao\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspaservice\\servicesservice\\iserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B87840EF-C459-4A21-B694-0A957EEC09CE}|PetSpaService\\PetSpaService.csproj|solutionrelative:petspaservice\\servicesservice\\iserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +31,12 @@
       "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petspadao\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47CC57C8-0265-44E1-A12A-2B24963E55C2}|PetSpaDAO\\PetSpaDAO.csproj|solutionrelative:petspadao\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\petsparepo\\petsparepo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -27,32 +47,12 @@
       "RelativeMoniker": "D:0:0:{1D58C42D-F0E1-48AC-B218-20A6E20AB531}|PetSpaRepo\\PetSpaRepo.csproj|solutionrelative:petsparepo\\servicerepository\\servicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|solutionrelative:prn211groupproject\\pages\\servicepage\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA870BF2-C192-4AB3-B8EB-8503E7D9D7DE}|PRN211GroupProject\\PRN211GroupProject.csproj|c:\\users\\admin\\onedrive\\desktop\\fpt university\\ky-7 net1703\\prn221\\prn221-group-project\\petspamanagement\\prn211groupproject\\pages\\servicepage\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -135,6 +135,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T06:35:48.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IServiceService.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\IServiceService.cs",
+              "RelativeDocumentMoniker": "PetSpaService\\ServicesService\\IServiceService.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\IServiceService.cs",
+              "RelativeToolTip": "PetSpaService\\ServicesService\\IServiceService.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T05:08:11.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T06:41:28.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Edit.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml.cs",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml.cs",
@@ -146,14 +182,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Details.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T06:17:12.811Z",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T06:41:55.513Z",
               "EditorCaption": ""
             },
             {
@@ -170,31 +206,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Program.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Program.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Program.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Program.cs",
+              "DocumentIndex": 12,
+              "Title": "Details.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Details.cshtml.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:16:52.534Z",
+              "WhenOpened": "2024-06-13T06:17:12.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:15:21.073Z",
+              "WhenOpened": "2024-06-13T06:21:55.894Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ServiceDAO.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaDAO\\ServiceDAO.cs",
               "RelativeDocumentMoniker": "PetSpaDAO\\ServiceDAO.cs",
@@ -207,18 +243,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ServiceRepo.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "RelativeDocumentMoniker": "PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "RelativeToolTip": "PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T04:04:27.118Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ServiceService.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\ServiceService.cs",
               "RelativeDocumentMoniker": "PetSpaService\\ServicesService\\ServiceService.cs",
@@ -230,31 +254,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T06:35:48.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IServiceService.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\IServiceService.cs",
-              "RelativeDocumentMoniker": "PetSpaService\\ServicesService\\IServiceService.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\ServicesService\\IServiceService.cs",
-              "RelativeToolTip": "PetSpaService\\ServicesService\\IServiceService.cs",
+              "DocumentIndex": 10,
+              "Title": "ServiceRepo.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
+              "RelativeDocumentMoniker": "PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
+              "RelativeToolTip": "PetSpaRepo\\ServiceRepository\\ServiceRepo.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T05:08:11.444Z",
+              "WhenOpened": "2024-06-13T04:04:27.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "PetSpaRepo",
               "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaRepo\\PetSpaRepo.csproj",
               "RelativeDocumentMoniker": "PetSpaRepo\\PetSpaRepo.csproj",
@@ -266,26 +278,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Edit.cshtml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T06:41:28.888Z",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T05:15:21.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Create.cshtml.cs",
+              "DocumentIndex": 17,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Program.cs",
+              "RelativeDocumentMoniker": "PRN211GroupProject\\Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Program.cs",
+              "RelativeToolTip": "PRN211GroupProject\\Program.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T06:21:55.894Z",
+              "WhenOpened": "2024-06-13T05:16:52.534Z",
               "EditorCaption": ""
             },
             {
@@ -302,19 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "RelativeToolTip": "PRN211GroupProject\\Pages\\ServicePage\\Index.cshtml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T06:41:55.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PRN211GroupProject\\Pages\\Shared\\_Layout.cshtml",
