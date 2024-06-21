@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿    @inject PRN211GroupProject.Pages.LayoutModel LayoutModel
+    @{
+        var isLogin = LayoutModel.isLogin; 
+    }
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -70,9 +75,19 @@
                                         </ul>
                                     </nav>
                                 </div>
-                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                    <a asp-page="/Login" class="header-btn">Login</a>
-                                </div>
+                                @if (!isLogin)
+                                {
+                                    <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                        <a asp-page="/Login" class="header-btn">Login</a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                        <a asp-page="/Login" class="header-btn">Welcome @LayoutModel.name!</a>
+                                    </div>
+                                }
+
                             </div>
                         </div>
                         <!-- Mobile Menu -->

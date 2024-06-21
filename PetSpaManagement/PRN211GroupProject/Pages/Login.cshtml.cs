@@ -35,6 +35,7 @@ namespace PRN211GroupProject.Pages
             {
                 HttpContext.Session.SetString("Email",email);
                 HttpContext.Session.SetInt32("RoleID", account.RoleId);
+                HttpContext.Session.SetString("Name", account.Name);
                 Response.Redirect("Index");
             }
             else

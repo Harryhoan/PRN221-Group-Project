@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using PetSpaService;
+using PetSpaService.AdminServiceService;
 
 namespace PRN211GroupProject.Pages
 {

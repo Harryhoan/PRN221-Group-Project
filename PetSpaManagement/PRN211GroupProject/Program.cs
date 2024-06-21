@@ -1,6 +1,8 @@
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService;
+using PetSpaService.AdminServiceService;
+using PRN211GroupProject.Pages;
 
 namespace PRN211GroupProject
 {
@@ -10,6 +12,7 @@ namespace PRN211GroupProject
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddRazorPages();
+            builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IAccountService, AccountService>();
             builder.Services.AddScoped<IAvailableService, AvailableService>();
             builder.Services.AddScoped<IBillDetailedService, BillDetailedService>();
@@ -20,7 +23,15 @@ namespace PRN211GroupProject
             builder.Services.AddScoped<IServiceService, ServiceService>();
             builder.Services.AddScoped<ISpotService, SpotService>();
             builder.Services.AddScoped<IVoucherService, VoucherService>();
-            builder.Services.AddSession();
+            builder.Services.AddTransient<LayoutModel>();
+            builder.Services.AddDistributedMemoryCache(); 
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(30); 
+                options.Cookie.HttpOnly = true; 
+                options.Cookie.IsEssential = true; 
+            });
+
             var app = builder.Build();
             if (!app.Environment.IsDevelopment())
             {
@@ -30,6 +41,7 @@ namespace PRN211GroupProject
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseSession();
             app.UseAuthorization();
             app.MapRazorPages();
             app.Run();
