@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService;
@@ -24,14 +25,20 @@ namespace PRN211GroupProject
             builder.Services.AddScoped<IServiceService, ServiceService>();
             builder.Services.AddScoped<ISpotService, SpotService>();
             builder.Services.AddScoped<IVoucherService, VoucherService>();
-            builder.Services.AddTransient<LayoutModel>();
-            builder.Services.AddDistributedMemoryCache(); 
             builder.Services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromDays(30); 
-                options.Cookie.HttpOnly = true; 
-                options.Cookie.IsEssential = true; 
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Adjust as needed
             });
+            builder.Services.AddMvc();
+            builder.Services.AddTransient<LayoutModel>();
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/Login"; // Specify your login path
+
+        });
+
 
             var app = builder.Build();
             if (!app.Environment.IsDevelopment())
@@ -39,12 +46,19 @@ namespace PRN211GroupProject
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseSession();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapRazorPages();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers(); // or MapRazorPages(), depending on your setup
+            });
+
             app.Run();
         }
     }

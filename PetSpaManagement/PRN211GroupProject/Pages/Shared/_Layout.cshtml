@@ -75,16 +75,15 @@
                                         </ul>
                                     </nav>
                                 </div>
-                                @if (!isLogin)
+                                @if (String.IsNullOrEmpty(@User.Identity.Name))
                                 {
                                     <div class="header-right-btn f-right d-none d-lg-block ml-30">
                                         <a asp-page="/Login" class="header-btn">Login</a>
                                     </div>
                                 }
                                 else
-                                {
-                                    <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                        <a asp-page="/Login" class="header-btn">Welcome @LayoutModel.name!</a>
+                                {    <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                        <a asp-page="/Login" class="header-btn">Welcome @User.Identity.Name!</a>
                                     </div>
                                 }
 

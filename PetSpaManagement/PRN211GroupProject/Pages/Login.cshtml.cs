@@ -1,11 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
+using System.Security.Claims;
 using PetSpaRepo;
 using PetSpaService;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 using PetSpaService.AccountService;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore.Update;
 
 namespace PRN211GroupProject.Pages
 {
@@ -28,21 +33,33 @@ namespace PRN211GroupProject.Pages
         {
         }
 
-        public void OnPost()
+        public async Task<IActionResult> OnPostAsync()
+
         {
             Account account = accountService.GetAccountByEmail(email, pass);
 
             if (account != null)
             {
-                HttpContext.Session.SetString("Email",email);
-                HttpContext.Session.SetInt32("RoleID", account.RoleId);
-                HttpContext.Session.SetString("Name", account.Name);
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Email, email),
+                    new Claim(ClaimTypes.Name, account.Name),
+                    new Claim(ClaimTypes.MobilePhone, account.Phone),
+                };
+
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                var principal = new ClaimsPrincipal(identity);
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                 Response.Redirect("Index");
+                return Page();
+
             }
             else
             {
                 errorMessage = "Your email or password is incorrect.";
-                return;
+                return Page();
             }
         }
 
