@@ -18,3 +18,23 @@ C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetS
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\refint\PetSpaService.dll
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.pdb
 C:\Users\Dell\Documents\NetBeansProjects\math-util-mvn\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\ref\PetSpaService.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaService.deps.json
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaService.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaService.pdb
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaBussinessObject.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaDAO.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaRepo.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaRepo.pdb
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaBussinessObject.pdb
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\bin\Debug\net6.0\PetSpaDAO.pdb
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.csproj.AssemblyReference.cache
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.AssemblyInfoInputs.cache
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.AssemblyInfo.cs
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.sourcelink.json
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaSe.313E4453.Up2Date
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\refint\PetSpaService.dll
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\PetSpaService.pdb
+C:\Users\ADMIN\OneDrive\Desktop\FPT university\KY-7 NET1703\PRN221\PRN221-Group-Project\PetSpaManagement\PetSpaService\obj\Debug\net6.0\ref\PetSpaService.dll
