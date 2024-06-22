@@ -1,0 +1,62 @@
+﻿@page
+@model PRN211GroupProject.Pages.AccountPage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Account.Id" />
+            <div class="form-group">
+                <label asp-for="Account.Name" class="control-label"></label>
+                <input asp-for="Account.Name" class="form-control" />
+                <span asp-validation-for="Account.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Email" class="control-label"></label>
+                <input asp-for="Account.Email" class="form-control" />
+                <span asp-validation-for="Account.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Pass" class="control-label"></label>
+                <input asp-for="Account.Pass" class="form-control" />
+                <span asp-validation-for="Account.Pass" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Account.Status" /> @Html.DisplayNameFor(model => model.Account.Status)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.CountVoucher" class="control-label"></label>
+                <input asp-for="Account.CountVoucher" class="form-control" />
+                <span asp-validation-for="Account.CountVoucher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.RoleId" class="control-label"></label>
+                <input asp-for="Account.RoleId" class="form-control" ></input>
+                <span asp-validation-for="Account.RoleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.VoucherId" class="control-label"></label>
+                <input asp-for="Account.VoucherId" class="form-control" ></input>
+                <span asp-validation-for="Account.VoucherId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

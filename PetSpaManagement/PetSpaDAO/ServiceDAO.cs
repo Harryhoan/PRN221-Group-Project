@@ -46,20 +46,26 @@ namespace PetSpaDAO
         }
         public void UpdateService(Service newService)
         {
-            var dbContext = new PetSpaManagementContext();
-            if (newService != null)
+            if (newService == null)
             {
-                dbContext.Services.Update(newService);
-                dbContext.SaveChanges();
+                throw new ArgumentNullException(nameof(newService), "Service cannot be null");
             }
-            else { throw new Exception("Service not exist"); }
+
+            var existingService = _context.Services.FirstOrDefault(s => s.Id == newService.Id);
+            if (existingService == null)
+            {
+                throw new Exception("Service does not exist");
+            }
+
+            _context.Entry(existingService).CurrentValues.SetValues(newService);
+            _context.SaveChanges();
         }
         public void AddService(Service service)
         {
             Service newService = GetService(service.Id);
-            if (newService != null)
+            if (newService == null)
             {
-                _context.Add(newService);
+                _context.Services.Add(service);
                 _context.SaveChanges();
             }
         }

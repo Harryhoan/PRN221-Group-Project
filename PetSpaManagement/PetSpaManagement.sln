@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSpaBussinessObject", "Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSpaRepo", "PetSpaRepo\PetSpaRepo.csproj", "{1D58C42D-F0E1-48AC-B218-20A6E20AB531}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetSpaService", "PetSpaService\PetSpaService.csproj", "{B87840EF-C459-4A21-B694-0A957EEC09CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetSpaService", "PetSpaService\PetSpaService.csproj", "{B87840EF-C459-4A21-B694-0A957EEC09CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
