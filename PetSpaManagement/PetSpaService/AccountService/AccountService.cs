@@ -20,8 +20,9 @@ namespace PetSpaService.AccountService
         public void AddAccount(Account account) => AccountDAO.Instance.AddAccount(account);
 
         public Account GetAccount(int accountID) => AccountDAO.Instance.GetAccount(accountID);
+        public Account GetAccountByEmail(string email) => AccountDAO.Instance.GetAccountByEmail(email);
 
-        public Account GetAccountByEmail(string Email, string password)
+        public Account Login(string Email, string password)
         {
             Account account = repo.GetAccountByEmail(Email);
             if (account != null && account.Pass.Equals(password))
