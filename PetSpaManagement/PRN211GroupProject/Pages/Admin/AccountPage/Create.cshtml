@@ -11,11 +11,6 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Account.Id" class="control-label"></label>
-                <input asp-for="Account.Id" class="form-control" />
-                <span asp-validation-for="Account.Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Account.Name" class="control-label"></label>
                 <input asp-for="Account.Name" class="form-control" />
                 <span asp-validation-for="Account.Name" class="text-danger"></span>
@@ -24,6 +19,11 @@
                 <label asp-for="Account.Email" class="control-label"></label>
                 <input asp-for="Account.Email" class="form-control" />
                 <span asp-validation-for="Account.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Account.Phone" class="control-label"></label>
+                <input asp-for="Account.Phone" class="form-control" />
+                <span asp-validation-for="Account.Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.Pass" class="control-label"></label>
@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Account.VoucherId" class="control-label"></label>
-                <select asp-for="Account.VoucherId" class ="form-control" asp-items="ViewBag.VoucherId"></select>
+                <select asp-for="Account.VoucherId" class="form-control" asp-items="ViewBag.VoucherId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -1,12 +1,14 @@
-﻿using System;
+﻿using PetSpaBussinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetSpaService
+namespace PetSpaService.RolesService
 {
     public interface IRoleService
     {
+        List<Role> GetAllRole();
     }
 }

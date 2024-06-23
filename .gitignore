@@ -75,3 +75,8 @@ appsettings.Production.json
 /PetSpaManagement/PetSpaDAO/obj/PetSpaDAO.csproj.nuget.g.props
 /PetSpaManagement/PetSpaDAO/obj/PetSpaDAO.csproj.nuget.dgspec.json
 /PetSpaManagement/PetSpaBussinessObject/obj/project.assets.json
+*.v2
+*.json
+*.cache
+*.props
+*.txt

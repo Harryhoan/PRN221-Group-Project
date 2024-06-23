@@ -1,4 +1,5 @@
-﻿using PetSpaDaos;
+﻿using PetSpaBussinessObject;
+using PetSpaDaos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,15 @@ namespace PetSpaDAO
                     instance = new FeedbackDAO();
                 }
                 return instance;
+            }
+        }
+        public void NewFeedback(Feedback feedback)
+        {
+            Feedback newFeedback = new Feedback();
+            if (newFeedback == null)
+            {
+                context.Feedbacks.Add(feedback);
+                context.SaveChanges();
             }
         }
     }
