@@ -1,4 +1,5 @@
-﻿using PetSpaDaos;
+﻿using PetSpaBussinessObject;
+using PetSpaDaos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,5 +29,76 @@ namespace PetSpaDAO
                 return instance;
             }
         }
-    }
+
+		public List<Booking> GetAllBooking()
+		{
+			var bookings = context.Bookings.ToList();
+			if (bookings == null)
+				throw new Exception("All bookings cannot be retrieved");
+			return bookings;
+
+		}
+		public Booking GetBooking(int bookingId)
+		{
+			var booking = context.Bookings.FirstOrDefault(b => b.Id.Equals(bookingId));
+			if (booking == null)
+				throw new Exception("Booking cannot be retrieved");
+			return booking;
+		}
+		public void AddBooking(Booking booking)
+		{
+			try
+			{
+				Booking existingBooking = GetBooking(booking.Id);
+				if (existingBooking == null && booking != null)
+				{
+					context.Bookings.Add(booking);
+					context.SaveChanges();
+				}
+			}
+			catch
+			{
+				Console.WriteLine("Booking cannot be added");
+			}
+		}
+		public void UpdateBooking(Booking newBooking)
+		{
+			try
+			{
+				if (newBooking == null)
+				{
+					throw new ArgumentNullException(nameof(newBooking), "Booking cannot be null");
+				}
+
+				var existingBooking = context.Bookings.FirstOrDefault(s => s.Id == newBooking.Id);
+				if (existingBooking == null)
+				{
+					throw new Exception("Booking does not exist");
+				}
+				context.Entry(existingBooking).CurrentValues.SetValues(newBooking);
+				context.SaveChanges();
+			}
+			catch
+			{
+				Console.WriteLine("Booking cannot be updated");
+			}
+		}
+
+		public void SoftRemoveBooking(int bookingId)
+		{
+			try
+			{
+				var booking = GetBooking(bookingId);
+				if (booking == null)
+					throw new Exception("Booking cannot be found");
+				booking.Status = false;
+				context.Update(booking);
+				context.SaveChanges();
+			}
+			catch
+			{
+				Console.WriteLine("Booking cannot be removed");
+			}
+		}
+	}
 }

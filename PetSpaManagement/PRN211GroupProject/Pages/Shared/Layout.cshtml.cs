@@ -15,7 +15,7 @@ namespace PRN211GroupProject.Pages
         {
             email = HttpContext.Session.GetString("Email");
             name = HttpContext.Session.GetString("Name");
-                     isLogin = true;
+            isLogin = true;
 
     }
 

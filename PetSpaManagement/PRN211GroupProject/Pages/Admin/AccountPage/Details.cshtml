@@ -54,7 +54,7 @@
             @Html.DisplayNameFor(model => model.Account.Voucher)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Account.Voucher.Name)
+            @if (Model.Account.Voucher != null && !String.IsNullOrEmpty(Model.Account.Voucher.Name)) @Html.DisplayFor(model => model.Account.Voucher.Name) else @ViewData[String.Empty]
         </dd>
     </dl>
 </div>

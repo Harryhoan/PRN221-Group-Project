@@ -7,6 +7,9 @@ using PetSpaService.AdminServiceService;
 using PetSpaService.FeedbacksService;
 using PetSpaService.RolesService;
 using PetSpaService.ServicesService;
+using PetSpaService.AvailableService;
+using PetSpaService.BookingService;
+using PetSpaService.SpotService.SpotService;
 using PRN211GroupProject.Pages;
 
 namespace PRN211GroupProject
