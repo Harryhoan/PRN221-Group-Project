@@ -1,4 +1,5 @@
-﻿using PetSpaDaos;
+﻿using PetSpaBussinessObject;
+using PetSpaDaos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,74 @@ namespace PetSpaDAO
                     instance = new AvailableDAO();
                 }
                 return instance;
+            }
+        }
+
+        public List<Available> GetAllAvailable()
+        {
+            var availables = context.Availables.ToList();
+            if (availables == null)
+                throw new Exception("All availables cannot be retrieved");
+            return availables;
+
+        }
+        public Available GetAvailable(int availableId)
+        {
+            var available = context.Availables.FirstOrDefault(a => a.Id.Equals(availableId));
+            if (available == null)
+                throw new Exception("Available cannot be retrieved");
+            return available;   
+        }
+        public void AddAvailable(Available available)
+        {
+            try
+            {
+                Available existingAvailable = GetAvailable(available.Id);
+                if (existingAvailable == null && available != null)
+                {
+                    context.Availables.Add(available);
+                    context.SaveChanges();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Available cannot be added");
+            }
+        }
+        public void UpdateAvailable(Available newAvaiable)
+        {
+            try
+            {
+                if (newAvaiable == null)
+                {
+                    throw new ArgumentNullException(nameof(newAvaiable), "Available cannot be null");
+                }
+
+                var existingAvailable = context.Availables.FirstOrDefault(a => a.Id == newAvaiable.Id);
+                if (existingAvailable == null)
+                {
+                    throw new Exception("Available does not exist");
+                }
+                context.Entry(existingAvailable).CurrentValues.SetValues(newAvaiable);
+                context.SaveChanges();
+            }
+            catch
+            {
+                Console.WriteLine("Available cannot be updated");
+            }
+        }
+
+        public void DeleteAvailable(int availableId)
+        {
+            try
+            {
+                var existingAvailable = GetAvailable(availableId) ?? throw new Exception("Available cannot be found");
+                context.Remove(availableId);
+                context.SaveChanges();
+            } 
+            catch
+            {
+                Console.WriteLine("Available cannot be deleted");
             }
         }
     }

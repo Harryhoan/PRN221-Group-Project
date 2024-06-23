@@ -75,7 +75,7 @@
                                         </ul>
                                     </nav>
                                 </div>
-                                @if (String.IsNullOrEmpty(@User.Identity.Name))
+                                @if (@User.Identity == null || String.IsNullOrEmpty(@User.Identity.Name))
                                 {
                                     <div class="header-right-btn f-right d-none d-lg-block ml-30">
                                         <a asp-page="/Login" class="header-btn">Login</a>
