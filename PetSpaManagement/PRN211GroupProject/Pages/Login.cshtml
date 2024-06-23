@@ -74,6 +74,11 @@
             {
                 <p style="color:red">@Model.errorMessage</p>
             }
+
+            @if (!string.IsNullOrEmpty(Model.successMessage))
+            {
+                <p style="color:mediumseagreen">@Model.successMessage</p>
+            }
         </div>
     </div>
 </body>

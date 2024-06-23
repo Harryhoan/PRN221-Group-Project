@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Services\" />
+    <Compile Remove="Pages\Services.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Services.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

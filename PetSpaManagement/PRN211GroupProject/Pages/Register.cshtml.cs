@@ -1,61 +1,57 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using PetSpaService.AccountService;
+using PRN211GroupProject.ViewModel;
+using System.Text.RegularExpressions;
+using System.Web;
 
 namespace PRN211GroupProject.Pages
 {
     public class RegisterModel : PageModel
     {
-        public string errorMessage;
         [BindProperty]
-        public string Email { get; set; }
-        [BindProperty]
-        public string Name { get; set; }
+        public RegisterViewModel RegisterViewModel { get; set; }
 
-        [BindProperty]
-        public string Pass { get; set; }
+        [TempData]
+        public string errorMessage { get; set; }
 
-        [BindProperty]
-        public string confirmPassword { get; set; }
-        [BindProperty]
-        public string Phone { get; set; }
-
+        [TempData]
+        public string successMessage { get; set; }
         private IAccountService accountService;
 
         public RegisterModel(IAccountService accountSer)
         {
             accountService = accountSer;
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
-            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Pass) || string.IsNullOrEmpty(confirmPassword))
+            if (accountService.GetAccountByEmail(RegisterViewModel.Email) != null)
             {
-                errorMessage = "Please fill in all required fields.";
-                return;
-            }
-            if (Pass != confirmPassword)
-            {
-                errorMessage = "Password and confirm password do not match.";
-                return;
+                ModelState.AddModelError(string.Empty, "An account with this email already exists.");
+                return Page();  
             }
             if (!ModelState.IsValid)
             {
-                // If ModelState is not valid due to other validation errors, handle them here
-                return;
+                return Page();
             }
-            Account account = new Account();
-            account.Email = Email;
-            account.Name = Name;
-            account.Pass = Pass;
-            account.Phone = Phone;
-            account.RoleId = 1;
-            account.Status = true;
-            account.CountVoucher = 0;
-            account.VoucherId = null;
+            Account account = new Account
+            {
+                Email = RegisterViewModel.Email,
+                Name = RegisterViewModel.Name,
+                Pass = RegisterViewModel.Pass,
+                Phone = RegisterViewModel.Phone,
+                RoleId = 1,
+                Status = true,
+                CountVoucher = 0,
+                VoucherId = null
+            };
+
             accountService.AddAccount(account);
-            errorMessage = "Registered Successfull,Login to continue";
-            Response.Redirect("Login");
+
+            successMessage = "Registered Successfully. Login to continue.";
+             return RedirectToPage("Login");
         }
     }
 }

@@ -16,7 +16,12 @@ namespace PRN211GroupProject.Pages
 {
     public class LoginModel : PageModel
     {
-        public string errorMessage;
+        [TempData]
+        public string errorMessage { get; set; }
+
+        [TempData]
+        public string successMessage { get; set; }
+
         [BindProperty]
         public string email { get; set; }
         [BindProperty]
@@ -36,7 +41,7 @@ namespace PRN211GroupProject.Pages
         public async Task<IActionResult> OnPostAsync()
 
         {
-            Account account = accountService.GetAccountByEmail(email, pass);
+            Account account = accountService.Login(email, pass);
 
             if (account != null)
             {
