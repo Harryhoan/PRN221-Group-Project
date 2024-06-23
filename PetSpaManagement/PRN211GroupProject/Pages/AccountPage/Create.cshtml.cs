@@ -7,22 +7,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PetSpaBussinessObject;
 using PetSpaDaos;
+using PetSpaService.AccountService;
 
 namespace PRN211GroupProject.Pages.AccountPage
 {
     public class CreateModel : PageModel
     {
-        private readonly PetSpaDaos.PetSpaManagementContext _context;
+        private readonly IAccountService _account;
 
-        public CreateModel(PetSpaDaos.PetSpaManagementContext context)
+        public CreateModel(IAccountService account)
         {
-            _context = context;
+            _account = account;
         }
 
         public IActionResult OnGet()
         {
-        ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name");
-        ViewData["VoucherId"] = new SelectList(_context.Vouchers, "Id", "Name");
             return Page();
         }
 
@@ -32,14 +31,14 @@ namespace PRN211GroupProject.Pages.AccountPage
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
+        
         {
-          if (!ModelState.IsValid || _context.Accounts == null || Account == null)
+            if (!ModelState.IsValid || Account == null || Account == null)
             {
                 return Page();
             }
 
-            _context.Accounts.Add(Account);
-            await _context.SaveChangesAsync();
+            _account.AddAccount(Account);
 
             return RedirectToPage("./Index");
         }
