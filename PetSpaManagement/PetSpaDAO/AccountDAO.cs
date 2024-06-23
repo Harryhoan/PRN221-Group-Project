@@ -47,7 +47,14 @@ namespace PetSpaDAO
             Account newAccount = GetAccount(account.Id);
             if (newAccount == null)
             {
-                context.Accounts.Add(account);
+                Account tempAccount = new Account();
+                tempAccount.Name = account.Name;
+                tempAccount.Email = account.Email;
+                tempAccount.VoucherId = account.VoucherId;
+                tempAccount.Phone = account.Phone;
+                tempAccount.RoleId = account.RoleId;
+                tempAccount.Status = account.Status;
+                context.Accounts.Add(tempAccount);
                 context.SaveChanges();
             }
         }

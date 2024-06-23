@@ -1,4 +1,5 @@
-﻿using PetSpaDaos;
+﻿using PetSpaBussinessObject;
+using PetSpaDaos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,10 @@ namespace PetSpaDAO
                 }
                 return instance;
             }
+        }
+        public List<Role> GetAllRole()
+        {
+            return context.Roles.ToList();
         }
     }
 }

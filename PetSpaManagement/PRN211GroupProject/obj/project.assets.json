@@ -11672,6 +11672,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Session >= 2.1.1",
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.29",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.29",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.29",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.29",
@@ -11680,19 +11681,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
       "projectName": "PRN211GroupProject",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\PRN211GroupProject.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PRN211GroupProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11707,8 +11708,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Documents\\GitHub\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\PetSpaService.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\PetSpaService.csproj"
+            "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\PetSpaService.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Desktop\\FPT university\\KY-7 NET1703\\PRN221\\PRN221-Group-Project\\PetSpaManagement\\PetSpaService\\PetSpaService.csproj"
             }
           }
         }
@@ -11731,6 +11732,12 @@
           "Microsoft.AspNetCore.Session": {
             "target": "Package",
             "version": "[2.1.1, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.29, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -11762,6 +11769,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

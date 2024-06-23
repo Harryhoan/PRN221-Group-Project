@@ -42,12 +42,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Account.RoleId" class="control-label"></label>
-                <input asp-for="Account.RoleId" class="form-control" />
-                <span asp-for="Account.RoleId" class ="form-control" asp-items="ViewBag.RoleId"></span>
+                <select asp-for="Account.RoleId" class ="form-control" asp-items="ViewBag.RoleId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Account.VoucherId" class="control-label"></label>
-                <span asp-for="Account.VoucherId" class ="form-control" asp-items="ViewBag.VoucherId"></span>
+                <select asp-for="Account.VoucherId" class="form-control" asp-items="ViewBag.VoucherId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -1,13 +1,14 @@
 ﻿using PetSpaBussinessObject;
 using PetSpaDAO;
 using PetSpaRepo.AdminServiceRepo;
+using PetSpaService.AdminServiceService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetSpaService.AdminServiceService
+namespace PetSpaService.ServicesService
 {
     public class ServiceService : IServiceService
     {
