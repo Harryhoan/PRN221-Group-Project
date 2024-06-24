@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using PetSpaBussinessObject;
 using PetSpaDaos;
-using PetSpaService;
 using PetSpaService.AccountService;
 using PetSpaService.AdminServiceService;
 using PetSpaService.FeedbacksService;
@@ -13,6 +12,8 @@ using PetSpaService.SpotService.SpotService;
 using PRN211GroupProject.Pages;
 using PetSpaService.BillService;
 using PetSpaService.BillDetailedService;
+using PetSpaService.VoucherService;
+using PetSpaService.VoucherService.VoucherService;
 
 namespace PRN211GroupProject
 {
@@ -43,8 +44,9 @@ namespace PRN211GroupProject
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
         {
-            options.LoginPath = "/Login"; // Specify your login path
-
+            options.Cookie.Name = "User";
+            options.LoginPath = "/Account/Login"; // Adjust this path if needed
+            options.LogoutPath = "/Index"; // Adjust this path if needed
         });
 
 

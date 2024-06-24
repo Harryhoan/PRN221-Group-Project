@@ -1,4 +1,6 @@
 ﻿using Humanizer;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,19 +8,15 @@ namespace PRN211GroupProject.Pages
 {
     public class LayoutModel : PageModel
     {
-        public bool isLogin = false;
-        public string name = string.Empty;
-        public string email = string.Empty;
         public LayoutModel() { }
 
-        void OnGet()
+        public async Task<IActionResult> OnPostLogoutAsync()
         {
-            email = HttpContext.Session.GetString("Email");
-            name = HttpContext.Session.GetString("Name");
-            isLogin = true;
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToPage("/Index");
+        }
 
     }
 
-}
- 
 }

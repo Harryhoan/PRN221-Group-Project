@@ -7,7 +7,7 @@ using PRN211GroupProject.ViewModel;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace PRN211GroupProject.Pages
+namespace PRN211GroupProject.Pages.Accounts
 {
     public class RegisterModel : PageModel
     {
@@ -30,7 +30,7 @@ namespace PRN211GroupProject.Pages
             if (accountService.GetAccountByEmail(RegisterViewModel.Email) != null)
             {
                 ModelState.AddModelError(string.Empty, "An account with this email already exists.");
-                return Page();  
+                return Page();
             }
             if (!ModelState.IsValid)
             {
@@ -51,7 +51,7 @@ namespace PRN211GroupProject.Pages
             accountService.AddAccount(account);
 
             successMessage = "Registered Successfully. Login to continue.";
-             return RedirectToPage("Login");
+            return RedirectToPage("Login");
         }
     }
 }

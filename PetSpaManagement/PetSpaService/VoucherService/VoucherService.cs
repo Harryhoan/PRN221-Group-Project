@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetSpaService
+namespace PetSpaService.VoucherService.VoucherService
 {
-    public class VoucherService : IVoucherService 
+    public class VoucherService : IVoucherService
     {
     }
 }

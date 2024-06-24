@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetSpaService
+namespace PetSpaService.VoucherService.VoucherService
 {
     public interface IVoucherService
     {

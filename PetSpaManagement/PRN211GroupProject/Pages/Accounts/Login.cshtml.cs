@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore.Update;
 
-namespace PRN211GroupProject.Pages
+namespace PRN211GroupProject.Pages.Accounts
 {
     public class LoginModel : PageModel
     {
@@ -57,7 +57,7 @@ namespace PRN211GroupProject.Pages
                 var principal = new ClaimsPrincipal(identity);
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                Response.Redirect("Index");
+                Response.Redirect("/Index");
                 return Page();
 
             }
