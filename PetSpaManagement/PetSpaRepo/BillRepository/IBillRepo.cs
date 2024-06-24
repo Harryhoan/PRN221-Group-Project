@@ -15,6 +15,8 @@ namespace PetSpaRepo.BillRepository
 
         public List<Bill> GetBillList();
 
+        public List<Bill> GetAccountBillList(int accId);
+
         public Bill GetBill(int billId);
     }
 }

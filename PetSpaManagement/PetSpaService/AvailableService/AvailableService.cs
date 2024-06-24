@@ -28,7 +28,7 @@ namespace PetSpaService.AvailableService
 
         public void AddAvailable(Available available)
         {
-            if (!(available.ServiceId > 0 && available.SpotId > 0))
+            if (!(available.ServiceId > 0 && available.SpotId > 0) || available == null || available.Id != default)
                 throw new Exception("Invalid available");
             availableRepo.AddAvailable(available);
         }

@@ -46,6 +46,12 @@ namespace PetSpaService.BookingService
             return BookingRepo.GetActiveBookingList();
         }
 
+		public List<Booking> GetAccountBookingList()
+		{
+			return BookingRepo.GetActiveBookingList();
+		}
+
+
 		public void UpdateBooking(Booking booking)
         {
             if (booking == null || !(booking.Id > 0))

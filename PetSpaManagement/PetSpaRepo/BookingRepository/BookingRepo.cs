@@ -18,7 +18,7 @@ namespace PetSpaRepo.BookingRepository
 
         public List<Booking> GetActiveBookingList() => BookingDAO.Instance.GetActiveBooking();
 
-
+		public List<Booking> GetAccountBookingList(int accountId) => BookingDAO.Instance.GetAccountBooking(accountId);
 		public void SoftRemoveBooking(int BookingId) => BookingDAO.Instance.SoftRemoveBooking(BookingId);
 
         public void UpdateBooking(Booking Booking) => BookingDAO.Instance.UpdateBooking(Booking);
