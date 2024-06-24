@@ -46,6 +46,13 @@ namespace PetSpaDAO
 				throw new Exception("All bookings cannot be retrieved");
 			return bookings;
 		}
+		public List<Booking> GetAccountBooking(int accountId)
+		{
+			var bookings = context.Bookings.Where(b => b.Status == true && b.AccountId == accountId).ToList();
+			if (bookings == null)
+				throw new Exception("All bookings cannot be retrieved");
+			return bookings;
+		}
 		public Booking GetBooking(int bookingId)
 		{
 			var booking = context.Bookings.FirstOrDefault(b => b.Id.Equals(bookingId));
@@ -57,17 +64,20 @@ namespace PetSpaDAO
 		{
 			try
 			{
-				Booking existingBooking = GetBooking(booking.Id);
-				if (existingBooking == null && booking != null)
+				if (booking != null)
 				{
-					if (booking.Created == default || booking.Started == default || booking.Ended == default)
-						throw new Exception("Booking has not been scheduled");
+					Booking existingBooking = GetBooking(booking.Id);
+					if (existingBooking == null)
+					{
+						if (booking.Created == default || booking.Started == default || booking.Ended == default)
+							throw new Exception("Booking has not been scheduled");
 
-					if (booking.Created > DateTime.Now || booking.Started.Date <= DateTime.Today || booking.Ended.Date <= DateTime.Today || booking.Started >= booking.Ended)
-						throw new Exception("Invalid booking date or time");
+						if (booking.Created > DateTime.Now || booking.Started.Date <= DateTime.Today || booking.Ended.Date <= DateTime.Today || booking.Started >= booking.Ended)
+							throw new Exception("Invalid booking date or time");
 
-					context.Bookings.Add(booking);
-					context.SaveChanges();
+						context.Bookings.Add(booking);
+						context.SaveChanges();
+					}
 				}
 			}
 			catch

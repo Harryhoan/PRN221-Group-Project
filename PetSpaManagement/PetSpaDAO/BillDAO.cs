@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 
 namespace PetSpaDAO
 {
-    public class BillDAO
-    {
-        private readonly PetSpaManagementContext context = null;
-        private static BillDAO instance = null;
+	public class BillDAO
+	{
+		private readonly PetSpaManagementContext context = null;
+		private static BillDAO instance = null;
 
-        public BillDAO()
-        {
-            context = new PetSpaManagementContext();
-        }
+		public BillDAO()
+		{
+			context = new PetSpaManagementContext();
+		}
 
-        public static BillDAO Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new BillDAO();
-                }
-                return instance;
-            }
-        }
+		public static BillDAO Instance
+		{
+			get
+			{
+				if (instance == null)
+				{
+					instance = new BillDAO();
+				}
+				return instance;
+			}
+		}
 
 		public List<Bill> GetAllBill()
 		{
@@ -38,6 +38,14 @@ namespace PetSpaDAO
 				throw new Exception("All Bills cannot be retrieved");
 			return Bills;
 
+		}
+
+		public List<Bill> GetAccountBill(int accId)
+		{
+			var Bills = context.Bills.Where(b => b.AccId == accId).ToList();
+			if (Bills == null)
+				throw new Exception("All Bills cannot be retrieved");
+			return Bills;
 		}
 
 		public Bill GetBill(int billId)
@@ -51,16 +59,19 @@ namespace PetSpaDAO
 		{
 			try
 			{
-				Bill existingBill = GetBill(bill.Id);
-				if (existingBill == null && bill != null)
+				if (bill != null)
 				{
-					if (bill.Started == default || bill.Started > DateTime.Now)
-						throw new Exception("Invalid bill date or time");
+					Bill existingBill = GetBill(bill.Id);
+					if (existingBill == null)
+					{
+						if (bill.Started == default || bill.Started > DateTime.Now)
+							throw new Exception("Invalid bill date or time");
 
-					if (bill.Total <= 0)
-						throw new Exception("Invalid bill total");
-					context.Bills.Add(bill);
-					context.SaveChanges();
+						if (bill.Total <= 0)
+							throw new Exception("Invalid bill total");
+						context.Bills.Add(bill);
+						context.SaveChanges();
+					}
 				}
 			}
 			catch
