@@ -38,6 +38,14 @@ namespace PetSpaDAO
             return spots;
 
         }
+
+        public List<Spot> GetActiveSpot() 
+        {
+			var spots = context.Spots.Where(s => s.Status == true).ToList();
+			if (spots == null)
+				throw new Exception("Active spots cannot be retrieved");
+			return spots;
+		}
         public Spot GetSpot(int spotId)
         {
             var spot = context.Spots.FirstOrDefault(s => s.Id.Equals(spotId));

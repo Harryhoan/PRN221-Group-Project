@@ -15,8 +15,11 @@ namespace PetSpaRepo.SpotRepository
 
         public List<Spot> GetSpotList();
 
-        public void UpdateSpot(Spot spot);
+		public List<Spot> GetActiveSpotList();
+
+		public void UpdateSpot(Spot spot);
 
         public Spot GetSpot(int spotId);
-    }
+
+	}
 }

@@ -4,6 +4,7 @@ using PetSpaRepo.SpotRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 namespace PetSpaService.SpotService.SpotService
@@ -19,6 +20,8 @@ namespace PetSpaService.SpotService.SpotService
 
         public void AddSpot(Spot spot)
         {
+            if (spot.Id != default(int))
+                throw new Exception("Invalid spot cannot be added");
             spotRepo.AddSpot(spot);
         }
 
@@ -37,6 +40,11 @@ namespace PetSpaService.SpotService.SpotService
         public List<Spot> GetSpotList()
         {
             return spotRepo.GetSpotList();
+        }
+
+        public List<Spot> GetActiveSpotList()
+        {
+            return spotRepo.GetActiveSpotList();
         }
 
         public void UpdateSpot(Spot spot)

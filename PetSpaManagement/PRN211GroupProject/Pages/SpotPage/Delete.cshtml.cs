@@ -5,61 +5,75 @@ using PetSpaService.SpotService.SpotService;
 
 namespace PRN211GroupProject.Pages.SpotPage
 {
-    public class DeleteModel : PageModel
-    {
-        private readonly ISpotService _spotService;
-        public DeleteModel(ISpotService spotService)
-        {
-            _spotService = spotService;
-        }
+	public class DeleteModel : PageModel
+	{
+		private readonly ISpotService _spotService;
+		public DeleteModel(ISpotService spotService)
+		{
+			_spotService = spotService;
+		}
 
-        [BindProperty]
-        public Spot? Spot { get; set; }
+		[BindProperty]
+		public Spot? Spot { get; set; }
 
-        public IActionResult OnGet(int spotId)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
+		public IActionResult OnGet(int spotId)
+		{
+			try
+			{
+				if (!ModelState.IsValid)
+				{
+					return BadRequest();
+				}
 
-            if (_spotService.GetSpotList() == null || _spotService.GetSpotList().Count == 0)
-            {
-                return BadRequest();
-            }
+				if (_spotService.GetSpotList() == null || _spotService.GetSpotList().Count == 0)
+				{
+					return BadRequest();
+				}
 
-            var existingSpot = _spotService.GetSpot(spotId);
-            if (existingSpot == null)
-            {
-                return NotFound();
-            }
-            this.Spot = existingSpot;
+				var existingSpot = _spotService.GetSpot(spotId);
+				if (existingSpot == null)
+				{
+					return NotFound();
+				}
+				this.Spot = existingSpot;
 
-            return Page();
-        }
+				return Page();
+			}
+			catch
+			{
+				return BadRequest();
+			}
+		}
 
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+		public IActionResult OnPost()
+		{
+			try
+			{
+				if (!ModelState.IsValid)
+				{
+					return Page();
+				}
 
-            if (Spot == null)
-            {
-                return BadRequest();
-            }
+				if (Spot == null)
+				{
+					return BadRequest();
+				}
 
-            try
-            {
-                _spotService.DeleteSpot(Spot.Id);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+				try
+				{
+					_spotService.DeleteSpot(Spot.Id);
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
 
-            return RedirectToPage("./Index");
-        }
-    }
+				return RedirectToPage("./Index");
+			}
+			catch
+			{
+				return BadRequest();
+			}
+		}
+	}
 }

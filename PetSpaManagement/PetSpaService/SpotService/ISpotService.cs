@@ -13,7 +13,9 @@ namespace PetSpaService.SpotService.SpotService
 
         public List<Spot> GetSpotList();
 
-        public void AddSpot(Spot spot);
+        public List<Spot> GetActiveSpotList();
+
+		public void AddSpot(Spot spot);
 
         public void DeleteSpot(int spotId);
 

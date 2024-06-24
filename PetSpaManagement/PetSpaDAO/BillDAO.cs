@@ -1,4 +1,6 @@
-﻿using PetSpaDaos;
+﻿using Microsoft.EntityFrameworkCore;
+using PetSpaBussinessObject;
+using PetSpaDaos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,5 +30,83 @@ namespace PetSpaDAO
                 return instance;
             }
         }
-    }
+
+		public List<Bill> GetAllBill()
+		{
+			var Bills = context.Bills.ToList();
+			if (Bills == null)
+				throw new Exception("All Bills cannot be retrieved");
+			return Bills;
+
+		}
+
+		public Bill GetBill(int billId)
+		{
+			var bill = context.Bills.FirstOrDefault(b => b.Id.Equals(billId));
+			if (bill == null)
+				throw new Exception("Bill cannot be retrieved");
+			return bill;
+		}
+		public void AddBill(Bill bill)
+		{
+			try
+			{
+				Bill existingBill = GetBill(bill.Id);
+				if (existingBill == null && bill != null)
+				{
+					if (bill.Started == default || bill.Started > DateTime.Now)
+						throw new Exception("Invalid bill date or time");
+
+					if (bill.Total <= 0)
+						throw new Exception("Invalid bill total");
+					context.Bills.Add(bill);
+					context.SaveChanges();
+				}
+			}
+			catch
+			{
+				Console.WriteLine("Bill cannot be added");
+			}
+		}
+		//public void UpdateBill(Bill newBill)
+		//{
+		//	try
+		//	{
+		//		if (newBill == null)
+		//		{
+		//			throw new ArgumentNullException(nameof(newBill), "Bill cannot be null");
+		//		}
+
+		//		var existingBill = context.Bills.FirstOrDefault(b => b.Id == newBill.Id);
+		//		if (existingBill == null)
+		//		{
+		//			throw new Exception("Bill does not exist");
+		//		}
+		//		context.Entry(existingBill).CurrentValues.SetValues(newBill);
+		//		context.SaveChanges();
+		//	}
+		//	catch
+		//	{
+		//		Console.WriteLine("Bill cannot be updated");
+		//	}
+		//}
+
+		public void DeleteBill(int billId)
+		{
+			try
+			{
+				var existingBill = context.Bills.Include(b => b.BillDetaileds).SingleOrDefault(b => b.Id == billId) ?? throw new Exception("Bill cannot be found");
+				foreach (var bd in existingBill.BillDetaileds)
+				{
+					context.BillDetaileds.Remove(bd);
+				}
+				context.Remove(billId);
+				context.SaveChanges();
+			}
+			catch
+			{
+				Console.WriteLine("Bill cannot be deleted");
+			}
+		}
+	}
 }

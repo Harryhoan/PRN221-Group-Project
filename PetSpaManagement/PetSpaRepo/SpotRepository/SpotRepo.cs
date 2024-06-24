@@ -16,6 +16,8 @@ namespace PetSpaRepo.SpotRepository
 
         public List<Spot> GetSpotList() => SpotDAO.Instance.GetAllSpot();
 
+        public List<Spot> GetActiveSpotList() => SpotDAO.Instance.GetActiveSpot();
+
         public void SoftRemoveSpot(int spotId) => SpotDAO.Instance.SoftRemoveSpot(spotId);
 
         public void UpdateSpot(Spot spot) => SpotDAO.Instance.UpdateSpot(spot);
