@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 using PetSpaBussinessObject;
+
 namespace PetSpaDaos
 {
     public partial class PetSpaManagementContext : DbContext
@@ -32,6 +33,7 @@ namespace PetSpaDaos
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer(GetConnectionString());
             }
         }
@@ -49,9 +51,7 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Account");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CountVoucher).HasColumnName("countVoucher");
 
@@ -64,6 +64,16 @@ namespace PetSpaDaos
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("name");
+
+                entity.Property(e => e.Pass)
+                    .HasMaxLength(15)
+                    .IsUnicode(false)
+                    .HasColumnName("pass");
+
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(11)
+                    .IsUnicode(false)
+                    .HasColumnName("phone");
 
                 entity.Property(e => e.RoleId).HasColumnName("roleId");
 
@@ -87,9 +97,7 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Available");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.ServiceId).HasColumnName("serviceId");
 
@@ -112,9 +120,9 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Bill");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.AccId).HasColumnName("accId");
 
                 entity.Property(e => e.Started)
                     .HasColumnType("datetime")
@@ -124,19 +132,23 @@ namespace PetSpaDaos
 
                 entity.Property(e => e.VoucherId).HasColumnName("voucherId");
 
+                entity.HasOne(d => d.Acc)
+                    .WithMany(p => p.Bills)
+                    .HasForeignKey(d => d.AccId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__Bill__accId__4F7CD00D");
+
                 entity.HasOne(d => d.Voucher)
                     .WithMany(p => p.Bills)
                     .HasForeignKey(d => d.VoucherId)
-                    .HasConstraintName("FK__Bill__voucherId__4F7CD00D");
+                    .HasConstraintName("FK__Bill__voucherId__5070F446");
             });
 
             modelBuilder.Entity<BillDetailed>(entity =>
             {
                 entity.ToTable("BillDetailed");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.BillId).HasColumnName("billId");
 
@@ -148,22 +160,20 @@ namespace PetSpaDaos
                     .WithMany(p => p.BillDetaileds)
                     .HasForeignKey(d => d.BillId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BillDetai__billI__534D60F1");
+                    .HasConstraintName("FK__BillDetai__billI__5441852A");
 
                 entity.HasOne(d => d.Booking)
                     .WithMany(p => p.BillDetaileds)
                     .HasForeignKey(d => d.BookingId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BillDetai__booki__52593CB8");
+                    .HasConstraintName("FK__BillDetai__booki__534D60F1");
             });
 
             modelBuilder.Entity<Booking>(entity =>
             {
                 entity.ToTable("Booking");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.AccountId).HasColumnName("accountId");
 
@@ -200,9 +210,7 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Feedback");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.AccId).HasColumnName("accId");
 
@@ -242,9 +250,7 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Role");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(20)
@@ -256,9 +262,12 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Service");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Description)
+                    .HasMaxLength(500)
+                    .IsUnicode(false)
+                    .HasColumnName("description");
 
                 entity.Property(e => e.Duration).HasColumnName("duration");
 
@@ -276,9 +285,7 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Spot");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(10)
@@ -292,9 +299,7 @@ namespace PetSpaDaos
             {
                 entity.ToTable("Voucher");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Expired)
                     .HasColumnType("datetime")

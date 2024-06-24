@@ -24,6 +24,8 @@ namespace PetSpaBussinessObject
 
         public virtual Role Role { get; set; } = null!;
         public virtual Voucher? Voucher { get; set; }
+        public virtual ICollection<Bill> Bills { get; set; }
+
         public virtual ICollection<Booking> Bookings { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
     }
