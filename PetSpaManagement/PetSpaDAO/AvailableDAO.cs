@@ -49,11 +49,14 @@ namespace PetSpaDAO
         {
             try
             {
-                Available existingAvailable = GetAvailable(available.Id);
-                if (existingAvailable == null && available != null)
+                if (available != null)
                 {
-                    context.Availables.Add(available);
-                    context.SaveChanges();
+                    Available existingAvailable = GetAvailable(available.Id);
+                    if (existingAvailable == null)
+                    {
+                        context.Availables.Add(available);
+                        context.SaveChanges();
+                    }
                 }
             }
             catch

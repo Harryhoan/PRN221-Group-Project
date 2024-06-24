@@ -51,13 +51,16 @@ namespace PetSpaDAO
 		{
 			try
 			{
-				BillDetailed existingBillDetailed = GetBillDetailed(billDetailed.Id);
-				if (existingBillDetailed == null && billDetailed != null)
+				if (billDetailed != null)
 				{
-					if (billDetailed.Cost <= 0)
-						throw new Exception("Invalid billDetailed cost");
-					context.BillDetaileds.Add(billDetailed);
-					context.SaveChanges();
+					BillDetailed existingBillDetailed = GetBillDetailed(billDetailed.Id);
+					if (existingBillDetailed == null)
+					{
+						if (billDetailed.Cost <= 0)
+							throw new Exception("Invalid billDetailed cost");
+						context.BillDetaileds.Add(billDetailed);
+						context.SaveChanges();
+					}
 				}
 			}
 			catch

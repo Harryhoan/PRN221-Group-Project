@@ -17,6 +17,8 @@ namespace PetSpaRepo.BookingRepository
 
         public List<Booking> GetActiveBookingList();
 
+        public List<Booking> GetAccountBookingList(int accountId);
+
 		public void UpdateBooking(Booking booking);
 
         public Booking GetBooking(int bookingId);

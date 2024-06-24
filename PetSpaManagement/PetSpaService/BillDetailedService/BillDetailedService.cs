@@ -28,7 +28,7 @@ namespace PetSpaService.BillDetailedService
 
         public void AddBillDetailed(BillDetailed billDetailed)
         {
-            if (billDetailed.Id != default)
+            if (billDetailed == null || billDetailed.Id != default)
                 throw new Exception("Invalid billDetailed");
             billDetailedRepo.AddBillDetailed(billDetailed);
         }

@@ -10,23 +10,41 @@ using System.Threading.Tasks;
 
 namespace PetSpaService.ServicesService
 {
-    public class ServiceService : IServiceService
-    {
-        private IServiceRepo _serviceRepo;
-        public ServiceService()
-        {
-            _serviceRepo = new ServiceRepo();
-        }
+	public class ServiceService : IServiceService
+	{
+		private IServiceRepo _serviceRepo;
+		public ServiceService()
+		{
+			_serviceRepo = new ServiceRepo();
+		}
 
-        public void AddService(Service service) => ServiceDAO.Instance.AddService(service);
+		public void AddService(Service service)
+		{
+			if (service == null || service.Id == default)
+				throw new Exception("Invalid service cannot be added");
+			_serviceRepo.AddService(service);
+		}
 
-        public void DeleteService(int serviceID) => ServiceDAO.Instance.DeleteService(serviceID);
+		public void DeleteService(int serviceId)
+		{
+			if (!(serviceId > 0))
+				throw new Exception("Invalid service id");
+			_serviceRepo.DeleteService(serviceId);
+		}
 
-        public Service GetService(int serviceID) => ServiceDAO.Instance.GetService(serviceID);
+		public Service GetService(int serviceId)
+		{
+			return _serviceRepo.GetService(serviceId);
+		}
 
-        public List<Service> GetServiceList() => ServiceDAO.Instance.GetServiceList();
+		public List<Service> GetServiceList() => ServiceDAO.Instance.GetServiceList();
 
-        public void UpdateService(Service service) => ServiceDAO.Instance.UpdateService(service);
+		public void UpdateService(Service service)
+		{
+			if (service == null || !(service.Id > 0))
+				throw new Exception("Invalid new service");
+			UpdateService(service);
+		}
 
-    }
+	}
 }

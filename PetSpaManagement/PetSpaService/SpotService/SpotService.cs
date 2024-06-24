@@ -20,7 +20,7 @@ namespace PetSpaService.SpotService.SpotService
 
         public void AddSpot(Spot spot)
         {
-            if (spot.Id != default(int))
+            if (spot == null || spot.Id != default)
                 throw new Exception("Invalid spot cannot be added");
             spotRepo.AddSpot(spot);
         }

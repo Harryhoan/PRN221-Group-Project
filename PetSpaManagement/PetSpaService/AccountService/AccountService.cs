@@ -17,14 +17,25 @@ namespace PetSpaService.AccountService
             repo = new AccountRepo();
         }
 
-        public void AddAccount(Account account) => AccountDAO.Instance.AddAccount(account);
+        public void AddAccount(Account account)
+        {
+            if (account == null || account.Id != default)
+                throw new Exception("Invalid account cannot be added");
+            repo.AddAccount(account);
+        }
 
-        public Account GetAccount(int accountID) => AccountDAO.Instance.GetAccount(accountID);
-        public Account GetAccountByEmail(string email) => AccountDAO.Instance.GetAccountByEmail(email);
+        public Account GetAccount(int accountId)
+        {
+            return repo.GetAccount(accountId);
+        }
+        public Account GetAccountByEmail(string email)
+        {
+            return repo.GetAccountByEmail(email);
+        }
 
         public Account Login(string Email, string password)
         {
-            Account account = repo.GetAccountByEmail(Email);
+            Account account = GetAccountByEmail(Email);
             if (account != null && account.Pass.Equals(password))
             {
                 return account;
@@ -32,9 +43,14 @@ namespace PetSpaService.AccountService
             }
             return null;
         }
-        public List<Account> GetAllAccount() => AccountDAO.Instance.GetAllAccount();
+        public List<Account> GetAllAccount() => repo.GetAllAccount();
 
-        public void UpdateAccount(Account account) => AccountDAO.Instance.UpdateAccount(account);
+        public void UpdateAccount(Account account)
+        {
+            if (account == null || account.Id == default)
+                throw new Exception("Invalid new account");
+            repo.UpdateAccount(account.Id, account);
+        }
     }
 }
 

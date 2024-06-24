@@ -15,6 +15,8 @@ namespace PetSpaService.BookingService
 
 		public List<Booking> GetActiveBookingList();
 
+		public List<Booking> GetAccountBookingList();
+
 		public void AddBooking(Booking booking);
 
         public void DeleteBooking(int BookingId);
