@@ -19,6 +19,8 @@ namespace PetSpaService.BookingService
 
         public void AddBooking(Booking booking)
         {
+            if (booking.Id != default(int))
+                throw new Exception("Invalid booking cannot be added");
             BookingRepo.AddBooking(booking);
         }
 
@@ -39,7 +41,12 @@ namespace PetSpaService.BookingService
             return BookingRepo.GetBookingList();
         }
 
-        public void UpdateBooking(Booking booking)
+		public List<Booking> GetActiveBookingList()
+        {
+            return BookingRepo.GetActiveBookingList();
+        }
+
+		public void UpdateBooking(Booking booking)
         {
             if (booking == null || !(booking.Id > 0))
                 throw new Exception("Invalid new Booking");

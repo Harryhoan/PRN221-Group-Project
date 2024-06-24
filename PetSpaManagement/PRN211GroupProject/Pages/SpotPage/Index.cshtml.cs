@@ -17,12 +17,19 @@ namespace PRN211GroupProject.Pages.SpotPage
 
         public IActionResult OnGet()
         {
-            if (_spotService == null)
+            try
+            {
+                if (_spotService == null)
+                {
+                    return BadRequest();
+                }
+                Spots = _spotService.GetSpotList();
+                return Page();
+            }
+            catch
             {
                 return BadRequest();
             }
-            Spots = _spotService.GetSpotList();
-            return Page();
         }
     }
 }

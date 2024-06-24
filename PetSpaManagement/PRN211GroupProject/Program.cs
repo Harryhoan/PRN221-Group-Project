@@ -11,6 +11,8 @@ using PetSpaService.AvailableService;
 using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
 using PRN211GroupProject.Pages;
+using PetSpaService.BillService;
+using PetSpaService.BillDetailedService;
 
 namespace PRN211GroupProject
 {

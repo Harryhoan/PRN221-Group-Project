@@ -3,11 +3,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using PetSpaService.AdminServiceService;
 using PetSpaService.SpotService.SpotService;
+using System.Linq.Expressions;
 
 namespace PRN211GroupProject.Pages.SpotPage
 {
-    public class CreateModel : PageModel
-    {
+	public class CreateModel : PageModel
+	{
 		private readonly ISpotService _spotService;
 		public CreateModel(ISpotService spotService)
 		{
@@ -19,36 +20,50 @@ namespace PRN211GroupProject.Pages.SpotPage
 
 		public IActionResult OnGet()
 		{
-			if (!ModelState.IsValid)
+			try
+			{
+				if (!ModelState.IsValid)
+				{
+					return BadRequest();
+				}
+
+				return Page();
+			}
+			catch
 			{
 				return BadRequest();
 			}
-
-			return Page();
 		}
 
 		public IActionResult OnPost()
 		{
-			if (!ModelState.IsValid)
+			try
 			{
-				return Page();
-			}
+				if (!ModelState.IsValid)
+				{
+					return Page();
+				}
 
-			if (Spot == null)
+				if (Spot == null)
+				{
+					return BadRequest();
+				}
+
+				try
+				{
+					_spotService.AddSpot(Spot);
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+
+				return RedirectToPage("./Index");
+			}
+			catch
 			{
 				return BadRequest();
 			}
-
-			try
-			{
-				_spotService.AddSpot(Spot);
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
-
-			return RedirectToPage("./Index");
 		}
 	}
 }

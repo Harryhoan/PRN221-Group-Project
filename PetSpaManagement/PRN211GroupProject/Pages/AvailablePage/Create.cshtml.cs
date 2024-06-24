@@ -26,48 +26,62 @@ namespace PRN211GroupProject.Pages.AvailablePage
 		public IList<Spot>? Spots { get; set; }
 		public IActionResult OnGet()
 		{
-			if (!ModelState.IsValid)
+			try
+			{
+				if (!ModelState.IsValid)
+				{
+					return BadRequest();
+				}
+
+				Services = _serviceService.GetServiceList();
+				if (Services == null || !(Services.Count > 0))
+				{
+					return NotFound();
+				}
+
+				Spots = _spotService.GetSpotList();
+				if (Services == null || !(Services.Count > 0))
+				{
+					return NotFound();
+				}
+
+				return Page();
+			}
+			catch
 			{
 				return BadRequest();
 			}
-
-			Services = _serviceService.GetServiceList();
-			if (Services == null || !(Services.Count > 0))
-			{
-				return NotFound();
-			}
-
-			Spots = _spotService.GetSpotList();
-			if (Services == null || !(Services.Count > 0))
-			{
-				return NotFound();
-			}
-
-			return Page();
 		}
 
 		public IActionResult OnPost()
 		{
-			if (!ModelState.IsValid)
+			try
 			{
-				return Page();
-			}
+				if (!ModelState.IsValid)
+				{
+					return Page();
+				}
 
-			if (Available == null)
+				if (Available == null)
+				{
+					return BadRequest();
+				}
+
+				try
+				{
+					_availableService.AddAvailable(Available);
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+
+				return RedirectToPage("./Index");
+			} 
+			catch 
 			{
 				return BadRequest();
 			}
-
-			try
-			{
-				_availableService.AddAvailable(Available);
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
-
-			return RedirectToPage("./Index");
 		}
 	}
 }
