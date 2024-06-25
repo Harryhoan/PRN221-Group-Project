@@ -20,7 +20,7 @@ namespace PRN211GroupProject.ViewModel
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Phone number is required")]
-        [RegularExpression(@"^\d{11}$", ErrorMessage = "Phone number must be exactly 11 digits long and contain only numbers")]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "Phone number must be exactly 10 digits long and contain only numbers")]
         public string Phone { get; set; }
     }
 

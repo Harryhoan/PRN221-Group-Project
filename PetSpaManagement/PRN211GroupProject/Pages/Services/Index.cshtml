@@ -33,7 +33,7 @@
             <div class="row">
                 @foreach (var service in Model.Services)
                 {
-                    @if ((service.Name != "Basic Combo") && (service.Name != "Full Combo"))
+                    @if (!service.Name.Contains("Combo"))
                     {
                         string servicename = @service.Name;
                         string path = servicename.Replace(" ", "");
@@ -69,8 +69,7 @@
                             <p>Because we know that even the best technology is only as good as the people behind it. 24/7 tech support.</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="contact.html" class="btn white-btn">Book Us</a>
-                            <p>Or<a href="#"> +880 4664 216</a></p>
+                            <a asp-page="/Accounts/Booking" class="btn white-btn">Book Us</a>
                         </div>
                     </div>
                 </div>

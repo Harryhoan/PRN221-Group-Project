@@ -46,7 +46,7 @@ namespace PRN211GroupProject
         {
             options.Cookie.Name = "User";
             options.LoginPath = "/Account/Login"; // Adjust this path if needed
-            options.LogoutPath = "/Index"; // Adjust this path if needed
+            options.LogoutPath = "/Accounts/Logout"; // Adjust this path if needed
         });
 
 
