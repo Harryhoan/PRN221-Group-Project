@@ -46,9 +46,9 @@ namespace PetSpaService.BookingService
             return BookingRepo.GetActiveBookingList();
         }
 
-		public List<Booking> GetAccountBookingList()
+		public List<Booking> GetAccountBookingList(int accountId)
 		{
-			return BookingRepo.GetActiveBookingList();
+			return BookingRepo.GetAccountBookingList(accountId);
 		}
 
 
@@ -57,6 +57,13 @@ namespace PetSpaService.BookingService
             if (booking == null || !(booking.Id > 0))
                 throw new Exception("Invalid new Booking");
             BookingRepo.UpdateBooking(booking);
+        }
+
+        public async Task<List<Booking>> GetWeeklyBooking(DateTime week, List<Booking> bookings)
+        {
+            if (bookings == null ||  !(bookings.Count > 0))
+                throw new Exception("Invalid weekly Booking");
+            return await Task.Run(() => bookings.Where(b => Math.Abs((b.Started.Date - week.Date).TotalDays) < 7).ToList());
         }
     }
 }
