@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PetSpaBussinessObject;
 using PetSpaDaos;
+using PetSpaService.AccountService;
+using PetSpaService.AdminServiceService;
 using PetSpaService.FeedbacksService;
 
 namespace PRN211GroupProject.Pages
@@ -14,14 +16,20 @@ namespace PRN211GroupProject.Pages
     public class FeedbackModel : PageModel
     {
         private readonly IFeedbackService _feedbackService;
+        private readonly IServiceService _serviceService;
+        private readonly IAccountService _accountService;
 
-        public FeedbackModel(IFeedbackService feedbackService)
+        public FeedbackModel(IFeedbackService feedbackService, IServiceService serviceService, IAccountService accountService)
         {
             _feedbackService = feedbackService;
+            _serviceService = serviceService;
+            _accountService = accountService;
         }
 
         public IActionResult OnGet()
         {
+            ViewData["AccId"] = new SelectList(_accountService.GetAllAccount(), "Id", "Name");
+            ViewData["ServiceId"] = new SelectList(_serviceService.GetServiceList(), "Id", "Name");
             return Page();
         }
 
@@ -33,8 +41,8 @@ namespace PRN211GroupProject.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             _feedbackService.NewFeedback(Feedback);
-
             return RedirectToPage("./Index");
         }
     }
 }
+
