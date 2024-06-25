@@ -1,6 +1,8 @@
 ﻿@page
 @model PRN211GroupProject.Pages.Services.NailTrimmingModel
 @{
+    Layout = "_Layout";
+
 }
 
 <div id="preloader-active">
@@ -8,7 +10,7 @@
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="assets/img/logo/logo.png" alt="">
+                <img src="~/assets/img/logo/logo.png" alt="">
             </div>
         </div>
     </div>
@@ -150,7 +152,7 @@
         </div>
         <!-- contact left Img-->
         <div class="from-left d-none d-lg-block">
-            <img src="assets/img/gallery/contact_form.png" alt="">
+            <img src="~/assets/img/gallery/contact_form.png" alt="">
         </div>
     </div>
     <!-- Contact form End -->
@@ -165,7 +167,7 @@
                             <p>Because we know that even the best technology is only as good as the people behind it. 24/7 tech support.</p>
                         </div>
                         <div class="contact_btn d-flex align-items-center justify-content-center">
-                            <a href="contact.html" class="btn white-btn">Book Us</a>
+                            <a asp-page="/Accounts/Booking" class="btn white-btn">Book Us</a>
                         </div>
                     </div>
                 </div>

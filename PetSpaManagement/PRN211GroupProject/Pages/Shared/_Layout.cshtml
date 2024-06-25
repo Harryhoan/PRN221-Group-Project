@@ -1,4 +1,5 @@
-﻿@inject PRN211GroupProject.Pages.LayoutModel layoutModel
+﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,12 +64,11 @@
                                                 </ul>
                                             </li>
                                             <li><a asp-page="/Feedback">Feedback</a></li>
-                                            <li><a asp-page="/Accounts/Booking" style="font:bold">Booking Now!</a></li>
+                                            <li><a asp-page="/Accounts/Booking/Index" style="font:bold">Booking Now!</a></li>
                                             <li>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-                                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                                                </svg>
+                                                <i class="fa fa-bell"></i>
                                                 <span class="notification">4</span>
+
                                             </li>
                                         </ul>
                                     </nav>
@@ -81,25 +81,28 @@
                                 }
                                 else
                                 {
-                                    <form method="post" asp-page="Index" asp-page-handler="Logout">
-                                        <div class="menu-main d-flex align-items-center justify-content-end">
-                                            <!-- Main-menu -->
-                                            <div class="main-menu f-right d-none d-lg-block">
-                                                <nav>
-                                                    <ul id="navigation">
-                                                        <li>
-                                                            Welcome @User.Identity.Name!
-                                                            <ul class="submenu">
-                                                                <li><a asp-page="/Accounts/Profile">Profile</a></li>
-                                                                <li><a asp-page="/Services/Bath">History</a></li>
-                                                                <li><a type="submit">Log Out</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </nav>
-                                            </div>
+                                    <div class="menu-main d-flex align-items-center justify-content-end">
+                                        <!-- Main-menu -->
+                                        <div class="main-menu f-right d-none d-lg-block">
+                                            <nav>
+                                                <ul id="navigation">
+                                                    <li>
+                                                        Welcome @User.Identity.Name!
+                                                        <ul class="submenu">
+                                                            <li><a asp-page="/Accounts/Profile">Profile</a></li>
+                                                            <li><a asp-page="/Services/Bath">History</a></li>
+                                                            <li>
+                                                                <a href="#" id="logout-link">Logout</a>
+                                                                <form id="logout-form" asp-page="/Accounts/Logout" method="post" style="display: none;">
+                                                                </form>
+
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
                                         </div>
-                                    </form>
+                                    </div>
                                 }
 
                             </div>
@@ -118,15 +121,14 @@
         @RenderBody()
     </main>
 
-    @*     <footer class="border-top footer text-muted">
-    <div class="container">
-    &copy; 2024 - PRN211GroupProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
-    </div>
-    </footer>
-    *@
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
-    @*  <script src="~/js/site.js" asp-append-version="true"></script> *@
+    <script>
+        document.getElementById("logout-link").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("logout-form").submit();
+        });
+    </script>
 
 
     @await RenderSectionAsync("Scripts", required: false)
@@ -256,5 +258,9 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="~/assets/js/plugins.js"></script>
     <script src="~/assets/js/main.js"></script>
+    <script type="application/json" id="__browserLink_initializationData">
+        {"requestId":"a717d5a07c1741949a7cefd6fa2bad08","requestMappingFromServer":false}
+    </script>
+    <script type="text/javascript" src="http://localhost:54139/b6e36e429d034f578ebccd6a79bf19bf/browserLink" async="async"></script>
 </body>
 </html>
