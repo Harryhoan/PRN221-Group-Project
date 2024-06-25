@@ -38,7 +38,7 @@ namespace PetSpaDAO
             return context.Accounts.ToList();
 
         }
-        public Account GetAccount(int accountID) 
+        public Account GetAccount(int accountID)
         {
             return context.Accounts.FirstOrDefault(m => m.Id.Equals(accountID));
         }
@@ -47,12 +47,12 @@ namespace PetSpaDAO
             Account newAccount = GetAccount(account.Id);
             if (newAccount == null)
             {
-              context.Accounts.Add(account);
+                context.Accounts.Add(account);
                 context.SaveChanges();
             }
         }
         public void UpdateAccount(Account newAccount)
-        { 
+        {
             if (newAccount == null)
             {
                 throw new ArgumentNullException(nameof(newAccount), "Account cannot be null");

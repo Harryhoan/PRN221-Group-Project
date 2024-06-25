@@ -29,9 +29,13 @@ namespace PetSpaDAO
                 return instance;
             }
         }
+        public Feedback GetFeedback(int feedbackId)
+        {
+            return context.Feedbacks.FirstOrDefault(m => m.Id.Equals(feedbackId));
+        }
         public void NewFeedback(Feedback feedback)
         {
-            Feedback newFeedback = new Feedback();
+            Feedback newFeedback = GetFeedback(feedback.Id);
             if (newFeedback == null)
             {
                 context.Feedbacks.Add(feedback);
