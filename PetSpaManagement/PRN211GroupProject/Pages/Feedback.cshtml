@@ -69,18 +69,23 @@
                                         <span asp-validation-for="Feedback.Rating" class="text-danger"></span>
                                     </div>
                                 </div>
+                                <br/>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label asp-for="Feedback.AccId" class="control-label font-weight-bold"></label>
+                                        <label asp-for="Feedback.AccId" class="font-weight-bold"></label>
+                                        <br/>
                                         <select asp-for="Feedback.AccId" class="form-control" asp-items="ViewBag.AccId"></select>
                                     </div>
                                 </div>
+                                <br/>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label asp-for="Feedback.ServiceId" class="control-label font-weight-bold"></label>
+                                        <label asp-for="Feedback.ServiceId" class="font-weight-bold"></label>
+                                        <br/>
                                         <select asp-for="Feedback.ServiceId" class="form-control" asp-items="ViewBag.ServiceId"></select>
                                     </div>
                                 </div>
+                                <br/>
                                 @if (User.Identity.IsAuthenticated)
                                 {
                                     <div class="form-group mt-3">
