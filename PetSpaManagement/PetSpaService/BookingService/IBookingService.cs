@@ -15,12 +15,14 @@ namespace PetSpaService.BookingService
 
 		public List<Booking> GetActiveBookingList();
 
-		public List<Booking> GetAccountBookingList();
+		public List<Booking> GetAccountBookingList(int accountId);
 
 		public void AddBooking(Booking booking);
 
         public void DeleteBooking(int BookingId);
 
         public void UpdateBooking(Booking booking);
+
+        public List<Booking> GetWeeklyBooking(DateTime week, List<Booking> bookings);
     }
 }

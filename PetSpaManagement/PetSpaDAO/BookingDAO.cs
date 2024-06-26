@@ -1,4 +1,5 @@
-﻿using PetSpaBussinessObject;
+﻿using Microsoft.EntityFrameworkCore;
+using PetSpaBussinessObject;
 using PetSpaDaos;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace PetSpaDAO
 
 		public List<Booking> GetAllBooking()
 		{
-			var bookings = context.Bookings.ToList();
+			var bookings = context.Bookings.OrderByDescending(b => b.Started).ToList();
 			if (bookings == null)
 				throw new Exception("All bookings cannot be retrieved");
 			return bookings;
@@ -41,14 +42,14 @@ namespace PetSpaDAO
 
 		public List<Booking> GetActiveBooking()
 		{
-			var bookings = context.Bookings.Where(b => b.Status == true).ToList();
+			var bookings = context.Bookings.Include(b => b.Available).ThenInclude(a => a.Service).Include(b => b.Available).ThenInclude(a => a.Spot).Where(b => b.Status == true).OrderByDescending(b => b.Started).ToList();
 			if (bookings == null)
 				throw new Exception("All bookings cannot be retrieved");
 			return bookings;
 		}
 		public List<Booking> GetAccountBooking(int accountId)
 		{
-			var bookings = context.Bookings.Where(b => b.Status == true && b.AccountId == accountId).ToList();
+			var bookings = context.Bookings.Include(b => b.Available).ThenInclude(a => a.Service).Include(b => b.Available).ThenInclude(a => a.Spot).Where(b => b.Status == true && b.AccountId == accountId).OrderByDescending(b => b.Started).ToList();
 			if (bookings == null)
 				throw new Exception("All bookings cannot be retrieved");
 			return bookings;
