@@ -42,5 +42,9 @@ namespace PetSpaDAO
                 context.SaveChanges();
             }
         }
+        public List<Feedback> GetAllFeedback()
+        {
+            return context.Feedbacks.ToList();
+        }
     }
 }
