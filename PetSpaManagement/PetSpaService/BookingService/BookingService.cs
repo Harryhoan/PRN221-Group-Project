@@ -59,11 +59,22 @@ namespace PetSpaService.BookingService
             BookingRepo.UpdateBooking(booking);
         }
 
-        public async Task<List<Booking>> GetWeeklyBooking(DateTime week, List<Booking> bookings)
+        public List<Booking> GetWeeklyBooking(DateTime week, List<Booking> bookings)
         {
             if (bookings == null ||  !(bookings.Count > 0))
                 throw new Exception("Invalid weekly Booking");
-            return await Task.Run(() => bookings.Where(b => Math.Abs((b.Started.Date - week.Date).TotalDays) < 7).ToList());
+            return  bookings.Where(b => IsInSameWeek(b.Started.Date, week.Date)).ToList();
         }
+
+        public static bool IsInSameWeek(DateTime date1, DateTime date2)
+        {
+            // First, find the first day of the week for both dates
+            DateTime startOfWeek1 = date1.Date.AddDays(-(int)date1.DayOfWeek);
+            DateTime startOfWeek2 = date2.Date.AddDays(-(int)date2.DayOfWeek);
+
+            // Dates are in the same week if the starting days of their weeks are the same
+            return startOfWeek1 == startOfWeek2;
+        }
+
     }
 }

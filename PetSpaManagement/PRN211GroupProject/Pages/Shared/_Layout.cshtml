@@ -9,6 +9,8 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <!-- CSS here -->
+    <script>document.getElementsByTagName("html")[0].className += " js";</script>
+    <link rel="stylesheet" href="~/scheduleAssets/assets/css/style.css">
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/assets/css/slicknav.css">
@@ -21,7 +23,20 @@
     <link rel="stylesheet" href="~/assets/css/nice-select.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
     <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
+    <style>
+       
+        main {
+            clear: both;
+            width:100%;
+            display:block;
+        }
 
+        footer {
+            clear: both;
+            width: 100%;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -65,11 +80,7 @@
                                             </li>
                                             <li><a asp-page="/Feedback">Feedback</a></li>
                                             <li><a asp-page="/Accounts/Booking/Index" style="font:bold">Booking Now!</a></li>
-                                            <li>
-                                                <i class="fa fa-bell"></i>
-                                                <span class="notification">4</span>
-
-                                            </li>
+                                         
                                         </ul>
                                     </nav>
                                 </div>
@@ -131,7 +142,6 @@
     </script>
 
 
-    @await RenderSectionAsync("Scripts", required: false)
     <footer>
         <!-- Footer Start-->
         <div class="footer-area footer-padding">
@@ -220,9 +230,6 @@
                 </div>
             </div>
 
-        </div>
-        <div class="container">
-            &copy; 2024 - PRN211GroupProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
         <!-- Footer End-->
     </footer>

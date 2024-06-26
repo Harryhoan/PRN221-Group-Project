@@ -23,6 +23,6 @@ namespace PetSpaService.BookingService
 
         public void UpdateBooking(Booking booking);
 
-        public Task<List<Booking>> GetWeeklyBooking(DateTime week, List<Booking> bookings);
+        public List<Booking> GetWeeklyBooking(DateTime week, List<Booking> bookings);
     }
 }

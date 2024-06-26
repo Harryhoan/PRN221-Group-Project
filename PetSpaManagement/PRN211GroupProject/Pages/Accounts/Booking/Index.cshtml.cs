@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PetSpaBussinessObject;
 using PetSpaService.AccountService;
 using PetSpaService.BookingService;
 using System.Security.Claims;
@@ -11,6 +12,7 @@ namespace PRN211GroupProject.Pages.Accounts
 
         private readonly IBookingService _bookingService;
         private readonly IAccountService _accountService;
+        public int _offset { get; set; } = 0;
 
         public BookingModel(IBookingService bookingService, IAccountService accountService)
         {
@@ -19,18 +21,28 @@ namespace PRN211GroupProject.Pages.Accounts
         }
 
         public IList<PetSpaBussinessObject.Booking>? Bookings { get; set; }
-        public IActionResult OnGet()
+        /*public IActionResult OnGet()
         {
             try
             {
-                var userIdClaim = User.FindFirst(ClaimTypes.Email);
-                if (User.Identity != null && userIdClaim != null && !string.IsNullOrEmpty(userIdClaim.Value))
+
+                if (User.Identity != null && !String.IsNullOrEmpty(User.Identity.Name) && User.Identity.IsAuthenticated)
                 {
-                    var account = _accountService.GetAccountByEmail(userIdClaim.Value);
-                    if (account != null)
-                    {
-                        Bookings = (IList<PetSpaBussinessObject.Booking>?)_bookingService.GetWeeklyBooking(DateTime.Now, _bookingService.GetAccountBookingList(account.Id));
-                    }
+                    //var userIdClaim = User.FindFirst(ClaimTypes.Email);
+                    //if (userIdClaim != null && !string.IsNullOrEmpty(userIdClaim.Value))
+                    //{
+                    //var account = _accountService.GetAccountByEmail(userIdClaim.Value);
+                    //if (account != null)
+                    //{
+                    //    Bookings = _bookingService.GetWeeklyBooking(DateTime.Now, _bookingService.GetAccountBookingList(account.Id));
+                    //    return Page();
+                    //}
+                    //else 
+                    //    return NotFound();
+
+                    //}
+                    Bookings = _bookingService.GetWeeklyBooking(DateTime.Now, _bookingService.GetActiveBookingList());
+                    return Page();
                 }
                 return Unauthorized();
             }
@@ -39,38 +51,56 @@ namespace PRN211GroupProject.Pages.Accounts
                 return BadRequest();
             }
 
+        }*/
+        public IActionResult OnGet(int? offset) 
+        {
+            try
+            {
+                if (User.Identity != null && !String.IsNullOrEmpty(User.Identity.Name) && User.Identity.IsAuthenticated)
+                {
+                    if (offset != null && offset != 0) 
+                    {
+                        _offset = (int)offset;
+                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date.AddDays((Double)offset * 7), _bookingService.GetActiveBookingList()); 
+                    }
+                       
+                    else
+                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date, _bookingService.GetActiveBookingList());
+                    return Page();
+                }
+                return Unauthorized();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         public IActionResult OnPost()
         {
-            {
-                try
-                {
-                    if (User.Identity != null)
-                    {
-                        var userIdClaim = User.FindFirst(ClaimTypes.Email);
-                        if (userIdClaim != null && !string.IsNullOrEmpty(userIdClaim.Value))
-                        {
-                            var account = _accountService.GetAccountByEmail(userIdClaim.Value);
-                            if (account != null)
-                            {
-                                Bookings = (IList<PetSpaBussinessObject.Booking>?)_bookingService.GetWeeklyBooking(DateTime.Now, _bookingService.GetAccountBookingList(account.Id));
-                                return Page();
-                            }
-                            else 
-                            { 
-                                return NotFound(); 
-                            }
-                        }
-                    }
-                    return Unauthorized();
-                }
-                catch
-                {
-                    return BadRequest();
-                }
+            //{
+            //    try
+            //    {
+            //        if (User.Identity != null && !String.IsNullOrEmpty(User.Identity.Name) && User.Identity.IsAuthenticated)
+            //        {
+            //            if (Request != null)
+            //            {
+            //                var week = Request.Form["Week"];
+                            
+            //                    Bookings = _bookingService.GetWeeklyBooking(DateTime.Now, _bookingService.GetActiveBookingList());
+            //                    return Page();
+                            
+            //            }
+            //        }
+            //        return Unauthorized();
+            //    }
+            //    catch
+            //    {
+            //        return RedirectToPage("Login");
+            //    }
 
-            }
+            //}
+            return Page();
         }
     }
 }
