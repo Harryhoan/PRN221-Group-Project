@@ -38,7 +38,7 @@ namespace PRN211GroupProject.Pages
 
         [BindProperty]
         public Feedback Feedback { get; set; } = default!;
-        
+        public IList<Service> Services { get; set; } = new List<Service>();
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
