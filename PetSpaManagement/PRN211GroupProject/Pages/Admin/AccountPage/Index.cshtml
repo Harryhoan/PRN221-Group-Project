@@ -87,13 +87,13 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <form method="post">
                             <div class="modal-body">
                                 <p class="small">
                                     Create a new account using this form, make sure you
                                     fill them all.
                                 </p>
-                                @using (Html.BeginForm("Index", "Create", FormMethod.Post))
-                                {
+                                
                                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -102,7 +102,7 @@
                                                 <input asp-for="NewAccount.Name"
                                                        type="text"
                                                        class="form-control"
-                                                       placeholder="fill name" />
+                                                       placeholder="Fill Name" required/>
                                                 <span asp-validation-for="NewAccount.Name" class="text-danger"></span>
                                             </div>
                                         </div>
@@ -112,8 +112,18 @@
                                                 <input asp-for="NewAccount.Email"
                                                        type="email"
                                                        class="form-control"
-                                                       placeholder="fill email" />
+                                                       placeholder="Fill Email" required/>
                                                 <span asp-validation-for="NewAccount.Email" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-group-default">
+                                                <label>Password</label>
+                                                <input asp-for="NewAccount.Pass"
+                                                       type="password"
+                                                       class="form-control"
+                                                       placeholder="Fill Password" required />
+                                                <span asp-validation-for="NewAccount.Pass" class="text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6 pe-0">
@@ -122,32 +132,42 @@
                                                 <input asp-for="NewAccount.Phone"
                                                        type="text"
                                                        class="form-control"
-                                                       placeholder="fill phone number" />
+                                                       placeholder="Fill Phone Number" required pattern="^\d{10}$"/>
                                                 <span asp-validation-for="NewAccount.Phone" class="text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group form-group-default">
                                                 <label>Role</label>
-                                                <input asp-for="NewAccount.Role"
-                                                       type="text"
-                                                       class="form-control"
-                                                       placeholder="select Role" />
-                                                <span asp-validation-for="NewAccount.Role" class="text-danger"></span>
+                                                <select asp-for="NewAccount.RoleId" class="form-control" required>
+                                                    <option value="">-- Select --</option> <!-- Optional placeholder -->
+                                                    @foreach (var item in Model.Roles)
+                                                    {
+                                                        <option value="@item.Id">@item.Name</option>
+                                                    }
+                                                </select>
+                                                <span asp-validation-for="NewAccount.RoleId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-group-default">
+                                                <label>Status</label>
+                                                <input asp-for="NewAccount.Status"
+                                                       type="radio" required value="true" /> Active
+                                                <input asp-for="NewAccount.Status"
+                                                       type="radio" required value="false" /> Inactive
+                                                <span asp-validation-for="NewAccount.Status" class="text-danger"></span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="submit" value="Create" class="btn btn-primary" />
-                                    </div>
-                                }
+                                   
+                                
                             </div>
 
                             <div class="modal-footer border-0">
-                                <button type="button"
-                                        id="addRowButton"
+                                <button type="submit"
                                         class="btn btn-primary">
-                                    Add
+                                    Create
                                 </button>
                                 <button type="button"
                                         class="btn btn-danger"
@@ -155,6 +175,7 @@
                                     Close
                                 </button>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>

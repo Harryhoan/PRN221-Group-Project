@@ -8,26 +8,34 @@ using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.AccountService;
+using PetSpaService.RolesService;
 
 namespace PRN211GroupProject.Pages.AccountPage
 {
     public class IndexModel : PageModel
     {
         private readonly IAccountService _account;
+        private readonly IRoleService _role;
 
-        public IndexModel(IAccountService account)
+        public IndexModel(IAccountService account, IRoleService role)
         {
             _account = account;
+            _role = role;
         }
 
         public IList<Account> Account { get;set; } = default!;
+        [BindProperty]
         public Account NewAccount { get; set; } = default!;
+
+        public IList<Role> Roles { get; set; } = new List<Role>();
         public async Task OnGetAsync()
         {
-            if (_account.GetAllAccount != null)
+            if (_account != null)
             {
                 Account = _account.GetAllAccount();
             }
+            if (_role != null)
+                Roles = _role.GetAllRole();
         }
         public async Task<IActionResult> OnPostAsync()
         {
@@ -35,7 +43,14 @@ namespace PRN211GroupProject.Pages.AccountPage
             //{
             //    return page();
             //}
-            _account.AddAccount(NewAccount);
+            if (NewAccount != null)
+            {
+                if (NewAccount.RoleId == default)
+                {
+                    NewAccount.RoleId = 1;
+                }
+                _account.AddAccount(NewAccount);
+            }
 
             return RedirectToPage("./Index");
         }

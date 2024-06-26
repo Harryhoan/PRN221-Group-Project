@@ -27,15 +27,17 @@ namespace PRN211GroupProject.Pages.Accounts
         }
         public IActionResult OnPost()
         {
-            if (accountService.GetAccountByEmail(RegisterViewModel.Email) != null)
-            {
-                ModelState.AddModelError(string.Empty, "An account with this email already exists.");
-                return Page();
-            }
             if (!ModelState.IsValid)
             {
                 return Page();
             }
+            if (accountService.GetAccountByEmail(RegisterViewModel.Email) != null)
+            {
+                //RegisterViewModel.Email = "An account with this email already exists.";
+                //ModelState.AddModelError("Duplicate Email Error", RegisterViewModel.Email);
+                return Page();
+            }
+            
             Account account = new Account
             {
                 Email = RegisterViewModel.Email,
