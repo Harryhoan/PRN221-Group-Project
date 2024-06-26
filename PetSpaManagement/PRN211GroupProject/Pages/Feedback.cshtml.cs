@@ -28,8 +28,11 @@ namespace PRN211GroupProject.Pages
 
         public IActionResult OnGet()
         {
-            ViewData["AccId"] = new SelectList(_accountService.GetAllAccount(), "Id", "Name");
-            ViewData["ServiceId"] = new SelectList(_serviceService.GetServiceList(), "Id", "Name");
+            var accounts = _accountService.GetAllAccount();
+            var services = _serviceService.GetServiceList();
+
+            ViewData["AccId"] = new SelectList(accounts, "Id", "Name");
+            ViewData["ServiceId"] = new SelectList(services, "Id", "Name");
             return Page();
         }
 
@@ -40,6 +43,9 @@ namespace PRN211GroupProject.Pages
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            Feedback.Created = DateTime.Now;
+            Feedback.Updated = DateTime.Now;
+            Feedback.Status = true;
             _feedbackService.NewFeedback(Feedback);
             return RedirectToPage("./Index");
         }

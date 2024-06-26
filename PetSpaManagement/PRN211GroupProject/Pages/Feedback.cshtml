@@ -4,53 +4,7 @@
 @{
     ViewData["Title"] = "Feedback";
 }
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Feedback.Information" class="control-label"></label>
-                <input asp-for="Feedback.Information" class="form-control" />
-                <span asp-validation-for="Feedback.Information" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Feedback.Status" /> @Html.DisplayNameFor(model => model.Feedback.Status)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Feedback.Rating" class="control-label"></label>
-                <input asp-for="Feedback.Rating" class="form-control" />
-                <span asp-validation-for="Feedback.Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Feedback.Created" class="control-label"></label>
-                <input asp-for="Feedback.Created" class="form-control" />
-                <span asp-validation-for="Feedback.Created" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Feedback.Updated" class="control-label"></label>
-                <input asp-for="Feedback.Updated" class="form-control" />
-                <span asp-validation-for="Feedback.Updated" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Feedback.AccId" class="control-label"></label>
-                <select asp-for="Feedback.AccId" class ="form-control" asp-items="ViewBag.AccId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Feedback.ServiceId" class="control-label"></label>
-                <select asp-for="Feedback.ServiceId" class ="form-control" asp-items="ViewBag.ServiceId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
@@ -75,17 +29,6 @@
 </head>
 
 <body>
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
     <main>
         <!-- Hero Area Start -->
         <div class="slider-area2 slider-height2 d-flex align-items-center">
@@ -93,7 +36,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center pt-50">
-                            <h2>Contact US</h2>
+                            <h2>Feedback</h2>
                         </div>
                     </div>
                 </div>
@@ -104,37 +47,55 @@
         <section class="contact-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <h2 class="contact-title">Get in Touch</h2>
-                    </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                            <div class="row">
+                        <div class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <form method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                <div class="form-group">
+                                    <label asp-for="Feedback.Information" class="control-label font-weight-bold"></label>
+                                    <textarea asp-for="Feedback.Information" class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder="Enter Message"></textarea>
+                                </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                                        <label asp-for="Feedback.Rating" class="control-label font-weight-bold"></label>
+                                        <div class="rating">
+                                            <input asp-for="Feedback.Rating" type="radio" id="star5" name="Feedback.Rating" value="5" /><label for="star5" title="5 stars"></label>
+                                            <input asp-for="Feedback.Rating" type="radio" id="star4" name="Feedback.Rating" value="4" /><label for="star4" title="4 stars"></label>
+                                            <input asp-for="Feedback.Rating" type="radio" id="star3" name="Feedback.Rating" value="3" /><label for="star3" title="3 stars"></label>
+                                            <input asp-for="Feedback.Rating" type="radio" id="star2" name="Feedback.Rating" value="2" /><label for="star2" title="2 stars"></label>
+                                            <input asp-for="Feedback.Rating" type="radio" id="star1" name="Feedback.Rating" value="1" /><label for="star1" title="1 star"></label>
+                                        </div>
+                                        <span asp-validation-for="Feedback.Rating" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <label asp-for="Feedback.AccId" class="control-label font-weight-bold"></label>
+                                        <select asp-for="Feedback.AccId" class="form-control" asp-items="ViewBag.AccId"></select>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <label asp-for="Feedback.ServiceId" class="control-label font-weight-bold"></label>
+                                        <select asp-for="Feedback.ServiceId" class="form-control" asp-items="ViewBag.ServiceId"></select>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="form-group mt-3">
+                                        <input type="submit" value="Send" class="button button-contactForm boxed-btn" />
                                     </div>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
-                            </div>
-                        </form>
+                                }
+                                else
+                                {
+                                    <div class="alert">
+                                        You need to <a href="/Accounts/Login" class="alert-link">log in</a> to provide feedback.
+                                    </div>
+                                }
+                            </form>
+                        </div>
+
                     </div>
                     <div class="col-lg-3 offset-lg-1">
                         <div class="media contact-info">
@@ -164,6 +125,69 @@
         </section>
         <!-- ================ contact section end ================= -->
     </main>
+
+    <!-- Star style script -->
+    <style>
+        .alert {
+            padding: 20px;
+            background-color: orange;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .closebtn:hover {
+                color: black;
+            }
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+            .rating input {
+                display: none;
+            }
+
+            .rating label {
+                position: relative;
+                width: 1em;
+                font-size: 2rem;
+                color: #FFD700;
+                cursor: pointer;
+            }
+
+                .rating label::before {
+                    content: "★";
+                    position: absolute;
+                    opacity: 0.3;
+                }
+
+                .rating label:hover:before,
+                .rating label:hover ~ label:before {
+                    opacity: 1 !important;
+                }
+
+            .rating input:checked ~ label:before {
+                opacity: 1;
+            }
+
+            .rating input:checked + label:hover:before,
+            .rating input:checked + label:hover ~ label:before,
+            .rating label:hover ~ input:checked ~ label:before {
+                opacity: 0.4;
+            }
+    </style>
     <!-- JS here -->
 
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
@@ -201,5 +225,7 @@
 </html>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
