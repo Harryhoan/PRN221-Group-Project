@@ -31,26 +31,18 @@ namespace PRN211GroupProject.Pages.AccountPage
         }
 
         [BindProperty]
-        public Account Account { get; set; }
+        public Account Account { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (!ModelState.IsValid || Account == null)
+            //if (!modelstate.isvalid || account == null)
             //{
-            //    return Page();
+            //    return page();
             //}
-            Account tempAccount = new Account();
-            tempAccount.Name = Account.Name;
-            tempAccount.Email = Account.Email;  
-            tempAccount.VoucherId = Account.VoucherId;
-            tempAccount.Phone= Account.Phone;
-            tempAccount.Pass = Account.Pass;
-            tempAccount.CountVoucher = Account.CountVoucher;
-            tempAccount.Status = Account.Status;
-            tempAccount.RoleId = Account.RoleId;
-            _account.AddAccount(tempAccount);
+            Account.Status = true;
+            _account.AddAccount(Account);
 
             return RedirectToPage("./Index");
         }

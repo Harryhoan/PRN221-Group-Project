@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = null;
 }
 <h4>Account</h4>
 <hr />
@@ -12,28 +13,23 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Account.Name" class="control-label"></label>
-                <input asp-for="Account.Name" class="form-control" />
+                <input id="name"asp-for="Account.Name" class="form-control" />
                 <span asp-validation-for="Account.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.Email" class="control-label"></label>
-                <input asp-for="Account.Email" class="form-control" />
+                <input id="email" asp-for="Account.Email" class="form-control" />
                 <span asp-validation-for="Account.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.Phone" class="control-label"></label>
-                <input asp-for="Account.Phone" class="form-control" />
+                <input id="phone" asp-for="Account.Phone" class="form-control" />
                 <span asp-validation-for="Account.Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.Pass" class="control-label"></label>
                 <input asp-for="Account.Pass" class="form-control" />
                 <span asp-validation-for="Account.Pass" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Account.Status" /> @Html.DisplayNameFor(model => model.Account.Status)
-                </label>
             </div>
             <div class="form-group">
                 <label asp-for="Account.CountVoucher" class="control-label"></label>
