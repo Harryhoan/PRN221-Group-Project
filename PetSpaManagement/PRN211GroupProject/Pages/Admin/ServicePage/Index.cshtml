@@ -81,255 +81,256 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
-                                <p class="small">
-                                    Create a new Service using this form, make sure you
-                                    fill them all
-                                </p>
-                                <form>
+                            <form method="post">
+                                <div class="modal-body">
+                                    <p class="small">
+                                        Create a new service using this form, make sure you
+                                        fill them all.
+                                    </p>
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group form-group-default">
                                                 <label>Name</label>
-                                                <input id="name"
+                                                <input asp-for="NewService.Name"
                                                        type="text"
                                                        class="form-control"
-                                                       placeholder="fill name" />
+                                                       placeholder="Fill Name" required />
+                                                <span asp-validation-for="NewService.Name" class="text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="form-group form-group-default">
-                                                <label>Email</label>
-                                                <input id="addName"
-                                                       type="email"
+                                                <label>Duration</label>
+                                                <input asp-for="NewService.Duration"
+                                                       type="number"
                                                        class="form-control"
-                                                       placeholder="fill email" />
+                                                       placeholder="Fill Duration" required />
+                                                <span asp-validation-for="NewService.Duration" class="text-danger"></span>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 pe-0">
+                                        <div class="col-sm-12">
                                             <div class="form-group form-group-default">
-                                                <label>Phone Number</label>
-                                                <input id="addPosition"
-                                                       type="text"
+                                                <label>Duration</label>
+                                                <input asp-for="NewService.Price"
+                                                       type="number"
                                                        class="form-control"
-                                                       placeholder="fill phone number" />
+                                                       placeholder="Fill Price" required />
+                                                <span asp-validation-for="NewService.Price" class="text-danger"></span>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group form-group-default">
-                                                <label>Role</label>
-                                                <input id="addOffice"
-                                                       type="text"
-                                                       class="form-control"
-                                                       placeholder="select Role" />
+                                                <label>Status</label>
+                                                <input asp-for="NewService.Status"
+                                                       type="radio" required value="true" /> Active
+                                                <input asp-for="NewService.Status"
+                                                       type="radio" required value="false" /> Inactive
+                                                <span asp-validation-for="NewService.Status" class="text-danger"></span>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer border-0">
-                                <button type="button"
-                                        id="addRowButton"
-                                        class="btn btn-primary">
-                                    Add
-                                </button>
-                                <button type="button"
-                                        class="btn btn-danger"
-                                        data-dismiss="modal">
-                                    Close
-                                </button>
-                            </div>
+                                </div>
+                                <div class="modal-footer border-0">
+                                    <button type="submit"
+                                            class="btn btn-primary">
+                                        Create
+                                    </button>
+                                    <button type="button"
+                                            class="btn btn-danger"
+                                            data-dismiss="modal">
+                                        Close
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive">
-                    <table id="add-row"
-                           class="display table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Service[0].Name)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Service[0].Duration)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Service[0].Price)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Service[0].Status)
-                                </th>
-                                <th style="width: 10%">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.Service)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Name)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Duration)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Price)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Status)
-                                    </td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <a type="button" asp-page="./Edit" asp-route-id="@item.Id"
-                                                    data-bs-toggle="tooltip"
-                                                    title=""
-                                                    class="btn btn-link btn-primary btn-lg"
-                                                    data-original-title="Edit Task">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                            <a type="button" asp-page="./Details" asp-route-id="@item.Id"
-                                                    data-bs-toggle="tooltip"
-                                                    title=""
-                                                    class="btn btn-link btn-primary btn-lg"
-                                                    data-original-title="Edit Task">
-                                                <i class="fas fa-info-circle"></i>
-                                            </a>
-                                            <a type="button" asp-page="./Delete" asp-route-id="@item.Id"
-                                                    data-bs-toggle="tooltip"
-                                                    title=""
-                                                    class="btn btn-link btn-danger"
-                                                    data-original-title="Remove">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
             </div>
-            <!--   Core JS Files   -->
-            <script src="~/adminAssets/assets/js/core/jquery-3.7.1.min.js"></script>
-            <script src="~/adminAssets/assets/js/core/popper.min.js"></script>
-            <script src="~/adminAssets/assets/js/core/bootstrap.min.js"></script>
+            <div class="table-responsive">
+                <table id="add-row"
+                       class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Service[0].Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Service[0].Duration)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Service[0].Price)
+                            </th>
+                            <th style="width: 10%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Service)
+                        {
+                            if (item.Status == true){
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Duration)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    <div class="form-button-action">
+                                        <a type="button" asp-page="./Edit" asp-route-id="@item.Id"
+                                           data-bs-toggle="tooltip"
+                                           title=""
+                                           class="btn btn-link btn-primary btn-lg"
+                                           data-original-title="Edit Task">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a type="button" asp-page="./Details" asp-route-id="@item.Id"
+                                           data-bs-toggle="tooltip"
+                                           title=""
+                                           class="btn btn-link btn-primary btn-lg"
+                                           data-original-title="Edit Task">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                        <a type="button" asp-page="./Delete" asp-route-id="@item.Id"
+                                           data-bs-toggle="tooltip"
+                                           title=""
+                                           class="btn btn-link btn-danger"
+                                           data-original-title="Remove">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--   Core JS Files   -->
+        <script src="~/adminAssets/assets/js/core/jquery-3.7.1.min.js"></script>
+        <script src="~/adminAssets/assets/js/core/popper.min.js"></script>
+        <script src="~/adminAssets/assets/js/core/bootstrap.min.js"></script>
 
-            <!-- jQuery Scrollbar -->
-            <script src="~/adminAssets/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <!-- jQuery Scrollbar -->
+        <script src="~/adminAssets/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
-            <!-- Chart JS -->
-            <script src="~/adminAssets/assets/js/plugin/chart.js/chart.min.js"></script>
+        <!-- Chart JS -->
+        <script src="~/adminAssets/assets/js/plugin/chart.js/chart.min.js"></script>
 
-            <!-- jQuery Sparkline -->
-            <script src="~/adminAssets/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+        <!-- jQuery Sparkline -->
+        <script src="~/adminAssets/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
-            <!-- Chart Circle -->
-            <script src="~/adminAssets/assets/js/plugin/chart-circle/circles.min.js"></script>
+        <!-- Chart Circle -->
+        <script src="~/adminAssets/assets/js/plugin/chart-circle/circles.min.js"></script>
 
-            <!-- Datatables -->
-            <script src="~/adminAssets/assets/js/plugin/datatables/datatables.min.js"></script>
+        <!-- Datatables -->
+        <script src="~/adminAssets/assets/js/plugin/datatables/datatables.min.js"></script>
 
-            <!-- Bootstrap Notify -->
-            <script src="~/adminAssets/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+        <!-- Bootstrap Notify -->
+        <script src="~/adminAssets/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
-            <!-- jQuery Vector Maps -->
-            <script src="~/adminAssets/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-            <script src="~/adminAssets/assets/js/plugin/jsvectormap/world.js"></script>
+        <!-- jQuery Vector Maps -->
+        <script src="~/adminAssets/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+        <script src="~/adminAssets/assets/js/plugin/jsvectormap/world.js"></script>
 
-            <!-- Sweet Alert -->
-            <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+        <!-- Sweet Alert -->
+        <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
-            <!-- Kaiadmin JS -->
-            <script src="~/adminAssets/assets/js/kaiadmin.min.js"></script>
+        <!-- Kaiadmin JS -->
+        <script src="~/adminAssets/assets/js/kaiadmin.min.js"></script>
 
-            <!-- Kaiadmin DEMO methods, don't include it in your project! -->
-            <script src="~/adminAssets/assets/js/setting-demo.js"></script>
-            <script src="~/adminAssets/assets/js/demo.js"></script>
-            <script>
-                $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-                    type: "line",
-                    height: "70",
-                    width: "100%",
-                    lineWidth: "2",
-                    lineColor: "#177dff",
-                    fillColor: "rgba(23, 125, 255, 0.14)",
+        <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+        <script src="~/adminAssets/assets/js/setting-demo.js"></script>
+        <script src="~/adminAssets/assets/js/demo.js"></script>
+        <script>
+            $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+                type: "line",
+                height: "70",
+                width: "100%",
+                lineWidth: "2",
+                lineColor: "#177dff",
+                fillColor: "rgba(23, 125, 255, 0.14)",
+            });
+
+            $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+                type: "line",
+                height: "70",
+                width: "100%",
+                lineWidth: "2",
+                lineColor: "#f3545d",
+                fillColor: "rgba(243, 84, 93, .14)",
+            });
+
+            $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+                type: "line",
+                height: "70",
+                width: "100%",
+                lineWidth: "2",
+                lineColor: "#ffa534",
+                fillColor: "rgba(255, 165, 52, .14)",
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $("#basic-datatables").DataTable({});
+
+                $("#multi-filter-select").DataTable({
+                    pageLength: 5,
+                    initComplete: function () {
+                        this.api()
+                            .columns()
+                            .every(function () {
+                                var column = this;
+                                var select = $(
+                                    '<select class="form-select"><option value=""></option></select>'
+                                )
+                                    .appendTo($(column.footer()).empty())
+                                    .on("change", function () {
+                                        var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                                        column
+                                            .search(val ? "^" + val + "$" : "", true, false)
+                                            .draw();
+                                    });
+
+                                column
+                                    .data()
+                                    .unique()
+                                    .sort()
+                                    .each(function (d, j) {
+                                        select.append(
+                                            '<option value="' + d + '">' + d + "</option>"
+                                        );
+                                    });
+                            });
+                    },
                 });
 
-                $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-                    type: "line",
-                    height: "70",
-                    width: "100%",
-                    lineWidth: "2",
-                    lineColor: "#f3545d",
-                    fillColor: "rgba(243, 84, 93, .14)",
+                // Add Row
+                $("#add-row").DataTable({
+                    pageLength: 5,
                 });
 
-                $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-                    type: "line",
-                    height: "70",
-                    width: "100%",
-                    lineWidth: "2",
-                    lineColor: "#ffa534",
-                    fillColor: "rgba(255, 165, 52, .14)",
+                var action =
+                    '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+                $("#addRowButton").click(function () {
+                    $("#add-row")
+                        .dataTable()
+                        .fnAddData([
+                            $("#addName").val(),
+                            $("#addPosition").val(),
+                            $("#addOffice").val(),
+                            action,
+                        ]);
+                    $("#addRowModal").modal("hide");
                 });
-            </script>
-
-            <script>
-                $(document).ready(function () {
-                    $("#basic-datatables").DataTable({});
-
-                    $("#multi-filter-select").DataTable({
-                        pageLength: 5,
-                        initComplete: function () {
-                            this.api()
-                                .columns()
-                                .every(function () {
-                                    var column = this;
-                                    var select = $(
-                                        '<select class="form-select"><option value=""></option></select>'
-                                    )
-                                        .appendTo($(column.footer()).empty())
-                                        .on("change", function () {
-                                            var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-                                            column
-                                                .search(val ? "^" + val + "$" : "", true, false)
-                                                .draw();
-                                        });
-
-                                    column
-                                        .data()
-                                        .unique()
-                                        .sort()
-                                        .each(function (d, j) {
-                                            select.append(
-                                                '<option value="' + d + '">' + d + "</option>"
-                                            );
-                                        });
-                                });
-                        },
-                    });
-
-                    // Add Row
-                    $("#add-row").DataTable({
-                        pageLength: 5,
-                    });
-
-                    var action =
-                        '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-                    $("#addRowButton").click(function () {
-                        $("#add-row")
-                            .dataTable()
-                            .fnAddData([
-                                $("#addName").val(),
-                                $("#addPosition").val(),
-                                $("#addOffice").val(),
-                                action,
-                            ]);
-                        $("#addRowModal").modal("hide");
-                    });
-                });
-            </script>
+            });
+        </script>
 
 </body>

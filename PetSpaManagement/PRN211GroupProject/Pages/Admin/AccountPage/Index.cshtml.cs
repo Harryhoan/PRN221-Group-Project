@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
@@ -22,7 +23,11 @@ namespace PRN211GroupProject.Pages.AccountPage
             _account = account;
             _role = role;
         }
-
+        public IActionResult onGet()
+        {
+            ViewData["RoleId"] = new SelectList(_role.GetAllRole(), "Id", "Name");
+            return Page();
+        }
         public IList<Account> Account { get;set; } = default!;
         [BindProperty]
         public Account NewAccount { get; set; } = default!;
