@@ -43,7 +43,7 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             Account account = accountService.Login(email, pass);
 
-            if (account != null)
+            if (account != null)    
             {
                 var claims = new List<Claim>
                 {

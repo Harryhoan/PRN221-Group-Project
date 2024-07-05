@@ -53,23 +53,18 @@ namespace PetSpaDAO
         }
         public void UpdateAccount(Account newAccount)
         {
-            if (newAccount == null)
-            {
-                throw new ArgumentNullException(nameof(newAccount), "Account cannot be null");
-            }
+                if (newAccount == null)
+                {
+                    throw new ArgumentNullException(nameof(newAccount), "Account cannot be null");
+                }
 
-            var existingAccount = context.Accounts.FirstOrDefault(s => s.Id == newAccount.Id);
-            if (existingAccount == null)
-            {
-                throw new Exception("Account does not exist");
-            }
-            context.Entry(existingAccount).CurrentValues.SetValues(newAccount);
-            context.SaveChanges();
+                var existingAccount = context.Accounts.FirstOrDefault(s => s.Id == newAccount.Id);
+                if (existingAccount == null)
+                {
+                    throw new Exception("Account does not exist");
+                }
+                context.Entry(existingAccount).CurrentValues.SetValues(newAccount);
+                context.SaveChanges();
         }
-        //public void (int accountID)
-        //{
-        //    Account
-        //}
-
     }
 }

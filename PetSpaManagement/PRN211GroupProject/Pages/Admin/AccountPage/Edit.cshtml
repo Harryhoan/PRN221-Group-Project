@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
 }
 <h4>Account</h4>
 <hr />
@@ -43,12 +44,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Account.RoleId" class="control-label"></label>
-                <input asp-for="Account.RoleId" class="form-control" ></input>
+                <input asp-for="Account.RoleId" class="form-control"></input>
                 <span asp-validation-for="Account.RoleId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.VoucherId" class="control-label"></label>
-                <input asp-for="Account.VoucherId" class="form-control" ></input>
+                <input asp-for="Account.VoucherId" class="form-control"></input>
                 <span asp-validation-for="Account.VoucherId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -63,5 +64,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

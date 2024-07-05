@@ -54,22 +54,9 @@ namespace PRN211GroupProject.Pages.AccountPage
             }
             catch (Exception ex)
             {
-                //if (!AccountExists(Account.Id))
-                //{
-                //    return NotFound();
-                //}
-                //else
-                //{
-                //    throw;
-                //}
             }
 
             return RedirectToPage("./Index");
         }
-
-        //private bool AccountExists(int id)
-        //{
-        //  return (_context.Accounts?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
     }
 }

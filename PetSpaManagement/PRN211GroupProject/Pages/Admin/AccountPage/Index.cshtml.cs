@@ -39,10 +39,6 @@ namespace PRN211GroupProject.Pages.AccountPage
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (!modelstate.isvalid || account == null)
-            //{
-            //    return page();
-            //}
             if (NewAccount != null)
             {
                 if (NewAccount.RoleId == default)
