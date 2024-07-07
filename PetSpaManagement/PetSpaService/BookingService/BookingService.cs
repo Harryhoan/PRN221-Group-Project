@@ -19,7 +19,7 @@ namespace PetSpaService.BookingService
 
         public void AddBooking(Booking booking)
         {
-            if (booking.Id != default(int))
+            if (booking.Id != default)
                 throw new Exception("Invalid booking cannot be added");
             BookingRepo.AddBooking(booking);
         }
@@ -64,6 +64,13 @@ namespace PetSpaService.BookingService
             if (bookings == null ||  !(bookings.Count > 0))
                 throw new Exception("Invalid weekly Booking");
             return  bookings.Where(b => IsInSameWeek(b.Started.Date, week.Date)).ToList();
+        }
+
+        public bool IsActiveBookingConflict(DateTime started, DateTime ended)
+        {
+            if (started >= ended)
+                throw new Exception("Invalid booking datetime");
+            return BookingRepo.IsActiveBookingConflict(started, ended);
         }
 
         public static bool IsInSameWeek(DateTime date1, DateTime date2)

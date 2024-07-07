@@ -1,4 +1,5 @@
-﻿using PetSpaBussinessObject;
+﻿using Microsoft.EntityFrameworkCore;
+using PetSpaBussinessObject;
 using PetSpaDaos;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace PetSpaDAO
 
         public List<Available> GetAllAvailable()
         {
-            var availables = context.Availables.ToList();
+            var availables = context.Availables.Include(a => a.Service).Include(a => a.Spot).ToList();
             if (availables == null)
                 throw new Exception("All availables cannot be retrieved");
             return availables;

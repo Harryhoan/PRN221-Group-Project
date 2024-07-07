@@ -24,5 +24,7 @@ namespace PetSpaService.BookingService
         public void UpdateBooking(Booking booking);
 
         public List<Booking> GetWeeklyBooking(DateTime week, List<Booking> bookings);
+
+        public bool IsActiveBookingConflict(DateTime started, DateTime ended);
     }
 }
