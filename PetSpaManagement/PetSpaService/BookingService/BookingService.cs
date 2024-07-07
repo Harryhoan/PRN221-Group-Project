@@ -51,8 +51,12 @@ namespace PetSpaService.BookingService
 			return BookingRepo.GetAccountBookingList(accountId);
 		}
 
+        public List<Booking> GetActiveBookingListBySpot(int spotId)
+        {
+            return BookingRepo.GetActiveBookingListBySpot(spotId);
+        }
 
-		public void UpdateBooking(Booking booking)
+        public void UpdateBooking(Booking booking)
         {
             if (booking == null || !(booking.Id > 0))
                 throw new Exception("Invalid new Booking");
@@ -61,16 +65,18 @@ namespace PetSpaService.BookingService
 
         public List<Booking> GetWeeklyBooking(DateTime week, List<Booking> bookings)
         {
-            if (bookings == null ||  !(bookings.Count > 0))
+            if (bookings == null)
                 throw new Exception("Invalid weekly Booking");
+            if (bookings.Count == 0)
+                return bookings;
             return  bookings.Where(b => IsInSameWeek(b.Started.Date, week.Date)).ToList();
         }
 
-        public bool IsActiveBookingConflict(DateTime started, DateTime ended)
-        {
+		public bool IsActiveBookingConflictBySpot(DateTime started, DateTime ended, int spotId)
+		{
             if (started >= ended)
                 throw new Exception("Invalid booking datetime");
-            return BookingRepo.IsActiveBookingConflict(started, ended);
+            return BookingRepo.IsActiveBookingConflictBySpot(started, ended, spotId);
         }
 
         public static bool IsInSameWeek(DateTime date1, DateTime date2)

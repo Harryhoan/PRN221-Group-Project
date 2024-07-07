@@ -39,7 +39,16 @@ namespace PetSpaDAO
             return availables;
 
         }
-        public Available GetAvailable(int availableId)
+		public List<Available> GetAllAvailableBySpot(int spotId)
+		{
+			var availables = context.Availables.Include(a => a.Service).Include(a => a.Spot).Where(a => a.SpotId == spotId).ToList();
+			if (availables == null)
+				throw new Exception("All availables cannot be retrieved");
+			return availables;
+
+		}
+
+		public Available GetAvailable(int availableId)
         {
             var available = context.Availables.FirstOrDefault(a => a.Id.Equals(availableId));
             if (available == null)

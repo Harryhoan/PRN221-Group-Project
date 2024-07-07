@@ -46,6 +46,14 @@ namespace PetSpaService.AvailableService
                 throw new Exception("Invalid new available");
             availableRepo.UpdateAvailable(available);
         }
-    }
+
+		public List<Available> GetAvailableListBySpot(int spotId)
+        {
+            if (!(spotId > 0))
+				throw new Exception("Invalid new available id");
+            return availableRepo.GetAvailableListBySpot(spotId);
+		}
+
+	}
 
 }

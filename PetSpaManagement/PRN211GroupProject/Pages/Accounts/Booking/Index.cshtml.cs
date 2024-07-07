@@ -6,6 +6,7 @@ using PetSpaService.AccountService;
 using PetSpaService.AdminServiceService;
 using PetSpaService.AvailableService;
 using PetSpaService.BookingService;
+using PetSpaService.SpotService.SpotService;
 using System.Security.Claims;
 
 namespace PRN211GroupProject.Pages.Accounts
@@ -17,14 +18,16 @@ namespace PRN211GroupProject.Pages.Accounts
         private readonly IAccountService _accountService;
         private readonly IAvailableService _availableService;
         private readonly IServiceService _serviceService;
+        private readonly ISpotService _spotService;
         public int _offset { get; set; } = 0;
 
-        public BookingModel(IBookingService bookingService, IAccountService accountService, IAvailableService availableService, IServiceService serviceService)
+        public BookingModel(IBookingService bookingService, IAccountService accountService, IAvailableService availableService, IServiceService serviceService, ISpotService spotService)
         {
             _bookingService = bookingService;
             _accountService = accountService;
             _availableService = availableService;
             _serviceService = serviceService;
+            _spotService = spotService;
         }
 
         [BindProperty]
@@ -61,7 +64,9 @@ namespace PRN211GroupProject.Pages.Accounts
             }
 
         }*/
-        public IActionResult OnGet(int? offset) 
+        [BindProperty]
+        public int SpotId { get; set; } = -1;
+        public IActionResult OnGet(int? spotId, int? offset) 
         {
             try
             {
@@ -72,7 +77,26 @@ namespace PRN211GroupProject.Pages.Accounts
                         return BadRequest();
                     }
 
-                    ViewData["availableList"] = _availableService.GetAvailableList().Select(available => new SelectListItem
+                    var spotList = _spotService.GetActiveSpotList();
+                    if (spotList == null || spotList.Count == 0)
+                    {
+                        return RedirectToPage("/Index");
+                    }
+
+                    if (spotId == null || spotId < 1)
+                    {
+                        spotId = spotList[0].Id;
+                    }
+
+                    SpotId = (int)spotId;
+
+                    ViewData["spotList"] = spotList.Select(spot => new SelectListItem
+                    {
+                        Value = spot.Id.ToString(),
+                        Text = spot.Name
+                    }).ToList();
+
+                    ViewData["availableList"] = _availableService.GetAvailableListBySpot((int)spotId).Select(available => new SelectListItem
                     {
                         Value = available.Id.ToString(),
                         Text = available.Service.Name + " - " + available.Spot.Name
@@ -81,11 +105,11 @@ namespace PRN211GroupProject.Pages.Accounts
                     if (offset != null && offset != 0) 
                     {
                         _offset = (int)offset;
-                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date.AddDays((Double)offset * 7), _bookingService.GetActiveBookingList()); 
+                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date.AddDays((Double)offset * 7), _bookingService.GetActiveBookingListBySpot((int)spotId)); 
                     }
                        
                     else
-                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date, _bookingService.GetActiveBookingList());
+                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date, _bookingService.GetActiveBookingListBySpot((int)spotId));
                     return Page();
                 }
                 return Unauthorized();
@@ -104,6 +128,13 @@ namespace PRN211GroupProject.Pages.Accounts
                 {
                     return Unauthorized();
                 }
+
+                var formSpotId = Request.Form["formSpotId"];
+                if (String.IsNullOrEmpty(formSpotId) || formSpotId == "-1")
+                {
+                    return BadRequest();
+                }
+                SpotId = Int32.Parse(formSpotId);
                 var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
                 var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
                 if (emailClaim == null)
@@ -133,7 +164,7 @@ namespace PRN211GroupProject.Pages.Accounts
                     return NotFound();
                 }
                 NewBooking.Ended = NewBooking.Started.AddMinutes(service.Duration);
-                if (NewBooking.Ended.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Ended.TimeOfDay > TimeSpan.FromHours(18) || _bookingService.IsActiveBookingConflict(NewBooking.Started, NewBooking.Ended))
+                if (NewBooking.Ended.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Ended.TimeOfDay > TimeSpan.FromHours(18) || _bookingService.IsActiveBookingConflictBySpot(NewBooking.Started, NewBooking.Ended, SpotId))
                 {
                     return BadRequest();
                 }

@@ -47,6 +47,14 @@ namespace PetSpaDAO
                 throw new Exception("All bookings cannot be retrieved");
             return bookings;
         }
+
+        public List<Booking> GetActiveBookingBySpot(int spotId)
+        {
+            var bookings = context.Bookings.Include(b => b.Available).ThenInclude(a => a.Service).Include(b => b.Available).ThenInclude(a => a.Spot).Where(b => b.Status == true && b.Available.SpotId == spotId).OrderByDescending(b => b.Started).ToList();
+            if (bookings == null)
+                throw new Exception("All bookings cannot be retrieved");
+            return bookings;
+        }
         public List<Booking> GetAccountBooking(int accountId)
         {
             var bookings = context.Bookings.Include(b => b.Available).ThenInclude(a => a.Service).Include(b => b.Available).ThenInclude(a => a.Spot).Where(b => b.Status == true && b.AccountId == accountId).OrderByDescending(b => b.Started).ToList();
@@ -62,11 +70,11 @@ namespace PetSpaDAO
             return booking;
         }
 
-        public bool IsActiveBookingConflict(DateTime started, DateTime ended)
+        public bool IsActiveBookingConflictBySpot(DateTime started, DateTime ended, int spotId)
         {
             try
             {
-                return context.Bookings.Where(b => b.Status == true && b.Started >= started && b.Ended <= ended).AsNoTracking().Any();
+                return context.Bookings.Include(b => b.Available).Where(b => b.Available.SpotId == spotId && b.Status == true && b.Started >= started && b.Ended <= ended).AsNoTracking().Any();
             }
             catch
             {
@@ -83,7 +91,7 @@ namespace PetSpaDAO
                     if (booking.Created == default || booking.Started == default || booking.Ended == default)
                         throw new Exception("Booking has not been scheduled");
 
-                    if (booking.Created > DateTime.Now || booking.Started.Date <= DateTime.Today || booking.Ended.Date <= DateTime.Today || booking.Started >= booking.Ended || IsActiveBookingConflict(booking.Started, booking.Ended))
+                    if (booking.Created > DateTime.Now || booking.Started.Date <= DateTime.Today || booking.Ended.Date <= DateTime.Today || booking.Started >= booking.Ended)
                         throw new Exception("Invalid booking date or time");
 
                     context.Bookings.Add(booking);

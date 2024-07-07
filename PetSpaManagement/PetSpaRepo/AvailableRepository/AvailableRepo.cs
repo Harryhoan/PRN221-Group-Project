@@ -19,5 +19,8 @@ namespace PetSpaRepo.AvailableRepository
         public void UpdateAvailable(Available available) => AvailableDAO.Instance.UpdateAvailable(available);
 
         public Available GetAvailable(int availableId) => AvailableDAO.Instance.GetAvailable(availableId);
-    }
+
+		public List<Available> GetAvailableListBySpot(int spotId) => AvailableDAO.Instance.GetAllAvailableBySpot(spotId);
+
+	}
 }

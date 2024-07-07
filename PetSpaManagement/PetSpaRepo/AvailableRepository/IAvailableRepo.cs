@@ -19,5 +19,8 @@ namespace PetSpaRepo.AvailableRepository
         public void UpdateAvailable(Available available);
 
         public Available GetAvailable(int availableId);
-    }
+
+        public List<Available> GetAvailableListBySpot(int spotId);
+
+	}
 }
