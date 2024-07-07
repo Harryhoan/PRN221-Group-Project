@@ -19,9 +19,14 @@ namespace PetSpaRepo.BookingRepository
         public List<Booking> GetActiveBookingList() => BookingDAO.Instance.GetActiveBooking();
 
 		public List<Booking> GetAccountBookingList(int accountId) => BookingDAO.Instance.GetAccountBooking(accountId);
-		public void SoftRemoveBooking(int BookingId) => BookingDAO.Instance.SoftRemoveBooking(BookingId);
+
+        public List<Booking> GetActiveBookingListBySpot(int spotId) => BookingDAO.Instance.GetActiveBookingBySpot(spotId);
+
+        public void SoftRemoveBooking(int BookingId) => BookingDAO.Instance.SoftRemoveBooking(BookingId);
 
         public void UpdateBooking(Booking Booking) => BookingDAO.Instance.UpdateBooking(Booking);
+
+		public bool IsActiveBookingConflictBySpot(DateTime started, DateTime ended, int spotId) => BookingDAO.Instance.IsActiveBookingConflictBySpot(started, ended, spotId);
 
     }
 }

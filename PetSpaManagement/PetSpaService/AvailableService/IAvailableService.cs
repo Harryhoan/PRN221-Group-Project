@@ -19,5 +19,8 @@ namespace PetSpaService.AvailableService
 
         public void UpdateAvailable(Available available);
 
-    }
+        public List<Available> GetAvailableListBySpot(int spotId);
+
+
+	}
 }
