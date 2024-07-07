@@ -1,4 +1,5 @@
-﻿using PetSpaDaos;
+﻿using PetSpaBussinessObject;
+using PetSpaDaos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,15 @@ namespace PetSpaDAO
                 }
                 return instance;
             }
+        }
+
+        public List<Voucher> GetAllVoucher()
+        {
+            var vouchers = context.Vouchers.ToList();
+            if (vouchers == null)
+                throw new Exception("All vouchers cannot be retrieved");
+            return vouchers;
+
         }
     }
 }
