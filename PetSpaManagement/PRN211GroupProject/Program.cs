@@ -39,7 +39,6 @@ namespace PRN211GroupProject
                 options.IdleTimeout = TimeSpan.FromMinutes(30); // Adjust as needed
             });
             builder.Services.AddMvc();
-            builder.Services.AddTransient<LayoutModel>();
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
@@ -51,12 +50,9 @@ namespace PRN211GroupProject
 
 
             var app = builder.Build();
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-            }
-
+            app.UseExceptionHandler("/Error");
+            app.UseHsts();
+            app.UseStatusCodePagesWithReExecute("/Error", "?statusCode={0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

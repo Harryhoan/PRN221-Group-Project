@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace PetSpaDAO
 {
@@ -31,16 +33,16 @@ namespace PetSpaDAO
         }
         public Account GetAccountByEmail(string Email)
         {
-            return context.Accounts.SingleOrDefault(m => m.Email.Equals(Email));
+            return context.Accounts.Include(m=>m.Role).SingleOrDefault(m => m.Email.Equals(Email));
         }
         public List<Account> GetAllAccount()
         {
-            return context.Accounts.ToList();
+            return context.Accounts.Include(a => a.Role).ToList();
 
         }
         public Account GetAccount(int accountID)
         {
-            return context.Accounts.FirstOrDefault(m => m.Id.Equals(accountID));
+            return context.Accounts.Include(a => a.Role).SingleOrDefault(m => m.Id.Equals(accountID));
         }
         public void AddAccount(Account account)
         {
@@ -53,18 +55,19 @@ namespace PetSpaDAO
         }
         public void UpdateAccount(Account newAccount)
         {
-                if (newAccount == null)
-                {
-                    throw new ArgumentNullException(nameof(newAccount), "Account cannot be null");
-                }
+            if (newAccount == null)
+            {
+                throw new ArgumentNullException(nameof(newAccount), "Account cannot be null");
+            }
 
-                var existingAccount = context.Accounts.FirstOrDefault(s => s.Id == newAccount.Id);
-                if (existingAccount == null)
-                {
-                    throw new Exception("Account does not exist");
-                }
-                context.Entry(existingAccount).CurrentValues.SetValues(newAccount);
-                context.SaveChanges();
+            var existingAccount = context.Accounts.FirstOrDefault(s => s.Id == newAccount.Id);
+            if (existingAccount == null)
+            {
+                throw new Exception("Account does not exist");
+            }
+            context.Entry(existingAccount).CurrentValues.SetValues(newAccount);
+            context.SaveChanges();
         }
+        
     }
 }

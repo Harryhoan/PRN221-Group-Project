@@ -43,15 +43,15 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             Account account = accountService.Login(email, pass);
 
-            if (account != null)    
+            if (account != null)
             {
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Email, email),
                     new Claim(ClaimTypes.Name, account.Name),
-                    new Claim(ClaimTypes.MobilePhone, account.Phone),
+                    new Claim(ClaimTypes.Role, account.Role.Name)
                 };
-
+      
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 var principal = new ClaimsPrincipal(identity);
