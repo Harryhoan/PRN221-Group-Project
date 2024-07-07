@@ -42,7 +42,7 @@
 			<p class="margin-top-md margin-bottom-xl"></p>
 			<button id="createBookingButton" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createBookingModal">Create Booking</button>
 			<br />
-			<h1 class="text-xl"><a href="/Accounts/Booking?offset=@(Model._offset - 1)"><i class="fa fa-angle-left"></i></a> @startOfWeek.ToShortDateString() - @endOfWeek.ToShortDateString() <a href="/Accounts/Booking?offset=@(Model._offset + 1)"><i class="fa fa-angle-right"></i></a></h1>
+			<h1 class="text-xl"><a href="/Accounts/Booking?offset=@(Model._offset - 1)&spotId=@Model.SpotId"><i class="fa fa-angle-left"></i></a> @startOfWeek.ToShortDateString() - @endOfWeek.ToShortDateString() <a href="/Accounts/Booking?offset=@(Model._offset + 1)&spotId=@Model.SpotId"><i class="fa fa-angle-right"></i></a></h1>
 			<br />
 			@{
 				string spotIdFromUrl = Request.Query.TryGetValue("spotId", out var spotId) ? spotId.ToString() : "";
@@ -134,9 +134,7 @@
 									}
 
 								}
-
-								<li style="visibility: hidden; opacity: 0;" class="cd-schedule__event"><a style=" visibility: hidden; opacity: 0;" data-start="08:00" data-end="08:00" data-content="event-abs-circuit" data-event="event-1" href="#0"><em></em></a></li>
-
+								<li style="visibility: hidden; opacity: 0;" class="cd-schedule__event"><a style=" visibility: hidden; opacity: 0;" data-start="19:00" data-end="19:00" data-content="event-abs-circuit" data-event="event-1" href="#0"><em></em></a></li>
 							</ul>
 						</li>
 					}
