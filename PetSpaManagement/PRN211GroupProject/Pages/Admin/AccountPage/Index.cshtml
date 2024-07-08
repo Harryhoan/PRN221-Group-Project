@@ -190,9 +190,6 @@
                                     @Html.DisplayNameFor(model => model.Account[0].Pass)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Account[0].Status)
-                                </th>
-                                <th>
                                     @Html.DisplayNameFor(model => model.Account[0].Role)
                                 </th>
                                 <th style="width: 10%">Action</th>
@@ -201,7 +198,7 @@
                         <tbody>
                             @foreach (var item in Model.Account)
                             {
-                                if (item.RoleId != 1){
+                                if (item.RoleId != 1 && item.Status == true){
                                 {
                                     <tr>
                                         <td>
@@ -212,9 +209,6 @@
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Pass)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Status)
                                         </td>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.RoleId)
@@ -235,13 +229,15 @@
                                                         data-original-title="Edit Task">
                                                     <i class="fas fa-info-circle"></i>
                                                 </a>
-                                                <a type="button" asp-page="./Delete" asp-route-id="@item.Id"
+                                                <form>
+                                                <a type="button" asp-page="./Delete" method="post" asp-route-id="@item.Id"
                                                         data-bs-toggle="tooltip"
                                                         title=""
-                                                        class="btn btn-link btn-danger"
+                                                        class="btn btn-link btn-danger btn-lg"
                                                         data-original-title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </a>
+                                                    </form>
                                             </div>
                                         </td>
                                     </tr>

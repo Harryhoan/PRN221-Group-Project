@@ -22,6 +22,7 @@ namespace PRN211GroupProject.Pages.ServicePage
         }
 
         public IList<Service> Service { get; set; } = default!;
+        [BindProperty]
         public Service NewService { get; set; } = default!;
         public async Task OnGetAsync()
         {
