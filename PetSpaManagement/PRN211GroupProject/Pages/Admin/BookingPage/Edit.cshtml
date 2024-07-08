@@ -1,0 +1,60 @@
+﻿@page
+@model PRN211GroupProject.Pages.Admin.BookingPage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit Booking</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post" class="bg-light p-4 rounded">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="Booking.Id" />
+            <div class="form-group mb-3">
+                <label asp-for="Booking.Started" class="control-label"></label>
+                <input asp-for="Booking.Started" class="form-control" />
+                <span asp-validation-for="Booking.Started" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Booking.Ended" class="control-label"></label>
+                <input asp-for="Booking.Ended" class="form-control" />
+                <span asp-validation-for="Booking.Ended" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Booking.Created" class="control-label"></label>
+                <input asp-for="Booking.Created" class="form-control" />
+                <span asp-validation-for="Booking.Created" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Booking.AvailableId" class="control-label"></label>
+                <select asp-for="Booking.AvailableId" class="form-control" asp-items="ViewBag.AvailableId"></select>
+                <span asp-validation-for="Booking.AvailableId" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Booking.AccountId" class="control-label"></label>
+                <select asp-for="Booking.AccountId" class="form-control" asp-items="ViewBag.AccountId"></select>
+                <span asp-validation-for="Booking.AccountId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check mb-3">
+                <input class="form-check-input" asp-for="Booking.Status" />
+                <label class="form-check-label" for="Booking_Status">
+                    @Html.DisplayNameFor(model => model.Booking.Status)
+                </label>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3 text-center">
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

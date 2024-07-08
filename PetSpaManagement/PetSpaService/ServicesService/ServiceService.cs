@@ -20,7 +20,7 @@ namespace PetSpaService.ServicesService
 
 		public void AddService(Service service)
 		{
-			if (service == null || service.Id == default)
+			if (service == null || service.Id != default)
 				throw new Exception("Invalid service cannot be added");
 			_serviceRepo.AddService(service);
 		}

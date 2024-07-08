@@ -21,14 +21,23 @@ namespace PRN211GroupProject.Pages.ServicePage
             _service = service;
         }
 
-        public IList<Service> Service { get;set; } = default!;
-
+        public IList<Service> Service { get; set; } = default!;
+        [BindProperty]
+        public Service NewService { get; set; } = default!;
         public async Task OnGetAsync()
         {
             if (_service.GetServiceList() != null)
             {
                 Service = _service.GetServiceList();
             }
+        }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (NewService != null)
+            {
+                _service.AddService(NewService);
+            }
+            return RedirectToPage("./Index");
         }
     }
 }
