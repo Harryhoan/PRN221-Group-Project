@@ -25,11 +25,11 @@
     <link rel="stylesheet" href="~/assets/css/style.css">
     <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
     <style>
-       
+
         main {
             clear: both;
-            width:100%;
-            display:block;
+            width: 100%;
+            display: block;
         }
 
         footer {
@@ -102,12 +102,21 @@
                                                         <ul class="submenu">
                                                             <li><a asp-page="/Accounts/Profile">Profile</a></li>
                                                             <li><a asp-page="/Services/Bath">History</a></li>
+                                                            @if (User.IsInRole("Admin"))
+                                                            {
+                                                            <li><a href="/Admin">Admin</a></li>
+                                                            }
+                                                            else if (User.IsInRole("Staff"))
+                                                            {
+                                                            <li><a href="/Staff">Staff</a></li>
+                                                            }
                                                             <li>
                                                                 <a href="#" id="logout-link">Logout</a>
                                                                 <form id="logout-form" asp-page="/Accounts/Logout" method="post" style="display: none;">
                                                                 </form>
 
                                                             </li>
+
                                                         </ul>
                                                     </li>
                                                 </ul>

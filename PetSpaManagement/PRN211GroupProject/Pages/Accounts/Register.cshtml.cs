@@ -6,6 +6,7 @@ using PetSpaService.AccountService;
 using PRN211GroupProject.ViewModel;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Net.Mail;
 
 namespace PRN211GroupProject.Pages.Accounts
 {
@@ -33,18 +34,17 @@ namespace PRN211GroupProject.Pages.Accounts
             }
             if (accountService.GetAccountByEmail(RegisterViewModel.Email) != null)
             {
-                //RegisterViewModel.Email = "An account with this email already exists.";
-                //ModelState.AddModelError("Duplicate Email Error", RegisterViewModel.Email);
+                ModelState.AddModelError("RegisterViewModel.Email", "Email already exists.");
                 return Page();
             }
-            
+
             Account account = new Account
             {
                 Email = RegisterViewModel.Email,
                 Name = RegisterViewModel.Name,
                 Pass = RegisterViewModel.Pass,
                 Phone = RegisterViewModel.Phone,
-                RoleId = 1,
+                RoleId = 2,
                 Status = true,
                 CountVoucher = 0,
                 VoucherId = null
@@ -52,7 +52,7 @@ namespace PRN211GroupProject.Pages.Accounts
 
             accountService.AddAccount(account);
 
-            successMessage = "Registered Successfully. Login to continue.";
+            successMessage = "Registered Successfully.Login to continue.";
             return RedirectToPage("Login");
         }
     }

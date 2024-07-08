@@ -9,9 +9,8 @@ namespace PRN211GroupProject.Pages.Accounts
     {
         public async Task<IActionResult> OnPostAsync()
         {
-            // Perform logout logic
+ 
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
             return RedirectToPage("/Index"); // Redirect to home page after logout
         }
     }

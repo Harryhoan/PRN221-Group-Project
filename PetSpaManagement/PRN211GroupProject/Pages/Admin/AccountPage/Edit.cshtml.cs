@@ -9,16 +9,21 @@ using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.AccountService;
+using PetSpaService.RolesService;
+using PetSpaService.VoucherService.VoucherService;
 
 namespace PRN211GroupProject.Pages.AccountPage
 {
     public class EditModel : PageModel
     {
         private readonly IAccountService _account;
-
-        public EditModel(IAccountService account)
+        private readonly IVoucherService _voucher;
+        private readonly IRoleService _role;
+        public EditModel(IAccountService account, IVoucherService voucher, IRoleService role)
         {
             _account = account;
+            _voucher = voucher;
+            _role = role;
         }
 
         [BindProperty]
@@ -36,6 +41,8 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return NotFound();
             }
+            ViewData["voucherlist"] = new SelectList(_voucher.GetVoucherList(), "Id", "Name");
+            ViewData["rolelist"] = new SelectList(_role.GetAllRole(), "Id", "Name");
             Account = account;
             return Page();
         }
@@ -44,32 +51,15 @@ namespace PRN211GroupProject.Pages.AccountPage
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
             try
             {
                  _account.UpdateAccount(Account);
             }
             catch (Exception ex)
             {
-                //if (!AccountExists(Account.Id))
-                //{
-                //    return NotFound();
-                //}
-                //else
-                //{
-                //    throw;
-                //}
             }
 
             return RedirectToPage("./Index");
         }
-
-        //private bool AccountExists(int id)
-        //{
-        //  return (_context.Accounts?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
     }
 }

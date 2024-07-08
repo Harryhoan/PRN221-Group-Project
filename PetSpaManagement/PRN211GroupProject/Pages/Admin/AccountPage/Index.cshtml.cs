@@ -23,11 +23,6 @@ namespace PRN211GroupProject.Pages.AccountPage
             _account = account;
             _role = role;
         }
-        public IActionResult onGet()
-        {
-            ViewData["RoleId"] = new SelectList(_role.GetAllRole(), "Id", "Name");
-            return Page();
-        }
         public IList<Account> Account { get;set; } = default!;
         [BindProperty]
         public Account NewAccount { get; set; } = default!;
@@ -41,13 +36,11 @@ namespace PRN211GroupProject.Pages.AccountPage
             }
             if (_role != null)
                 Roles = _role.GetAllRole();
+            ViewData["RoleId"] = new SelectList(_role.GetAllRole(), "Id", "Name");
+
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (!modelstate.isvalid || account == null)
-            //{
-            //    return page();
-            //}
             if (NewAccount != null)
             {
                 if (NewAccount.RoleId == default)

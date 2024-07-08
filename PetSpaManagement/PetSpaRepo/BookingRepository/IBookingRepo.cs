@@ -19,8 +19,13 @@ namespace PetSpaRepo.BookingRepository
 
         public List<Booking> GetAccountBookingList(int accountId);
 
-		public void UpdateBooking(Booking booking);
+        public List<Booking> GetActiveBookingListBySpot(int spotId);
+
+        public void UpdateBooking(Booking booking);
 
         public Booking GetBooking(int bookingId);
-    }
+
+        public bool IsActiveBookingConflictBySpot(DateTime started, DateTime ended, int spotId);
+
+	}
 }

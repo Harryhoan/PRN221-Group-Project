@@ -49,9 +49,9 @@ namespace PRN211GroupProject.Pages.Accounts
                 {
                     new Claim(ClaimTypes.Email, email),
                     new Claim(ClaimTypes.Name, account.Name),
-                    new Claim(ClaimTypes.MobilePhone, account.Phone),
+                    new Claim(ClaimTypes.Role, account.Role.Name)
                 };
-
+      
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 var principal = new ClaimsPrincipal(identity);
