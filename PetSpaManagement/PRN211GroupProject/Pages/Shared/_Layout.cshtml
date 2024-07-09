@@ -1,5 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Authentication.Cookies
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var cartItemCount = HttpContextAccessor.HttpContext.Session.GetInt32("BookingCount") ?? 0;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +32,28 @@
     <link rel="stylesheet" href="~/assets/css/style.css">
     <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
     <style>
+        .badge {
+            padding-left: 9px;
+            padding-right: 9px;
+            -webkit-border-radius: 9px;
+            -moz-border-radius: 9px;
+            border-radius: 9px;
+        }
+
+        .label-warning[href],
+        .badge-warning[href] {
+            background-color: #c67605;
+        }
+
+        #lblCartCount {
+            font-size: 12px;
+            background: #ff0000;
+            color: #fff;
+            padding: 0 5px;
+            vertical-align: top;
+            margin-left: -10px;
+        }
+
 
         main {
             clear: both;
@@ -71,16 +100,13 @@
                                                     <li><a asp-page="/Services/Teeth">Teeth Brushing</a></li>
                                                 </ul>
                                             </li>
-                                            <li>
-                                                <a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog_details.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Element</a></li>
-                                                </ul>
-                                            </li>
+
                                             <li><a asp-page="/Feedback">Feedback</a></li>
                                             <li><a asp-page="/Accounts/Booking/Index" style="font:bold">Booking Now!</a></li>
+                                            <li>
+                                                <i class="fa-solid fa-cart-shopping"></i>
+                                                <span class='badge badge-warning' id='lblCartCount'> @cartItemCount </span>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -104,11 +130,11 @@
                                                             <li><a asp-page="/Services/Bath">History</a></li>
                                                             @if (User.IsInRole("Admin"))
                                                             {
-                                                            <li><a href="/Admin">Admin</a></li>
+                                                                <li><a href="/Admin">Admin</a></li>
                                                             }
                                                             else if (User.IsInRole("Staff"))
                                                             {
-                                                            <li><a href="/Staff">Staff</a></li>
+                                                                <li><a href="/Staff">Staff</a></li>
                                                             }
                                                             <li>
                                                                 <a href="#" id="logout-link">Logout</a>

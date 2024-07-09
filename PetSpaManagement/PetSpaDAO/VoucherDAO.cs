@@ -38,5 +38,12 @@ namespace PetSpaDAO
             return vouchers;
 
         }
+        public Voucher GetVoucher(int id)
+        {
+            var voucher = context.Vouchers.SingleOrDefault(v => v.Id == id);
+            if (voucher == null)
+                throw new Exception("Voucher cannot be retrieved");
+            return voucher;
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace PetSpaRepo.VoucherRepository
     public class VoucherRepo : IVoucherRepo
     {
         public List<Voucher> GetVoucherList() => VoucherDAO.Instance.GetAllVoucher();
+        public Voucher GetVoucher(int id) => VoucherDAO.Instance.GetVoucher(id);
     }
 }

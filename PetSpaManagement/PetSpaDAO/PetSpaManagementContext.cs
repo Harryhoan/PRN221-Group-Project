@@ -33,6 +33,7 @@ namespace PetSpaDaos
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer(GetConnectionString());
             }
         }
@@ -43,7 +44,6 @@ namespace PetSpaDaos
             var strConnection = config.GetConnectionString("PetSpaManagement");
             return strConnection;
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>(entity =>
@@ -135,12 +135,12 @@ namespace PetSpaDaos
                     .WithMany(p => p.Bills)
                     .HasForeignKey(d => d.AccId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Bill__accId__4F7CD00D");
+                    .HasConstraintName("FK__Bill__accId__5070F446");
 
                 entity.HasOne(d => d.Voucher)
                     .WithMany(p => p.Bills)
                     .HasForeignKey(d => d.VoucherId)
-                    .HasConstraintName("FK__Bill__voucherId__5070F446");
+                    .HasConstraintName("FK__Bill__voucherId__4F7CD00D");
             });
 
             modelBuilder.Entity<BillDetailed>(entity =>
@@ -300,6 +300,8 @@ namespace PetSpaDaos
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
+                entity.Property(e => e.Discount).HasColumnName("discount");
+
                 entity.Property(e => e.Expired)
                     .HasColumnType("datetime")
                     .HasColumnName("expired");
@@ -310,10 +312,6 @@ namespace PetSpaDaos
                     .HasColumnName("name");
 
                 entity.Property(e => e.Reach).HasColumnName("reach");
-
-                entity.Property(e => e.Started)
-                    .HasColumnType("datetime")
-                    .HasColumnName("started");
 
                 entity.Property(e => e.Status).HasColumnName("status");
             });

@@ -38,6 +38,7 @@ namespace PRN211GroupProject
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30); // Adjust as needed
             });
+            builder.Services.AddHttpContextAccessor();
             builder.Services.AddMvc();
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -50,9 +51,9 @@ namespace PRN211GroupProject
 
 
             var app = builder.Build();
-            app.UseExceptionHandler("/Error");
+          /*  app.UseExceptionHandler("/Error");
             app.UseHsts();
-            app.UseStatusCodePagesWithReExecute("/Error", "?statusCode={0}");
+            app.UseStatusCodePagesWithReExecute("/Error", "?statusCode={0}");*/
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

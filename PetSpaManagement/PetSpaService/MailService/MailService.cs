@@ -10,7 +10,6 @@ using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
 using MailKit.Security;
-using YourNamespaceWhereEmailSettingsIsDefined;
 
 
 
@@ -18,7 +17,7 @@ namespace PetSpaService.MailService
 {
 	public class MailService
 	{
-		private readonly EmailSettings _emailSettings;
+		/*private readonly EmailSettings _emailSettings;
 
 		public MailService(IOptions<EmailSettings> emailSettings)
 		{
@@ -46,6 +45,6 @@ namespace PetSpaService.MailService
 				await client.SendAsync(message);
 				await client.DisconnectAsync(true);
 			}
-		}
+		}*/
 	}
 }

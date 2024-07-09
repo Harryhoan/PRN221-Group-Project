@@ -10,5 +10,6 @@ namespace PetSpaRepo.VoucherRepository
     public interface IVoucherRepo
     {
         public List<Voucher> GetVoucherList();
+        public Voucher GetVoucher(int id);
     }
 }

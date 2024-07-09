@@ -50,7 +50,7 @@ namespace PetSpaDAO
 
 		public Available GetAvailable(int availableId)
         {
-            var available = context.Availables.FirstOrDefault(a => a.Id.Equals(availableId));
+            var available = context.Availables.Include(a => a.Service).Include(a => a.Spot).FirstOrDefault(a => a.Id.Equals(availableId));
             if (available == null)
                 throw new Exception("Available cannot be retrieved");
             return available;   

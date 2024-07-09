@@ -7,6 +7,7 @@ namespace PetSpaBussinessObject
     {
         public Account()
         {
+            Bills = new HashSet<Bill>();
             Bookings = new HashSet<Booking>();
             Feedbacks = new HashSet<Feedback>();
         }
@@ -16,7 +17,6 @@ namespace PetSpaBussinessObject
         public string Email { get; set; } = null!;
         public string Pass { get; set; } = null!;
         public string Phone { get; set; } = null!;
-
         public bool Status { get; set; }
         public int CountVoucher { get; set; }
         public int RoleId { get; set; }
@@ -25,7 +25,6 @@ namespace PetSpaBussinessObject
         public virtual Role Role { get; set; } = null!;
         public virtual Voucher? Voucher { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }
-
         public virtual ICollection<Booking> Bookings { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
     }

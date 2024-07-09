@@ -10,5 +10,6 @@ namespace PetSpaService.VoucherService.VoucherService
     public interface IVoucherService
     {
         public List<Voucher> GetVoucherList();
+        public Voucher GetVoucher(int id);
     }
 }

@@ -17,9 +17,7 @@ namespace PetSpaService.VoucherService.VoucherService
             voucherRepo = new VoucherRepo();
         }
 
-        public List<Voucher> GetVoucherList()
-        {
-            return voucherRepo.GetVoucherList();
-        }
+        public List<Voucher> GetVoucherList()=> voucherRepo.GetVoucherList();
+        public Voucher GetVoucher(int id) => voucherRepo.GetVoucher(id);
     }
 }

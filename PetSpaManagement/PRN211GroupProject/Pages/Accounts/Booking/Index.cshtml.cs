@@ -8,6 +8,7 @@ using PetSpaService.AvailableService;
 using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace PRN211GroupProject.Pages.Accounts
 {
@@ -33,6 +34,8 @@ namespace PRN211GroupProject.Pages.Accounts
         [BindProperty]
         public PetSpaBussinessObject.Booking NewBooking { get; set; } = new PetSpaBussinessObject.Booking();
         public IList<PetSpaBussinessObject.Booking>? Bookings { get; set; }
+        public int BookingCount { get; set; } = 0;
+
         /*public IActionResult OnGet()
         {
             try
@@ -66,7 +69,7 @@ namespace PRN211GroupProject.Pages.Accounts
         }*/
         [BindProperty]
         public int SpotId { get; set; } = -1;
-        public IActionResult OnGet(int? spotId, int? offset) 
+        public IActionResult OnGet(int? spotId, int? offset)
         {
             try
             {
@@ -102,12 +105,12 @@ namespace PRN211GroupProject.Pages.Accounts
                         Text = available.Service.Name + " - " + available.Spot.Name
                     }).ToList();
 
-                    if (offset != null && offset != 0) 
+                    if (offset != null && offset != 0)
                     {
                         _offset = (int)offset;
-                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date.AddDays((Double)offset * 7), _bookingService.GetActiveBookingListBySpot((int)spotId)); 
+                        Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date.AddDays((Double)offset * 7), _bookingService.GetActiveBookingListBySpot((int)spotId));
                     }
-                       
+
                     else
                         Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date, _bookingService.GetActiveBookingListBySpot((int)spotId));
                     return Page();
@@ -122,9 +125,9 @@ namespace PRN211GroupProject.Pages.Accounts
 
         public IActionResult OnPost()
         {
-            try 
+            try
             {
-                if (User.Identity == null || String.IsNullOrEmpty(User.Identity.Name) || !User.Identity.IsAuthenticated) 
+                if (User.Identity == null || String.IsNullOrEmpty(User.Identity.Name) || !User.Identity.IsAuthenticated)
                 {
                     return Unauthorized();
                 }
@@ -153,9 +156,10 @@ namespace PRN211GroupProject.Pages.Accounts
                 if (NewBooking == null || NewBooking.Started == default || NewBooking.Started.Date <= DateTime.Today || NewBooking.Started.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Started.TimeOfDay > TimeSpan.FromHours(18))
                 {
                     return BadRequest();
-                }                         
+                }
                 var available = _availableService.GetAvailable(NewBooking.AvailableId);
-                if (available == null) {
+                if (available == null)
+                {
                     return NotFound();
                 }
                 var service = _serviceService.GetService(available.ServiceId);
@@ -171,15 +175,34 @@ namespace PRN211GroupProject.Pages.Accounts
                 NewBooking.AccountId = currentUser.Id;
                 NewBooking.Status = true;
                 NewBooking.Created = DateTime.Now;
-                _bookingService.AddBooking(NewBooking);
-                return RedirectToPage(Request.Path);
-                
+                if (HttpContext.Session != null)
+                {
+                    List<PetSpaBussinessObject.Booking>? bookingCart = new();
+                    var json = HttpContext.Session.GetString("BookingCart");
+
+                    // Deserialize JSON to object
+                    if (!string.IsNullOrEmpty(json))
+                    {
+                        bookingCart = JsonSerializer.Deserialize<List<PetSpaBussinessObject.Booking>>(json);
+                        
+                    }
+                    if (bookingCart != null)
+                    {
+                        bookingCart.Add(NewBooking);
+                        HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart));
+                        BookingCount = bookingCart.Count;
+                        HttpContext.Session.SetInt32("BookingCount", BookingCount);
+                        //_bookingService.AddBooking(NewBooking);
+                        return OnGet(SpotId, 0);
+                    }
+                }
+                return BadRequest();
             }
             catch
             {
                 return BadRequest();
             }
-            
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PetSpaBussinessObject
 
         public int Id { get; set; }
         public string Name { get; set; } = null!;
-        public DateTime Started { get; set; }
+        public int Discount { get; set; }
         public DateTime Expired { get; set; }
         public int Reach { get; set; }
         public bool Status { get; set; }
