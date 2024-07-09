@@ -28,14 +28,12 @@ namespace PRN211GroupProject.Pages.AccountPage
 
         [BindProperty]
         public Account Account { get; set; } = default!;
-
         public async Task<IActionResult> OnGetAsync(int id)
         {
             if (id == null || _account.GetAllAccount() == null)
             {
                 return NotFound();
             }
-
             var account = _account.GetAccount(id);
             if (account == null)
             {
@@ -46,14 +44,13 @@ namespace PRN211GroupProject.Pages.AccountPage
             Account = account;
             return Page();
         }
-
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             try
             {
-                 _account.UpdateAccount(Account);
+                _account.UpdateAccount(Account);
             }
             catch (Exception ex)
             {
