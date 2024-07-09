@@ -15,5 +15,6 @@ namespace PetSpaService.AccountService
         Account GetAccount(int accountID);
         public void AddAccount(Account account);
         public void UpdateAccount(Account account);
+        public void DeleteAccount(int accountID);
     }
 }

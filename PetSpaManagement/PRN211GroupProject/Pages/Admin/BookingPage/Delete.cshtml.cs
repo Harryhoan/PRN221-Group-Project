@@ -1,63 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
-using PetSpaService.AccountService;
+using PetSpaService.BookingService;
 
-namespace PRN211GroupProject.Pages.AccountPage
+namespace PRN211GroupProject.Pages.Admin.BookingPage
 {
     public class DeleteModel : PageModel
     {
-        private readonly IAccountService _account;
+        private readonly IBookingService _bookingService;
 
-        public DeleteModel(IAccountService account)
+        public DeleteModel(IBookingService bookingService)
         {
-            _account = account;
+            _bookingService = bookingService;
         }
 
         [BindProperty]
-      public Account Account { get; set; } = default!;
+      public Booking Booking { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null || _account.GetAllAccount() == null)
+            if (id == null || _bookingService.GetBookingList() == null)
             {
                 return NotFound();
             }
 
-            var account = _account.GetAccount(id);
-            if (account == null)
+            var booking = _bookingService.GetBooking(id);
+            if (booking == null)
             {
                 return NotFound();
             }
             else 
             {
-                Account = account;
+                Booking = booking;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            if (!ModelState.IsValid)
+            if (id == null || _bookingService.GetBookingList() == null)
             {
-                return Page();
+                return NotFound();
             }
-            try
-            {
-                Account.Status = false;
-                _account.DeleteAccount(id);
-            }
-            catch (Exception ex)
-            {
-
-            }
+            _bookingService.DeleteBooking(id);
 
             return RedirectToPage("./Index");
         }

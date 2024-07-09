@@ -69,5 +69,15 @@ namespace PetSpaDAO
             context.SaveChanges();
         }
         
+        public void DeleteAccount(int accountID)
+        {
+            Account account = GetAccount(accountID);
+            if (account != null)
+            {
+                account.Status = false;
+                context.SaveChanges();
+            }
+        }
+
     }
 }

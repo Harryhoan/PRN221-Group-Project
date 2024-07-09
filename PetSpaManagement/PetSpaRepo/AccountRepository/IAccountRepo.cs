@@ -14,5 +14,6 @@ namespace PetSpaRepo.AccountRepository
         public Account GetAccount(int accountID);
         public void AddAccount(Account account);
         public void UpdateAccount(int accountID, Account account);
+        public void DeleteAccount(int accountID);
     }
 }

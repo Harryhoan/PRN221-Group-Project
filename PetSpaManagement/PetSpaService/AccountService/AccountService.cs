@@ -51,6 +51,12 @@ namespace PetSpaService.AccountService
                 throw new Exception("Invalid account");
             repo.UpdateAccount(account.Id, account);
         }
+        public void DeleteAccount(int accountId)
+        {
+            if (!(accountId > 0))
+                throw new Exception("Invalid accountid");
+             repo.DeleteAccount(accountId);
+        }
     }
 }
 

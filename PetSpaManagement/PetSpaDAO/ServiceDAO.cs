@@ -40,7 +40,7 @@ namespace PetSpaDAO
             Service service = GetService(serviceID);
             if (service != null)
             {
-                _context.Services.Remove(service);
+                service.Status = false;
                 _context.SaveChanges();
             }
         }
