@@ -2,6 +2,8 @@
 @model PRN211GroupProject.Pages.Accounts.Booking.PaymentModel
 @{
     Layout = null;
+    var roundedDiscount = Math.Round(Model.Discount, 2).ToString("0.00");
+    var total = Model.Sum - Model.Discount;
 }
 <!doctype html>
 <html>
@@ -115,27 +117,28 @@
                         <small class="text-muted">Phone Number</small>
                         <p class="">@Model.Account.Phone</p>
                     </div>
-                    <div class="d-flex justify-content-between b-bottom">
-                        <form method="post">
+                    <div class="d-flex justify-content-between pb-3">
+                        <form method="post" asp-page-handler="ApplyVoucher">
                             <div class="d-flex justify-content-between b-bottom">
-                                <select id="voucherSelect" class="form-select ps-2" asp-for="SelectedVoucherId" aria-label="Select voucher">
+                                <select class="form-select ps-2" asp-for="SelectedVoucherId">
                                     @if (Model.Account.Voucher != null)
                                     {
                                         <option value="0">Select Voucher</option>
-                                        <option value="@Model.Account.VoucherId" data-expiration="@Model.Account.Voucher.Expired.ToString("yyyy-MM-dd")">@Model.Account.Voucher.Name (Expires: @Model.Account.Voucher.Expired.ToString("yyyy-MM-dd"))</option>
+                                        <option value="@Model.Account.VoucherId">@Model.Account.Voucher.Name (Expires: @Model.Account.Voucher.Expired.ToString("yyyy-MM-dd"))</option>
+                                        <input type="hidden" value="@Model.Discount" asp-for="Discount" />
+                                        <input type="hidden" value="@Model.Sum" asp-for="Sum" />
                                     }
                                     else
                                     {
                                         <option value="0">No vouchers available</option>
                                     }
                                 </select>
-                                <button type="submit" id="applyVoucherBtn" class="btn btn-primary">Apply</button>
+                                <button type="submit" class="btn btn-primary">Apply</button>
                             </div>
                         </form>
-
                     </div>
 
-                    
+
                     <div class="d-flex flex-column b-bottom">
                         <div class="d-flex justify-content-between py-3">
                             <small class="text-muted">Order Summary</small>
@@ -143,18 +146,24 @@
                         </div>
                         <div class="d-flex justify-content-between pb-3">
                             <small class="text-muted">Discount</small>
-                            <p>- $@Model.Discount</p>
+                            <p>- $@roundedDiscount</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <small class="fw-bold">Total Amount</small>
-                            <p class="fw-bold">$@(Model.Sum - Model.Discount)</p>
+                            <p class="fw-bold">@total.ToString("0.00")</p>
                         </div>
                     </div>
                     </br>
-                    <div class="d-flex justify-content-between pb-3">
-                        <small class="text-muted"></small>
-                        <div class="btn btn-primary">Submit</div>
-                    </div>
+                    <form method="post" asp-page-handler="Bill">
+                        <input type="hidden" value="@roundedDiscount" asp-for="Discount" />
+                        <input type="hidden" value="@Model.Sum" asp-for="Sum" />
+                        <input type="hidden" value="@Model.Account" asp-for="Account" />
+                        <input type="hidden" value="@Model.SelectedVoucherId" asp-for="SelectedVoucherId" />
+                        <div class="d-flex justify-content-between pb-3">
+                            <small class="text-muted"></small>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

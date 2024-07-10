@@ -9,6 +9,7 @@ using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
 using System.Security.Claims;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace PRN211GroupProject.Pages.Accounts
 {
@@ -175,6 +176,7 @@ namespace PRN211GroupProject.Pages.Accounts
                 NewBooking.AccountId = currentUser.Id;
                 NewBooking.Status = true;
                 NewBooking.Created = DateTime.Now;
+                NewBooking.Available = available;
                 if (HttpContext.Session != null)
                 {
                     List<PetSpaBussinessObject.Booking>? bookingCart = new();
@@ -183,13 +185,23 @@ namespace PRN211GroupProject.Pages.Accounts
                     // Deserialize JSON to object
                     if (!string.IsNullOrEmpty(json))
                     {
-                        bookingCart = JsonSerializer.Deserialize<List<PetSpaBussinessObject.Booking>>(json);
-                        
+                            JsonSerializerOptions options = new JsonSerializerOptions
+                            {
+                                ReferenceHandler = ReferenceHandler.Preserve,
+                                WriteIndented = true // for readability
+                            };
+                        bookingCart = JsonSerializer.Deserialize<List<PetSpaBussinessObject.Booking>>(json, options);
+
                     }
                     if (bookingCart != null)
                     {
+                        JsonSerializerOptions options = new JsonSerializerOptions
+                        {
+                            ReferenceHandler = ReferenceHandler.Preserve,
+                            WriteIndented = true // for readability
+                        };
                         bookingCart.Add(NewBooking);
-                        HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart));
+                        HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart, options));
                         BookingCount = bookingCart.Count;
                         HttpContext.Session.SetInt32("BookingCount", BookingCount);
                         //_bookingService.AddBooking(NewBooking);
