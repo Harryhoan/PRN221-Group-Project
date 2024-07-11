@@ -22,21 +22,21 @@ namespace PRN211GroupProject.Pages.AccountPage
         }
 
         [BindProperty]
-      public Account Account { get; set; } = default!;
+        public Account Account { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _account.GetAllAccount() == null)
             {
                 return NotFound();
             }
 
-            var account = _account.GetAccount(id);
+            var account = _account.GetAccount((int)id);
             if (account == null)
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Account = account;
             }
@@ -45,18 +45,17 @@ namespace PRN211GroupProject.Pages.AccountPage
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
             try
             {
-                Account.Status = false;
+                if (id == null || _account.GetAllAccount() == null)
+                {
+                    return Page();
+                }
                 _account.DeleteAccount(id);
             }
             catch (Exception ex)
             {
-
+                return BadRequest();
             }
 
             return RedirectToPage("./Index");

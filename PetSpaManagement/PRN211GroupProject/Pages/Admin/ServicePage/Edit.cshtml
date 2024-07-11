@@ -27,12 +27,6 @@
                 <input asp-for="Service.Price" class="form-control" />
                 <span asp-validation-for="Service.Price" class="text-danger"></span>
             </div>
-            <div class="form-group form-check mb-3">
-                <input class="form-check-input" asp-for="Service.Status" />
-                <label class="form-check-label" for="Service_Status">
-                    @Html.DisplayNameFor(model => model.Service.Status)
-                </label>
-            </div>
             <div class="form-group text-center">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
