@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.AccountService;
+using PetSpaService.AvailableService;
 using PetSpaService.BookingService;
 
 namespace PRN211GroupProject.Pages.Admin.BookingPage
@@ -17,11 +18,13 @@ namespace PRN211GroupProject.Pages.Admin.BookingPage
     {
         private readonly IBookingService _bookingService;
         private readonly IAccountService _accountService;
+        private readonly IAvailableService _availableService;
 
-        public DetailsModel(IBookingService bookingService, IAccountService accountService)
+        public DetailsModel(IBookingService bookingService, IAccountService accountService, IAvailableService availableService)
         {
             _bookingService = bookingService;
             _accountService = accountService;
+            _availableService = availableService;
 
         }
 
@@ -29,6 +32,8 @@ namespace PRN211GroupProject.Pages.Admin.BookingPage
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
+            var account = _accountService.GetAllAccount();
+            var available = _availableService.GetAvailableList();
             if (id == null || _bookingService.GetBookingList() == null)
             {
                 return NotFound();
@@ -43,7 +48,12 @@ namespace PRN211GroupProject.Pages.Admin.BookingPage
             {
                 Booking = booking;
             }
-            ViewData["account"] = new SelectList(_accountService.GetAllAccount(), "Id", "email");
+            ViewData["account"] = account.Select(acc => new SelectListItem
+            {
+                Value = acc.Id.ToString(),
+                Text = acc.Email
+            }).ToList();
+            ViewData["available"] = new SelectList(_availableService.GetAvailableList(), "Id", "Name");
             return Page();
         }
     }
