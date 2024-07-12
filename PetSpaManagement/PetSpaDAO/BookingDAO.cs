@@ -93,7 +93,7 @@ namespace PetSpaDAO
 
                     if (booking.Created > DateTime.Now || booking.Started.Date <= DateTime.Today || booking.Ended.Date <= DateTime.Today || booking.Started >= booking.Ended)
                         throw new Exception("Invalid booking date or time");
-
+                    context.Entry(booking).State = EntityState.Added;
                     context.Bookings.Add(booking);
                     context.SaveChanges();
 

@@ -12,7 +12,7 @@ namespace PRN211GroupProject.ViewModel
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Password is required")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", ErrorMessage = "Password must be at least eight characters, at least one uppercase letter, one lowercase letter, one number and one special character!")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$", ErrorMessage = "Password must be from 8-15 characters, at least one uppercase letter, one lowercase letter, one number and one special character!")]
         public string Pass { get; set; }
 
         [Required(ErrorMessage = "Confirm Password is required")]

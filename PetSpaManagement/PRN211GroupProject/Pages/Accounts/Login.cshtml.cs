@@ -11,7 +11,9 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore.Update;
-
+using BCrypt.Net;
+using Microsoft.AspNetCore.Identity;
+using PRN211GroupProject.ViewModel;
 namespace PRN211GroupProject.Pages.Accounts
 {
     public class LoginModel : PageModel
@@ -41,9 +43,10 @@ namespace PRN211GroupProject.Pages.Accounts
         public async Task<IActionResult> OnPostAsync()
 
         {
-            Account account = accountService.Login(email, pass);
-
-            if (account != null)
+            Account account = accountService.GetAccountByEmail(email);
+            string HashedPass = PasswordHasher.HashPassword(pass);
+            var valid = PasswordHasher.VerifyPassword(account.Pass, HashedPass);
+            if (account != null && valid == true)
             {
                 var claims = new List<Claim>
                 {
@@ -51,7 +54,7 @@ namespace PRN211GroupProject.Pages.Accounts
                     new Claim(ClaimTypes.Name, account.Name),
                     new Claim(ClaimTypes.Role, account.Role.Name)
                 };
-      
+
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 var principal = new ClaimsPrincipal(identity);
