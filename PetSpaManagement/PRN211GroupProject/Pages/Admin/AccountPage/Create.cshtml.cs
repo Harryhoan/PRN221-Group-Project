@@ -37,7 +37,10 @@ namespace PRN211GroupProject.Pages.Admin.AccountPage
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            Account.Status = true;
+            if (!ModelState.IsValid || _account.GetAllAccount() == null || Account == null)
+            {
+                return Page();
+            }
             _account.AddAccount(Account);
 
             return RedirectToPage("./Index");

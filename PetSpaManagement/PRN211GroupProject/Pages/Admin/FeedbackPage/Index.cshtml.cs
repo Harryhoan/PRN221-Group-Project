@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -22,12 +23,18 @@ namespace PRN211GroupProject.Pages.Admin.FeedbackPage
 
         public IList<Feedback> Feedback { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
+            var roleClaim = User.FindFirst(ClaimTypes.Role);
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            {
+                return Unauthorized();
+            }
             if (_feedback.GetAllFeedback != null)
             {
                 Feedback = _feedback.GetAllFeedback();
             }
+            return Page();
         }
     }
 }

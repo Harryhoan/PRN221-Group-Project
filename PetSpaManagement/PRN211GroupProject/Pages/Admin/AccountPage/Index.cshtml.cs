@@ -52,27 +52,16 @@ namespace PRN211GroupProject.Pages.AccountPage
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int accountID)
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (User.Identity == null || !User.Identity.IsAuthenticated)
-            {
-                return Unauthorized();
-            }
-            // Check if the user has an admin role
-            if (!_account.IsAdmin(accountID))
-            {
-                return Forbid(); // Use Forbid to indicate the user is authenticated but not authorized
-            }
+            //if (User.Identity == null || !User.Identity.IsAuthenticated)
+            //{
+            //    return Unauthorized();
+            //}
             if (NewAccount != null)
             {
-                if (NewAccount.RoleId == default)
-                {
-                    NewAccount.RoleId = 1;
-                }
-
                 _account.AddAccount(NewAccount);
             }
-
             return RedirectToPage("/Index");
         }
     }

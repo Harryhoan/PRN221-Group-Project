@@ -45,6 +45,11 @@
                 <select asp-for="Account.VoucherId" class="form-control" asp-items="ViewBag.VoucherId"></select>
             </div>
             <div class="form-group">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Account.Status"/> @Html.DisplayNameFor(Model => Model.Account.Status)
+                </label>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
