@@ -10,7 +10,7 @@ using PetSpaDaos;
 using PetSpaService.AccountService;
 using PetSpaService.RolesService;
 
-namespace PRN211GroupProject.Pages.AccountPage
+namespace PRN211GroupProject.Pages.Admin.AccountPage
 {
     public class CreateModel : PageModel
     {
@@ -32,13 +32,16 @@ namespace PRN211GroupProject.Pages.AccountPage
 
         [BindProperty]
         public Account Account { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-                Account.Status = true;
-                _account.AddAccount(Account);
+            if (!ModelState.IsValid || _account.GetAllAccount() == null || Account == null)
+            {
+                return Page();
+            }
+            _account.AddAccount(Account);
 
             return RedirectToPage("./Index");
         }

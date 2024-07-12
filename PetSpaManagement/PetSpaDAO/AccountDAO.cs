@@ -77,6 +77,17 @@ namespace PetSpaDAO
                 context.SaveChanges();
             }
         }
-
+        public bool IsAdmin(int accountID)
+        {
+            Account account = GetAccount(accountID);
+            if (account != null)
+            {
+                if (account.RoleId == 1)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
