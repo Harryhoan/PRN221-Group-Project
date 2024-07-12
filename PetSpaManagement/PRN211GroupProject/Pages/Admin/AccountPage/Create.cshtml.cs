@@ -14,19 +14,19 @@ namespace PRN211GroupProject.Pages.Admin.AccountPage
 {
     public class CreateModel : PageModel
     {
-        private readonly IAccountService _account;
-        private readonly IRoleService _role;
+        private readonly IAccountService accountService;
+        private readonly IRoleService roleService;
 
         public CreateModel(IAccountService account, IRoleService role)
         {
-            _account = account;
-            _role = role;
+            accountService = account;
+            roleService = role;
         }
 
         public IActionResult OnGet()
         {
-            ViewData["RoleId"] = new SelectList(_role.GetAllRole(), "Id", "Name");
-            ViewData["VoucherId"] = new SelectList(_account.GetAllAccount(), "VoucherId", "Voucher");
+            ViewData["RoleId"] = new SelectList(roleService.GetAllRole(), "Id", "Name");
+            ViewData["VoucherId"] = new SelectList(accountService.GetAllAccount(), "VoucherId", "Voucher");
             return Page();
         }
 
@@ -37,11 +37,11 @@ namespace PRN211GroupProject.Pages.Admin.AccountPage
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _account.GetAllAccount() == null || Account == null)
+            if (!ModelState.IsValid || accountService.GetAllAccount() == null || Account == null)
             {
                 return Page();
             }
-            _account.AddAccount(Account);
+            accountService.AddAccount(Account);
 
             return RedirectToPage("./Index");
         }

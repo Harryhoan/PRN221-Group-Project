@@ -44,6 +44,7 @@ namespace PetSpaDaos
             var strConnection = config.GetConnectionString("PetSpaManagement");
             return strConnection;
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>(entity =>
@@ -65,7 +66,7 @@ namespace PetSpaDaos
                     .HasColumnName("name");
 
                 entity.Property(e => e.Pass)
-                    .HasMaxLength(15)
+                    .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("pass");
 
@@ -122,6 +123,10 @@ namespace PetSpaDaos
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.AccId).HasColumnName("accId");
+
+                entity.Property(e => e.Created)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created");
 
                 entity.Property(e => e.Started)
                     .HasColumnType("datetime")

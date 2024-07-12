@@ -13,7 +13,7 @@ namespace PetSpaDAO
     {
         private readonly PetSpaManagementContext context = null;
         private static BillDAO instance = null;
-
+         
         public BillDAO()
         {
             context = new PetSpaManagementContext();

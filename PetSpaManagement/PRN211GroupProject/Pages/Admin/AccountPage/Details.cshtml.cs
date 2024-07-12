@@ -14,11 +14,11 @@ namespace PRN211GroupProject.Pages.AccountPage
 {
     public class DetailsModel : PageModel
     {
-        private readonly IAccountService _account;
+        private readonly IAccountService accountService;
 
         public DetailsModel(IAccountService account)
         {
-           _account = account;
+           accountService = account;
         }
 
       public Account Account { get; set; } = default!; 
@@ -30,12 +30,12 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return Unauthorized();
             }
-            if (id == null || _account.GetAllAccount() == null)
+            if (id == null || accountService.GetAllAccount() == null)
             {
                 return NotFound();
             }
 
-            var account = _account.GetAccount(id);
+            var account = accountService.GetAccount(id);
             if (account == null)
             {
                 return NotFound();
