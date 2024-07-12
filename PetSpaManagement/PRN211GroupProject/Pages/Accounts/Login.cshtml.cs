@@ -44,8 +44,7 @@ namespace PRN211GroupProject.Pages.Accounts
 
         {
             Account account = accountService.GetAccountByEmail(email);
-            string HashedPass = PasswordHasher.HashPassword(pass);
-            var valid = PasswordHasher.VerifyPassword(account.Pass, HashedPass);
+            var valid = PasswordHasher.VerifyPassword(pass, account.Pass);
             if (account != null && valid == true)
             {
                 var claims = new List<Claim>
