@@ -1,4 +1,6 @@
 ﻿@page
+@using System.Text.Json
+@using System.Text.Json.Serialization
 @model PRN211GroupProject.Pages.Accounts.Booking.PaymentModel
 @{
     Layout = null;
@@ -65,9 +67,9 @@
                         <div class="table-responsive px-md-4 px-2 pt-3">
                             <table class="table table-borderless">
                                 <tbody>
-                                    @if (Model.billDetaileds != null && Model.billDetaileds.Count > 0)
+                                    @if (Model.BillDetaileds != null && Model.BillDetaileds.Count > 0)
                                     {
-                                        @for (int i = 1; i <= Model.billDetaileds.Count; i++)
+                                        @for (int i = 1; i <= Model.BillDetaileds.Count; i++)
                                         {
                                             <tr class="border-bottom">
                                                 <td>
@@ -78,18 +80,18 @@
                                                 <td>
                                                     <div class="d-flex align-items-center">
                                                         <div class="ps-3 d-flex flex-column justify-content">
-                                                            <p class="fw-bold">@Model.billDetaileds[i - 1].Booking.Available.Service.Name</p> <small class=" d-flex"><span class=" fw-bold">@Model.billDetaileds[i - 1].Booking.Available.Spot.Name</span> </small> <small class=""> <span class=" text-muted">Date:</span> <span class=" fw-bold">@Model.billDetaileds[i - 1].Booking.Started</span> </small>
+                                                            <p class="fw-bold">@Model.BillDetaileds[i - 1].Booking.Available.Service.Name</p> <small class=" d-flex"><span class=" fw-bold">@Model.BillDetaileds[i - 1].Booking.Available.Spot.Name</span> </small> <small class=""> <span class=" text-muted">Date:</span> <span class=" fw-bold">@Model.BillDetaileds[i - 1].Booking.Started</span> </small>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex">
-                                                        <p class="pe-3"><span class="red">$@Model.billDetaileds[i - 1].Cost</span></p>
+                                                        <p class="pe-3"><span class="red">$@Model.BillDetaileds[i - 1].Cost</span></p>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <span class="pe-3 text-muted">Duration @Model.billDetaileds[i - 1].Booking.Available.Service.Duration minutes</span>
+                                                        <span class="pe-3 text-muted">Duration @Model.BillDetaileds[i - 1].Booking.Available.Service.Duration minutes</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -154,10 +156,18 @@
                         </div>
                     </div>
                     </br>
+                    @{
+                        JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve,
+                WriteIndented = true
+            };
+                        string billDetailedJson = JsonSerializer.Serialize(Model.BillDetaileds, options);
+                    }
                     <form method="post" asp-page-handler="Bill">
                         <input type="hidden" value="@roundedDiscount" asp-for="Discount" />
                         <input type="hidden" value="@Model.Sum" asp-for="Sum" />
-                        <input type="hidden" value="@Model.Account" asp-for="Account" />
+                        <input type="hidden" value="@billDetailedJson" id="billDetailedJson" name="billDetailedJson" />
                         <input type="hidden" value="@Model.SelectedVoucherId" asp-for="SelectedVoucherId" />
                         <div class="d-flex justify-content-between pb-3">
                             <small class="text-muted"></small>

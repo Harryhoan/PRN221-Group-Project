@@ -25,6 +25,7 @@
     <!-- CSS here -->
     <script>document.getElementsByTagName("html")[0].className += " js";</script>
     <link rel="stylesheet" href="~/scheduleAssets/assets/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
@@ -66,11 +67,6 @@
             width: 100%;
             display: block;
         }
-
-        .modal {
-            z-index: 1050;
-        }
-
         .cart-icon {
             cursor: pointer;
             display: inline-block;
@@ -86,6 +82,27 @@
             .cart-icon .badge {
                 margin-left: 5px;
             }
+
+        .dropdown-menu {
+            width: 300px; /* Adjust the width as needed */
+            padding: 10px; /* Optional: Add some padding for better spacing */
+        }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+        }
+
+            .cart-icon i {
+                margin-right: 5px;
+            }
+
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -93,6 +110,25 @@
                 $('#cartModal').modal('show');
             });
         });
+        $(document).ready(function () {
+            $('.delete-item-btn').click(function () {
+                var bookingId = $(this).data('booking-id');
+                $.ajax({
+                    url: '/Accounts/Booking/DeleteItem',
+                    type: 'POST',
+                    data: { bookingId: bookingId },
+                    success: function (result) {
+                        // Handle success (e.g., refresh cart, update count, etc.)
+                        location.reload(); // Reload the page to see the updated cart
+                    },
+                    error: function (err) {
+                        // Handle error
+                        console.log(err);
+                    }
+                });
+            });
+        });
+
     </script>
 
 </head>
@@ -131,40 +167,39 @@
 
                                             <li><a asp-page="/Feedback">Feedback</a></li>
                                             <li><a asp-page="/Accounts/Booking/Index" style="font:bold">Booking Now!</a></li>
-                                            <li>
-                                                <div id="cartIcon" class="cart-icon">
-                                                    <i class="fa" style="font-size:24px">&#xf07a;</i>
-                                                    <span class='badge badge-warning' id='lblCartCount'> @cartItemCount </span>
-                                                </div>
-                                                <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="createBookingModalLabel">Your Cart</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <ul id="bookingList">
-                                                                    @if (bookingCart.Count > 0)
-                                                                    {
-                                                                        foreach (var booking in bookingCart)
-                                                                        {
-                                                                            <li>@booking.Available.Service.Name - @booking.Available.Spot.Name - @booking.Started</li>
-                                                                        }
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        <li>Your cart is empty.</li>
-                                                                    }
-                                                                </ul>
-                                                            </div>
-                                                            <div class="d-grid gap-2">
-                                                                <button type="submit" class="btn btn-primary">Payment</button>
-                                                            </div>
-                                                        </div>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <div id="cartIcon" class="cart-icon">
+                                                        <i class="fa fa-shopping-cart" style="font-size:24px;"></i>
+                                                        <span class='badge badge-warning' id='lblCartCount'>@cartItemCount</span>
                                                     </div>
-                                                </div>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="cartDropdown">
+                                                    <li class="dropdown-header">Your Cart</li>
+                                                    @if (bookingCart.Count > 0)
+                                                    {
+                                                        foreach (var booking in bookingCart)
+                                                        {
+                                                            <li class="list-group-item">
+                                                                <span>@booking.Available.Service.Name - @booking.Available.Spot.Name - @booking.Started</span>
+                                                                <button class="btn btn-link p-0 m-0 align-baseline delete-item-btn" style="border: none; background: none;" data-booking-id="@booking.Id">
+                                                                    <i class="fa fa-trash" style="color: red;"></i>
+                                                                </button>
+                                                            </li>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <li class="list-group-item">Your cart is empty.</li>
+                                                    }
+                                                    <li>
+                                                        <div class="d-grid gap-2 p-2">
+                                                            <button type="button" class="btn btn-small btn-primary" onclick="window.location.href='/Accounts/Booking/Payment'">CheckOut</button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </li>
+
                                         </ul>
                                     </nav>
                                 </div>
@@ -361,6 +396,7 @@
     </script>
     <!-- Ensure jQuery is included -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
 
     <!-- Include jQuery Validation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>

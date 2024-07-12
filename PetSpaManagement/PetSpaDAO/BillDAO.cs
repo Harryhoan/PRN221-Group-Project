@@ -9,115 +9,114 @@ using System.Threading.Tasks;
 
 namespace PetSpaDAO
 {
-	public class BillDAO
-	{
-		private readonly PetSpaManagementContext context = null;
-		private static BillDAO instance = null;
+    public class BillDAO
+    {
+        private readonly PetSpaManagementContext context = null;
+        private static BillDAO instance = null;
 
-		public BillDAO()
-		{
-			context = new PetSpaManagementContext();
-		}
+        public BillDAO()
+        {
+            context = new PetSpaManagementContext();
+        }
 
-		public static BillDAO Instance
-		{
-			get
-			{
-				if (instance == null)
-				{
-					instance = new BillDAO();
-				}
-				return instance;
-			}
-		}
+        public static BillDAO Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new BillDAO();
+                }
+                return instance;
+            }
+        }
 
-		public List<Bill> GetAllBill()
-		{
-			var Bills = context.Bills.ToList();
-			if (Bills == null)
-				throw new Exception("All Bills cannot be retrieved");
-			return Bills;
+        public List<Bill> GetAllBill()
+        {
+            var Bills = context.Bills.ToList();
+            if (Bills == null)
+                throw new Exception("All Bills cannot be retrieved");
+            return Bills;
 
-		}
+        }
 
-		public List<Bill> GetAccountBill(int accId)
-		{
-			var Bills = context.Bills.Where(b => b.AccId == accId).ToList();
-			if (Bills == null)
-				throw new Exception("All Bills cannot be retrieved");
-			return Bills;
-		}
+        public List<Bill> GetAccountBill(int accId)
+        {
+            var Bills = context.Bills.Where(b => b.AccId == accId).ToList();
+            if (Bills == null)
+                throw new Exception("All Bills cannot be retrieved");
+            return Bills;
+        }
 
-		public Bill GetBill(int billId)
-		{
-			var bill = context.Bills.FirstOrDefault(b => b.Id.Equals(billId));
-			if (bill == null)
-				throw new Exception("Bill cannot be retrieved");
-			return bill;
-		}
-		public void AddBill(Bill bill)
-		{
-			try
-			{
-				if (bill != null)
-				{
-					Bill existingBill = GetBill(bill.Id);
-					if (existingBill == null)
-					{
-						if (bill.Started == default || bill.Started > DateTime.Now)
-							throw new Exception("Invalid bill date or time");
+        public Bill GetBill(int billId)
+        {
+            var bill = context.Bills.FirstOrDefault(b => b.Id.Equals(billId));
+            if (bill == null)
+                throw new Exception("Bill cannot be retrieved");
+            return bill;
+        }
+        public void AddBill(Bill bill)
+        {
+            try
+            {
+                if (bill != null)
+                {
 
-						if (bill.Total <= 0)
-							throw new Exception("Invalid bill total");
-						context.Bills.Add(bill);
-						context.SaveChanges();
-					}
-				}
-			}
-			catch
-			{
-				Console.WriteLine("Bill cannot be added");
-			}
-		}
-		//public void UpdateBill(Bill newBill)
-		//{
-		//	try
-		//	{
-		//		if (newBill == null)
-		//		{
-		//			throw new ArgumentNullException(nameof(newBill), "Bill cannot be null");
-		//		}
+                    if (bill.Started == default || bill.Started <= DateTime.Now)
+                        throw new Exception("Invalid bill date or time");
 
-		//		var existingBill = context.Bills.FirstOrDefault(b => b.Id == newBill.Id);
-		//		if (existingBill == null)
-		//		{
-		//			throw new Exception("Bill does not exist");
-		//		}
-		//		context.Entry(existingBill).CurrentValues.SetValues(newBill);
-		//		context.SaveChanges();
-		//	}
-		//	catch
-		//	{
-		//		Console.WriteLine("Bill cannot be updated");
-		//	}
-		//}
+                    if (bill.Total <= 0)
+                        throw new Exception("Invalid bill total");
+                    context.Entry(bill).State = EntityState.Added;
+                    context.Bills.Add(bill);
+                    context.SaveChanges();
 
-		public void DeleteBill(int billId)
-		{
-			try
-			{
-				var existingBill = context.Bills.Include(b => b.BillDetaileds).SingleOrDefault(b => b.Id == billId) ?? throw new Exception("Bill cannot be found");
-				foreach (var bd in existingBill.BillDetaileds)
-				{
-					context.BillDetaileds.Remove(bd);
-				}
-				context.Remove(billId);
-				context.SaveChanges();
-			}
-			catch
-			{
-				Console.WriteLine("Bill cannot be deleted");
-			}
-		}
-	}
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Bill cannot be added");
+            }
+        }
+        //public void UpdateBill(Bill newBill)
+        //{
+        //	try
+        //	{
+        //		if (newBill == null)
+        //		{
+        //			throw new ArgumentNullException(nameof(newBill), "Bill cannot be null");
+        //		}
+
+        //		var existingBill = context.Bills.FirstOrDefault(b => b.Id == newBill.Id);
+        //		if (existingBill == null)
+        //		{
+        //			throw new Exception("Bill does not exist");
+        //		}
+        //		context.Entry(existingBill).CurrentValues.SetValues(newBill);
+        //		context.SaveChanges();
+        //	}
+        //	catch
+        //	{
+        //		Console.WriteLine("Bill cannot be updated");
+        //	}
+        //}
+
+        public void DeleteBill(int billId)
+        {
+            try
+            {
+                var existingBill = context.Bills.Include(b => b.BillDetaileds).SingleOrDefault(b => b.Id == billId) ?? throw new Exception("Bill cannot be found");
+                foreach (var bd in existingBill.BillDetaileds)
+                {
+                    context.BillDetaileds.Remove(bd);
+                }
+                context.Remove(billId);
+                context.SaveChanges();
+            }
+            catch
+            {
+                Console.WriteLine("Bill cannot be deleted");
+            }
+        }
+    }
 }

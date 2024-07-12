@@ -19,7 +19,7 @@ namespace PetSpaService.AccountService
 
         public void AddAccount(Account account)
         {
-            if (account != null || account.Id != default)
+            if (account == null || account.Id != default)
                 throw new Exception("Invalid account cannot be added");
             repo.AddAccount(account);
         }

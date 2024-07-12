@@ -42,7 +42,7 @@ namespace PRN211GroupProject.Pages.Accounts
             {
                 Email = RegisterViewModel.Email,
                 Name = RegisterViewModel.Name,
-                Pass = RegisterViewModel.Pass,
+                Pass = PasswordHasher.HashPassword(RegisterViewModel.Pass),
                 Phone = RegisterViewModel.Phone,
                 RoleId = 2,
                 Status = true,
