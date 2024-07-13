@@ -17,12 +17,12 @@ namespace PRN211GroupProject.Pages.AccountPage
 {
     public class EditModel : PageModel
     {
-        private readonly IAccountService _account;
+        private readonly IAccountService accountService;
         private readonly IVoucherService _voucher;
         private readonly IRoleService _role;
         public EditModel(IAccountService account, IVoucherService voucher, IRoleService role)
         {
-            _account = account;
+            accountService = account;
             _voucher = voucher;
             _role = role;
         }
@@ -36,11 +36,11 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return Unauthorized();
             }
-            if (id == null || _account.GetAllAccount() == null)
+            if (id == null || accountService.GetAllAccount() == null)
             {
                 return NotFound();
             }
-            var account = _account.GetAccount(id);
+            var account = accountService.GetAccount(id);
             if (account == null)
             {
                 return NotFound();

@@ -21,6 +21,7 @@ namespace PetSpaService.AccountService
         {
             if (account == null || account.Id != default)
                 throw new Exception("Invalid account cannot be added");
+            account.Pass = HashPassword(account.Pass);
             repo.AddAccount(account);
         }
 
@@ -32,11 +33,19 @@ namespace PetSpaService.AccountService
         {
             return repo.GetAccountByEmail(email);
         }
-
+        public static string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+        public static bool VerifyPassword(string password, string hashedPassword)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
+        }
         public Account Login(string Email, string password)
         {
             Account account = GetAccountByEmail(Email);
-            if (account != null && account.Pass.Equals(password))
+            var valid = VerifyPassword(password, account.Pass);
+            if (account != null && valid == true)
             {
                 return account;
 
@@ -44,11 +53,11 @@ namespace PetSpaService.AccountService
             return null;
         }
         public List<Account> GetAllAccount() => repo.GetAllAccount();
-
         public void UpdateAccount(Account account)
         {
             if (account == null || account.Id == default)
                 throw new Exception("Invalid account");
+            account.Pass = HashPassword(account.Pass);
             repo.UpdateAccount(account.Id, account);
         }
         public void DeleteAccount(int accountId)

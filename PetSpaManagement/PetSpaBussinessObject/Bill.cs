@@ -12,6 +12,7 @@ namespace PetSpaBussinessObject
 
         public int Id { get; set; }
         public DateTime Started { get; set; }
+        public DateTime Created { get; set; }
         public double Total { get; set; }
         public int? VoucherId { get; set; }
         public int AccId { get; set; }

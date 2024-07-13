@@ -120,24 +120,6 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             return Page();
         }
 
-        public void SetAccount()
-        {
-            try
-            {
-                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
-                var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
-                if (emailClaim == null)
-                {
-                    Account = null;
-                    return;
-                }
-                Account = accountService.GetAccountByEmail(emailClaim.Value);
-            }
-            catch
-            {
-                Account = null;
-            }
-        }
 
         public IActionResult OnPostApplyVoucher()
         {
@@ -222,6 +204,25 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             {
                 return BadRequest();
             }
+        }
+        public void SetAccount()
+        {
+            try
+            {
+                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
+                var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
+                if (emailClaim == null)
+                {
+                    Account = null;
+                    return;
+                }
+                Account = accountService.GetAccountByEmail(emailClaim.Value);
             }
+            catch
+            {
+                Account = null;
+            }
+        }
+
     }
 }
