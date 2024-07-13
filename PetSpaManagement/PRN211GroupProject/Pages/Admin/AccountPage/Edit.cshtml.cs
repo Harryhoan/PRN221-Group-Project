@@ -56,7 +56,8 @@ namespace PRN211GroupProject.Pages.AccountPage
         {
             try
             {
-                accountService.UpdateAccount(Account);
+                Account.Status = true;
+                _account.UpdateAccount(Account);
             }
             catch (Exception ex)
             {

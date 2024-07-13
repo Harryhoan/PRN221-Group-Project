@@ -1,4 +1,5 @@
-﻿using PetSpaBussinessObject;
+﻿using Microsoft.EntityFrameworkCore;
+using PetSpaBussinessObject;
 using PetSpaDaos;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,7 @@ namespace PetSpaDAO
         }
         public List<Feedback> GetAllFeedback()
         {
+            var feedback = context.Feedbacks.Include(f => f.Acc).Include(f => f.Service).ToList();
             return context.Feedbacks.ToList();
         }
     }

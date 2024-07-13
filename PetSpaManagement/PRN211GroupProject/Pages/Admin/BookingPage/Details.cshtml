@@ -16,18 +16,20 @@
             </div>
             <div class="card-body">
                 <dl class="row">
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Account.Name)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Account.Name)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Account.Email)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Account.Email)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Available.Service)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Available.Service.Name)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Available.Spot)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Available.Spot.Name)</dd>
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Started)</dt>
                     <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Started)</dd>
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Ended)</dt>
                     <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Ended)</dd>
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Created)</dt>
                     <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Created)</dd>
-                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Status)</dt>
-                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Status)</dd>
-                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Account)</dt>
-                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Account.Email)</dd>
-                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Available)</dt>
-                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Available.Id)</dd>
                 </dl>
             </div>
             <div class="card-footer">

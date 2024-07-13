@@ -19,6 +19,5 @@ namespace PetSpaRepo.AccountRepository
 
         public void UpdateAccount(int accountID, Account account) => AccountDAO.Instance.UpdateAccount(account);
         public void DeleteAccount(int accountID) => AccountDAO.Instance.DeleteAccount(accountID);
-        public bool IsAdmin(int accountID) => AccountDAO.Instance.IsAdmin(accountID);
     }
 }

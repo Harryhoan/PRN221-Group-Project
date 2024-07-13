@@ -11,5 +11,8 @@ namespace PetSpaService.VoucherService.VoucherService
     {
         public List<Voucher> GetVoucherList();
         public Voucher GetVoucher(int id);
+        public void AddVoucher(Voucher voucher);
+        public void UpdateVoucher(Voucher voucher);
+        public void DeleteVoucher(int voucherID);
     }
 }

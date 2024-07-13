@@ -41,9 +41,9 @@ namespace PetSpaService.ServicesService
 
 		public void UpdateService(Service service)
 		{
-			if (service == null || !(service.Id > 0))
+			if (service == null || service.Id == default)
 				throw new Exception("Invalid new service");
-			UpdateService(service);
+			_serviceRepo.UpdateService(service.Id, service);
 		}
 
 	}

@@ -66,9 +66,6 @@ namespace PetSpaService.AccountService
                 throw new Exception("Invalid accountid");
              repo.DeleteAccount(accountId);
         }
-
-        public bool IsAdmin(int accountID) => AccountDAO.Instance.IsAdmin(accountID);
-
     }
 }
 

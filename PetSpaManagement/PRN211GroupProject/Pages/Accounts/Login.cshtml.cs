@@ -56,7 +56,7 @@ namespace PRN211GroupProject.Pages.Accounts
 
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                Response.Redirect("/Index");
+                Response.Redirect("/");
                 return Page();
 
             }
