@@ -5,54 +5,51 @@
     ViewData["Title"] = "Details";
     Layout = "~/Pages/Shared/_AdminLayout.cshtml";
 }
-<div>
-    <h4>Feedback</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Feedback.Information)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Feedback.Information)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Feedback.Status)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Feedback.Status)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Feedback.Rating)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Feedback.Rating)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Feedback.Created)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Feedback.Created)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Feedback.Updated)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Feedback.Updated)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Feedback.AccId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Feedback.AccId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Feedback.ServiceId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Feedback.ServiceId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+<body>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Feedback Details</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Feedback.Information)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Feedback.Information)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Feedback.Rating)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Feedback.Rating)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Feedback.Created)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Feedback.Created)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Feedback.Updated)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Feedback.Updated)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Feedback.Acc.Name)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Feedback.Acc.Name)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Feedback.Service)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Feedback.Service.Name)</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/adminAssets/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/popper.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart-circle/circles.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/world.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="~/adminAssets/assets/js/kaiadmin.min.js"></script>
+    <script src="~/adminAssets/assets/js/setting-demo.js"></script>
+    <script src="~/adminAssets/assets/js/demo.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
+</body>

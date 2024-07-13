@@ -58,7 +58,7 @@ namespace PetSpaService.BookingService
 
         public void UpdateBooking(Booking booking)
         {
-            if (booking == null || !(booking.Id > 0))
+            if (booking == null || booking.Id == default)
                 throw new Exception("Invalid new Booking");
             BookingRepo.UpdateBooking(booking);
         }

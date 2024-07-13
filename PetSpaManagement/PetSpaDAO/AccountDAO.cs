@@ -37,7 +37,7 @@ namespace PetSpaDAO
         }
         public List<Account> GetAllAccount()
         {
-            return context.Accounts.Include(a => a.Role).ToList();
+            return context.Accounts.Include(a => a.Role).Include(a => a.Voucher).ToList();
 
         }
         public Account GetAccount(int accountID)
@@ -76,18 +76,6 @@ namespace PetSpaDAO
                 account.Status = false;
                 context.SaveChanges();
             }
-        }
-        public bool IsAdmin(int accountID)
-        {
-            Account account = GetAccount(accountID);
-            if (account != null)
-            {
-                if (account.RoleId == 1)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

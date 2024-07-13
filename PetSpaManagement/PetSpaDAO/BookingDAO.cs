@@ -33,7 +33,7 @@ namespace PetSpaDAO
 
         public List<Booking> GetAllBooking()
         {
-            var bookings = context.Bookings.OrderByDescending(b => b.Started).ToList();
+            var bookings = context.Bookings.Include(b => b.Account).Include(b => b.Available.Service).Include(b => b.Available.Spot).OrderByDescending(b => b.Started).ToList();
             if (bookings == null)
                 throw new Exception("All bookings cannot be retrieved");
             return bookings;

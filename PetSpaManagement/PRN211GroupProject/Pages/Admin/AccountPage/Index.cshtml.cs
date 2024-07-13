@@ -54,10 +54,6 @@ namespace PRN211GroupProject.Pages.AccountPage
 
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (User.Identity == null || !User.Identity.IsAuthenticated)
-            //{
-            //    return Unauthorized();
-            //}
             if (NewAccount != null)
             {
                 _account.AddAccount(NewAccount);

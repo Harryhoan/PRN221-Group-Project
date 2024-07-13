@@ -185,10 +185,10 @@
                                 @Html.DisplayNameFor(model => model.Account[0].Email)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Account[0].Pass)
+                                @Html.DisplayNameFor(model => model.Account[0].Phone)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Account[0].Id)
+                                @Html.DisplayNameFor(model => model.Account[0].Role)
                             </th>
                             <th style="width: 10%">Action</th>
                         </tr>
@@ -210,10 +210,10 @@
                                             @Html.DisplayFor(modelItem => item.Email)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.Pass)
+                                            @Html.DisplayFor(modelItem => item.Phone)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.RoleId)
+                                            @Html.DisplayFor(modelItem => item.Role.Name)
                                         </td>
                                         <td>
                                             <div class="form-button-action">

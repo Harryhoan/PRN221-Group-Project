@@ -50,32 +50,16 @@ namespace PRN211GroupProject.Pages.ServicePage
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
             try
             {
+                Service.Status = true;
                 _serviceService.UpdateService(Service);
             }
             catch (Exception ex)
             {
-                //if (!ServiceExists(Service.Id))
-                //{
-                //    return NotFound();
-                //}
-                //else
-                //{
-                //    throw;
-                //}
             }
 
             return RedirectToPage("./Index");
         }
-
-        //private bool ServiceExists(int id)
-        //{
-        //  return (_context.Services?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
     }
 }
