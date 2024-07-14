@@ -77,5 +77,9 @@ namespace PetSpaDAO
                 context.SaveChanges();
             }
         }
+        public int NumberOfUser()
+        {
+            return context.Accounts.Count();
+        }
     }
 }

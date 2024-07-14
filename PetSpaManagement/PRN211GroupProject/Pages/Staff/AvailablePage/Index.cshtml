@@ -28,10 +28,6 @@
             <div class="card-header">
                 <div class="d-flex align-items-center">
                     <h4 class="card-title">Available Services</h4>
-                    <button asp-page="Create" class="btn btn-primary btn-round ms-auto">
-                        <i class="fa fa-plus"></i>
-                        Create New
-                    </button>
                 </div>
             </div>
             <div class="card-body">
@@ -56,14 +52,14 @@
                                     </td>
                                     <td>
                                         <div class="form-button-action">
-                                            <a type="button" asp-page="./Edit" asp-route-id="@item.Id"
+@*                                             <a type="button" asp-page="./Edit" asp-route-id="@item.Id"
                                                data-bs-toggle="tooltip" title="Edit" class="btn btn-link btn-primary btn-lg">
                                                 <i class="fa fa-edit"></i>
-                                            </a>
-                                            <a type="button" asp-page="./Delete" asp-route-id="@item.Id"
+                                            </a> *@
+@*                                             <a type="button" asp-page="./Delete" asp-route-id="@item.Id"
                                                data-bs-toggle="tooltip" title="Remove" class="btn btn-link btn-danger btn-lg">
                                                 <i class="fa fa-times"></i>
-                                            </a>
+                                            </a> *@
                                         </div>
                                     </td>
                                 </tr>

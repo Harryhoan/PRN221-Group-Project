@@ -64,7 +64,7 @@ namespace PRN211GroupProject.Pages.AccountPage
                 return BadRequest();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

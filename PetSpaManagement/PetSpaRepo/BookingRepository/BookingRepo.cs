@@ -27,6 +27,6 @@ namespace PetSpaRepo.BookingRepository
         public void UpdateBooking(Booking Booking) => BookingDAO.Instance.UpdateBooking(Booking);
 
 		public bool IsActiveBookingConflictBySpot(DateTime started, DateTime ended, int spotId) => BookingDAO.Instance.IsActiveBookingConflictBySpot(started, ended, spotId);
-
+        public int NumberOfBooking() => BookingDAO.Instance.NumberOfBooking();
     }
 }

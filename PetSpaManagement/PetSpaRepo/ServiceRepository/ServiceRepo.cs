@@ -19,5 +19,6 @@ namespace PetSpaRepo.AdminServiceRepo
         public void UpdateService(int serviceID, Service service) => ServiceDAO.Instance.UpdateService(service);
 
         public Service GetService(int serviceID) => ServiceDAO.Instance.GetService(serviceID);
+        public int NumberOfService() => ServiceDAO.Instance.NumberOfService();
     }
 }

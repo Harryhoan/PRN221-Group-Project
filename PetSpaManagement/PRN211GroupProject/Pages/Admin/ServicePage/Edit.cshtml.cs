@@ -59,7 +59,7 @@ namespace PRN211GroupProject.Pages.ServicePage
             {
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

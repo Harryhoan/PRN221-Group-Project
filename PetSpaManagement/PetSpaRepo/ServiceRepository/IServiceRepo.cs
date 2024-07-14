@@ -14,5 +14,6 @@ namespace PetSpaRepo.AdminServiceRepo
         public void DeleteService(int serviceID);
         public void UpdateService(int serviceID, Service service);
         public void AddService(Service service);
+        public int NumberOfService();
     }
 }

@@ -37,7 +37,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
                 return Page();
             }
             _voucherService.AddVoucher(Voucher);
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

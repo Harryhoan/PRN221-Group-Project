@@ -12,5 +12,6 @@ namespace PetSpaService.FeedbacksService
         public void NewFeedback(Feedback feedback);
         Feedback GetFeedback(int feedbackId);
         public List<Feedback> GetAllFeedback();
+        public int NumberOfFeedback();
     }
 }

@@ -58,7 +58,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
             {
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

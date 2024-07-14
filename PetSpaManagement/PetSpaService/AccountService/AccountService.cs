@@ -68,6 +68,8 @@ namespace PetSpaService.AccountService
                 throw new Exception("Invalid accountid");
              repo.DeleteAccount(accountId);
         }
+
+        public int NumberOfUser() => repo.NumberOfUser();
     }
 }
 

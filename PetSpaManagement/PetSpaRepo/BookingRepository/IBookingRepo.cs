@@ -26,6 +26,6 @@ namespace PetSpaRepo.BookingRepository
         public Booking GetBooking(int bookingId);
 
         public bool IsActiveBookingConflictBySpot(DateTime started, DateTime ended, int spotId);
-
-	}
+        public int NumberOfBooking();
+    }
 }

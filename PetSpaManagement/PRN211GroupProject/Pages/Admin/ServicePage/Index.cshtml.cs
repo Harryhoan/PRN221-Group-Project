@@ -43,7 +43,7 @@ namespace PRN211GroupProject.Pages.ServicePage
             {
                 _service.AddService(NewService);
             }
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

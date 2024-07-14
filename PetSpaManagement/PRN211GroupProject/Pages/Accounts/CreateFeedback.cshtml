@@ -87,9 +87,21 @@
                                             <textarea asp-for="Feedback.Information" class="form-control"></textarea>
                                             <span asp-validation-for="Feedback.Information" class="text-danger"></span>
                                         </div>
-                                        <div class="submit-info">
-                                            <button class="btn submit-btn2" type="submit">Submit Now</button>
-                                        </div>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <div class="submit-info">
+                                                <button class="btn submit-btn2" type="submit">Submit Now</button>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="alert alert-danger">You need to Login to leave a feedback</div>
+                                            <div><br /></div>
+                                            <div class="submit-info">
+                                                <button class="btn submit-btn2"><a href="/Accounts/Login">Login</a></button>
+                                            </div>
+                                        }
+
                                     </div>
                                 </div>
                                 <!-- shape-dog -->
@@ -102,8 +114,8 @@
                 </div>
             </div>
             <!-- contact left Img-->
-@*             <div class="from-left d-none d-lg-block">
-                <img src="~/assets/img/gallery/contact_form.png" alt="">
+            @*             <div class="from-left d-none d-lg-block">
+            <img src="~/assets/img/gallery/contact_form.png" alt="">
             </div> *@
         </div>
     </main>
@@ -252,5 +264,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
