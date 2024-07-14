@@ -11,7 +11,7 @@ using PetSpaService.AccountService;
 using PetSpaService.AdminServiceService;
 using PetSpaService.FeedbacksService;
 
-namespace PRN211GroupProject.Pages.Admin.FeedbackPage
+namespace PRN211GroupProject.Pages.Accounts
 {
     public class CreateFeedbackModel : PageModel
     {
