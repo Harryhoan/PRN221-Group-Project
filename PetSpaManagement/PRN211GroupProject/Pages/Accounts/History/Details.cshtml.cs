@@ -46,24 +46,35 @@ namespace PRN211GroupProject.Pages.Accounts.History
 
         public IActionResult OnGet(int id)
         {
-            var billDetails = billDetailedService.GetBillDetailsByBillId(id);
-            foreach (var item in billDetails)
+            if (billDetailedService == null)
             {
-                item.Booking = bookingService.GetBooking(item.BookingId);
-                if (item.Booking != null)
-                {
-                    item.Booking.Available = availableService.GetAvailable(item.Booking.AvailableId);
-                    if (item.Booking.Available != null)
-                    {
-                        item.Booking.Available.Service = serviceService.GetService(item.Booking.Available.ServiceId);
-                        item.Booking.Available.Spot = spotService.GetSpot(item.Booking.Available.SpotId);
-                    }
-                }
-                BillDetails.Add(item);
+                return NotFound("BillDetailedService not found");
             }
 
-            // Return a PartialViewResult or JSON data if needed
-            return Partial("_DetailPartial", this);
+            var billDetails = billDetailedService.GetBillDetailsByBillId(id);
+            if (billDetails == null)
+            {
+                return NotFound("Bill details not found");
+            }
+
+            foreach (var item in billDetails)
+            {
+                if (item != null)
+                {
+                    item.Booking = bookingService.GetBooking(item.BookingId);
+                    if (item.Booking != null)
+                    {
+                        item.Booking.Available = availableService.GetAvailable(item.Booking.AvailableId);
+                        if (item.Booking.Available != null)
+                        {
+                            item.Booking.Available.Service = serviceService.GetService(item.Booking.Available.ServiceId);
+                            item.Booking.Available.Spot = spotService.GetSpot(item.Booking.Available.SpotId);
+                        }
+                    }
+                    BillDetails.Add(item);
+                }
+            }
+            return Page();
         }
     }
 }

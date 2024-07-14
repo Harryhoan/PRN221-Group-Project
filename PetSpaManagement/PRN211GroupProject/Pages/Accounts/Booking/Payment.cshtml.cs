@@ -60,14 +60,22 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             try
             {
                 Sum = 0;
-                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
-                var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
                 SetAccount();
                 if (Account != null)
                 {
                     if (Account.VoucherId != null)
                     {
-                        Account.Voucher = voucherService.GetVoucher((int)Account.VoucherId);
+                        Voucher voucher = voucherService.GetVoucher((int)Account.VoucherId);
+                        if (voucher.Expired >= DateTime.Now)
+                        {
+                            Account.VoucherId = null;
+                            Account.Voucher = null;
+                            accountService.UpdateAccount(Account);
+                        }
+                        else
+                        {
+                            Account.Voucher = voucherService.GetVoucher((int)Account.VoucherId);
+                        }
                     }
                     else
                     {
@@ -188,10 +196,14 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
 
                         if (SelectedVoucherId != 0)
                         {
-
+                            Account.VoucherId = null;
+                            accountService.UpdateAccount(Account);
                         }
                         HttpContext.Session.Clear();
-                        return RedirectToPage("/index");
+
+                        TempData["Message"] = "Payment successful!";
+                        return RedirectToPage("/Index");
+
                     }
                     else
                     {

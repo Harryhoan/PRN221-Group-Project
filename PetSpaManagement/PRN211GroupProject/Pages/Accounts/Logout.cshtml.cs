@@ -9,10 +9,9 @@ namespace PRN211GroupProject.Pages.Accounts
     {
         public async Task<IActionResult> OnPostAsync()
         {
-            HttpContext.Session.SetString("BookingCart", string.Empty);
-            HttpContext.Session.SetInt32("BookingCount", 0);
+            HttpContext.Session.Clear();
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToPage("/Index"); // Redirect to home page after logout
+            return RedirectToPage("/Index"); 
         }
     }
 }

@@ -38,33 +38,36 @@ namespace PRN211GroupProject.Pages.Accounts.History
             serviceService = service;
             spotService = spot;
             voucherService = voucher;
-            BillDetailed = new List<BillDetailed>();
         }
 
         public Account? Account { get; set; }
         public List<Bill> Bill { get; set; } = new List<Bill>();
-        public List<BillDetailed> BillDetailed { get; set; }
 
         public IActionResult OnGet()
         {
             SetAccount();
+
             if (Account != null)
             {
-                if (billService != null)
+                // Fetch list of bills associated with the account
+                Bill = billService.GetAccountBillList(Account.Id);
+
+                if (Bill == null || Bill.Count == 0)
                 {
-                    Bill = billService.GetAccountBillList(Account.Id);
+                    return NotFound("No bills found for the account.");
                 }
+
                 return Page();
             }
             else
             {
-                return NotFound();
+                return NotFound("Account not found.");
             }
         }
 
         public string errorMessage { get; set; }
 
-        public IActionResult OnGetSortDate(DateTime fromDate, DateTime toDate)
+        public IActionResult OnPostSortDate(DateTime fromDate, DateTime toDate)
         {
             SetAccount();
             if (Account != null)
@@ -93,6 +96,7 @@ namespace PRN211GroupProject.Pages.Accounts.History
                 return NotFound();
             }
         }
+
 
         public void SetAccount()
         {

@@ -37,37 +37,6 @@ namespace PRN211GroupProject.Pages.Accounts
         public IList<PetSpaBussinessObject.Booking>? Bookings { get; set; }
         public int BookingCount { get; set; } = 0;
 
-        /*public IActionResult OnGet()
-        {
-            try
-            {
-
-                if (User.Identity != null && !String.IsNullOrEmpty(User.Identity.Name) && User.Identity.IsAuthenticated)
-                {
-                    //var userIdClaim = User.FindFirst(ClaimTypes.Email);
-                    //if (userIdClaim != null && !string.IsNullOrEmpty(userIdClaim.Value))
-                    //{
-                    //var account = _accountService.GetAccountByEmail(userIdClaim.Value);
-                    //if (account != null)
-                    //{
-                    //    Bookings = _bookingService.GetWeeklyBooking(DateTime.Now, _bookingService.GetAccountBookingList(account.Id));
-                    //    return Page();
-                    //}
-                    //else 
-                    //    return NotFound();
-
-                    //}
-                    Bookings = _bookingService.GetWeeklyBooking(DateTime.Now, _bookingService.GetActiveBookingList());
-                    return Page();
-                }
-                return Unauthorized();
-            }
-            catch
-            {
-                return BadRequest();
-            }
-
-        }*/
         [BindProperty]
         public int SpotId { get; set; } = -1;
         public IActionResult OnGet(int? spotId, int? offset)
@@ -94,13 +63,13 @@ namespace PRN211GroupProject.Pages.Accounts
 
                     SpotId = (int)spotId;
 
-                    ViewData["spotList"] = spotList.Select(spot => new SelectListItem
+                    ViewData["spotList"] = spotList.Where(s => s.Status == true).Select(spot => new SelectListItem
                     {
                         Value = spot.Id.ToString(),
                         Text = spot.Name
                     }).ToList();
 
-                    ViewData["availableList"] = _availableService.GetAvailableListBySpot((int)spotId).Select(available => new SelectListItem
+                    ViewData["availableList"] = _availableService.GetAvailableListBySpot((int)spotId).Where(a => a.Service.Status == true).Select(available => new SelectListItem
                     {
                         Value = available.Id.ToString(),
                         Text = available.Service.Name + " - " + available.Spot.Name
@@ -118,9 +87,9 @@ namespace PRN211GroupProject.Pages.Accounts
                 }
                 return Unauthorized();
             }
-            catch
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -185,11 +154,11 @@ namespace PRN211GroupProject.Pages.Accounts
                     // Deserialize JSON to object
                     if (!string.IsNullOrEmpty(json))
                     {
-                            JsonSerializerOptions options = new JsonSerializerOptions
-                            {
-                                ReferenceHandler = ReferenceHandler.Preserve,
-                                WriteIndented = true // for readability
-                            };
+                        JsonSerializerOptions options = new JsonSerializerOptions
+                        {
+                            ReferenceHandler = ReferenceHandler.Preserve,
+                            WriteIndented = true // for readability
+                        };
                         bookingCart = JsonSerializer.Deserialize<List<PetSpaBussinessObject.Booking>>(json, options);
 
                     }

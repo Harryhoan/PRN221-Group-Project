@@ -44,11 +44,13 @@ namespace PetSpaService.AccountService
         public Account Login(string Email, string password)
         {
             Account account = GetAccountByEmail(Email);
-            var valid = VerifyPassword(password, account.Pass);
-            if (account != null && valid == true)
+            if (account != null)
             {
-                return account;
-
+                var valid = VerifyPassword(password, account.Pass);
+                if (valid)
+                {
+                    return account;
+                }
             }
             return null;
         }
