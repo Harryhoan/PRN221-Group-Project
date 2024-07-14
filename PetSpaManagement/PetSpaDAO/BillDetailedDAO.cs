@@ -33,7 +33,7 @@ namespace PetSpaDAO
 
         public List<BillDetailed> GetAllBillDetailed()
         {
-            var BillDetaileds = context.BillDetaileds.ToList();
+            var BillDetaileds = context.BillDetaileds.Include(b => b.Bill).Include(b => b.Cost).ToList();
             if (BillDetaileds == null)
                 throw new Exception("All BillDetaileds cannot be retrieved");
             return BillDetaileds;
