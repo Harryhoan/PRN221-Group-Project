@@ -69,7 +69,7 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

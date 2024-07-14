@@ -144,5 +144,9 @@ namespace PetSpaDAO
                 Console.WriteLine("Booking cannot be removed");
             }
         }
+        public int NumberOfBooking()
+        {
+            return context.Bookings.Count();
+        }
     }
 }

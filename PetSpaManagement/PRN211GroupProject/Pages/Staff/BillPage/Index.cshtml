@@ -17,23 +17,6 @@
     <link rel="icon" href="~/adminAssets/assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
 
     <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
-    <script>
-        WebFont.load({
-            google: { families: ["Public Sans:300,400,500,600,700"] },
-            custom: {
-                families: [
-                    "Font Awesome 5 Solid",
-                    "Font Awesome 5 Regular",
-                    "Font Awesome 5 Brands",
-                    "simple-line-icons",
-                ],
-                urls: ["../assets/css/fonts.min.css"],
-            },
-            active: function () {
-                sessionStorage.fonts = true;
-            },
-        });
-    </script>
 
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins.min.css" />
@@ -43,6 +26,11 @@
 <body>
     <div class="col-md-12">
         <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Account Manager</h4>
+                </div>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table id="bill-table" class="display table table-striped table-hover">

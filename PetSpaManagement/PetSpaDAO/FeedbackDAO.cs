@@ -48,5 +48,6 @@ namespace PetSpaDAO
             var feedback = context.Feedbacks.Include(f => f.Acc).Include(f => f.Service).ToList();
             return context.Feedbacks.ToList();
         }
+        public int NumberOfFeedback() => context.Feedbacks.Count();
     }
 }

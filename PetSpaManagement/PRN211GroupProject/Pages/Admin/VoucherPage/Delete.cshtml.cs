@@ -57,7 +57,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
 
             _voucherService.DeleteVoucher((int)id);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

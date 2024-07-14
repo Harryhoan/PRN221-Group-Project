@@ -43,7 +43,7 @@ namespace PRN211GroupProject.Pages.Admin.AccountPage
             }
             accountService.AddAccount(Account);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }
