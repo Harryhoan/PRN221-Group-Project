@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using System.Security.Claims;
@@ -48,28 +48,36 @@ namespace PRN211GroupProject.Pages.Accounts
             Account account = accountService.Login(email,pass);
             if (account != null)
             {
-                if (account.VoucherId != null) 
+                if (account.Status == true)
                 {
-                    Voucher voucher = voucherService.GetVoucher((int)account.VoucherId);
-                    if (voucher.Expired >= DateTime.Now)
+                    if (account.VoucherId != null)
                     {
-                        account.VoucherId = null;
-                        accountService.UpdateAccount(account);
+                        Voucher voucher = voucherService.GetVoucher((int)account.VoucherId);
+                        if (voucher.Expired >= DateTime.Now)
+                        {
+                            account.VoucherId = null;
+                            accountService.UpdateAccount(account);
+                        }
                     }
-                }
-                var claims = new List<Claim>
+                    var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Email, email),
                     new Claim(ClaimTypes.Name, account.Name),
                     new Claim(ClaimTypes.Role, account.Role.Name)
                 };
 
-                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-                var principal = new ClaimsPrincipal(identity);
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                Response.Redirect("/");
-                return Page();
+                    var principal = new ClaimsPrincipal(identity);
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                    Response.Redirect("/");
+                    return Page();
+                }
+                else
+                {
+                    errorMessage = "Your account has been deactivate.";
+                    return Page();
+                }
             }
             else
             {
