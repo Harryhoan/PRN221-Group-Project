@@ -7,6 +7,7 @@ using PetSpaService.AdminServiceService;
 using PetSpaService.AvailableService;
 using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
+using PRN211GroupProject.Utilities;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -111,13 +112,7 @@ namespace PRN211GroupProject.Pages.Accounts
                     return BadRequest();
                 }
                 SpotId = Int32.Parse(formSpotId);
-                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
-                var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
-                if (emailClaim == null)
-                {
-                    return Unauthorized();
-                }
-                var currentUser = _accountService.GetAccountByEmail(emailClaim.Value);
+                var currentUser = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
                 if (currentUser == null)
                 {
                     return NotFound();
