@@ -33,7 +33,7 @@ namespace PetSpaDAO
 
         public List<Available> GetAllAvailable()
         {
-            var availables = context.Availables.Include(a => a.Service).Include(a => a.Spot).ToList();
+            var availables = context.Availables.Include(a => a.Service).Include(a => a.Spot).Where(a => a.Service.Status == true && a.Spot.Status == true).ToList();
             if (availables == null)
                 throw new Exception("All availables cannot be retrieved");
             return availables;

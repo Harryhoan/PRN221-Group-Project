@@ -11,24 +11,24 @@ using PetSpaService.AccountService;
 using PetSpaService.AdminServiceService;
 using PetSpaService.FeedbacksService;
 
-namespace PRN211GroupProject.Pages
+namespace PRN211GroupProject.Pages.Admin.FeedbackPage
 {
-    public class FeedbackModel : PageModel
+    public class CreateFeedbackModel : PageModel
     {
         private readonly IFeedbackService _feedbackService;
-        private readonly IServiceService _serviceService;
         private readonly IAccountService _accountService;
+        private readonly IServiceService _serviceService;
 
-        public FeedbackModel(IFeedbackService feedbackService, IServiceService serviceService, IAccountService accountService)
+        public CreateFeedbackModel(IFeedbackService feedbackService, IAccountService accountService, IServiceService serviceService)
         {
             _feedbackService = feedbackService;
-            _serviceService = serviceService;
             _accountService = accountService;
+            _serviceService = serviceService;
         }
 
         public IActionResult OnGet()
         {
-            ViewData["AccId"] = new SelectList(_accountService.GetAllAccount(), "Id", "Email");
+            ViewData["AccId"] = new SelectList(_accountService.GetAllAccount(), "Id", "Name");
             ViewData["ServiceId"] = new SelectList(_serviceService.GetServiceList(), "Id", "Name");
             return Page();
         }
@@ -36,6 +36,8 @@ namespace PRN211GroupProject.Pages
         [BindProperty]
         public Feedback Feedback { get; set; } = default!;
 
+
+        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             try
@@ -46,6 +48,7 @@ namespace PRN211GroupProject.Pages
                 }
                 try
                 {
+                    Feedback.Status = true;
                     Feedback.Created = DateTime.Now;
                     Feedback.Updated = DateTime.Now;
                     _feedbackService.NewFeedback(Feedback);
@@ -63,4 +66,3 @@ namespace PRN211GroupProject.Pages
         }
     }
 }
-

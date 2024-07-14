@@ -1,5 +1,5 @@
 ﻿@page
-@model PRN211GroupProject.Pages.AvailablePage.IndexModel
+@model PRN211GroupProject.Pages.Staff.BillPage.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -10,13 +10,31 @@
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Available Services - Kaiadmin Bootstrap 5 Admin Dashboard</title>
+    <title>Bill Management - Kaiadmin Bootstrap 5 Admin Dashboard</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="icon" href="~/adminAssets/assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
 
     <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["../assets/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
+    </script>
+
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins.min.css" />
     <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
@@ -25,44 +43,37 @@
 <body>
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
-                <div class="d-flex align-items-center">
-                    <h4 class="card-title">Available Services</h4>
-                    <button asp-page="Create" class="btn btn-primary btn-round ms-auto">
-                        <i class="fa fa-plus"></i>
-                        Create New
-                    </button>
-                </div>
-            </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="add-row" class="display table table-striped table-hover">
+                    <table id="bill-table" class="display table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Service</th>
-                                <th>Spot</th>
+                                <th>@Html.DisplayNameFor(model => model.Bill[0].Acc.Name)</th>
+                                <th>@Html.DisplayNameFor(model => model.Bill[0].Voucher)</th>
+                                <th>@Html.DisplayNameFor(model => model.Bill[0].Total)</th>
                                 <th style="width: 10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.Availables)
+                            @foreach (var item in Model.Bill)
                             {
                                 <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.Acc.Name)</td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Service.Name)
+                                        @if (item.Voucher == null)
+                                        {
+                                            <span>None</span>
+                                        }
+                                        else
+                                        {
+                                            @Html.DisplayFor(modelItem => item.Voucher.Name)
+                                        }
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Spot.Name)
-                                    </td>
+                                    <td>@Html.DisplayFor(modelItem => item.Total)</td>
                                     <td>
                                         <div class="form-button-action">
-                                            <a type="button" asp-page="./Edit" asp-route-id="@item.Id"
-                                               data-bs-toggle="tooltip" title="Edit" class="btn btn-link btn-primary btn-lg">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                            <a type="button" asp-page="./Delete" asp-route-id="@item.Id"
-                                               data-bs-toggle="tooltip" title="Remove" class="btn btn-link btn-danger btn-lg">
-                                                <i class="fa fa-times"></i>
+                                            <a type="button" asp-page="./Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="View Details" class="btn btn-link btn-primary btn-lg">
+                                                <i class="fas fa-info-circle"></i>
                                             </a>
                                         </div>
                                     </td>
@@ -114,20 +125,8 @@
 
     <script>
         $(document).ready(function () {
-            $("#add-row").DataTable({
+            $("#bill-table").DataTable({
                 pageLength: 5,
-            });
-
-            var action = '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-            $("#addRowButton").click(function () {
-                $("#add-row").dataTable().fnAddData([
-                    $("#addName").val(),
-                    $("#addPosition").val(),
-                    $("#addOffice").val(),
-                    action,
-                ]);
-                $("#addRowModal").modal("hide");
             });
         });
     </script>

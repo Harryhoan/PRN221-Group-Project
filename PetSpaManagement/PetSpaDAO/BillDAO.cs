@@ -34,7 +34,7 @@ namespace PetSpaDAO
 
         public List<Bill> GetAllBill()
         {
-            var Bills = context.Bills.ToList();
+            var Bills = context.Bills.Include(b => b.Acc).Include(b => b.Voucher).ToList();
             if (Bills == null)
                 throw new Exception("All Bills cannot be retrieved");
             return Bills;

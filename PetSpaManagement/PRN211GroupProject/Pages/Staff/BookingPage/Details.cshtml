@@ -1,0 +1,58 @@
+﻿@page
+@model PRN211GroupProject.Pages.Staff.BookingPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_StaffLayout.cshtml";
+}
+
+<body>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Booking Details</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Account.Name)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Account.Name)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Account.Email)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Account.Email)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Available.Service)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Available.Service.Name)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Available.Spot)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Available.Spot.Name)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Started)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Started)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Ended)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Ended)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Booking.Created)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Booking.Created)</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <a asp-page="./Edit" asp-route-id="@Model.Booking?.Id" class="btn btn-primary">Edit</a>
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/adminAssets/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/popper.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart-circle/circles.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/world.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="~/adminAssets/assets/js/kaiadmin.min.js"></script>
+    <script src="~/adminAssets/assets/js/setting-demo.js"></script>
+    <script src="~/adminAssets/assets/js/demo.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
+</body>
