@@ -30,14 +30,16 @@ namespace PetSpaService.BillService
 		{
 			return billRepo.GetAccountBillList(accId);
 		}
-
-
 		public void AddBill(Bill bill)
         {
             if (bill == null || bill.Id != default)
                 throw new Exception("Invalid bill cannot be added");
             if (bill.Total <= 0)
                 throw new Exception("Bill has invalid price");
+            if (bill.Started == default || bill.Created == default)
+            {
+                throw new Exception("Bill has invalid datetime");
+            }
             billRepo.AddBill(bill);
         }
 

@@ -63,7 +63,7 @@ namespace PetSpaDAO
                 if (bill != null)
                 {
 
-                    if (bill.Started == default || bill.Started <= DateTime.Now)
+                    if (bill.Started == default || bill.Started <= DateTime.Now || bill.Created > DateTime.Now)
                         throw new Exception("Invalid bill date or time");
 
                     if (bill.Total <= 0)

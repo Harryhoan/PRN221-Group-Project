@@ -180,6 +180,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                         bill.AccId = Account.Id;
                         bill.Started = BillDetaileds[0].Booking.Started;
                         bill.VoucherId = SelectedVoucherId == 0 ? null : SelectedVoucherId;
+                        bill.Created = DateTime.Now;
                         billService.AddBill(bill);
 
                         if (bill != null && bill.Id > 0)
@@ -200,10 +201,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                             accountService.UpdateAccount(Account);
                         }
                         HttpContext.Session.Clear();
-
-                        TempData["Message"] = "Payment successful!";
                         return RedirectToPage("/Index");
-
                     }
                     else
                     {
