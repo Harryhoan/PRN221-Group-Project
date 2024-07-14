@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.AdminServiceService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.ServicePage
 {
@@ -52,8 +53,12 @@ namespace PRN211GroupProject.Pages.ServicePage
         {
             try
             {
-                Service.Status = true;
-                _serviceService.UpdateService(Service);
+                if (!String.IsNullOrEmpty(Service.Description) && Service.Price > 0 && Service.Duration > 0) 
+                {
+                    Service.Status = true;
+                    Service.Description = FormatUtilities.TrimSpacesPreserveSingle(Service.Description);
+                    _serviceService.UpdateService(Service);
+                }     
             }
             catch (Exception ex)
             {

@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Admin.VoucherPage
 {
@@ -52,7 +53,11 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
         {
             try
             {
-                _voucherService.UpdateVoucher(Voucher);
+                if (Voucher != null && !String.IsNullOrEmpty(Voucher.Name) && Voucher.Discount <= 100 && Voucher.Discount > 0 && Voucher.Reach > 0 && Voucher.Expired.Date > DateTime.Today)
+                {
+                    Voucher.Name = FormatUtilities.TrimSpacesPreserveSingle(Voucher.Name);
+                    _voucherService.UpdateVoucher(Voucher);
+                }
             }
             catch (Exception ex)
             {
