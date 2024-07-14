@@ -8,54 +8,53 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
-using PetSpaService.VoucherService.VoucherService;
+using PetSpaService.BookingService;
 
-namespace PRN211GroupProject.Pages.Admin.VoucherPage
+namespace PRN211GroupProject.Pages.Staff.BookingPage
 {
     public class DeleteModel : PageModel
     {
-        private readonly IVoucherService _voucherService;
+        private readonly IBookingService _bookingService;
 
-        public DeleteModel(IVoucherService voucherService)
+        public DeleteModel(IBookingService bookingService)
         {
-            _voucherService = voucherService;
+            _bookingService = bookingService;
         }
 
         [BindProperty]
-        public Voucher Voucher { get; set; } = default!;
+      public Booking Booking { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
             var roleClaim = User.FindFirst(ClaimTypes.Role);
             if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
             {
                 return Unauthorized();
             }
-            if (id == null || _voucherService.GetVoucherList() == null)
+            if (id == null || _bookingService.GetBookingList() == null)
             {
                 return NotFound();
             }
-            var voucher = _voucherService.GetVoucher((int)id);
 
-            if (voucher == null)
+            var booking = _bookingService.GetBooking(id);
+            if (booking == null)
             {
                 return NotFound();
             }
-            else
+            else 
             {
-                Voucher = voucher;
+                Booking = booking;
             }
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int id)
         {
-            if (id == null || _voucherService.GetVoucherList() == null)
+            if (id == null || _bookingService.GetBookingList() == null)
             {
                 return NotFound();
             }
-
-            _voucherService.DeleteVoucher((int)id);
+            _bookingService.DeleteBooking(id);
 
             return RedirectToPage("./Index");
         }

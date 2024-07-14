@@ -1,5 +1,5 @@
 ﻿@page
-@model PRN211GroupProject.Pages.AvailablePage.IndexModel
+@model PRN211GroupProject.Pages.Staff.BookingPage.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Available Services - Kaiadmin Bootstrap 5 Admin Dashboard</title>
+    <title>Datatables - Kaiadmin Bootstrap 5 Admin Dashboard</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -43,43 +43,33 @@
 <body>
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
-                <div class="d-flex align-items-center">
-                    <h4 class="card-title">Available Services</h4>
-                    <button asp-page="Create" class="btn btn-primary btn-round ms-auto">
-                        <i class="fa fa-plus"></i>
-                        Create New
-                    </button>
-                </div>
-            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table id="add-row" class="display table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Service</th>
-                                <th>Spot</th>
+                                <th>@Html.DisplayNameFor(model => model.Booking[0].Account)</th>
+                                <th>@Html.DisplayNameFor(model => model.Booking[0].Available.Service)</th>
+                                <th>@Html.DisplayNameFor(model => model.Booking[0].Available.Spot)</th>
                                 <th style="width: 10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.Availables)
+                            @foreach (var item in Model.Booking)
                             {
                                 <tr>
-                                    <td>
-                                        <a asp-page="ServicePage/Details" asp-route-id="@item.ServiceId">@Html.DisplayFor(modelItem => item.ServiceId)</a>
-                                    </td>
-                                    <td>
-                                        <a asp-page="ServicePage/Details" asp-route-id="@item.SpotId">@Html.DisplayFor(modelItem => item.SpotId)</a>
-                                    </td>
+                                    <td>@Html.DisplayFor(modelItem => item.Account.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Available.Service.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Available.Spot.Name)</td>
                                     <td>
                                         <div class="form-button-action">
-                                            <a type="button" asp-page="./Edit" asp-route-id="@item.Id"
-                                               data-bs-toggle="tooltip" title="Edit" class="btn btn-link btn-primary btn-lg">
+                                            <a type="button" asp-page="./Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            <a type="button" asp-page="./Delete" asp-route-id="@item.Id"
-                                               data-bs-toggle="tooltip" title="Remove" class="btn btn-link btn-danger btn-lg">
+                                            <a type="button" asp-page="./Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="View Details">
+                                                <i class="fas fa-info-circle"></i>
+                                            </a>
+                                            <a type="button" asp-page="./Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger btn-lg" data-original-title="Remove">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </div>
@@ -132,6 +122,27 @@
 
     <script>
         $(document).ready(function () {
+            $("#basic-datatables").DataTable({});
+
+            $("#multi-filter-select").DataTable({
+                pageLength: 5,
+                initComplete: function () {
+                    this.api().columns().every(function () {
+                        var column = this;
+                        var select = $('<select class="form-select"><option value=""></option></select>')
+                            .appendTo($(column.footer()).empty())
+                            .on("change", function () {
+                                var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                                column.search(val ? "^" + val + "$" : "", true, false).draw();
+                            });
+
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + "</option>");
+                        });
+                    });
+                },
+            });
+
             $("#add-row").DataTable({
                 pageLength: 5,
             });
