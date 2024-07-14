@@ -36,7 +36,7 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return Unauthorized();
             }
-            if (id == null || accountService.GetAllAccount() == null)
+            if (id == 0 || accountService.GetAllAccount() == null)
             {
                 return NotFound();
             }
@@ -45,11 +45,17 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return NotFound();
             }
-            ViewData["voucherlist"] = new SelectList(_voucher.GetVoucherList(), "Id", "Name");
+
+            // Fetch and filter vouchers
+            var vouchers = _voucher.GetVoucherList();
+            var activeVouchers = vouchers.Where(v => v.Status == true).ToList();
+            ViewData["voucherlist"] = new SelectList(activeVouchers, "Id", "Name");
+
             ViewData["rolelist"] = new SelectList(_role.GetAllRole(), "Id", "Name");
             Account = account;
             return Page();
         }
+
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -57,7 +63,7 @@ namespace PRN211GroupProject.Pages.AccountPage
             try
             {
                 Account.Status = true;
-                _account.UpdateAccount(Account);
+                accountService.UpdateAccount(Account);
             }
             catch (Exception ex)
             {
