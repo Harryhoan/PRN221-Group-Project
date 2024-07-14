@@ -118,38 +118,37 @@
 
 </head>
 <body>
-
-	<header>
-		<!--? Header Start -->
-		<div class="header-area header-transparent">
-			<div class="main-header header-sticky">
-				<div class="container-fluid">
-					<div class="row align-items-center">
-						<!-- Logo -->
-						<div class="col-xl-2 col-lg-2 col-md-1">
-							<div class="logo">
-								<a asp-page="/Index"><img src="~/assets/img/logo/logo.png" alt=""></a>
-							</div>
-						</div>
-						<div class="col-xl-10 col-lg-10 col-md-10">
-							<div class="menu-main d-flex align-items-center justify-content-end">
-								<!-- Main-menu -->
-								<div class="main-menu f-right d-none d-lg-block">
-									<nav>
-										<ul id="navigation">
-											<li><a asp-page="/Index">Home</a></li>
-											<li><a asp-page="/About">About Us</a></li>
-											<li>
-												<a asp-page="/Services/Index">Services</a>
-												<ul class="submenu">
-													<li><a asp-page="/Services/Bath">Bath</a></li>
-													<li><a asp-page="/Services/Nail">Nail Trimming</a></li>
-													<li><a asp-page="/Services/Ear">Ear Cleaning</a></li>
-													<li><a asp-page="/Services/Hair">Hair Grooming</a></li>
-													<li><a asp-page="/Services/Massage">Massage Therapy</a></li>
-													<li><a asp-page="/Services/Teeth">Teeth Brushing</a></li>
-												</ul>
-											</li>
+    <header>
+        <!--? Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                                <a asp-page="/Index"><img src="~/assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="menu-main d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a asp-page="/Index">Home</a></li>
+                                            <li><a asp-page="/About">About Us</a></li>
+                                            <li>
+                                                <a asp-page="/Services/Index">Services</a>
+                                                <ul class="submenu">
+                                                    <li><a asp-page="/Services/Bath">Bath</a></li>
+                                                    <li><a asp-page="/Services/NailTrimming">Nail Trimming</a></li>
+                                                    <li><a asp-page="/Services/EarCleaning">Ear Cleaning</a></li>
+                                                    <li><a asp-page="/Services/HairGrooming">Hair Grooming</a></li>
+                                                    <li><a asp-page="/Services/MassageTherapy">Massage Therapy</a></li>
+                                                    <li><a asp-page="/Services/TeethBrushing">Teeth Brushing</a></li>
+                                                </ul>
+                                            </li>
 
 											<li><a asp-page="/accounts/createFeedback">Feedback</a></li>
 											<li><a asp-page="/Accounts/Booking/Index" style="font:bold">Booking Now!</a></li>
