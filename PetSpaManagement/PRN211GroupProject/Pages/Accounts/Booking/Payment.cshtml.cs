@@ -61,8 +61,8 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             try
             {
                 Sum = 0;
-                SetAccount();
-                if (Account != null)
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+				if (Account != null)
                 {
                     if (Account.VoucherId != null)
                     {
@@ -160,7 +160,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             
             try
             {
-				AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+				Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
 				if (Account != null)
                 {
 
