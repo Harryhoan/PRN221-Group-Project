@@ -30,7 +30,7 @@ namespace PRN211GroupProject.Pages.Admin.BillPage
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
             {
                 return Unauthorized();
             }
