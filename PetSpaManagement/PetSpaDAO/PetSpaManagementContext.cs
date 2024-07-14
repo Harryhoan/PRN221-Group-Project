@@ -102,6 +102,7 @@ namespace PetSpaDaos
                 entity.Property(e => e.ServiceId).HasColumnName("serviceId");
 
                 entity.Property(e => e.SpotId).HasColumnName("spotId");
+                entity.Property(e => e.Status).HasColumnName("status");
 
                 entity.HasOne(d => d.Service)
                     .WithMany(p => p.Availables)
