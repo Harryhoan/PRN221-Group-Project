@@ -9,7 +9,7 @@ namespace PRN211GroupProject.Pages.Staff
         public async Task<IActionResult> OnGetAsync()
         {
             var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
             {
                 return Unauthorized();
             }

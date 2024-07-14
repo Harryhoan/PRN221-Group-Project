@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using PetSpaService.AdminServiceService;
 using PetSpaService.AvailableService;
+using System.Security.Claims;
 
 namespace PRN211GroupProject.Pages.AvailablePage
 {
@@ -18,7 +19,12 @@ namespace PRN211GroupProject.Pages.AvailablePage
 		public Available? Available { get; set; }
 		public IActionResult OnGet(int availableId)
 		{
-			try
+            var roleClaim = User.FindFirst(ClaimTypes.Role);
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
+            {
+                return Unauthorized();
+            }
+            try
 			{
 				if (!ModelState.IsValid)
 				{
