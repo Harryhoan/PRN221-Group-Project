@@ -10,8 +10,9 @@ using PetSpaDaos;
 using PetSpaService.AccountService;
 using PetSpaService.AdminServiceService;
 using PetSpaService.FeedbacksService;
+using PRN211GroupProject.Utilities;
 
-namespace PRN211GroupProject.Pages.Admin.FeedbackPage
+namespace PRN211GroupProject.Pages.Accounts
 {
     public class CreateFeedbackModel : PageModel
     {
@@ -36,18 +37,21 @@ namespace PRN211GroupProject.Pages.Admin.FeedbackPage
         [BindProperty]
         public Feedback Feedback { get; set; } = default!;
 
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+		[BindProperty]
+		public Account? Account { get; set; }
+		// To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+		public async Task<IActionResult> OnPostAsync()
         {
             try
             {
-                if (Feedback == null)
+				Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+				if (Feedback == null)
                 {
                     return BadRequest();
                 }
                 try
                 {
+                    Feedback.AccId = Account.Id;
                     Feedback.Status = true;
                     Feedback.Created = DateTime.Now;
                     Feedback.Updated = DateTime.Now;
@@ -57,7 +61,7 @@ namespace PRN211GroupProject.Pages.Admin.FeedbackPage
                 {
                     Console.WriteLine(ex.Message);
                 }
-                return RedirectToPage("./Index");
+                return RedirectToPage("/Index");
             }
             catch
             {

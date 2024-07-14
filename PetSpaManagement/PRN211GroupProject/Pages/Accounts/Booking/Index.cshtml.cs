@@ -101,7 +101,10 @@ namespace PRN211GroupProject.Pages.Accounts
                 {
                     return Unauthorized();
                 }
-
+                if (HttpContext.Session == null)
+                {
+                    return BadRequest();
+                }
                 var formSpotId = Request.Form["formSpotId"];
                 if (String.IsNullOrEmpty(formSpotId) || formSpotId == "-1")
                 {
@@ -142,14 +145,9 @@ namespace PRN211GroupProject.Pages.Accounts
                 {
                     return BadRequest();
                 }
-                NewBooking.AccountId = currentUser.Id;
-                NewBooking.Status = true;
-                NewBooking.Created = DateTime.Now;
-                NewBooking.Available = available;
-                if (HttpContext.Session != null)
-                {
-                    List<PetSpaBussinessObject.Booking>? bookingCart = new();
-                    var json = HttpContext.Session.GetString("BookingCart");
+
+                List<PetSpaBussinessObject.Booking>? bookingCart = new();
+                var json = HttpContext.Session.GetString("BookingCart");
 
                     // Deserialize JSON to object
                     if (!string.IsNullOrEmpty(json))
@@ -161,22 +159,29 @@ namespace PRN211GroupProject.Pages.Accounts
                         };
                         bookingCart = JsonSerializer.Deserialize<List<PetSpaBussinessObject.Booking>>(json, options);
 
-                    }
-                    if (bookingCart != null)
-                    {
-                        JsonSerializerOptions options = new JsonSerializerOptions
-                        {
-                            ReferenceHandler = ReferenceHandler.Preserve,
-                            WriteIndented = true // for readability
-                        };
-                        bookingCart.Add(NewBooking);
-                        HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart, options));
-                        BookingCount = bookingCart.Count;
-                        HttpContext.Session.SetInt32("BookingCount", BookingCount);
-                        //_bookingService.AddBooking(NewBooking);
-                        return OnGet(SpotId, 0);
-                    }
                 }
+                if (bookingCart != null)
+                {
+                    if (bookingCart.Count > 0 && bookingCart.Where(b => b.Started >= NewBooking.Started && b.Ended <= NewBooking.Ended).Any())
+                    {
+                        return BadRequest();
+                    }
+                    NewBooking.AccountId = currentUser.Id;
+                    NewBooking.Status = true;
+                    NewBooking.Available = available;
+                    bookingCart.Add(NewBooking);
+                    JsonSerializerOptions options = new JsonSerializerOptions
+                    {
+                        ReferenceHandler = ReferenceHandler.Preserve,
+                        WriteIndented = true // for readability
+                    };
+                    HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart, options));
+                    BookingCount = bookingCart.Count;
+                    HttpContext.Session.SetInt32("BookingCount", BookingCount);
+                    //_bookingService.AddBooking(NewBooking);
+                    return OnGet(SpotId, 0);
+                }
+
                 return BadRequest();
             }
             catch
