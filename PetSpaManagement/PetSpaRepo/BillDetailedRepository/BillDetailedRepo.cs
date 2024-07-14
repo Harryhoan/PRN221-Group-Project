@@ -17,5 +17,7 @@ namespace PetSpaRepo.BillDetailedRepository
         public List<BillDetailed> GetBillDetailedList() => BillDetailedDAO.Instance.GetAllBillDetailed();
 
         public BillDetailed GetBillDetailed(int billDetailedId) => BillDetailedDAO.Instance.GetBillDetailed(billDetailedId);
+        public List<BillDetailed> GetBillDetailsByBillId(int id) => BillDetailedDAO.Instance.GetBillDetailsByBillId(id);
+
     }
 }

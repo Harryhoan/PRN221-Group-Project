@@ -18,5 +18,8 @@ namespace PetSpaRepo.BillRepository
         public List<Bill> GetAccountBillList(int accId);
 
         public Bill GetBill(int billId);
+        public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int id);
+        public List<Bill> GetFilteredBill(DateTime fromDate, DateTime toDate);
+
     }
 }

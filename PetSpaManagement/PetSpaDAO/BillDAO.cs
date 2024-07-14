@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace PetSpaDAO
 {
@@ -42,7 +43,7 @@ namespace PetSpaDAO
 
         public List<Bill> GetAccountBill(int accId)
         {
-            var Bills = context.Bills.Where(b => b.AccId == accId).ToList();
+            var Bills = context.Bills.Where(b => b.AccId == accId).Include(b => b.Voucher).ToList();
             if (Bills == null)
                 throw new Exception("All Bills cannot be retrieved");
             return Bills;
@@ -100,6 +101,16 @@ namespace PetSpaDAO
         //		Console.WriteLine("Bill cannot be updated");
         //	}
         //}
+        public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int id)
+        {
+            List<Bill> allBills = GetAccountBill(id);
+            return allBills.Where(o => o.Created >= fromDate && o.Created <= toDate).ToList();
+        }
+        public List<Bill> GetFilteredBill(DateTime fromDate, DateTime toDate)
+        {
+            List<Bill> allBills = GetAllBill();
+            return allBills.Where(o => o.Created >= fromDate && o.Created <= toDate).ToList();
+        }
 
         public void DeleteBill(int billId)
         {

@@ -65,7 +65,17 @@ namespace PetSpaDAO
                 Console.WriteLine("BillDetailed cannot be added");
             }
         }
-
+        public  List<BillDetailed> GetBillDetailsByBillId(int id)
+        {
+            return context.BillDetaileds.Where(m => m.BillId == id).Include(m => m.Booking).ToList();
+        }
+        public async Task<List<BillDetailed>> GetBillDetailsByBillIdAsync(int id)
+        {
+            return await context.BillDetaileds
+                .Where(m => m.BillId == id)
+                .Include(m => m.Booking)
+                .ToListAsync(); // Ensure to use ToListAsync() to return Task<List<BillDetailed>>
+        }
         public void DeleteBillDetailed(int billDetailedId)
         {
             try

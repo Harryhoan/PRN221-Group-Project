@@ -1,0 +1,39 @@
+﻿@page
+@model PRN211GroupProject.Pages.Accounts.History.DetailsModel
+
+<table class="table center-table">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Service Name</th>
+            <th>Spot Name</th>
+            <th>Started</th>
+            <th>Ended</th>
+            <th>Duration</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.BillDetails != null)
+        {
+            @foreach (var item in Model.BillDetails)
+            {
+                <tr>
+                    <td>@(Model.BillDetails.IndexOf(item) + 1)</td>
+                    <td>@(item?.Booking?.Available?.Service?.Name ?? "N/A")</td>
+                    <td>@(item?.Booking?.Available?.Spot?.Name ?? "N/A")</td>
+                    <td>@(item?.Booking?.Started.ToString() ?? "N/A")</td>
+                    <td>@(item?.Booking?.Ended.ToString() ?? "N/A")</td>
+                    <td>@(item?.Booking?.Available?.Service?.Duration.ToString() ?? "N/A")</td>
+                    <td>@(item?.Cost.ToString() ?? "N/A")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7">No data available</td>
+            </tr>
+        }
+    </tbody>
+</table>

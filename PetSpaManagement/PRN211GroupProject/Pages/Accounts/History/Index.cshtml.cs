@@ -5,30 +5,47 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
-using PetSpaDaos;
-using PetSpaRepo.VoucherRepository;
 using PetSpaService.AccountService;
+using PetSpaService.AdminServiceService;
+using PetSpaService.AvailableService;
+using PetSpaService.BillDetailedService;
 using PetSpaService.BillService;
+using PetSpaService.BookingService;
+using PetSpaService.SpotService.SpotService;
 using PetSpaService.VoucherService.VoucherService;
 
 namespace PRN211GroupProject.Pages.Accounts.History
 {
     public class IndexModel : PageModel
     {
-        private readonly IAccountService accountService;
+        private readonly IBillDetailedService billDetailedService;
         private readonly IBillService billService;
+        private readonly IAccountService accountService;
+        private readonly IBookingService bookingService;
+        private readonly IAvailableService availableService;
+        private readonly IServiceService serviceService;
+        private readonly ISpotService spotService;
         private readonly IVoucherService voucherService;
-        public IndexModel(IAccountService account, IBillService bill, IVoucherService voucher)
+
+        public IndexModel(IBillDetailedService billDetailed, IAccountService account, IBillService bill, IBookingService booking, IAvailableService available, IServiceService service, ISpotService spot, IVoucherService voucher)
         {
-            accountService = account;
+            billDetailedService = billDetailed;
             billService = bill;
+            accountService = account;
+            bookingService = booking;
+            availableService = available;
+            serviceService = service;
+            spotService = spot;
             voucherService = voucher;
+            BillDetailed = new List<BillDetailed>();
         }
+
         public Account? Account { get; set; }
-        public List<Bill> Bill { get; set; } = default!;
-        public IActionResult OnGetAsync()
+        public List<Bill> Bill { get; set; } = new List<Bill>();
+        public List<BillDetailed> BillDetailed { get; set; }
+
+        public IActionResult OnGet()
         {
             SetAccount();
             if (Account != null)
@@ -38,12 +55,45 @@ namespace PRN211GroupProject.Pages.Accounts.History
                     Bill = billService.GetAccountBillList(Account.Id);
                 }
                 return Page();
-            }   
+            }
             else
             {
                 return NotFound();
             }
         }
+
+        public string errorMessage { get; set; }
+
+        public IActionResult OnGetSortDate(DateTime fromDate, DateTime toDate)
+        {
+            SetAccount();
+            if (Account != null)
+            {
+                if (fromDate != DateTime.MinValue && toDate != DateTime.MinValue)
+                {
+                    Bill = billService.GetFilterdAccountBill(fromDate, toDate, Account.Id);
+                    if (Bill.Count > 0)
+                    {
+                        return Page();
+                    }
+                    else
+                    {
+                        errorMessage = $"No Order's from {fromDate} to {toDate}";
+                        return Page();
+                    }
+                }
+                else
+                {
+                    Bill = billService.GetAccountBillList(Account.Id);
+                }
+                return Page();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         public void SetAccount()
         {
             try
@@ -62,6 +112,5 @@ namespace PRN211GroupProject.Pages.Accounts.History
                 Account = null;
             }
         }
-
     }
 }

@@ -47,6 +47,7 @@ namespace PetSpaService.BillService
                 throw new Exception("Invalid bill id");
             billRepo.DeleteBill(billId);
         }
-
+        public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int id) => billRepo.GetFilterdAccountBill(fromDate, toDate, id);
+        public List<Bill> GetFilteredBill(DateTime fromDate, DateTime toDate) => billRepo.GetFilteredBill(fromDate, toDate);
     }
 }

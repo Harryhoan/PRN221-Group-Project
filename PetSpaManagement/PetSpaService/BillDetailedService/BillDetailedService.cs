@@ -25,7 +25,7 @@ namespace PetSpaService.BillDetailedService
         {
             return billDetailedRepo.GetBillDetailedList();
         }
-
+        public List<BillDetailed> GetBillDetailsByBillId(int id) => billDetailedRepo.GetBillDetailsByBillId(id);
         public void AddBillDetailed(BillDetailed billDetailed)
         {
             if (billDetailed == null || billDetailed.Id != default)
