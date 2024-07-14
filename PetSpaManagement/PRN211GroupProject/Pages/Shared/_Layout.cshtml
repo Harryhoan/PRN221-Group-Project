@@ -188,39 +188,39 @@
 												</ul>
 											</li>
 
-										</ul>
-									</nav>
-								</div>
-								@if (@User.Identity == null || String.IsNullOrEmpty(@User.Identity.Name))
-								{
-									<div class="header-right-btn f-right d-none d-lg-block ml-30">
-										<a asp-page="/Accounts/Login" class="header-btn">Login</a>
-									</div>
-								}
-								else
-								{
-									<div class="menu-main d-flex align-items-center justify-content-end">
-										<!-- Main-menu -->
-										<div class="main-menu f-right d-none d-lg-block">
-											<nav>
-												<ul id="navigation">
-													<li>
-														Welcome @User.Identity.Name!
-														<ul class="submenu">
-															<li><a asp-page="/Accounts/Profile">Profile</a></li>
-															<li><a href="/Accounts/History">History</a></li>
-															@if (User.IsInRole("Admin"))
-															{
-																<li><a href="/Admin">Admin</a></li>
-															}
-															else if (User.IsInRole("Staff"))
-															{
-																<li><a href="/Admin">Staff</a></li>
-															}
-															<li>
-																<a href="#" id="logout-link">Logout</a>
-																<form id="logout-form" asp-page="/Accounts/Logout" method="post" style="display: none;">
-																</form>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                @if (@User.Identity == null || String.IsNullOrEmpty(@User.Identity.Name))
+                                {
+                                    <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                        <a asp-page="/Accounts/Login" class="header-btn">Login</a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="menu-main d-flex align-items-center justify-content-end">
+                                        <!-- Main-menu -->
+                                        <div class="main-menu f-right d-none d-lg-block">
+                                            <nav>
+                                                <ul id="navigation">
+                                                    <li>
+                                                        Welcome @User.Identity.Name!
+                                                        <ul class="submenu">
+                                                            <li><a asp-page="/Accounts/Profile">Profile</a></li>
+                                                            <li><a href="/Accounts/History">History</a></li>
+                                                            @if (User.IsInRole("Admin"))
+                                                            {
+                                                                <li><a href="/Admin">Admin</a></li>
+                                                            }
+                                                            else if (User.IsInRole("Staff"))
+                                                            {
+                                                                <li><a href="/Staff">Staff</a></li>
+                                                            }
+                                                            <li>
+                                                                <a href="#" id="logout-link">Logout</a>
+                                                                <form id="logout-form" asp-page="/Accounts/Logout" method="post" style="display: none;">
+                                                                </form>
 
 															</li>
 

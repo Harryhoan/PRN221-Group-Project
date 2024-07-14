@@ -7,10 +7,6 @@
 }
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+xPtKaFL8Rgv/KDi2dh65+oWylK/T3Yy8Sm" crossorigin="anonymous"></script>
-<script src="@Html.Raw(popperJsUrl)" integrity="sha384-ALpQN/z5s+xjq06zjOe4+06GHNk8uqvhWjA6cFZkQ6zUdVeF4u8R9mvMN5YS9icv" crossorigin="anonymous"></script>
 
 <style>
     .center-content {
@@ -57,9 +53,9 @@
             </div>
         </div>
     </div>
-
+    <br/>
     <div class="card center-content">
-        <form method="get" class="form-inline mb-3" asp-page-handler="SortDate">
+        <form method="post" class="form-inline mb-3" asp-page-handler="SortDate">
             <div class="form-group mr-2">
                 <label class="mr-2">From:</label>
                 <input type="date" class="form-control" id="fromDate" name="fromDate">
@@ -70,6 +66,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Apply Filter</button>
         </form>
+
 
         <div class="table-responsive">
             <table class="table center-table">
@@ -116,9 +113,11 @@
                                 <td>No Voucher</td>
                             }
                             <td>
-                                <div class="form-button-action">
-                                    <button class="view-details-btn btn btn-primary" data-toggle="modal" data-target="#billDetailsModal" data-billid="@item.Id">View Details</button>
-                                </div>
+                                <a asp-page="./Details" asp-route-id="@item.Id">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 4a.9.9 0 1 1 0 1.8A.9.9 0 0 1 8 4zm-.445 6.89c.088.22.21.416.363.568.154.15.348.266.568.354.22.088.45.133.688.133s.468-.045.687-.133a2.08 2.08 0 0 0 1.045-1.045c.088-.22.133-.46.133-.688s-.045-.468-.133-.688a2.08 2.08 0 0 0-1.045-1.045c-.22-.088-.45-.133-.687-.133s-.468.045-.688.133a2.08 2.08 0 0 0-.568.354 2.08 2.08 0 0 0-.354.568 2.08 2.08 0 0 0-.133.688c0 .238.045.468.133.688a2.08 2.08 0 0 0 .354.568 2.08 2.08 0 0 0 .568.354c.22.088.45.133.688.133s.468-.045.688-.133a2.08 2.08 0 0 0 .568-.354 2.08 2.08 0 0 0 .354-.568c.088-.22.133-.45.133-.688s-.045-.468-.133-.688a2.08 2.08 0 0 0-.354-.568 2.08 2.08 0 0 0-.568-.354 2.08 2.08 0 0 0-.688-.133c-.238 0-.468.045-.688.133a2.08 2.08 0 0 0-.568.354 2.08 2.08 0 0 0-.354.568zM8 11a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                                    </svg>
+                                </a>
                             </td>
                         </tr>
                     }
@@ -135,35 +134,5 @@
         </div>
     </div>
 </main>
-<div class="modal fade" id="billDetailsModal" tabindex="-1" role="dialog" aria-labelledby="billDetailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="billDetailsModalLabel">Bill Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Render partial page here -->
-                <partial name="Details" model="@ViewData["DetailsModel"]" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-@@section Scripts {
-<script>
-    $(document).ready(function () {
-        $('.view-details-btn').click(function () {
-            var billId = $(this).data('billid');
-            $.get('/Accounts/History/Details?handler=DetailPartial&billId=' + billId, function (data) {
-                $('#billDetailsModal .modal-body').html(data);
-                $('#billDetailsModal').modal('show'); // Show modal after content is loaded
-            });
-        });
-    });
-</script>
-}
+
+

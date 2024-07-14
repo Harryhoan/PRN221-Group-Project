@@ -34,7 +34,7 @@ namespace PetSpaDAO
 
         public List<Bill> GetAllBill()
         {
-            var Bills = context.Bills.ToList();
+            var Bills = context.Bills.Include(b => b.Acc).Include(b => b.Voucher).ToList();
             if (Bills == null)
                 throw new Exception("All Bills cannot be retrieved");
             return Bills;
@@ -101,10 +101,13 @@ namespace PetSpaDAO
         //		Console.WriteLine("Bill cannot be updated");
         //	}
         //}
-        public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int id)
+        public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int accountId)
         {
-            List<Bill> allBills = GetAccountBill(id);
-            return allBills.Where(o => o.Created >= fromDate && o.Created <= toDate).ToList();
+            var filteredBills = context.Bills
+                .Where(b => b.AccId == accountId && b.Created >= fromDate && b.Created <= toDate)
+                .OrderBy(b => b.Created)
+                .ToList();
+            return filteredBills;
         }
         public List<Bill> GetFilteredBill(DateTime fromDate, DateTime toDate)
         {
