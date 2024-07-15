@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,7 +10,7 @@ using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.VoucherService.VoucherService;
 
-namespace PRN211GroupProject.Pages.Admin.VoucherPage
+namespace PRN211GroupProject.Pages.Staff.VoucherPage
 {
     public class CreateModel : PageModel
     {
@@ -22,6 +23,11 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
 
         public IActionResult OnGet()
         {
+            var roleClaim = User.FindFirst(ClaimTypes.Role);
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
+            {
+                return Unauthorized();
+            }
             return Page();
         }
 

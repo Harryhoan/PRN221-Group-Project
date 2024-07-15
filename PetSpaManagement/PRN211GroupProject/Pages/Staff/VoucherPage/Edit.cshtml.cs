@@ -5,18 +5,19 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.VoucherService.VoucherService;
 
-namespace PRN211GroupProject.Pages.Admin.VoucherPage
+namespace PRN211GroupProject.Pages.Staff.VoucherPage
 {
-    public class DeleteModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly IVoucherService _voucherService;
 
-        public DeleteModel(IVoucherService voucherService)
+        public EditModel(IVoucherService voucherService)
         {
             _voucherService = voucherService;
         }
@@ -27,7 +28,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
             {
                 return Unauthorized();
             }
@@ -35,27 +36,27 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
             {
                 return NotFound();
             }
-            var voucher = _voucherService.GetVoucher((int)id);
 
+            var voucher = _voucherService.GetVoucher((int)id);
             if (voucher == null)
             {
                 return NotFound();
             }
-            else
-            {
-                Voucher = voucher;
-            }
+            Voucher = voucher;
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (id == null || _voucherService.GetVoucherList() == null)
+            try
             {
-                return NotFound();
+                _voucherService.UpdateVoucher(Voucher);
             }
-
-            _voucherService.DeleteVoucher((int)id);
+            catch (Exception ex)
+            {
+            }
 
             return RedirectToPage();
         }

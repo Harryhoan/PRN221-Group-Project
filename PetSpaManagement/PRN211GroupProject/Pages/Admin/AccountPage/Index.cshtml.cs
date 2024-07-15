@@ -58,7 +58,7 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 accountService.AddAccount(NewAccount);
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage();
         }
     }
 }

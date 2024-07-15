@@ -57,7 +57,7 @@ namespace PRN211GroupProject.Pages.ServicePage
             }
             _serviceService.DeleteService(id);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

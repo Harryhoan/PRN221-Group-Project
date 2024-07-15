@@ -4,6 +4,7 @@ using PetSpaBussinessObject;
 using PetSpaService.AdminServiceService;
 using PetSpaService.SpotService.SpotService;
 using System.Linq.Expressions;
+using System.Security.Claims;
 
 namespace PRN211GroupProject.Pages.SpotPage
 {
@@ -16,54 +17,26 @@ namespace PRN211GroupProject.Pages.SpotPage
 		}
 
 		[BindProperty]
-		public Spot? Spot { get; set; }
+		public Spot Spot { get; set; }
 
 		public IActionResult OnGet()
 		{
-			try
-			{
-				if (!ModelState.IsValid)
-				{
-					return BadRequest();
-				}
-
-				return Page();
-			}
-			catch
-			{
-				return BadRequest();
-			}
-		}
+            var roleClaim = User.FindFirst(ClaimTypes.Role);
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
+            {
+                return Unauthorized();
+            }
+			return Page();
+        }
 
 		public IActionResult OnPost()
 		{
-			try
-			{
-				if (!ModelState.IsValid)
-				{
-					return Page();
-				}
-
-				if (Spot == null)
-				{
-					return BadRequest();
-				}
-
-				try
-				{
-					_spotService.AddSpot(Spot);
-				}
-				catch (Exception ex)
-				{
-					Console.WriteLine(ex.Message);
-				}
-
-				return RedirectToPage("./Index");
-			}
-			catch
-			{
-				return BadRequest();
-			}
-		}
+            if (!ModelState.IsValid || _spotService.GetSpotList() == null || Spot == null)
+            {
+                return Page();
+            }
+            _spotService.AddSpot(Spot);
+            return RedirectToPage();
+        }
 	}
 }

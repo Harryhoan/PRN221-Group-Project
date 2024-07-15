@@ -11,7 +11,7 @@ using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.VoucherService.VoucherService;
 
-namespace PRN211GroupProject.Pages.Admin.VoucherPage
+namespace PRN211GroupProject.Pages.Staff.VoucherPage
 {
     public class IndexModel : PageModel
     {
@@ -29,7 +29,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
         public async Task<IActionResult> OnGetAsync()
         {
             var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
             {
                 return Unauthorized();
             }
@@ -43,6 +43,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
         {
             if (NewVoucher != null)
             {
+                NewVoucher.Status = false;
                 _voucherService.AddVoucher(NewVoucher);
             }
             return RedirectToPage();

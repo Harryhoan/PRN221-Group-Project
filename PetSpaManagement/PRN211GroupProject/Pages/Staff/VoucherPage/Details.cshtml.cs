@@ -10,24 +10,23 @@ using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.VoucherService.VoucherService;
 
-namespace PRN211GroupProject.Pages.Admin.VoucherPage
+namespace PRN211GroupProject.Pages.Staff.VoucherPage
 {
-    public class DeleteModel : PageModel
+    public class DetailsModel : PageModel
     {
         private readonly IVoucherService _voucherService;
 
-        public DeleteModel(IVoucherService voucherService)
+        public DetailsModel(IVoucherService voucherService)
         {
             _voucherService = voucherService;
         }
 
-        [BindProperty]
-        public Voucher Voucher { get; set; } = default!;
+        public Voucher Voucher { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
             {
                 return Unauthorized();
             }
@@ -35,29 +34,17 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
             {
                 return NotFound();
             }
-            var voucher = _voucherService.GetVoucher((int)id);
 
+            var voucher = _voucherService.GetVoucher((int)id);
             if (voucher == null)
             {
                 return NotFound();
             }
-            else
+            else 
             {
                 Voucher = voucher;
             }
             return Page();
-        }
-
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null || _voucherService.GetVoucherList() == null)
-            {
-                return NotFound();
-            }
-
-            _voucherService.DeleteVoucher((int)id);
-
-            return RedirectToPage();
         }
     }
 }

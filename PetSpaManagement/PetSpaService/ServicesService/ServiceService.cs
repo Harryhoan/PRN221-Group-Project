@@ -45,6 +45,6 @@ namespace PetSpaService.ServicesService
 				throw new Exception("Invalid new service");
 			_serviceRepo.UpdateService(service.Id, service);
 		}
-
-	}
+		public int NumberOfService() => ServiceDAO.Instance.NumberOfService();
+    }
 }

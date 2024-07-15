@@ -69,5 +69,6 @@ namespace PetSpaDAO
                 _context.SaveChanges();
             }
         }
+        public int NumberOfService() => _context.Services.Count();
     }
 }

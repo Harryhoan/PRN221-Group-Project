@@ -88,6 +88,6 @@ namespace PetSpaService.BookingService
             // Dates are in the same week if the starting days of their weeks are the same
             return startOfWeek1 == startOfWeek2;
         }
-
+        public int NumberOfBooking() => BookingRepo.NumberOfBooking();
     }
 }

@@ -84,10 +84,13 @@
                                             <input asp-for="NewAccount.Phone"
                                                    type="text"
                                                    class="form-control"
-                                                   placeholder="Fill Phone Number" required pattern="^\d{10}$" />
+                                                   placeholder="Fill Phone Number"
+                                                   required
+                                                   onkeypress="return !/\d/.test(event.key)" />
                                             <span asp-validation-for="NewAccount.Phone" class="text-danger"></span>
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group form-group-default">
                                             <label>Role</label>

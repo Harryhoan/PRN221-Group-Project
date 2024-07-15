@@ -56,7 +56,7 @@ namespace PRN211GroupProject.Pages.Admin.BookingPage
             }
             _bookingService.DeleteBooking(id);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

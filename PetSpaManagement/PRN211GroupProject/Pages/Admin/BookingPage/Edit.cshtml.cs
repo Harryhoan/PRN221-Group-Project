@@ -87,7 +87,7 @@ namespace PRN211GroupProject.Pages.Admin.BookingPage
             {
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }
