@@ -13,6 +13,7 @@ using PetSpaService.AccountService;
 using PetSpaService.AvailableService;
 using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Staff.BookingPage
 {
@@ -80,7 +81,37 @@ namespace PRN211GroupProject.Pages.Staff.BookingPage
         {
             try
             {
-                Booking.Status = true;
+                if (User.Identity == null || String.IsNullOrEmpty(User.Identity.Name) || !User.Identity.IsAuthenticated)
+                {
+                    return Unauthorized();
+                }
+                if (HttpContext.Session == null)
+                {
+                    return BadRequest();
+                }
+                var currentUser = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+                if (currentUser == null)
+                {
+                    return NotFound();
+                }
+                if (currentUser.RoleId == 1)
+                {
+                    return Unauthorized();
+                }
+                if (Booking == null || Booking.Started == default || Booking.Started.Date <= DateTime.Today || Booking.Started.TimeOfDay < TimeSpan.FromHours(9) || Booking.Started.TimeOfDay > TimeSpan.FromHours(18))
+                {
+                    return BadRequest();
+                }
+                var available = _availableService.GetAvailable(Booking.AvailableId);
+                if (available == null || available.Service == null || available.Spot == null)
+                {
+                    return BadRequest();
+                }
+                Booking.Ended = Booking.Started.AddMinutes(available.Service.Duration);
+                if (Booking.Ended.TimeOfDay < TimeSpan.FromHours(9) || Booking.Ended.TimeOfDay > TimeSpan.FromHours(18) || _bookingService.IsActiveBookingConflictBySpot(Booking.Started, Booking.Ended, Booking.Available.SpotId))
+                {
+                    return BadRequest();
+                }
                 _bookingService.UpdateBooking(Booking);
             }
             catch (Exception ex)
