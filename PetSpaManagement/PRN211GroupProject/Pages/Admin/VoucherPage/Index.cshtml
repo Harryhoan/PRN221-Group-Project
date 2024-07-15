@@ -2,59 +2,172 @@
 @model PRN211GroupProject.Pages.Admin.VoucherPage.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Voucher Manager";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@ViewData["Title"] - Kaiadmin Bootstrap 5 Admin Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Voucher[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voucher[0].Discount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voucher[0].Expired)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voucher[0].Reach)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Voucher[0].Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Voucher) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Expired)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Reach)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <link rel="icon" href="~/adminAssets/assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["../assets/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
+    </script>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex align-items-center">
+                <h4 class="card-title">@ViewData["Title"]</h4>
+                <button type="button" class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal" data-bs-target="#addVoucherModal">
+                    <i class="fa fa-plus"></i>
+                    Create New
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="voucher-table" class="display table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Voucher[0].Name)</th>
+                            <th>@Html.DisplayNameFor(model => model.Voucher[0].Discount)</th>
+                            <th>@Html.DisplayNameFor(model => model.Voucher[0].Expired)</th>
+                            <th>@Html.DisplayNameFor(model => model.Voucher[0].Reach)</th>
+                            <th>@Html.DisplayNameFor(model => model.Voucher[0].Status)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Voucher)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Discount)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Expired)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Reach)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                                <td>
+                                    <div class="form-button-action">
+                                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-link btn-primary btn-lg">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-link btn-info btn-lg">
+                                            <i class="fas fa-info-circle"></i>
+                                        </a>
+                                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-link btn-danger btn-lg">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Voucher Modal -->
+    <div class="modal fade" id="addVoucherModal" tabindex="-1" role="dialog" aria-labelledby="addVoucherModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="addVoucherModalLabel">Create New Voucher</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post">
+                    <div class="modal-body">
+                                <p class="small">
+                                    Create a new voucher using this form, make sure you
+                                    fill them all.
+                                </p>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group form-group-default">
+                            <label asp-for="NewVoucher.Name">Name</label>
+                            <input asp-for="NewVoucher.Name" class="form-control" placeholder="Fill Name" required />
+                            <span asp-validation-for="NewVoucher.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-group-default">
+                            <label asp-for="NewVoucher.Discount">Discount</label>
+                            <input asp-for="NewVoucher.Discount" class="form-control" placeholder="Fill Discount" required min="1" max="100"/>
+                            <span asp-validation-for="NewVoucher.Discount" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-group-default">
+                            <label asp-for="NewVoucher.Expired">Expired</label>
+                            <input asp-for="NewVoucher.Expired" class="form-control" placeholder="Fill Expiry Date" required />
+                            <span asp-validation-for="NewVoucher.Expired" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-group-default">
+                            <label asp-for="NewVoucher.Reach">Reach</label>
+                            <input asp-for="NewVoucher.Reach" class="form-control" placeholder="Fill Reach" required min="1" max="100"/>
+                            <span asp-validation-for="NewVoucher.Reach" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-group-default">
+                            <label>Status</label><br />
+                            <input asp-for="NewVoucher.Status" type="radio" value="true" required /> Active
+                            <input asp-for="NewVoucher.Status" type="radio" value="false" required /> Inactive
+                            <span asp-validation-for="NewVoucher.Status" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core JS Files -->
+    <script src="~/adminAssets/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/popper.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart-circle/circles.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/world.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="~/adminAssets/assets/js/kaiadmin.min.js"></script>
+    <script src="~/adminAssets/assets/js/setting-demo.js"></script>
+    <script src="~/adminAssets/assets/js/demo.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#voucher-table').DataTable({
+                pageLength: 5,
+            });
+        });
+    </script>
+</body>
+</html>

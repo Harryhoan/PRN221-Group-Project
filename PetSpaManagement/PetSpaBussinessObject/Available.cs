@@ -14,6 +14,8 @@ namespace PetSpaBussinessObject
         public int ServiceId { get; set; }
         public int SpotId { get; set; }
 
+        public Boolean Status { get; set; }
+
         public virtual Service Service { get; set; } = null!;
         public virtual Spot Spot { get; set; } = null!;
         public virtual ICollection<Booking> Bookings { get; set; }

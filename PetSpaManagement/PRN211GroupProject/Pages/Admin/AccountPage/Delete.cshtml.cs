@@ -15,11 +15,11 @@ namespace PRN211GroupProject.Pages.AccountPage
 {
     public class DeleteModel : PageModel
     {
-        private readonly IAccountService _account;
+        private readonly IAccountService accountService;
 
         public DeleteModel(IAccountService account)
         {
-            _account = account;
+            accountService = account;
         }
 
         [BindProperty]
@@ -32,12 +32,12 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return Unauthorized();
             }
-            if (id == null || _account.GetAllAccount() == null)
+            if (id == null || accountService.GetAllAccount() == null)
             {
                 return NotFound();
             }
 
-            var account = _account.GetAccount((int)id);
+            var account = accountService.GetAccount((int)id);
             if (account == null)
             {
                 return NotFound();
@@ -53,18 +53,18 @@ namespace PRN211GroupProject.Pages.AccountPage
         {
             try
             {
-                if (id == null || _account.GetAllAccount() == null)
+                if (id == null || accountService.GetAllAccount() == null)
                 {
                     return Page();
                 }
-                _account.DeleteAccount(id);
+                accountService.DeleteAccount(id);
             }
             catch (Exception ex)
             {
                 return BadRequest();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

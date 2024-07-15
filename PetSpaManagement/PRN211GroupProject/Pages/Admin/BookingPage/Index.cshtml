@@ -48,9 +48,9 @@
                     <table id="add-row" class="display table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>@Html.DisplayNameFor(model => model.Booking[0].Started)</th>
-                                <th>@Html.DisplayNameFor(model => model.Booking[0].Ended)</th>
-                                <th>@Html.DisplayNameFor(model => model.Booking[0].Created)</th>
+                                <th>@Html.DisplayNameFor(model => model.Booking[0].Account)</th>
+                                <th>@Html.DisplayNameFor(model => model.Booking[0].Available.Service)</th>
+                                <th>@Html.DisplayNameFor(model => model.Booking[0].Available.Spot)</th>
                                 <th style="width: 10%">Action</th>
                             </tr>
                         </thead>
@@ -58,9 +58,9 @@
                             @foreach (var item in Model.Booking)
                             {
                                 <tr>
-                                    <td>@Html.DisplayFor(modelItem => item.Started)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Ended)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Created)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Account.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Available.Service.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Available.Spot.Name)</td>
                                     <td>
                                         <div class="form-button-action">
                                             <a type="button" asp-page="./Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">

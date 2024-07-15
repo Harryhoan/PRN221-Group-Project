@@ -1,0 +1,54 @@
+﻿@page
+@model PRN211GroupProject.Pages.Staff.VoucherPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_StaffLayout.cshtml";
+}
+
+<body>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Voucher Details</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Voucher.Name)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Voucher.Name)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Voucher.Discount)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Voucher.Discount)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Voucher.Expired)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Voucher.Expired)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Voucher.Reach)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Voucher.Reach)</dd>
+                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Voucher.Status)</dt>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Voucher.Status)</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <a asp-page="./Edit" asp-route-id="@Model.Voucher?.Id" class="btn btn-primary">Edit</a>
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/adminAssets/assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/popper.min.js"></script>
+    <script src="~/adminAssets/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/chart-circle/circles.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/jsvectormap/world.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="~/adminAssets/assets/js/kaiadmin.min.js"></script>
+    <script src="~/adminAssets/assets/js/setting-demo.js"></script>
+    <script src="~/adminAssets/assets/js/demo.js"></script>
+    <script src="~/adminAssets/assets/js/plugin/webfont/webfont.min.js"></script>
+</body>

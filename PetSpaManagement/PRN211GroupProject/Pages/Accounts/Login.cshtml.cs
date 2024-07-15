@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore.Update;
-using BCrypt.Net;
 using Microsoft.AspNetCore.Identity;
 using PRN211GroupProject.ViewModel;
+using PetSpaService.VoucherService.VoucherService;
 namespace PRN211GroupProject.Pages.Accounts
 {
     public class LoginModel : PageModel
@@ -30,10 +30,12 @@ namespace PRN211GroupProject.Pages.Accounts
         public string pass { get; set; }
 
         private IAccountService accountService;
+        private readonly IVoucherService voucherService;
 
-        public LoginModel(IAccountService accountSer)
+        public LoginModel(IAccountService account, IVoucherService voucher)
         {
-            accountService = accountSer;
+            accountService = account;
+            voucherService = voucher;
         }
 
         public void OnGet()
@@ -43,10 +45,18 @@ namespace PRN211GroupProject.Pages.Accounts
         public async Task<IActionResult> OnPostAsync()
 
         {
-            Account account = accountService.GetAccountByEmail(email);
-            var valid = PasswordHasher.VerifyPassword(pass, account.Pass);
-            if (account != null && valid == true)
+            Account account = accountService.Login(email,pass);
+            if (account != null)
             {
+                if (account.VoucherId != null) 
+                {
+                    Voucher voucher = voucherService.GetVoucher((int)account.VoucherId);
+                    if (voucher.Expired >= DateTime.Now)
+                    {
+                        account.VoucherId = null;
+                        accountService.UpdateAccount(account);
+                    }
+                }
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Email, email),
@@ -57,11 +67,9 @@ namespace PRN211GroupProject.Pages.Accounts
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 var principal = new ClaimsPrincipal(identity);
-
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                Response.Redirect("/Index");
+                Response.Redirect("/");
                 return Page();
-
             }
             else
             {

@@ -28,6 +28,7 @@ namespace PetSpaService.BookingService
 		public List<Booking> GetWeeklyBooking(DateTime week, List<Booking> bookings);
 
 		public bool IsActiveBookingConflictBySpot(DateTime started, DateTime ended, int spotId);
+		public int NumberOfBooking();
 
-	}
+    }
 }

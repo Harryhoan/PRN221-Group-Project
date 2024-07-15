@@ -45,7 +45,7 @@ namespace PRN211GroupProject.Pages.ServicePage
 
             _serviceService.AddService(Service);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

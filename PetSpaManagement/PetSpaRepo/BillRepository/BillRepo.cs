@@ -19,5 +19,7 @@ namespace PetSpaRepo.BillRepository
 		public List<Bill> GetAccountBillList(int accId) => BillDAO.Instance.GetAccountBill(accId);
 
 		public Bill GetBill(int billId) => BillDAO.Instance.GetBill(billId);
+        public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int id) => BillDAO.Instance.GetFilterdAccountBill(fromDate, toDate, id);    
+        public List<Bill> GetFilteredBill(DateTime fromDate, DateTime toDate) => BillDAO.Instance.GetFilteredBill(fromDate, toDate);
     }
 }

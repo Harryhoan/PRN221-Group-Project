@@ -14,6 +14,6 @@ namespace PetSpaService.AdminServiceService
         public void DeleteService(int serviceID);
         public void UpdateService(Service service);
         public void AddService(Service service);
-
+        public int NumberOfService();
     }
 }

@@ -17,12 +17,12 @@ namespace PRN211GroupProject.Pages.AccountPage
 {
     public class EditModel : PageModel
     {
-        private readonly IAccountService _account;
+        private readonly IAccountService accountService;
         private readonly IVoucherService _voucher;
         private readonly IRoleService _role;
         public EditModel(IAccountService account, IVoucherService voucher, IRoleService role)
         {
-            _account = account;
+            accountService = account;
             _voucher = voucher;
             _role = role;
         }
@@ -36,33 +36,40 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return Unauthorized();
             }
-            if (id == null || _account.GetAllAccount() == null)
+            if (id == 0 || accountService.GetAllAccount() == null)
             {
                 return NotFound();
             }
-            var account = _account.GetAccount(id);
+            var account = accountService.GetAccount(id);
             if (account == null)
             {
                 return NotFound();
             }
-            ViewData["voucherlist"] = new SelectList(_voucher.GetVoucherList(), "Id", "Name");
+
+            // Fetch and filter vouchers
+            var vouchers = _voucher.GetVoucherList();
+            var activeVouchers = vouchers.Where(v => v.Status == true).ToList();
+            ViewData["voucherlist"] = new SelectList(activeVouchers, "Id", "Name");
+
             ViewData["rolelist"] = new SelectList(_role.GetAllRole(), "Id", "Name");
             Account = account;
             return Page();
         }
+
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             try
             {
-                _account.UpdateAccount(Account);
+                Account.Status = true;
+                accountService.UpdateAccount(Account);
             }
             catch (Exception ex)
             {
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

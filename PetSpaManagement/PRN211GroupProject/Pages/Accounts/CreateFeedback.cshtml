@@ -1,0 +1,270 @@
+﻿@page
+@model CreateFeedbackModel
+
+@{
+    ViewData["Title"] = "CreateFeedback";
+}
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Animal | Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main>
+        <!-- Hero Area Start -->
+        <div class="slider-area2 slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center pt-50">
+                            <h2>Feedback</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Area End -->
+        <!-- ================ contact section start ================= -->
+        <div class="contact-form-main pb-top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="form-wrapper">
+                            <!--Section Tittle  -->
+                            <div class="form-tittle">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="section-tittle section-tittle2 mb-70 text-center">
+                                            <h2>Send us your feedback!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Section Tittle  -->
+                            <form id="contact-form" method="POST">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="select-itms">
+                                            <label asp-for="Feedback.Service" class="control-label"></label>
+                                            <select asp-for="Feedback.ServiceId" class="form-control" asp-items="ViewBag.ServiceId"></select>
+                                        </div>
+                                    </div>
+                                    <div><br /></div>
+                                    <div class="col-lg-12">
+                                        <div class="form-box user-icon mb-30">
+                                            <label asp-for="Feedback.Rating" class="control-label"></label>
+                                            <div class="rating">
+                                                <input asp-for="Feedback.Rating" type="radio" id="star5" name="Feedback.Rating" value="5" /><label for="star5" title="5 stars"></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star4" name="Feedback.Rating" value="4" /><label for="star4" title="4 stars"></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star3" name="Feedback.Rating" value="3" /><label for="star3" title="3 stars"></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star2" name="Feedback.Rating" value="2" /><label for="star2" title="2 stars"></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star1" name="Feedback.Rating" value="1" /><label for="star1" title="1 star"></label>
+                                            </div>
+                                            <span asp-validation-for="Feedback.Rating" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div><br /></div>
+                                    <div class="col-lg-12">
+                                        <div class="form-box message-icon mb-65">
+                                            <label asp-for="Feedback.Information" class="control-label"></label>
+                                            <textarea asp-for="Feedback.Information" class="form-control"></textarea>
+                                            <span asp-validation-for="Feedback.Information" class="text-danger"></span>
+                                        </div>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <div class="submit-info">
+                                                <button class="btn submit-btn2" type="submit">Submit Now</button>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="alert alert-danger">You need to Login to leave a feedback</div>
+                                            <div><br /></div>
+                                            <div class="submit-info">
+                                                <button class="btn submit-btn2"><a href="/Accounts/Login">Login</a></button>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                                <!-- shape-dog -->
+                                <div class="shape-dog">
+                                    <img src="~/assets/img/gallery/shape1.png" alt="">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- contact left Img-->
+            @*             <div class="from-left d-none d-lg-block">
+            <img src="~/assets/img/gallery/contact_form.png" alt="">
+            </div> *@
+        </div>
+    </main>
+    <style>
+        .alert {
+            padding: 20px;
+            background-color: orange;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .closebtn:hover {
+                color: black;
+            }
+
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+            .rating input {
+                display: none;
+            }
+
+            .rating label {
+                position: relative;
+                width: 1em;
+                font-size: 2rem;
+                color: #FFD700;
+                cursor: pointer;
+            }
+
+                .rating label::before {
+                    content: "★";
+                    position: absolute;
+                    opacity: 0.3;
+                }
+
+                .rating label:hover:before,
+                .rating label:hover ~ label:before {
+                    opacity: 1 !important;
+                }
+
+            .rating input:checked ~ label:before {
+                opacity: 1;
+            }
+
+            .rating input:checked + label:hover:before,
+            .rating input:checked + label:hover ~ label:before,
+            .rating label:hover ~ input:checked ~ label:before {
+                opacity: 0.4;
+            }
+    </style>
+    <!-- JS here -->
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+</body>
+@* </html>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Feedback.Information" class="control-label"></label>
+                <input asp-for="Feedback.Information" class="form-control" />
+                <span asp-validation-for="Feedback.Information" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Feedback.Status" /> @Html.DisplayNameFor(model => model.Feedback.Status)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback.Rating" class="control-label"></label>
+                <input asp-for="Feedback.Rating" class="form-control" />
+                <span asp-validation-for="Feedback.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback.Created" class="control-label"></label>
+                <input asp-for="Feedback.Created" class="form-control" />
+                <span asp-validation-for="Feedback.Created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback.Updated" class="control-label"></label>
+                <input asp-for="Feedback.Updated" class="form-control" />
+                <span asp-validation-for="Feedback.Updated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback.AccId" class="control-label"></label>
+                <select asp-for="Feedback.AccId" class ="form-control" asp-items="ViewBag.AccId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Feedback.ServiceId" class="control-label"></label>
+                <select asp-for="Feedback.ServiceId" class ="form-control" asp-items="ViewBag.ServiceId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div> *@
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

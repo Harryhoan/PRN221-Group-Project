@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace PetSpaDAO
 {
@@ -13,7 +14,7 @@ namespace PetSpaDAO
     {
         private readonly PetSpaManagementContext context = null;
         private static BillDAO instance = null;
-
+         
         public BillDAO()
         {
             context = new PetSpaManagementContext();
@@ -33,7 +34,7 @@ namespace PetSpaDAO
 
         public List<Bill> GetAllBill()
         {
-            var Bills = context.Bills.ToList();
+            var Bills = context.Bills.Include(b => b.Acc).Include(b => b.Voucher).ToList();
             if (Bills == null)
                 throw new Exception("All Bills cannot be retrieved");
             return Bills;
@@ -42,7 +43,7 @@ namespace PetSpaDAO
 
         public List<Bill> GetAccountBill(int accId)
         {
-            var Bills = context.Bills.Where(b => b.AccId == accId).ToList();
+            var Bills = context.Bills.Where(b => b.AccId == accId).Include(b => b.Voucher).ToList();
             if (Bills == null)
                 throw new Exception("All Bills cannot be retrieved");
             return Bills;
@@ -62,7 +63,7 @@ namespace PetSpaDAO
                 if (bill != null)
                 {
 
-                    if (bill.Started == default || bill.Started <= DateTime.Now)
+                    if (bill.Started == default || bill.Started <= DateTime.Now || bill.Created > DateTime.Now)
                         throw new Exception("Invalid bill date or time");
 
                     if (bill.Total <= 0)
@@ -100,6 +101,19 @@ namespace PetSpaDAO
         //		Console.WriteLine("Bill cannot be updated");
         //	}
         //}
+        public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int accountId)
+        {
+            var filteredBills = context.Bills
+                .Where(b => b.AccId == accountId && b.Created >= fromDate && b.Created <= toDate)
+                .OrderBy(b => b.Created)
+                .ToList();
+            return filteredBills;
+        }
+        public List<Bill> GetFilteredBill(DateTime fromDate, DateTime toDate)
+        {
+            List<Bill> allBills = GetAllBill();
+            return allBills.Where(o => o.Created >= fromDate && o.Created <= toDate).ToList();
+        }
 
         public void DeleteBill(int billId)
         {

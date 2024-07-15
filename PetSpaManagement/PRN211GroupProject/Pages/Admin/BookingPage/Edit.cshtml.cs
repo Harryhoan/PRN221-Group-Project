@@ -78,34 +78,16 @@ namespace PRN211GroupProject.Pages.Admin.BookingPage
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-
             try
             {
+                Booking.Status = true;
                 _bookingService.UpdateBooking(Booking);
             }
             catch (Exception ex)
             {
-                //if (!BookingExists(Booking.Id))
-                //{
-                //    return NotFound();
-                //}
-                //else
-                //{
-                //    throw;
-                //}
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
-
-        //private bool BookingExists(int id)
-        //{
-        //    return (_context.Bookings?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
     }
 }

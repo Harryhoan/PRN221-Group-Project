@@ -1,0 +1,103 @@
+﻿@page
+@model PRN211GroupProject.Pages.Accounts.History.DetailsModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bill Details</h1>
+
+        <table class="center-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Service Name</th>
+                    <th>Spot Name</th>
+                    <th>Started</th>
+                    <th>Ended</th>
+                    <th>Duration</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.BillDetails != null && Model.BillDetails.Any())
+                {
+                    @foreach (var item in Model.BillDetails)
+                    {
+                        <tr>
+                            <td>@(Model.BillDetails.IndexOf(item) + 1)</td>
+                            <td>@(item?.Booking?.Available?.Service?.Name ?? "N/A")</td>
+                            <td>@(item?.Booking?.Available?.Spot?.Name ?? "N/A")</td>
+                            <td>@(item?.Booking?.Started.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
+                            <td>@(item?.Booking?.Ended.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
+                            <td>@(item?.Booking?.Available?.Service?.Duration ?? 0) minutes</td>
+                            <td>@(item?.Cost.ToString("0.00") ?? "N/A")</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7">No data available</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <button class="back-button" onclick="window.history.back()">Back</button>
+    </div>
+</body>
+</html>

@@ -51,9 +51,9 @@ namespace PRN211GroupProject
 
 
             var app = builder.Build();
-          /*  app.UseExceptionHandler("/Error");
+            app.UseExceptionHandler("/Error");
             app.UseHsts();
-            app.UseStatusCodePagesWithReExecute("/Error", "?statusCode={0}");*/
+            app.UseStatusCodePagesWithReExecute("/Error", "?statusCode={0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

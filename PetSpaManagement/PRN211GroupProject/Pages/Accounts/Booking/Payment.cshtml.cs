@@ -12,6 +12,7 @@ using PetSpaService.BillService;
 using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Security.Claims;
@@ -60,14 +61,22 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             try
             {
                 Sum = 0;
-                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
-                var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
-                SetAccount();
-                if (Account != null)
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+				if (Account != null)
                 {
                     if (Account.VoucherId != null)
                     {
-                        Account.Voucher = voucherService.GetVoucher((int)Account.VoucherId);
+                        Voucher voucher = voucherService.GetVoucher((int)Account.VoucherId);
+                        if (voucher.Expired >= DateTime.Now)
+                        {
+                            Account.VoucherId = null;
+                            Account.Voucher = null;
+                            accountService.UpdateAccount(Account);
+                        }
+                        else
+                        {
+                            Account.Voucher = voucherService.GetVoucher((int)Account.VoucherId);
+                        }
                     }
                     else
                     {
@@ -120,24 +129,6 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             return Page();
         }
 
-        public void SetAccount()
-        {
-            try
-            {
-                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
-                var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
-                if (emailClaim == null)
-                {
-                    Account = null;
-                    return;
-                }
-                Account = accountService.GetAccountByEmail(emailClaim.Value);
-            }
-            catch
-            {
-                Account = null;
-            }
-        }
 
         public IActionResult OnPostApplyVoucher()
         {
@@ -166,10 +157,11 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
 
         public IActionResult OnPostBill()
         {
-            SetAccount();
+            
             try
             {
-                if (Account != null)
+				Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+				if (Account != null)
                 {
 
                     var billDetailedJson = Request.Form["billDetailedJson"];
@@ -190,6 +182,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                         bill.AccId = Account.Id;
                         bill.Started = BillDetaileds[0].Booking.Started;
                         bill.VoucherId = SelectedVoucherId == 0 ? null : SelectedVoucherId;
+                        bill.Created = DateTime.Now;
                         billService.AddBill(bill);
 
                         if (bill != null && bill.Id > 0)
@@ -206,10 +199,11 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
 
                         if (SelectedVoucherId != 0)
                         {
-
+                            Account.VoucherId = null;
+                            accountService.UpdateAccount(Account);
                         }
                         HttpContext.Session.Clear();
-                        return RedirectToPage("/index");
+                        return RedirectToPage("/Index");
                     }
                     else
                     {
@@ -222,6 +216,8 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             {
                 return BadRequest();
             }
-            }
+        }
+        
+
     }
 }

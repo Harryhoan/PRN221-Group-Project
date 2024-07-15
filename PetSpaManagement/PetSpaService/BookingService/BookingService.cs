@@ -58,7 +58,7 @@ namespace PetSpaService.BookingService
 
         public void UpdateBooking(Booking booking)
         {
-            if (booking == null || !(booking.Id > 0))
+            if (booking == null || booking.Id == default)
                 throw new Exception("Invalid new Booking");
             BookingRepo.UpdateBooking(booking);
         }
@@ -88,6 +88,6 @@ namespace PetSpaService.BookingService
             // Dates are in the same week if the starting days of their weeks are the same
             return startOfWeek1 == startOfWeek2;
         }
-
+        public int NumberOfBooking() => BookingRepo.NumberOfBooking();
     }
 }

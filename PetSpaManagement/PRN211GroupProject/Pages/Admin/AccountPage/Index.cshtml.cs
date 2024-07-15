@@ -14,13 +14,13 @@ namespace PRN211GroupProject.Pages.AccountPage
 {
     public class IndexModel : PageModel
     {
-        private readonly IAccountService _account;
-        private readonly IRoleService _role;
+        private readonly IAccountService accountService;
+        private readonly IRoleService roleService;
 
         public IndexModel(IAccountService account, IRoleService role)
         {
-            _account = account;
-            _role = role;
+            accountService = account;
+            roleService = role;
         }
 
         public IList<Account> Account { get; set; } = default!;
@@ -37,32 +37,28 @@ namespace PRN211GroupProject.Pages.AccountPage
             {
                 return Unauthorized();
             }
-            if (_account != null)
+            if (accountService != null)
             {
-                Account = _account.GetAllAccount();
+                Account = accountService.GetAllAccount();
             }
 
-            if (_role != null)
+            if (roleService != null)
             {
-                Roles = _role.GetAllRole();
+                Roles = roleService.GetAllRole();
             }
 
-            ViewData["RoleId"] = new SelectList(_role.GetAllRole(), "Id", "Name");
+            ViewData["RoleId"] = new SelectList(roleService.GetAllRole(), "Id", "Name");
 
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (User.Identity == null || !User.Identity.IsAuthenticated)
-            //{
-            //    return Unauthorized();
-            //}
             if (NewAccount != null)
             {
-                _account.AddAccount(NewAccount);
+                accountService.AddAccount(NewAccount);
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage();
         }
     }
 }

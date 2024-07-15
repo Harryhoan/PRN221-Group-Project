@@ -73,10 +73,10 @@
                     <thead>
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(Model => Model.Feedback[0].Information)
+                                @Html.DisplayNameFor(Model => Model.Feedback[0].Acc.Name)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(Model => Model.Feedback[0].Status)
+                                @Html.DisplayNameFor(Model => Model.Feedback[0].Information)
                             </th>
                             <th>
                                 @Html.DisplayNameFor(Model => Model.Feedback[0].Rating)
@@ -89,10 +89,10 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Information)
+                                    @Html.DisplayFor(modelItem => item.Acc.Name)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Status)
+                                    @Html.DisplayFor(modelItem => item.Information)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Rating)

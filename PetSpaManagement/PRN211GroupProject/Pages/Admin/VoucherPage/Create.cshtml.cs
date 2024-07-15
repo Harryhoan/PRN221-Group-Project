@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PetSpaBussinessObject;
 using PetSpaDaos;
+using PetSpaService.VoucherService.VoucherService;
 
 namespace PRN211GroupProject.Pages.Admin.VoucherPage
 {
     public class CreateModel : PageModel
     {
-        private readonly PetSpaDaos.PetSpaManagementContext _context;
+        private readonly IVoucherService _voucherService;
 
-        public CreateModel(PetSpaDaos.PetSpaManagementContext context)
+        public CreateModel(IVoucherService voucherService)
         {
-            _context = context;
+            _voucherService = voucherService;
         }
 
         public IActionResult OnGet()
@@ -26,20 +27,17 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
 
         [BindProperty]
         public Voucher Voucher { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Vouchers == null || Voucher == null)
+            if (!ModelState.IsValid || _voucherService.GetVoucherList() == null || Voucher == null)
             {
                 return Page();
             }
-
-            _context.Vouchers.Add(Voucher);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            _voucherService.AddVoucher(Voucher);
+            return RedirectToPage();
         }
     }
 }

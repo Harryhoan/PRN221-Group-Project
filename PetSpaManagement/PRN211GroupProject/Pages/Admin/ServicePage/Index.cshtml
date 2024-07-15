@@ -105,17 +105,21 @@
                                                 <input asp-for="NewService.Duration"
                                                        type="number"
                                                        class="form-control"
-                                                       placeholder="Fill Duration" required />
+                                                       placeholder="Fill Duration"
+                                                       required
+                                                       min="0" />
                                                 <span asp-validation-for="NewService.Duration" class="text-danger"></span>
                                             </div>
                                         </div>
+
                                         <div class="col-sm-12">
                                             <div class="form-group form-group-default">
                                                 <label>Duration</label>
                                                 <input asp-for="NewService.Price"
                                                        type="number"
                                                        class="form-control"
-                                                       placeholder="Fill Price" required />
+                                                       placeholder="Fill Price" required 
+                                                       min="0"/>
                                                 <span asp-validation-for="NewService.Price" class="text-danger"></span>
                                             </div>
                                         </div>

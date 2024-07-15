@@ -16,5 +16,6 @@ namespace PetSpaService.BillDetailedService
         public void AddBillDetailed(BillDetailed billDetailed);
 
         public void DeleteBillDetailed(int billDetailedId);
+        public List<BillDetailed> GetBillDetailsByBillId(int id);
     }
 }
