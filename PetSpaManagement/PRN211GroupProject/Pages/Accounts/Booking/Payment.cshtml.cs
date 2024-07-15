@@ -184,7 +184,6 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                         bill.VoucherId = SelectedVoucherId == 0 ? null : SelectedVoucherId;
                         bill.Created = DateTime.Now;
                         billService.AddBill(bill);
-
                         if (bill != null && bill.Id > 0)
                         {
                             foreach (var item in BillDetaileds)

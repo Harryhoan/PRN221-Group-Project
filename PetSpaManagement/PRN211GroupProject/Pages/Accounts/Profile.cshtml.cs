@@ -19,7 +19,7 @@ namespace PRN211GroupProject.Pages.Accounts
         public ProfileViewModel ProfileViewModel { get; set; }
         [BindProperty]
         public ChangePasswordViewModel ChangePasswordViewModel { get; set; }
-
+        [BindProperty]
         public Account? Account { get; set; }
         public IActionResult OnGet()
         {
@@ -34,10 +34,6 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return Page();
-                }
                 if (Account?.Email == ProfileViewModel.Email)
                 {
                     if (accountService.GetAccountByEmail(ProfileViewModel.Email) != null)
@@ -61,14 +57,10 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return Page();
-                }
                 if (Account?.Pass != ChangePasswordViewModel.OldPass)
-                {                  
-                        ModelState.AddModelError("ChangePasswordViewModel.OldPass", "Your password is incorrect.");
-                        return Page();
+                {
+                    ModelState.AddModelError("ChangePasswordViewModel.OldPass", "Your password is incorrect.");
+                    return Page();
                 }
                 Account.Pass = ChangePasswordViewModel.NewPass;
                 accountService.UpdateAccount(Account);

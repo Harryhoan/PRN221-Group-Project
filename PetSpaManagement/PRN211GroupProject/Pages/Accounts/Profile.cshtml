@@ -12,194 +12,185 @@
         </div>
     </div>
 </div>
-    <div class="slider-area2 slider-height2 d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="hero-cap text-center pt-50">
-                        <h2>Profile</h2>
-                    </div>
+<div class="slider-area2 slider-height2 d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="hero-cap text-center pt-50">
+                    <h2>Profile</h2>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Hero Area Start -->
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <style>
-        body {
-            background-color: #f8f9fa;
-            padding-top: 50px;
+</div>
+<!-- Hero Area Start -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom styles -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .profile-container {
+        max-width: 600px;
+        margin: auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .profile-header h2 {
+            color: #333333;
         }
 
-        .profile-container {
-            max-width: 600px;
-            margin: auto;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-        }
+    .profile-form .form-group {
+        margin-bottom: 20px;
+    }
 
-        .profile-header {
-            text-align: center;
-            margin-bottom: 20px;
+    .profile-form label {
+        font-weight: bold;
+    }
+        .profile-form .btn:hover {
+            background-color: lightslategrey;
         }
+</style>
+<main>
+    <body>
+        </br>
+        <div class="profile-container">
+            <div class="profile-header">
+                <h2>User Profile</h2>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="Email" class="form-control" placeholder="Email" value="@Model.Account.Email" readonly>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="Username" class="form-control" placeholder="Username" value="@Model.Account.Name" readonly>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="PhoneNumber" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" readonly>
+            </div>
+            <div class="text-center">
+                <button id="editProfileBtn" type="button" class="btn btn-primary">Edit Profile</button>
+                <button id="changePasswordBtn" type="button" class="btn btn-small">Change Password</button>
+            </div>
+        </div>
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="editProfileForm" method="post" asp-page-handler="SaveProfile">
+                        <input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
+                        <input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
+                        <input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
+                        <input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('editModal')">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label asp-for="ProfileViewModel.Email"></label>
+                                <input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" required />
+                                <span asp-validation-for="ProfileViewModel.Email" class="text-danger"></span>
+                            </div>
 
-            .profile-header h2 {
-                color: #333333;
+                            <div class="form-group">
+                                <label asp-for="ProfileViewModel.Name"></label>
+                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" />
+                                <span asp-validation-for="ProfileViewModel.Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProfileViewModel.Phone"></label>
+                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" type="number" min="1"/>
+                                <span asp-validation-for="ProfileViewModel.Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-small">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="changePasswordForm" method="post" asp-page-handler="ChangePassword">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('changePasswordModal')">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <input type="hidden" asp-for="Account.Id" value="@Model.Account.Id"/>
+                        <input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass"></input>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input asp-for="ChangePasswordViewModel.OldPass" class="form-control" placeholder="Enter your password." type="password" required />
+                                <span asp-validation-for="ChangePasswordViewModel.OldPass" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input asp-for="ChangePasswordViewModel.NewPass" class="form-control" placeholder="Enter your new password" type="password" required />
+                                <span asp-validation-for="ChangePasswordViewModel.NewPass" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="ChangePasswordViewModel.ConfirmPassword" class="form-control" placeholder="Enter your re-password" type="password" required />
+                                <span asp-validation-for="ChangePasswordViewModel.ConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <script>
+            function openModal() {
+                document.getElementById('edit-email').innerText = '@Model.Account.Email';
+                document.getElementById('edit-username').innerText = '@Model.Account.Name';
+                document.getElementById('edit-phone').innerText = '@Model.Account.Phone';
+                $('#editModal').modal('show');
             }
 
-        .profile-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .profile-form label {
-            font-weight: bold;
-        }
-
-        .profile-form .btn {
-            width: 100%;
-            background-color: black;
-            color: #ffffff;
-            border: none;
-        }
-
-            .profile-form .btn:hover {
-                background-color: lightslategrey;
+            function openModal(modalId) {
+                $('#' + modalId).modal('show');
             }
-    </style>
-<@* head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <!-- Bootstrap CSS -->
-   
-</head *@>
-    <main>
-<body>
-            <div class="profile-container">
-                <div class="profile-header">
-                    <h2>User Profile</h2>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" name="Email" class="form-control" placeholder="Email" value="@Model.Account.Email" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="Username" class="form-control" placeholder="Username" value="@Model.Account.Name" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="PhoneNumber" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" readonly>
-                </div>
-                <div class="text-center">
-                    <button id="editProfileBtn" type="button" class="btn btn-primary">Edit Profile</button>
-                    <button id="changePasswordBtn" type="button" class="btn btn-primary">Change Password</button>
-                </div>
-            </div>
-            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <form id="editProfileForm" method="post" asp-page-handler="SaveProfile">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('editModal')">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label asp-for="ProfileViewModel.Email"></label>
-                                    <input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" required />
-                                    <span asp-validation-for="ProfileViewModel.Email" class="text-danger"></span>
-                                </div>
 
-                                <div class="form-group">
-                                    <label asp-for="ProfileViewModel.Name"></label>
-                                    <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" />
-                                    <span asp-validation-for="ProfileViewModel.Name" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label asp-for="ProfileViewModel.Phone"></label>
-                                    <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" type="number" />
-                                    <span asp-validation-for="ProfileViewModel.Phone" class="text-danger"></span>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <form id="changePasswordForm" method="post" asp-page-handler="ChangePassword">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('changePasswordModal')">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <input asp-for="ChangePasswordViewModel.OldPass" class="form-control" placeholder="Enter your password." type="password" required />
-                                    <span asp-validation-for="ChangePasswordViewModel.OldPass" class="text-danger"></span>
-                                </div>
+            function closeModal(modalId) {
+                $('#' + modalId).modal('hide');
+            }
 
-                                <div class="form-group">
-                                    <input asp-for="ChangePasswordViewModel.NewPass" class="form-control" placeholder="Enter your new password" type="password" required />
-                                    <span asp-validation-for="ChangePasswordViewModel.NewPass" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <input asp-for="ChangePasswordViewModel.ConfirmPassword" class="form-control" placeholder="Enter your re-password" type="password" required />
-                                    <span asp-validation-for="ChangePasswordViewModel.ConfirmPassword" class="text-danger"></span>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Change Password</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-            <script>
-                function openModal() {
-                    document.getElementById('edit-email').value = '@Model.Account.Email';
-                    document.getElementById('edit-username').value = '@Model.Account.Name';
-                    document.getElementById('edit-phone').value = '@Model.Account.Phone';
-                    $('#editModal').modal('show');
+            document.getElementById('editProfileBtn').addEventListener('click', function () {
+                openModal('editModal');
+            });
+
+            document.getElementById('changePasswordBtn').addEventListener('click', function () {
+                openModal('changePasswordModal');
+            });
+
+            $(document).keydown(function (e) {
+                if (e.key === "Escape") {
+                    closeModal('editModal');
+                    closeModal('changePasswordModal');
                 }
-
-                function openModal(modalId) {
-                    $('#' + modalId).modal('show');
-                }
-
-                function closeModal(modalId) {
-                    $('#' + modalId).modal('hide');
-                }
-
-                document.getElementById('editProfileBtn').addEventListener('click', function () {
-                    openModal('editModal');
-                });
-
-                document.getElementById('changePasswordBtn').addEventListener('click', function () {
-                    openModal('changePasswordModal');
-                });
-
-                $(document).keydown(function (e) {
-                    if (e.key === "Escape") {
-                        closeModal('editModal');
-                        closeModal('changePasswordModal');
-                    }
-                });
-            </script>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    @Html.Raw("<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js'></script>")
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+            });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        @Html.Raw("<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js'></script>")
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
 </main>
