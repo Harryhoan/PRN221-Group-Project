@@ -9,20 +9,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
-using PetSpaService.SpotService.SpotService;
+using PetSpaService.VoucherService.VoucherService;
 
-namespace PRN211GroupProject.Pages.Staff.SpotPage
+namespace PRN211GroupProject.Pages.Staff.VoucherPage
 {
     public class EditModel : PageModel
     {
-        private readonly ISpotService _spotService;
-        public EditModel(ISpotService spotService)
+        private readonly IVoucherService _voucherService;
+
+        public EditModel(IVoucherService voucherService)
         {
-            _spotService = spotService;
+            _voucherService = voucherService;
         }
 
         [BindProperty]
-        public Spot Spot { get; set; } = default!;
+        public Voucher Voucher { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,17 +32,17 @@ namespace PRN211GroupProject.Pages.Staff.SpotPage
             {
                 return Unauthorized();
             }
-            if (id == null || _spotService.GetSpotList() == null)
+            if (id == null || _voucherService.GetVoucherList() == null)
             {
                 return NotFound();
             }
 
-            var spot = _spotService.GetSpot((int)id);
-            if (spot == null)
+            var voucher = _voucherService.GetVoucher((int)id);
+            if (voucher == null)
             {
                 return NotFound();
             }
-            Spot = spot;
+            Voucher = voucher;
             return Page();
         }
 
@@ -51,13 +52,13 @@ namespace PRN211GroupProject.Pages.Staff.SpotPage
         {
             try
             {
-                 _spotService.UpdateSpot(Spot);
+                _voucherService.UpdateVoucher(Voucher);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
     }
 }

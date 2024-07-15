@@ -1,9 +1,9 @@
 ﻿@page
-@model PRN211GroupProject.Pages.Admin.VoucherPage.IndexModel
+@model PRN211GroupProject.Pages.Staff.VoucherPage.IndexModel
 
 @{
     ViewData["Title"] = "Voucher Manager";
-    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+    Layout = "~/Pages/Shared/_StaffLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -80,9 +80,6 @@
                                         <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-link btn-info btn-lg">
                                             <i class="fas fa-info-circle"></i>
                                         </a>
-                                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-link btn-danger btn-lg">
-                                            <i class="fa fa-times"></i>
-                                        </a>
                                     </div>
                                 </td>
                             </tr>
@@ -130,12 +127,12 @@
                             <input asp-for="NewVoucher.Reach" class="form-control" placeholder="Fill Reach" required min="1" max="100"/>
                             <span asp-validation-for="NewVoucher.Reach" class="text-danger"></span>
                         </div>
-                        <div class="form-group form-group-default">
+@*                         <div class="form-group form-group-default">
                             <label>Status</label><br />
                             <input asp-for="NewVoucher.Status" type="radio" value="true" required /> Active
                             <input asp-for="NewVoucher.Status" type="radio" value="false" required /> Inactive
                             <span asp-validation-for="NewVoucher.Status" class="text-danger"></span>
-                        </div>
+                        </div> *@
                     </div>
                     <div class="modal-footer border-0">
                         <button type="submit" class="btn btn-primary">Create</button>
