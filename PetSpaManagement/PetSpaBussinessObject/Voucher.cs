@@ -16,6 +16,7 @@ namespace PetSpaBussinessObject
         public int Discount { get; set; }
         public DateTime Expired { get; set; }
         public int Reach { get; set; }
+        public DateTime Created { get; set; }
         public bool Status { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; }

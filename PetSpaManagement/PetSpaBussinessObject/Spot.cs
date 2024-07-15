@@ -12,6 +12,7 @@ namespace PetSpaBussinessObject
 
         public int Id { get; set; }
         public string Name { get; set; } = null!;
+        public DateTime Created { get; set; }
         public bool Status { get; set; }
 
         public virtual ICollection<Available> Availables { get; set; }
