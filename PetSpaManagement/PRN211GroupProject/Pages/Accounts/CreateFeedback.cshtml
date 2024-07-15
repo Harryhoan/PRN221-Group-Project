@@ -40,8 +40,7 @@
                 </div>
             </div>
         </div>
-        <!-- Hero Area End -->
-        <!-- ================ contact section start ================= -->
+        </br>
         <div class="contact-form-main pb-top">
             <div class="container">
                 <div class="row justify-content-center">
@@ -102,8 +101,8 @@
                 </div>
             </div>
             <!-- contact left Img-->
-@*             <div class="from-left d-none d-lg-block">
-                <img src="~/assets/img/gallery/contact_form.png" alt="">
+            @*             <div class="from-left d-none d-lg-block">
+            <img src="~/assets/img/gallery/contact_form.png" alt="">
             </div> *@
         </div>
     </main>
@@ -252,5 +251,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
