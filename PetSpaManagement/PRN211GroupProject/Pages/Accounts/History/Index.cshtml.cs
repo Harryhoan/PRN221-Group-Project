@@ -14,6 +14,7 @@ using PetSpaService.BillService;
 using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Accounts.History
 {
@@ -40,13 +41,15 @@ namespace PRN211GroupProject.Pages.Accounts.History
             voucherService = voucher;
         }
 
+        [TempData]
+        public string errorMessage { get; set; }
+
         public Account? Account { get; set; }
         public List<Bill> Bill { get; set; } = new List<Bill>();
 
         public IActionResult OnGet()
         {
-            SetAccount();
-
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
             if (Account != null)
             {
                 // Fetch list of bills associated with the account
@@ -54,22 +57,20 @@ namespace PRN211GroupProject.Pages.Accounts.History
 
                 if (Bill == null || Bill.Count == 0)
                 {
-                    return NotFound("No bills found for the account.");
+                    errorMessage = "No bills found for the account.";
                 }
 
                 return Page();
             }
             else
             {
-                return NotFound("Account not found.");
+                errorMessage = "You must login first";
+                return RedirectToPage("/Accounts/Login");
             }
         }
-
-        public string errorMessage { get; set; }
-
         public IActionResult OnPostSortDate(DateTime fromDate, DateTime toDate)
         {
-            SetAccount();
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
             if (Account != null)
             {
                 if (fromDate != DateTime.MinValue && toDate != DateTime.MinValue)
@@ -94,26 +95,6 @@ namespace PRN211GroupProject.Pages.Accounts.History
             else
             {
                 return NotFound();
-            }
-        }
-
-
-        public void SetAccount()
-        {
-            try
-            {
-                var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
-                var emailClaim = claimsIdentity?.FindFirst(ClaimTypes.Email);
-                if (emailClaim == null)
-                {
-                    Account = null;
-                    return;
-                }
-                Account = accountService.GetAccountByEmail(emailClaim.Value);
-            }
-            catch
-            {
-                Account = null;
             }
         }
     }

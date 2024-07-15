@@ -10,7 +10,12 @@
 </div> *@
 
 <main>
-    <!--? Slider Area Start-->
+    @if (!string.IsNullOrEmpty(Model.errorMessage))
+    {
+        <script>
+            alert('@Model.errorMessage');
+        </script>
+    }
     <div class="slider-area">
         <div class="slider-active dot-style">
             <!-- Slider Single -->

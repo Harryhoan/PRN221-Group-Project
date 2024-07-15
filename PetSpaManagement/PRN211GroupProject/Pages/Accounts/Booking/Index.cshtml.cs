@@ -40,11 +40,16 @@ namespace PRN211GroupProject.Pages.Accounts
 
         [BindProperty]
         public int SpotId { get; set; } = -1;
+        [TempData]
+        public string errorMessage { get; set; }
+
+        public Account? Account { get; set; }
         public IActionResult OnGet(int? spotId, int? offset)
         {
             try
             {
-                if (User.Identity != null && !String.IsNullOrEmpty(User.Identity.Name) && User.Identity.IsAuthenticated)
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+                if (Account != null)
                 {
                     if (_availableService == null || _bookingService == null || _accountService == null || _serviceService == null)
                     {
@@ -86,7 +91,11 @@ namespace PRN211GroupProject.Pages.Accounts
                         Bookings = _bookingService.GetWeeklyBooking(DateTime.Now.Date, _bookingService.GetActiveBookingListBySpot((int)spotId));
                     return Page();
                 }
-                return Unauthorized();
+                else
+                {
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
+                }
             }
             catch (Exception ex)
             {
@@ -98,9 +107,11 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             try
             {
-                if (User.Identity == null || String.IsNullOrEmpty(User.Identity.Name) || !User.Identity.IsAuthenticated)
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+                if (Account != null)
                 {
-                    return Unauthorized();
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
                 }
                 if (HttpContext.Session == null)
                 {

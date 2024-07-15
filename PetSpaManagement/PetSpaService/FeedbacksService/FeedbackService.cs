@@ -1,5 +1,7 @@
 ﻿using PetSpaBussinessObject;
 using PetSpaDAO;
+using PetSpaRepo.BookingRepository;
+using PetSpaRepo.FeedbackRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +12,18 @@ namespace PetSpaService.FeedbacksService
 {
     public class FeedbackService : IFeedbackService
     {
-        public List<Feedback> GetAllFeedback() => FeedbackDAO.Instance.GetAllFeedback();
+        private readonly IFeedbackRepo feedbackRepo;
 
-        public Feedback GetFeedback(int feedbackId) => FeedbackDAO.Instance.GetFeedback(feedbackId);
+        public FeedbackService()
+        {
+            feedbackRepo = new FeedbackRepo();
+        }
 
-        public void NewFeedback(Feedback feedback) => FeedbackDAO.Instance.NewFeedback(feedback);
-        public int NumberOfFeedback() => FeedbackDAO.Instance.NumberOfFeedback();
+
+        public List<Feedback> GetAllFeedback() => feedbackRepo.GetAllFeedback();
+        public Feedback GetFeedback(int feedbackId) => feedbackRepo.GetFeedback(feedbackId);
+        public void NewFeedback(Feedback feedback) => feedbackRepo.NewFeedback(feedback);
+        public int NumberOfFeedback() => feedbackRepo.NumberOfFeedback();
+        public List<Feedback> GetAllAccountFeedBack(int id) =>feedbackRepo.GetAllAccountFeedBack(id);
     }
 }

@@ -7,6 +7,7 @@ using PRN211GroupProject.ViewModel;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Net.Mail;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Accounts
 {
@@ -21,11 +22,26 @@ namespace PRN211GroupProject.Pages.Accounts
         [TempData]
         public string successMessage { get; set; }
         private IAccountService accountService;
+        public Account? Account { get; set; }
+
 
         public RegisterModel(IAccountService accountSer)
         {
             accountService = accountSer;
         }
+        public IActionResult Onget()
+        {
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+            if (Account != null)
+                if (Account != null)
+                {
+                    errorMessage = "Log Out to continue";
+                    return RedirectToPage("/Index");
+                }
+            return Page();
+        }
+
+
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)

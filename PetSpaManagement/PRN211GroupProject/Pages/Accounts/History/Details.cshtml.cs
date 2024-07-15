@@ -16,6 +16,7 @@ using PetSpaService.BillService;
 using PetSpaService.BookingService;
 using PetSpaService.SpotService.SpotService;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Accounts.History
 {
@@ -43,38 +44,50 @@ namespace PRN211GroupProject.Pages.Accounts.History
             voucherService = voucher;
         }
         public IList<BillDetailed> BillDetails { get; set; } = new List<BillDetailed>();
+        [TempData]
+        public string errorMessage { get; set; }
+        public Account? Account { get; set; }
 
         public IActionResult OnGet(int id)
         {
-            if (billDetailedService == null)
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+            if (Account != null)
             {
-                return NotFound("BillDetailedService not found");
-            }
-
-            var billDetails = billDetailedService.GetBillDetailsByBillId(id);
-            if (billDetails == null)
-            {
-                return NotFound("Bill details not found");
-            }
-
-            foreach (var item in billDetails)
-            {
-                if (item != null)
+                if (billDetailedService == null)
                 {
-                    item.Booking = bookingService.GetBooking(item.BookingId);
-                    if (item.Booking != null)
-                    {
-                        item.Booking.Available = availableService.GetAvailable(item.Booking.AvailableId);
-                        if (item.Booking.Available != null)
-                        {
-                            item.Booking.Available.Service = serviceService.GetService(item.Booking.Available.ServiceId);
-                            item.Booking.Available.Spot = spotService.GetSpot(item.Booking.Available.SpotId);
-                        }
-                    }
-                    BillDetails.Add(item);
+                    return NotFound("BillDetailedService not found");
                 }
+
+                var billDetails = billDetailedService.GetBillDetailsByBillId(id);
+                if (billDetails == null)
+                {
+                    return NotFound("Bill details not found");
+                }
+
+                foreach (var item in billDetails)
+                {
+                    if (item != null)
+                    {
+                        item.Booking = bookingService.GetBooking(item.BookingId);
+                        if (item.Booking != null)
+                        {
+                            item.Booking.Available = availableService.GetAvailable(item.Booking.AvailableId);
+                            if (item.Booking.Available != null)
+                            {
+                                item.Booking.Available.Service = serviceService.GetService(item.Booking.Available.ServiceId);
+                                item.Booking.Available.Spot = spotService.GetSpot(item.Booking.Available.SpotId);
+                            }
+                        }
+                        BillDetails.Add(item);
+                    }
+                }
+                return Page();
             }
-            return Page();
+            else
+            {
+                errorMessage = "You must login first";
+                return RedirectToPage("/Accounts/Login");
+            }
         }
     }
 }
