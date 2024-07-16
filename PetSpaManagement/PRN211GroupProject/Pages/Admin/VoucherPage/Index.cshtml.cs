@@ -9,18 +9,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
+using PetSpaService.AccountService;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Admin.VoucherPage
 {
     public class IndexModel : PageModel
     {
         private readonly IVoucherService _voucherService;
+        private readonly IAccountService _accountService;
 
-        public IndexModel(IVoucherService voucherService)
+        public IndexModel(IVoucherService voucherService, IAccountService account)
         {
             _voucherService = voucherService;
+            _accountService = account;
         }
+        [TempData]
+        public string errorMessage { get; set; }
 
         public IList<Voucher> Voucher { get;set; } = default!;
         [BindProperty]
@@ -28,10 +34,11 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            var Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+            if (Account == null)
             {
-                return Unauthorized();
+                errorMessage = "You must login first";
+                return RedirectToPage("/Accounts/Login");
             }
             if (_voucherService != null)
             {

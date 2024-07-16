@@ -14,14 +14,39 @@ using PetSpaService.BillService;
 using PetSpaService.BillDetailedService;
 using PetSpaService.VoucherService;
 using PetSpaService.VoucherService.VoucherService;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using PRN211GroupProject.Handler;
 
 namespace PRN211GroupProject
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddRazorPages(options =>
+            {
+                options.Conventions.AuthorizeFolder("/Admin", "RequireAdminRole");
+                options.Conventions.AuthorizeFolder("/Staff", "RequireStaffRole");
+
+            });
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+    options.Cookie.Name = "User";
+    options.LoginPath = "/Account/Login";
+    options.LogoutPath = "/Accounts/Logout";
+});
+            builder.Services.AddSingleton<IAuthorizationHandler, CustomAccessDeniedHandler>();
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdminRole", policy =>
+                    policy.RequireRole("Admin"));
+                options.AddPolicy("RequireStaffRole", policy =>
+                    policy.RequireRole("Staff"));
+            });
             builder.Services.AddRazorPages();
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IAccountService, AccountService>();
@@ -36,18 +61,11 @@ namespace PRN211GroupProject
             builder.Services.AddScoped<IVoucherService, VoucherService>();
             builder.Services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(30); // Adjust as needed
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddMvc();
             builder.Services.AddDistributedMemoryCache();
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-        .AddCookie(options =>
-        {
-            options.Cookie.Name = "User";
-            options.LoginPath = "/Account/Login"; // Adjust this path if needed
-            options.LogoutPath = "/Accounts/Logout"; // Adjust this path if needed
-        });
 
 
             var app = builder.Build();
@@ -63,7 +81,7 @@ namespace PRN211GroupProject
             app.MapRazorPages();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); // or MapRazorPages(), depending on your setup
+                endpoints.MapControllers();
             });
 
             app.Run();

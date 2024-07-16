@@ -44,14 +44,7 @@ namespace PRN211GroupProject.Pages.Admin
         {
             Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
             if (Account != null)
-            {
-                var roleClaim = User.FindFirst(ClaimTypes.Role);
-
-                if (roleClaim?.Value.ToString() != "Admin")
-                {
-                    errorMessage = "You do not have permission to access the Admin page.";
-                    return RedirectToPage("/Index");
-                }
+            { 
                 try
                 {
                     if (_billService == null)

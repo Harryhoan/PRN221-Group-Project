@@ -5,12 +5,16 @@
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
-	var cartItemCount = HttpContextAccessor.HttpContext.Session.GetInt32("BookingCount") ?? 0;
-	var cartItem = HttpContextAccessor.HttpContext.Session.GetString("BookingCart");
+	var cartItemCount = 0;
 	List<PetSpaBussinessObject.Booking>? bookingCart = new();
-	if (!string.IsNullOrEmpty(cartItem))
+	if (HttpContextAccessor.HttpContext != null)
 	{
-		bookingCart = JsonConvert.DeserializeObject<List<PetSpaBussinessObject.Booking>>(cartItem);
+		cartItemCount = HttpContextAccessor.HttpContext.Session.GetInt32("BookingCount") ?? 0;
+		var cartItem = HttpContextAccessor.HttpContext.Session.GetString("BookingCart");
+		if (!string.IsNullOrEmpty(cartItem))
+		{
+			bookingCart = JsonConvert.DeserializeObject<List<PetSpaBussinessObject.Booking>>(cartItem);
+		}
 	}
 }
 
@@ -118,37 +122,37 @@
 
 </head>
 <body>
-    <header>
-        <!--? Header Start -->
-        <div class="header-area header-transparent">
-            <div class="main-header header-sticky">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <!-- Logo -->
-                        <div class="col-xl-2 col-lg-2 col-md-1">
-                            <div class="logo">
-                                <a asp-page="/Index"><img src="~/assets/img/logo/logo.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-10 col-lg-10 col-md-10">
-                            <div class="menu-main d-flex align-items-center justify-content-end">
-                                <!-- Main-menu -->
-                                <div class="main-menu f-right d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a asp-page="/Index">Home</a></li>
-                                            <li><a asp-page="/About">About Us</a></li>
-                                            <li>
-                                                <a asp-page="/Services/Index">Services</a>
-                                                <ul class="submenu">
-                                                    <li><a asp-page="/Services/Bath">Bath</a></li>
-                                                    <li><a asp-page="/Services/NailTrimming">Nail Trimming</a></li>
-                                                    <li><a asp-page="/Services/EarCleaning">Ear Cleaning</a></li>
-                                                    <li><a asp-page="/Services/HairGrooming">Hair Grooming</a></li>
-                                                    <li><a asp-page="/Services/MassageTherapy">Massage Therapy</a></li>
-                                                    <li><a asp-page="/Services/TeethBrushing">Teeth Brushing</a></li>
-                                                </ul>
-                                            </li>
+	<header>
+		<!--? Header Start -->
+		<div class="header-area header-transparent">
+			<div class="main-header header-sticky">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<!-- Logo -->
+						<div class="col-xl-2 col-lg-2 col-md-1">
+							<div class="logo">
+								<a asp-page="/Index"><img src="~/assets/img/logo/logo.png" alt=""></a>
+							</div>
+						</div>
+						<div class="col-xl-10 col-lg-10 col-md-10">
+							<div class="menu-main d-flex align-items-center justify-content-end">
+								<!-- Main-menu -->
+								<div class="main-menu f-right d-none d-lg-block">
+									<nav>
+										<ul id="navigation">
+											<li><a asp-page="/Index">Home</a></li>
+											<li><a asp-page="/About">About Us</a></li>
+											<li>
+												<a asp-page="/Services/Index">Services</a>
+												<ul class="submenu">
+													<li><a asp-page="/Services/Bath">Bath</a></li>
+													<li><a asp-page="/Services/NailTrimming">Nail Trimming</a></li>
+													<li><a asp-page="/Services/EarCleaning">Ear Cleaning</a></li>
+													<li><a asp-page="/Services/HairGrooming">Hair Grooming</a></li>
+													<li><a asp-page="/Services/MassageTherapy">Massage Therapy</a></li>
+													<li><a asp-page="/Services/TeethBrushing">Teeth Brushing</a></li>
+												</ul>
+											</li>
 
 											<li><a asp-page="/accounts/createFeedback">Feedback</a></li>
 											<li><a asp-page="/Accounts/Booking/Index" style="font:bold">Booking Now!</a></li>
@@ -188,39 +192,39 @@
 												</ul>
 											</li>
 
-                                        </ul>
-                                    </nav>
-                                </div>
-                                @if (@User.Identity == null || String.IsNullOrEmpty(@User.Identity.Name))
-                                {
-                                    <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                        <a asp-page="/Accounts/Login" class="header-btn">Login</a>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="menu-main d-flex align-items-center justify-content-end">
-                                        <!-- Main-menu -->
-                                        <div class="main-menu f-right d-none d-lg-block">
-                                            <nav>
-                                                <ul id="navigation">
-                                                    <li>
-                                                        Welcome @User.Identity.Name!
-                                                        <ul class="submenu">
-                                                            <li><a asp-page="/Accounts/Profile">Profile</a></li>
-                                                            <li><a href="/Accounts/History">History</a></li>
-                                                            @if (User.IsInRole("Admin"))
-                                                            {
-                                                                <li><a href="/Admin">Admin</a></li>
-                                                            }
-                                                            else if (User.IsInRole("Staff"))
-                                                            {
-                                                                <li><a href="/Staff">Staff</a></li>
-                                                            }
-                                                            <li>
-                                                                <a href="#" id="logout-link">Logout</a>
-                                                                <form id="logout-form" asp-page="/Accounts/Logout" method="post" style="display: none;">
-                                                                </form>
+										</ul>
+									</nav>
+								</div>
+								@if (@User.Identity == null || String.IsNullOrEmpty(@User.Identity.Name))
+								{
+									<div class="header-right-btn f-right d-none d-lg-block ml-30">
+										<a asp-page="/Accounts/Login" class="header-btn">Login</a>
+									</div>
+								}
+								else
+								{
+									<div class="menu-main d-flex align-items-center justify-content-end">
+										<!-- Main-menu -->
+										<div class="main-menu f-right d-none d-lg-block">
+											<nav>
+												<ul id="navigation">
+													<li>
+														Welcome @User.Identity.Name!
+														<ul class="submenu">
+															<li><a asp-page="/Accounts/Profile">Profile</a></li>
+															<li><a href="/Accounts/History">History</a></li>
+															@if (User.IsInRole("Admin"))
+															{
+																<li><a href="/Admin">Admin</a></li>
+															}
+															else if (User.IsInRole("Staff"))
+															{
+																<li><a href="/Staff">Staff</a></li>
+															}
+															<li>
+																<a href="#" id="logout-link">Logout</a>
+																<form id="logout-form" asp-page="/Accounts/Logout" method="post" style="display: none;">
+																</form>
 
 															</li>
 

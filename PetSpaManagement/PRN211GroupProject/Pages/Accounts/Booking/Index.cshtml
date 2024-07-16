@@ -1,175 +1,176 @@
 ﻿@page
 @model PRN211GroupProject.Pages.Accounts.BookingModel
 @{
-    ViewData["Title"] = "Booking";
+	ViewData["Title"] = "Booking";
+}
+@if (!string.IsNullOrEmpty(Model.errorMessage))
+{
+    <script>
+        alert('@Model.errorMessage');
+    </script>
 }
 
 <div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-            <div class="preloader-circle"></div>
-            <div class="preloader-img pere-text">
-                <img src="~/assets/img/logo/logo.png" alt="">
-            </div>
-        </div>
-    </div>
+	<div class="preloader d-flex align-items-center justify-content-center">
+		<div class="preloader-inner position-relative">
+			<div class="preloader-circle"></div>
+			<div class="preloader-img pere-text">
+				<img src="~/assets/img/logo/logo.png" alt="">
+			</div>
+		</div>
+	</div>
 </div>
 <main>
-    <div class="slider-area2 slider-height2 d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="hero-cap text-center pt-50">
-                        <h2>Booking</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="slider-area2 slider-height2 d-flex align-items-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="hero-cap text-center pt-50">
+						<h2>Booking</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <body>
-        @{
-            DateTime currentDate = DateTime.Today.AddDays(Model._offset * 7);
-            DateTime startOfWeek = currentDate.AddDays(-(int)currentDate.DayOfWeek);
-            DateTime endOfWeek = startOfWeek.AddDays(6);
-            var tomorrow = DateTime.Today.AddDays(1);
-            var twoWeeksLater = tomorrow.AddDays(14);
-            var minDate = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, 9, 0, 0);
-            var maxDate = new DateTime(twoWeeksLater.Year, twoWeeksLater.Month, twoWeeksLater.Day, 18, 0, 0);
-        }
-        <header class="cd-main-header text-center flex flex-column flex-center">
-            <p class="margin-top-md margin-bottom-xl"></p>
-            <button id="createBookingButton" class="btn btn-small" data-bs-toggle="modal" data-bs-target="#createBookingModal">Create Booking</button>
-            <br />
-            <h1 class="text-xl"><a href="/Accounts/Booking?offset=@(Model._offset - 1)&spotId=@Model.SpotId"><i class="fa fa-angle-left"></i></a> @startOfWeek.ToShortDateString() - @endOfWeek.ToShortDateString() <a href="/Accounts/Booking?offset=@(Model._offset + 1)&spotId=@Model.SpotId"><i class="fa fa-angle-right"></i></a></h1>
-            <br />
-            @{
-                string spotIdFromUrl = Request.Query.TryGetValue("spotId", out var spotId) ? spotId.ToString() : "";
-            }
+	@{
+		DateTime currentDate = DateTime.Today.AddDays(Model._offset * 7);
+		DateTime startOfWeek = currentDate.AddDays(-(int)currentDate.DayOfWeek);
+		DateTime endOfWeek = startOfWeek.AddDays(6);
+		var tomorrow = DateTime.Today.AddDays(1);
+		var twoWeeksLater = tomorrow.AddDays(14);
+		var minDate = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, 9, 0, 0);
+		var maxDate = new DateTime(twoWeeksLater.Year, twoWeeksLater.Month, twoWeeksLater.Day, 18, 0, 0);
+	}
+	<header class="cd-main-header text-center flex flex-column flex-center">
+		<p class="margin-top-md margin-bottom-xl"></p>
+		<button id="createBookingButton" class="btn btn-small" data-bs-toggle="modal" data-bs-target="#createBookingModal">Create Booking</button>
+		<br />
+		<h1 class="text-xl">
+			<a href="/Accounts/Booking?offset=@(Model._offset - 1)&spotId=@Model.SpotId"><i class="fa fa-angle-left"></i></a>
+			@startOfWeek.ToShortDateString() - @endOfWeek.ToShortDateString()
+			<a href="/Accounts/Booking?offset=@(Model._offset + 1)&spotId=@Model.SpotId"><i class="fa fa-angle-right"></i></a>
+		</h1>
+		<br />
+		@{
+			string spotIdFromUrl = Request.Query.TryGetValue("spotId", out var spotId) ? spotId.ToString() : "";
+		}
 
-            <div class="d-flex align-items-center">
-                <select id="redirectDropdown" asp-items="ViewBag.spotList" asp-for="SpotId">
-                </select>
-                <div class="ms-2"></div>
-                <button type="button" class="btn btn-small d-flex align-items-center justify-content-center" onclick="redirectToPage()">Go</button>
-            </div>
+		<div class="d-flex align-items-center">
+			<select id="redirectDropdown" asp-items="ViewBag.spotList" asp-for="SpotId"></select>
+			<div class="ms-2"></div>
+			<button type="button" class="btn btn-small d-flex align-items-center justify-content-center" onclick="redirectToPage()">Go</button>
+		</div>
+	</header>
 
+	<div class="modal fade" id="createBookingModal" tabindex="-1" aria-labelledby="createBookingModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="createBookingModalLabel">Create Booking</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form method="post">
+						<input type="hidden" value="@Model.SpotId" id="formSpotId" name="formSpotId" />
+						<div class="mb-3">
+							<label asp-for="NewBooking.AvailableId" class="form-label">Service</label>
+							<select asp-for="NewBooking.AvailableId" asp-items="ViewBag.availableList" class="form-select" required></select>
+						</div>
+						<div class="mb-3">
+							<label asp-for="NewBooking.Started" class="form-label">Start Time</label>
+							<input type="datetime-local" id="datetimeInput" asp-for="NewBooking.Started"
+								   min="@minDate.ToString("yyyy-MM-ddTHH:mm")"
+								   max="@maxDate.ToString("yyyy-MM-ddTHH:mm")"
+								   step="900" class="form-control" required>
+						</div>
+						<div class="d-grid gap-2">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
-        </header>
-        <div class="modal fade" id="createBookingModal" tabindex="-1" aria-labelledby="createBookingModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="createBookingModalLabel">Create Booking</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post">
-                            <input type="hidden" value="@Model.SpotId" id="formSpotId" name="formSpotId" />
+	<div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
+		<div class="cd-schedule__timeline">
+			<ul>
+				<li><span>09:00</span></li>
+				<li><span>09:30</span></li>
+				<li><span>10:00</span></li>
+				<li><span>10:30</span></li>
+				<li><span>11:00</span></li>
+				<li><span>11:30</span></li>
+				<li><span>12:00</span></li>
+				<li><span>12:30</span></li>
+				<li><span>13:00</span></li>
+				<li><span>13:30</span></li>
+				<li><span>14:00</span></li>
+				<li><span>14:30</span></li>
+				<li><span>15:00</span></li>
+				<li><span>15:30</span></li>
+				<li><span>16:00</span></li>
+				<li><span>16:30</span></li>
+				<li><span>17:00</span></li>
+				<li><span>17:30</span></li>
+				<li><span>18:00</span></li>
+			</ul>
+		</div>
+		<div class="cd-schedule__events">
+			<ul>
+				@foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
+				{
+					<li class="cd-schedule__group">
+						<div class="cd-schedule__top-info"><span>@day.ToString()</span></div>
+						<ul>
+							@if (Model.Bookings != null)
+							{
+								var dayBookings = Model.Bookings.Where(b => b.Started.DayOfWeek == day);
 
-                            <div class="mb-3">
-                                <label asp-for="NewBooking.AvailableId" class="form-label">Service</label>
-                                <select asp-for="NewBooking.AvailableId" asp-items="ViewBag.availableList" class="form-select" required></select>
-                            </div>
+								if (dayBookings.Any())
+								{
+									foreach (var item in dayBookings)
+									{
+										<li class="cd-schedule__event" style="visibility:visible !important">
+											<a data-start="@item.Started.ToString("HH:mm")" data-end="@item.Ended.ToString("HH:mm")" data-content="event-abs-circuit" data-event="event-1" href="#0">
+												<em class="cd-schedule__name">@item.Available.Service.Name <br /> @item.Available.Spot.Name</em>
+											</a>
+										</li>
+									}
+								}
+							}
+							<li style="visibility: hidden; opacity: 0;" class="cd-schedule__event">
+								<a style="visibility: hidden; opacity: 0;" data-start="19:00" data-end="19:00" data-content="event-abs-circuit" data-event="event-1" href="#0">
+									<em></em>
+								</a>
+							</li>
+						</ul>
+					</li>
+				}
+			</ul>
+		</div>
+		<div class="cd-schedule-modal">
+			<header class="cd-schedule-modal__header">
+				<div class="cd-schedule-modal__content">
+					<span class="cd-schedule-modal__date"></span>
+					<h3 class="cd-schedule-modal__name"></h3>
+				</div>
+				<div class="cd-schedule-modal__header-bg"></div>
+			</header>
+			<div class="cd-schedule-modal__body">
+				<div class="cd-schedule-modal__event-info"></div>
+				<div class="cd-schedule-modal__body-bg"></div>
+			</div>
+			<a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
+		</div>
+		<div class="cd-schedule__cover-layer"></div>
+	</div>
 
-                            <div class="mb-3">
-                                <label asp-for="NewBooking.Started" class="form-label">Start Time</label>
-                                <input type="datetime-local" id="datetimeInput" asp-for="NewBooking.Started" min="@minDate.ToString("yyyy-MM-ddTHH:mm")"
-                                       max="@maxDate.ToString("yyyy-MM-ddTHH:mm")"
-                                       step="900" class="form-control" required>
-                            </div>
-
-                            <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
-            <div class="cd-schedule__timeline">
-                <ul>
-                    <li><span>09:00</span></li>
-                    <li><span>09:30</span></li>
-                    <li><span>10:00</span></li>
-                    <li><span>10:30</span></li>
-                    <li><span>11:00</span></li>
-                    <li><span>11:30</span></li>
-                    <li><span>12:00</span></li>
-                    <li><span>12:30</span></li>
-                    <li><span>13:00</span></li>
-                    <li><span>13:30</span></li>
-                    <li><span>14:00</span></li>
-                    <li><span>14:30</span></li>
-                    <li><span>15:00</span></li>
-                    <li><span>15:30</span></li>
-                    <li><span>16:00</span></li>
-                    <li><span>16:30</span></li>
-                    <li><span>17:00</span></li>
-                    <li><span>17:30</span></li>
-                    <li><span>18:00</span></li>
-                </ul>
-            </div>
-
-            <div class="cd-schedule__events">
-                <ul>
-                    @foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
-                    {
-                        <li class="cd-schedule__group">
-                            <div class="cd-schedule__top-info"><span>@day.ToString()</span></div>
-                            <ul>
-
-                                @if (Model.Bookings != null)
-                                {
-                                    var dayBookings = Model.Bookings.Where(b => b.Started.DayOfWeek == day);
-
-                                    @if (dayBookings.Any())
-                                    {
-                                        @foreach (var item in dayBookings)
-                                        {
-                                            <li class="cd-schedule__event">
-                                                <a data-start="@item.Started.ToString("HH:mm")" data-end="@item.Ended.ToString("HH:mm")" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                                                    <em class="cd-schedule__name">@item.Available.Service.Name <br /> @item.Available.Spot.Name</em>
-
-                                                </a>
-                                            </li>
-                                        }
-                                    }
-
-                                }
-                                <li style="visibility: hidden; opacity: 0;" class="cd-schedule__event"><a style=" visibility: hidden; opacity: 0;" data-start="19:00" data-end="19:00" data-content="event-abs-circuit" data-event="event-1" href="#0"><em></em></a></li>
-                            </ul>
-                        </li>
-                    }
-                </ul>
-            </div>
-
-            <div class="cd-schedule-modal">
-                <header class="cd-schedule-modal__header">
-                    <div class="cd-schedule-modal__content">
-                        <span class="cd-schedule-modal__date"></span>
-                        <h3 class="cd-schedule-modal__name"></h3>
-                    </div>
-
-                    <div class="cd-schedule-modal__header-bg"></div>
-                </header>
-
-                <div class="cd-schedule-modal__body">
-                    <div class="cd-schedule-modal__event-info"></div>
-                    <div class="cd-schedule-modal__body-bg"></div>
-                </div>
-
-                <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
-            </div>
-
-            <div class="cd-schedule__cover-layer"></div>
-        </div>
-        <script src="~/scheduleAssets/assets/js/util.js"></script>
-        <script src="~/scheduleAssets/assets/js/main.js"></script>
-    </body>
+	<script src="~/scheduleAssets/assets/js/util.js"></script>
+	<script src="~/scheduleAssets/assets/js/main.js"></script>
 </main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         $("#createBookingButton").click(function () {
@@ -180,8 +181,11 @@
         var selectedDateTime = new Date(this.value);
         var selectedTime = selectedDateTime.getHours();
 
-        if (selectedTime < 9 || selectedTime > 18) {
-            alert("Please select a time between 9:00 AM and 6:00 PM.");
+        if (selectedTime < 9) {
+            alert("Please select a time after 9:00.");
+            this.value = "";
+        }else if (selectedTime > 18) {
+            alert("Please select a time before 18:00.");
             this.value = "";
         }
     });

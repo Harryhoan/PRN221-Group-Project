@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -108,7 +109,7 @@ namespace PRN211GroupProject.Pages.Accounts
             try
             {
                 Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
-                if (Account != null)
+                if (Account == null)
                 {
                     errorMessage = "You must login first";
                     return RedirectToPage("/Accounts/Login");
@@ -149,7 +150,8 @@ namespace PRN211GroupProject.Pages.Accounts
                 NewBooking.Ended = NewBooking.Started.AddMinutes(service.Duration);
                 if (NewBooking.Ended.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Ended.TimeOfDay > TimeSpan.FromHours(18) || _bookingService.IsActiveBookingConflictBySpot(NewBooking.Started, NewBooking.Ended, SpotId))
                 {
-                    return BadRequest();
+                    errorMessage = "Booking already exist!";
+                    return Page();
                 }
 
                 List<PetSpaBussinessObject.Booking>? bookingCart = new();
@@ -197,4 +199,5 @@ namespace PRN211GroupProject.Pages.Accounts
 
         }
     }
+
 }
