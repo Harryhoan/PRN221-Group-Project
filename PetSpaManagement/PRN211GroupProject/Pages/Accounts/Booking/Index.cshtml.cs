@@ -108,7 +108,7 @@ namespace PRN211GroupProject.Pages.Accounts
             try
             {
                 Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
-                if (Account != null)
+                if (Account == null)
                 {
                     errorMessage = "You must login first";
                     return RedirectToPage("/Accounts/Login");
