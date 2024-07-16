@@ -108,8 +108,9 @@ $(document).ready(function(){
 	}
 
 	$('#search-nav').on('shown.bs.collapse', function () {
-		$('.nav-search .form-control').focus();
+		$('.nav-search .form-control').trigger('focus');
 	});
+
 
 	var toggle_sidebar = false,
 	toggle_quick_sidebar = false,
@@ -278,19 +279,20 @@ $(document).ready(function(){
 	}
 
 	
-	$('.sidebar').mouseenter(function() {
-		if (mini_sidebar == 1 && !first_toggle_sidebar){
+	$('.sidebar').on('mouseenter', function () {
+		if (mini_sidebar === 1 && !first_toggle_sidebar) {
 			$('.wrapper').addClass('sidebar_minimize_hover');
 			first_toggle_sidebar = true;
 		} else {
 			$('.wrapper').removeClass('sidebar_minimize_hover');
 		}
-	}).mouseleave(function(){
-		if (mini_sidebar == 1 && first_toggle_sidebar){
+	}).on('mouseleave', function () {
+		if (mini_sidebar === 1 && first_toggle_sidebar) {
 			$('.wrapper').removeClass('sidebar_minimize_hover');
 			first_toggle_sidebar = false;
 		}
 	});
+
 
 	// addClass if nav-item click and has subnav
 

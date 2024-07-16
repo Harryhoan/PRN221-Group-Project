@@ -354,8 +354,8 @@
 
 		window.addEventListener('keyup', function(event){
 			// close event modal when pressing escape key
-			if( event.keyCode && event.keyCode == 27 || event.key && event.key.toLowerCase() == 'escape' ) {
-				for(var i = 0; i < scheduleTemplateArray.length; i++) {
+			if (event.key === 'Escape') {
+				for (let i = 0; i < scheduleTemplateArray.length; i++) {
 					scheduleTemplateArray[i].closeModal();
 				}
 			}
