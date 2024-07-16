@@ -186,11 +186,11 @@ namespace PRN211GroupProject.Pages.Accounts
                     HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart, options));
                     BookingCount = bookingCart.Count;
                     HttpContext.Session.SetInt32("BookingCount", BookingCount);
-                    //_bookingService.AddBooking(NewBooking);
                     return OnGet(SpotId, 0);
                 }
 
-                return BadRequest();
+                errorMessage = "You already add this to cart!";
+                return Page();
             }
             catch
             {

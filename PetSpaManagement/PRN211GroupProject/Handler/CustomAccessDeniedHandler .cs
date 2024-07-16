@@ -28,7 +28,7 @@ namespace PRN211GroupProject.Handler
                 // Check if user is logged in
                 if (!context.User.Identity.IsAuthenticated)
                 {
-                     errorMessage = "You must login first";
+                     errorMessage = "Timeout login again please";
                     httpContext.Response.Redirect("/Accounts/Login");
                     return Task.CompletedTask;
                 }
@@ -50,7 +50,6 @@ namespace PRN211GroupProject.Handler
                 {
                     errorMessage = "Unauthorized! You are forbidden access.";
                     httpContext.Response.Redirect("/Errors/AccessDenied"); 
-
                 }
                 
             }
