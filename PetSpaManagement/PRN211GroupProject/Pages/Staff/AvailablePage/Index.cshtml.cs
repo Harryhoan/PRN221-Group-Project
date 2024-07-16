@@ -19,11 +19,6 @@ namespace PRN211GroupProject.Pages.AvailablePage
 
 		public IActionResult OnGet()
 		{
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
-            {
-                return Unauthorized();
-            }
             try
 			{
 				if (_availableService == null)

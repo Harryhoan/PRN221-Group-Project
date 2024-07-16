@@ -62,7 +62,7 @@
                                     <div class="col-lg-12">
                                         <div class="select-itms">
                                             <label asp-for="Feedback.Service" class="control-label"></label>
-                                            <select asp-for="Feedback.ServiceId" class="form-control" asp-items="ViewBag.ServiceId"></select>
+                                            <select asp-for="Feedback.ServiceId" class="form-control" asp-items="ViewBag.ServiceId" required></select>
                                         </div>
                                     </div>
                                     <div><br /></div>
@@ -70,11 +70,11 @@
                                         <div class="form-box user-icon mb-30">
                                             <label asp-for="Feedback.Rating" class="control-label"></label>
                                             <div class="rating">
-                                                <input asp-for="Feedback.Rating" type="radio" id="star5" name="Feedback.Rating" value="5" /><label for="star5" title="5 stars"></label>
-                                                <input asp-for="Feedback.Rating" type="radio" id="star4" name="Feedback.Rating" value="4" /><label for="star4" title="4 stars"></label>
-                                                <input asp-for="Feedback.Rating" type="radio" id="star3" name="Feedback.Rating" value="3" /><label for="star3" title="3 stars"></label>
-                                                <input asp-for="Feedback.Rating" type="radio" id="star2" name="Feedback.Rating" value="2" /><label for="star2" title="2 stars"></label>
-                                                <input asp-for="Feedback.Rating" type="radio" id="star1" name="Feedback.Rating" value="1" /><label for="star1" title="1 star"></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star5" name="Feedback.Rating" value="5" /><label for="star5" title="5 stars" required></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star4" name="Feedback.Rating" value="4" /><label for="star4" title="4 stars" required></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star3" name="Feedback.Rating" value="3" /><label for="star3" title="3 stars" required></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star2" name="Feedback.Rating" value="2" /><label for="star2" title="2 stars" required></label>
+                                                <input asp-for="Feedback.Rating" type="radio" id="star1" name="Feedback.Rating" value="1" /><label for="star1" title="1 star" required></label>
                                             </div>
                                             <span asp-validation-for="Feedback.Rating" class="text-danger"></span>
                                         </div>
@@ -83,10 +83,10 @@
                                     <div class="col-lg-12">
                                         <div class="form-box message-icon mb-65">
                                             <label asp-for="Feedback.Information" class="control-label"></label>
-                                            <textarea asp-for="Feedback.Information" class="form-control"></textarea>
+                                            <textarea asp-for="Feedback.Information" class="form-control" maxlength="50" required></textarea>
                                             <span asp-validation-for="Feedback.Information" class="text-danger"></span>
                                         </div>
-                                        @if (User.Identity.IsAuthenticated)
+                                        @if (Model.Account != null)
                                         {
                                             <div class="submit-info">
                                                 <button class="btn submit-btn2" type="submit">Submit Now</button>

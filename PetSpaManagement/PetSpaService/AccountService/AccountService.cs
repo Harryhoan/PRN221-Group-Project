@@ -21,8 +21,8 @@ namespace PetSpaService.AccountService
         {
             if (account == null || account.Id != default)
                 throw new Exception("Invalid account cannot be added");
-            account.Created = DateTime.Now;
             account.Pass = HashPassword(account.Pass);
+            account.Created = DateTime.Now;
             repo.AddAccount(account);
         }
 

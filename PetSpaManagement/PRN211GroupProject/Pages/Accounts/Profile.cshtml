@@ -111,18 +111,18 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label asp-for="ProfileViewModel.Email"></label>
-                                <input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" required />
+                                <input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" value="@Model.Account.Email" required />
                                 <span asp-validation-for="ProfileViewModel.Email" class="text-danger"></span>
                             </div>
 
                             <div class="form-group">
                                 <label asp-for="ProfileViewModel.Name"></label>
-                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" />
+                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" value="@Model.Account.Name" required/>
                                 <span asp-validation-for="ProfileViewModel.Name" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="ProfileViewModel.Phone"></label>
-                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" type="number" min="1"/>
+                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" type="number" min="1" required />
                                 <span asp-validation-for="ProfileViewModel.Phone" class="text-danger"></span>
                             </div>
                         </div>
@@ -176,14 +176,6 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            function openModal() {
-                document.getElementById('edit-email').value = '@Model.Account.Email';
-                document.getElementById('edit-username').value = '@Model.Account.Name';
-                document.getElementById('edit-phone').value = '@Model.Account.Phone';
-
-                $('#editModal').modal('show');
-            }
-
 
             function openModal(modalId) {
                 $('#' + modalId).modal('show');

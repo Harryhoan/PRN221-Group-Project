@@ -45,7 +45,11 @@ namespace PRN211GroupProject.Pages.Accounts
                     return RedirectToPage("/Accounts/Login");
                 }
 
-                if (Account?.Email == ProfileViewModel.Email)
+                if (ProfileViewModel == null)
+                {
+                    return BadRequest();
+                }
+                if (Account.Email == ProfileViewModel.Email)
                 {
                     if (accountService.GetAccountByEmail(ProfileViewModel.Email) != null)
                     {
@@ -53,12 +57,12 @@ namespace PRN211GroupProject.Pages.Accounts
                         return Page();
                     }
                 }
-                Account.Email = ProfileViewModel.Email;
-                Account.Name = ProfileViewModel.Name;
+                Account.Email = ProfileViewModel.Email.Trim();
+                Account.Name = FormatUtilities.TrimSpacesPreserveSingle(ProfileViewModel.Name);
                 Account.Phone = ProfileViewModel.Phone;
                 Account.Status = true;
                 accountService.UpdateAccount(Account);
-                errorMessage = "Profile successfully change";
+                errorMessage = "The profile is successfully updated.";
                 return Page();
             }
             catch

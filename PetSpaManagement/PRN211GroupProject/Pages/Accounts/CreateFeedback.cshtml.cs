@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.AccountService;
@@ -31,6 +32,7 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             ViewData["AccId"] = new SelectList(_accountService.GetAllAccount(), "Id", "Name");
             ViewData["ServiceId"] = new SelectList(_serviceService.GetServiceList(), "Id", "Name");
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
             return Page();
         }
 
@@ -45,7 +47,11 @@ namespace PRN211GroupProject.Pages.Accounts
             try
             {
 				Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
-				if (Feedback == null)
+                if (Account == null)
+                {
+                    return RedirectToPage("/Accounts/Login");
+                }
+                if (Feedback == null || String.IsNullOrEmpty(Feedback.Information) || Feedback.ServiceId == default || Feedback.Rating < 0)
                 {
                     return BadRequest();
                 }
@@ -54,7 +60,7 @@ namespace PRN211GroupProject.Pages.Accounts
                     Feedback.AccId = Account.Id;
                     Feedback.Status = true;
                     Feedback.Created = DateTime.Now;
-                    Feedback.Updated = DateTime.Now;
+                    Feedback.Updated = Feedback.Created;
                     _feedbackService.NewFeedback(Feedback);
                 }
                 catch (Exception ex)

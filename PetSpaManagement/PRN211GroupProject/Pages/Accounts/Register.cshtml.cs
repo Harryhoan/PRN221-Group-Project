@@ -42,29 +42,36 @@ namespace PRN211GroupProject.Pages.Accounts
         }
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return Page();
+                if (!ModelState.IsValid)
+                {
+                    return Page();
+                }
+                if (accountService.GetAccountByEmail(RegisterViewModel.Email) != null)
+                {
+                    ModelState.AddModelError("RegisterViewModel.Email", "Email already exists.");
+                    return Page();
+                }
+                Account account = new Account
+                {
+                    Email = RegisterViewModel.Email.Trim(),
+                    Name = FormatUtilities.TrimSpacesPreserveSingle(RegisterViewModel.Name),
+                    Pass = RegisterViewModel.Pass,
+                    Phone = RegisterViewModel.Phone,
+                    RoleId = 2,
+                    Status = true,
+                    CountVoucher = 0,
+                    VoucherId = null
+                };
+                accountService.AddAccount(account);
+                successMessage = "Registered Successfully.Login to continue.";
+                return RedirectToPage("Login");
             }
-            if (accountService.GetAccountByEmail(RegisterViewModel.Email) != null)
+            catch 
             {
-                ModelState.AddModelError("RegisterViewModel.Email", "Email already exists.");
-                return Page();
+                return BadRequest();
             }
-            Account account = new Account
-            {
-                Email = RegisterViewModel.Email,
-                Name = RegisterViewModel.Name,
-                Pass = RegisterViewModel.Pass,
-                Phone = RegisterViewModel.Phone,
-                RoleId = 2,
-                Status = true,
-                CountVoucher = 0,
-                VoucherId = null
-            };
-            accountService.AddAccount(account);
-            successMessage = "Registered Successfully.Login to continue.";
-            return RedirectToPage("Login");
         }
     }
 }
