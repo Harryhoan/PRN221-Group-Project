@@ -22,7 +22,16 @@ namespace PRN211GroupProject
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddRazorPages();
+            builder.Services.AddRazorPages(options =>
+            {
+                options.Conventions.AuthorizeFolder("/Admin", "RequireAdminRole");
+            });
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdminRole", policy =>
+                    policy.RequireRole("Admi    n"));
+            });
+
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IAccountService, AccountService>();
             builder.Services.AddScoped<IAvailableService, AvailableService>();

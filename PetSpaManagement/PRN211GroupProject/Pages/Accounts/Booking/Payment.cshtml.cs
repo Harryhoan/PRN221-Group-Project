@@ -162,11 +162,11 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
 
         public IActionResult OnPostBill()
         {
-            
+
             try
             {
-				Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
-				if (Account != null)
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+                if (Account != null)
                 {
 
                     var billDetailedJson = Request.Form["billDetailedJson"];
@@ -214,7 +214,11 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                         return NotFound();
                     }
                 }
-                return Unauthorized();
+                else
+                {
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
+                }
             }
             catch
             {
