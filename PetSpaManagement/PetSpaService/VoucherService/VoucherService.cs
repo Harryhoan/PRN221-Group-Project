@@ -24,6 +24,7 @@ namespace PetSpaService.VoucherService.VoucherService
         {
             if (voucher == null || voucher.Id != default)
                 throw new Exception("Invalid voucher cannot be added");
+            voucher.Created = DateTime.Now;
             voucherRepo.AddVoucher(voucher);
         }
 
