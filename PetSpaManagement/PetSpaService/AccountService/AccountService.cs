@@ -33,11 +33,11 @@ namespace PetSpaService.AccountService
         {
             return repo.GetAccountByEmail(email);
         }
-        public static string HashPassword(string password)
+        public  string HashPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
-        public static bool VerifyPassword(string password, string hashedPassword)
+        public  bool VerifyPassword(string password, string hashedPassword)
         {
             return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
@@ -59,6 +59,7 @@ namespace PetSpaService.AccountService
         {
             if (account == null || account.Id == default)
                 throw new Exception("Invalid account");
+            if (account.Pass != null)
             account.Pass = HashPassword(account.Pass);
             repo.UpdateAccount(account.Id, account);
         }

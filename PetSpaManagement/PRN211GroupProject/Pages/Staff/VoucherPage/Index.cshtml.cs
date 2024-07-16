@@ -9,27 +9,31 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PetSpaBussinessObject;
 using PetSpaDaos;
+using PetSpaService.AccountService;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Staff.VoucherPage
 {
     public class IndexModel : PageModel
     {
         private readonly IVoucherService _voucherService;
-
-        public IndexModel(IVoucherService voucherService)
+        private readonly IAccountService accountService;
+        public IndexModel(IVoucherService voucherService, IAccountService account)
         {
             _voucherService = voucherService;
+            accountService = account;
         }
-
+        [TempData]
+        public string errorMessage { get; set; }
         public IList<Voucher> Voucher { get;set; } = default!;
         [BindProperty]
         public Voucher NewVoucher { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
+            var Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+            if (Account != null)
             {
                 return Unauthorized();
             }

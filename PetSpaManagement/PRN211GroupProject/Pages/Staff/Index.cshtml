@@ -319,15 +319,15 @@
                                     <thead>
                                         <tr>
                                             <th>
-                                                @Html.DisplayNameFor(model => model.Account[0].Name)
+                                                @Html.DisplayNameFor(model => model.Accounts[0].Name)
                                             </th>
                                             <th>
-                                                @Html.DisplayNameFor(model => model.Account[0].Email)
+                                                @Html.DisplayNameFor(model => model.Accounts[0].Email)
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (var item in Model.Account)
+                                        @foreach (var item in Model.Accounts)
                                         {
                                             if (item.RoleId == 3 && item.Status == true)
                                             {
