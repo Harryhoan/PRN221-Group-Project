@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore.Update;
 using Microsoft.AspNetCore.Identity;
 using PRN211GroupProject.ViewModel;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 namespace PRN211GroupProject.Pages.Accounts
 {
     public class LoginModel : PageModel
@@ -28,6 +29,7 @@ namespace PRN211GroupProject.Pages.Accounts
         public string email { get; set; }
         [BindProperty]
         public string pass { get; set; }
+        public Account? Account { get; set; }
 
         private IAccountService accountService;
         private readonly IVoucherService voucherService;
@@ -38,8 +40,15 @@ namespace PRN211GroupProject.Pages.Accounts
             voucherService = voucher;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+            if (Account != null)
+            {
+                errorMessage = "You aleady logging in";
+                return RedirectToPage("/Index");
+            }
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()

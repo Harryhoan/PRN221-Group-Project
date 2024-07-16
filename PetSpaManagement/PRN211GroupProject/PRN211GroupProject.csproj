@@ -7,9 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="Models\**" />
     <Compile Remove="wwwroot\images\**" />
+    <Content Remove="Data\**" />
+    <Content Remove="Models\**" />
     <Content Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="wwwroot\images\**" />
+    <None Remove="Data\**" />
+    <None Remove="Models\**" />
     <None Remove="wwwroot\images\**" />
   </ItemGroup>
 
@@ -44,8 +52,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Models\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
     <Folder Include="wwwroot\lib\jquery-validation\" />

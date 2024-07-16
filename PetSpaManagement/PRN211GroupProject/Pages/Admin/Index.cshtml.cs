@@ -7,6 +7,7 @@ using PetSpaService.AvailableService;
 using PetSpaService.BillService;
 using PetSpaService.BookingService;
 using PetSpaService.FeedbacksService;
+using PRN211GroupProject.Utilities;
 using System.Security.Claims;
 
 namespace PRN211GroupProject.Pages.Admin
@@ -29,40 +30,55 @@ namespace PRN211GroupProject.Pages.Admin
             _serviceService = serviceService;
             _feedbackService = feedbackService;
         }
+        public Account? Account { get; set; }
+        [TempData]
+        public string errorMessage { get; set; }
+
         public IList<Bill> Bill { get; set; } = default!;
-        public IList<Account> Account { get; set; } = default!;
+        public IList<Account> Accounts { get; set; } = default!;
         public int UserCount { get; set; }
         public int bookingCount { get; set; }
         public int serviceCount { get; set; }
         public int FeedbackCount { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+            if (Account != null)
             {
-                return Unauthorized();
-            }
-            try
-            {
-                if (_billService == null)
+                var roleClaim = User.FindFirst(ClaimTypes.Role);
+
+                if (roleClaim?.Value.ToString() != "Admin")
+                {
+                    errorMessage = "You do not have permission to access the Admin page.";
+                    return RedirectToPage("/Index");
+                }
+                try
+                {
+                    if (_billService == null)
+                    {
+                        return BadRequest();
+                    }
+                    Bill = _billService.GetBillList();
+                    if (_accountService != null)
+                    {
+                        Accounts = _accountService.GetAllAccount();
+                        UserCount = _accountService.NumberOfUser();
+                        bookingCount = _bookingService.NumberOfBooking();
+                        serviceCount = _serviceService.NumberOfService();
+                        FeedbackCount = _feedbackService.NumberOfFeedback();
+                    }
+                }
+                catch
                 {
                     return BadRequest();
                 }
-                Bill = _billService.GetBillList();
-                if (_accountService != null)
-                {
-                    Account = _accountService.GetAllAccount();
-                    UserCount = _accountService.NumberOfUser();
-                    bookingCount = _bookingService.NumberOfBooking();
-                    serviceCount = _serviceService.NumberOfService();
-                    FeedbackCount = _feedbackService.NumberOfFeedback();
-                }
+                return Page();
             }
-            catch
+            else
             {
-                return BadRequest();
+                errorMessage = "You must login first";
+                return RedirectToPage("/Accounts/Login");
             }
-            return Page();
         }
     }
 }

@@ -16,5 +16,7 @@ namespace PetSpaRepo.FeedbackRepository
 
         public void NewFeedback(Feedback feedback) => FeedbackDAO.Instance.NewFeedback(feedback);
         public int NumberOfFeedback() => FeedbackDAO.Instance.NumberOfFeedback();
+        public List<Feedback> GetAllAccountFeedBack(int id) => FeedbackDAO.Instance.GetAllAccountFeedBack(id);
+
     }
 }

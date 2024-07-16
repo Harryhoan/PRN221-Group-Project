@@ -48,6 +48,10 @@ namespace PetSpaDAO
             var feedback = context.Feedbacks.Include(f => f.Acc).Include(f => f.Service).ToList();
             return context.Feedbacks.ToList();
         }
+        public List<Feedback> GetAllAccountFeedBack(int id)
+        {
+            return context.Feedbacks.Where(f => f.AccId == id).ToList();
+        }
         public int NumberOfFeedback() => context.Feedbacks.Count();
     }
 }

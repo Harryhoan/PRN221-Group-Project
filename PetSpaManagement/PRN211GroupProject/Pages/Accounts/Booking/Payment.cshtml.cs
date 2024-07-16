@@ -45,6 +45,9 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             spotService = spot;
             voucherService = voucher;
         }
+        [TempData]
+        public string errorMessage { get; set; }
+
         [BindProperty]
         public List<BillDetailed>? BillDetaileds { get; set; } = new List<BillDetailed>();
         public List<PetSpaBussinessObject.Booking>? Bookings { get; set; }
@@ -85,7 +88,9 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                 }
                 else
                 {
-                    return NotFound();
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
+
                 }
 
             }

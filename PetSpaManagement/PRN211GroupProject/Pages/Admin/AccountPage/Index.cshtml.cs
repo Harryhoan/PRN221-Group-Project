@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using PetSpaBussinessObject;
 using PetSpaService.AccountService;
 using PetSpaService.RolesService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.AccountPage
 {
@@ -23,33 +24,47 @@ namespace PRN211GroupProject.Pages.AccountPage
             roleService = role;
         }
 
-        public IList<Account> Account { get; set; } = default!;
+        public IList<Account> Accounts { get; set; } = default!;
 
         [BindProperty]
         public Account NewAccount { get; set; } = default!;
+        public Account? Account { get; set; }
+        [TempData]
+        public string errorMessage { get; set; }
 
         public IList<Role> Roles { get; set; } = new List<Role>();
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+            if (Account != null)
             {
-                return Unauthorized();
+                var roleClaim = User.FindFirst(ClaimTypes.Role);
+
+                if (roleClaim?.Value.ToString() != "Admin")
+                {
+                    errorMessage = "You do not have permission to access the Admin page.";
+                    return RedirectToPage("/Index");
+                }
+                if (accountService != null)
+                {
+                    Accounts = accountService.GetAllAccount();
+                }
+
+                if (roleService != null)
+                {
+                    Roles = roleService.GetAllRole();
+                }
+
+                ViewData["RoleId"] = new SelectList(roleService.GetAllRole(), "Id", "Name");
+
+                return Page();
             }
-            if (accountService != null)
+            else
             {
-                Account = accountService.GetAllAccount();
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
             }
-
-            if (roleService != null)
-            {
-                Roles = roleService.GetAllRole();
-            }
-
-            ViewData["RoleId"] = new SelectList(roleService.GetAllRole(), "Id", "Name");
-
-            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()

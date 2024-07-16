@@ -21,12 +21,16 @@ namespace PRN211GroupProject.Pages.Accounts
         public ChangePasswordViewModel ChangePasswordViewModel { get; set; }
         [BindProperty]
         public Account? Account { get; set; }
+        [TempData]
+        public string errorMessage { get; set; }
+
         public IActionResult OnGet()
         {
             Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
             if (Account == null)
             {
-                return Unauthorized();
+                errorMessage = "You must login first";
+                return RedirectToPage("/Accounts/Login");
             }
             return Page();
         }
@@ -60,6 +64,11 @@ namespace PRN211GroupProject.Pages.Accounts
                 if (Account?.Pass != ChangePasswordViewModel.OldPass)
                 {
                     ModelState.AddModelError("ChangePasswordViewModel.OldPass", "Your password is incorrect.");
+                    return Page();
+                }
+                if (ChangePasswordViewModel.OldPass == ChangePasswordViewModel.NewPass)
+                {
+                    ModelState.AddModelError("ChangePasswordViewModel.NewPass", "New password cannot be the same as the old password.");
                     return Page();
                 }
                 Account.Pass = ChangePasswordViewModel.NewPass;
