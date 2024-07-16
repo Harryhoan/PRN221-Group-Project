@@ -32,8 +32,13 @@
                     </div>
 
                     <div class="form-group mb-3">
+                        <label asp-for="Voucher.Created" class="control-label" hidden></label>
+                        <input asp-for="Voucher.Created" class="form-control" required type="hidden"/>
+                        <span asp-validation-for="Voucher.Created" class="text-danger" hidden></span>
+                    </div>
+                    <div class="form-group mb-3">
                         <label asp-for="Voucher.Expired" class="control-label"></label>
-                        <input asp-for="Voucher.Expired" class="form-control" required type="date" />
+                        <input asp-for="Voucher.Expired" class="form-control" required />
                         <span asp-validation-for="Voucher.Expired" class="text-danger"></span>
                     </div>
 

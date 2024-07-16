@@ -21,13 +21,11 @@
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Bill.Created)</dt>
                     <dd class="col-sm-10">@Html.DisplayFor(model => model.Bill.Created)</dd>
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Bill.Total)</dt>
-                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Bill.Total)</dd>
+                    <dd class="col-sm-10">@Html.DisplayFor(model => model.Bill.Total) $</dd>
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Bill.Acc.Name)</dt>
                     <dd class="col-sm-10">@Html.DisplayFor(model => model.Bill.Acc.Name)</dd>
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.BillDetailed.BookingId)</dt>
                     <dd class="col-sm-10">@Html.DisplayFor(model => model.BillDetailed.BookingId)</dd>
-                    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.BillDetailed.Cost)</dt>
-                    <dd class="col-sm-10">@Html.DisplayFor(model => model.BillDetailed.Cost)</dd>
                     <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Bill.Voucher)</dt>
                     <dd class="col-sm-10">
                         @if (Model.Bill.Voucher == null)

@@ -22,6 +22,7 @@ namespace PetSpaService.SpotService.SpotService
         {
             if (spot == null || spot.Id != default)
                 throw new Exception("Invalid spot cannot be added");
+            spot.Created = DateTime.Now;
             spotRepo.AddSpot(spot);
         }
 
