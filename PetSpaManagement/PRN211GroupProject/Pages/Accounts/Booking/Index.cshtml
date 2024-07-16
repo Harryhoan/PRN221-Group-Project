@@ -3,6 +3,12 @@
 @{
 	ViewData["Title"] = "Booking";
 }
+@if (!string.IsNullOrEmpty(Model.errorMessage))
+{
+    <script>
+        alert('@Model.errorMessage');
+    </script>
+}
 
 <div id="preloader-active">
 	<div class="preloader d-flex align-items-center justify-content-center">
@@ -166,24 +172,27 @@
 </main>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-	$(document).ready(function () {
-		$("#createBookingButton").click(function () {
-			$("#createBookingModal").modal("show");
-		});
-	});
-	document.getElementById("datetimeInput").addEventListener("input", function () {
-		var selectedDateTime = new Date(this.value);
-		var selectedTime = selectedDateTime.getHours();
+    $(document).ready(function () {
+        $("#createBookingButton").click(function () {
+            $("#createBookingModal").modal("show");
+        });
+    });
+    document.getElementById("datetimeInput").addEventListener("input", function () {
+        var selectedDateTime = new Date(this.value);
+        var selectedTime = selectedDateTime.getHours();
 
-		if (selectedTime < 9 || selectedTime > 18) {
-			alert("Please select a time between 9:00 AM and 6:00 PM.");
-			this.value = "";
-		}
-	});
-	function redirectToPage() {
-		var selectedValue = document.getElementById("redirectDropdown").value;
-		if (selectedValue !== "") {
-			window.location.href = "/Accounts/Booking?spotId=" + selectedValue;
-		}
-	}
+        if (selectedTime < 9) {
+            alert("Please select a time after 9:00.");
+            this.value = "";
+        }else if (selectedTime > 18) {
+            alert("Please select a time before 18:00.");
+            this.value = "";
+        }
+    });
+    function redirectToPage() {
+        var selectedValue = document.getElementById("redirectDropdown").value;
+        if (selectedValue !== "") {
+            window.location.href = "/Accounts/Booking?spotId=" + selectedValue;
+        }
+    }
 </script>

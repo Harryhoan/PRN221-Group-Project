@@ -40,8 +40,6 @@ namespace PRN211GroupProject.Pages.Accounts
                 }
             return Page();
         }
-
-
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -53,7 +51,6 @@ namespace PRN211GroupProject.Pages.Accounts
                 ModelState.AddModelError("RegisterViewModel.Email", "Email already exists.");
                 return Page();
             }
-
             Account account = new Account
             {
                 Email = RegisterViewModel.Email,
@@ -65,9 +62,7 @@ namespace PRN211GroupProject.Pages.Accounts
                 CountVoucher = 0,
                 VoucherId = null
             };
-
             accountService.AddAccount(account);
-
             successMessage = "Registered Successfully.Login to continue.";
             return RedirectToPage("Login");
         }

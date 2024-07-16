@@ -38,6 +38,13 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             try
             {
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+                if (Account == null)
+                {
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
+                }
+
                 if (Account?.Email == ProfileViewModel.Email)
                 {
                     if (accountService.GetAccountByEmail(ProfileViewModel.Email) != null)
@@ -49,8 +56,10 @@ namespace PRN211GroupProject.Pages.Accounts
                 Account.Email = ProfileViewModel.Email;
                 Account.Name = ProfileViewModel.Name;
                 Account.Phone = ProfileViewModel.Phone;
+                Account.Status = true;
                 accountService.UpdateAccount(Account);
-                return RedirectToPage("/Index");
+                errorMessage = "Profile successfully change";
+                return Page();
             }
             catch
             {
@@ -61,19 +70,27 @@ namespace PRN211GroupProject.Pages.Accounts
         {
             try
             {
-                if (Account?.Pass != ChangePasswordViewModel.OldPass)
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+                if (Account == null)
                 {
-                    ModelState.AddModelError("ChangePasswordViewModel.OldPass", "Your password is incorrect.");
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
+                }
+                if (!accountService.VerifyPassword(ChangePasswordViewModel.OldPass,Account?.Pass))
+                {
+                    errorMessage = "Your password is incorrect";
                     return Page();
                 }
-                if (ChangePasswordViewModel.OldPass == ChangePasswordViewModel.NewPass)
+                else if (accountService.VerifyPassword(ChangePasswordViewModel.NewPass, Account?.Pass))
                 {
-                    ModelState.AddModelError("ChangePasswordViewModel.NewPass", "New password cannot be the same as the old password.");
+                    errorMessage = "New password cannot be the same as the old password.";
                     return Page();
                 }
                 Account.Pass = ChangePasswordViewModel.NewPass;
                 accountService.UpdateAccount(Account);
-                return RedirectToPage("/Index");
+                Account.Status = true;
+                errorMessage = "Password successfully change";
+                return Page();
             }
             catch
             {

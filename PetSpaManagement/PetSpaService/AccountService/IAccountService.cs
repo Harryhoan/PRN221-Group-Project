@@ -17,5 +17,8 @@ namespace PetSpaService.AccountService
         public void UpdateAccount(Account account);
         public void DeleteAccount(int accountID);
         public int NumberOfUser();
+          string HashPassword(string password);
+          bool VerifyPassword(string password, string hashedPassword);
+
     }
 }

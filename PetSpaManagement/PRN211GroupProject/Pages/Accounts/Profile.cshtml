@@ -1,6 +1,8 @@
 ﻿@page
 @model PRN211GroupProject.Pages.Accounts.ProfileModel
 @{
+    ViewData["Title"] = "Profile";
+
 }
 <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
@@ -23,8 +25,12 @@
         </div>
     </div>
 </div>
-<!-- Hero Area Start -->
-<!-- Custom styles -->
+@if (!string.IsNullOrEmpty(Model.errorMessage))
+{
+    <script>
+        alert('@Model.errorMessage');
+    </script>
+}
 <style>
     body {
         background-color: #f8f9fa;
@@ -86,11 +92,16 @@
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form id="editProfileForm" method="post" asp-page-handler="SaveProfile">
+                    <form method="post" asp-page-handler="SaveProfile">
+                        <input type="hidden" asp-for="Account.Created" value="@Model.Account.Created" />
                         <input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
                         <input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
                         <input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
                         <input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
+                        <input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass" />
+                        <input type="hidden" asp-for="Account.CountVoucher" value="@Model.Account.CountVoucher"/>
+                        <input type="hidden" asp-for="Account.RoleId" value="@Model.Account.RoleId" />
+                        <input type="hidden" asp-for="Account.VoucherId" value="@Model.Account.VoucherId" />
                         <div class="modal-header">
                             <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('editModal')">
@@ -132,8 +143,15 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <input type="hidden" asp-for="Account.Id" value="@Model.Account.Id"/>
-                        <input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass"></input>
+                        <input type="hidden" asp-for="Account.Created" value="@Model.Account.Created" />
+                        <input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
+                        <input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
+                        <input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
+                        <input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
+                        <input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass" />
+                        <input type="hidden" asp-for="Account.CountVoucher" value="@Model.Account.CountVoucher" />
+                        <input type="hidden" asp-for="Account.RoleId" value="@Model.Account.RoleId" />
+                        <input type="hidden" asp-for="Account.VoucherId" value="@Model.Account.VoucherId" />
                         <div class="modal-body">
                             <div class="form-group">
                                 <input asp-for="ChangePasswordViewModel.OldPass" class="form-control" placeholder="Enter your password." type="password" required />

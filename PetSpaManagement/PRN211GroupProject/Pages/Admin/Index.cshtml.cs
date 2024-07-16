@@ -44,7 +44,7 @@ namespace PRN211GroupProject.Pages.Admin
         {
             Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
             if (Account != null)
-            {
+            { 
                 try
                 {
                     if (_billService == null)
