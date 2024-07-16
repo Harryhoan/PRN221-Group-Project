@@ -22,6 +22,7 @@ namespace PetSpaService.ServicesService
 		{
 			if (service == null || service.Id != default)
 				throw new Exception("Invalid service cannot be added");
+			service.Created = DateTime.Now;
 			_serviceRepo.AddService(service);
 		}
 

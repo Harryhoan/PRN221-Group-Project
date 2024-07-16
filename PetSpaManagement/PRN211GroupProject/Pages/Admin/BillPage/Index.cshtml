@@ -57,7 +57,7 @@
                                             @Html.DisplayFor(modelItem => item.Voucher.Name)
                                         }
                                     </td>
-                                    <td>@Html.DisplayFor(modelItem => item.Total)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Total) $</td>
                                     <td>
                                         <div class="form-button-action">
                                             <a type="button" asp-page="./Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="View Details" class="btn btn-link btn-primary btn-lg">
