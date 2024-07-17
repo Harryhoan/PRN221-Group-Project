@@ -25,5 +25,12 @@ namespace PetSpaService.FeedbacksService
         public void NewFeedback(Feedback feedback) => feedbackRepo.NewFeedback(feedback);
         public int NumberOfFeedback() => feedbackRepo.NumberOfFeedback();
         public List<Feedback> GetAllAccountFeedBack(int id) =>feedbackRepo.GetAllAccountFeedBack(id);
+        public void UpdateFeedback(Feedback feedback)
+        {
+            if (feedback == null || feedback.Id == default)
+                throw new Exception("Invalid Feedback");
+            feedbackRepo.UpdateFeedback(feedback);
+        }
+        public void DeleteFeedback(int accountID) => feedbackRepo.DeleteFeedback(accountID);
     }
 }

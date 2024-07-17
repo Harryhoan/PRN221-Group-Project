@@ -72,8 +72,10 @@ namespace PRN211GroupProject.Pages.Accounts
                 {
                     errorMessage = ex.Message;
                 }
+                
                 successMessage = "Successfully send Feedback";
-                return Page();
+                return RedirectToPage("/Accounts/UserFeedback/Index");
+                
             }
             catch (Exception ex)
             {
