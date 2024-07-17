@@ -23,9 +23,8 @@ namespace PRN211GroupProject.Pages.Accounts
 
         [TempData]
         public string successMessage { get; set; }
-        private IAccountService accountService;
         public Account? Account { get; set; }
-
+        private IAccountService accountService;
         private readonly ISendMailService _mailService;
 
         public RegisterModel(IAccountService accountSer, ISendMailService mail)

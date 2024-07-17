@@ -37,7 +37,7 @@ namespace PRN211GroupProject.Pages.Accounts
 		public List<Voucher>? VoucherList { get; set; }
 
 		public IActionResult OnGet()
-		{
+			{
 			try
 			{
 				Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
@@ -90,12 +90,12 @@ namespace PRN211GroupProject.Pages.Accounts
 					return BadRequest();
 				}
 				ProfileViewModel.Email = ProfileViewModel.Email.Trim();
-				if (Account.Email.Trim() == ProfileViewModel.Email)
+				if (Account.Email.Trim() != ProfileViewModel.Email)
 				{
 					if (accountService.GetAccountByEmail(ProfileViewModel.Email) != null)
 					{
-						ModelState.AddModelError("ProfileViewModel.Email", "Email already exists.");
-						return Page();
+                        errorMessage= "Email already exists.";
+						return OnGet();
 					}
 				}
 				Account.Email = ProfileViewModel.Email.Trim();
@@ -104,7 +104,7 @@ namespace PRN211GroupProject.Pages.Accounts
 				Account.Status = true;
 				accountService.UpdateAccount(Account);
 				successMessage = "The profile is successfully updated.";
-				return Page();
+				return OnGet();
 			}
 			catch
 			{
@@ -128,18 +128,18 @@ namespace PRN211GroupProject.Pages.Accounts
 				if (!accountService.VerifyPassword(ChangePasswordViewModel.OldPass, Account.Pass))
 				{
 					errorMessage = "Your password is incorrect";
-					return Page();
+					return OnGet();
 				}
 				else if (accountService.VerifyPassword(ChangePasswordViewModel.NewPass, Account.Pass))
 				{
 					errorMessage = "New password cannot be the same as the old password.";
-					return Page();
+					return OnGet();
 				}
 				Account.Pass = ChangePasswordViewModel.NewPass;
 				accountService.UpdateAccount(Account);
 				Account.Status = true;
 				successMessage = "The password has successfully been changed.";
-				return Page();
+				return OnGet();
 			}
 			catch
 			{
@@ -195,12 +195,13 @@ namespace PRN211GroupProject.Pages.Accounts
 				Account.Voucher = null;
 				Account.VoucherId = voucher.Id;
 				accountService.UpdateAccount(Account);
-				successMessage = "You got the voucher!";
+				successMessage = "Voucher added!";
 				return OnGet();
 			}
 			catch
 			{
-				return BadRequest();
+				successMessage = null;
+                return BadRequest();
 			}
 		}
 

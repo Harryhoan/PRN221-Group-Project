@@ -102,6 +102,7 @@ namespace PRN211GroupProject.Pages.Accounts
             }
             catch (Exception ex)
             {
+                successMessage = null;
                 return BadRequest(ex.Message);
             }
         }
@@ -197,6 +198,7 @@ namespace PRN211GroupProject.Pages.Accounts
 			}
 			catch
             {
+                successMessage = null;
                 return BadRequest();
             }
 

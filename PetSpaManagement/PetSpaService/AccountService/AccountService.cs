@@ -32,7 +32,12 @@ namespace PetSpaService.AccountService
         }
         public Account GetAccountByEmail(string email)
         {
-            return repo.GetAccountByEmail(email);
+            var account = repo.GetAccountByEmail(email);
+            if (account == null)
+            {
+                return null;
+            }
+            return account;
         }
         public string HashPassword(string password)
         {
@@ -44,13 +49,17 @@ namespace PetSpaService.AccountService
         }
         public Account Login(string Email, string password)
         {
-            Account account = GetAccountByEmail(Email);
-            if (account != null)
+            var account = GetAccountByEmail(Email);
+            if (account.Id != 0)
             {
                 var valid = VerifyPassword(password, account.Pass);
                 if (valid)
                 {
                     return account;
+                }
+                else
+                {
+                    return null;
                 }
             }
             return null;
@@ -58,7 +67,6 @@ namespace PetSpaService.AccountService
         public List<Account> GetAllAccount() => repo.GetAllAccount();
 
         public List<Account> GetAllAccountCreatedThisYear() => repo.GetAllAccountCreatedThisYear();
-
         public void UpdateAccount(Account account)
         {
             if (account == null || account.Id == default)
@@ -66,7 +74,8 @@ namespace PetSpaService.AccountService
             var existingAccount = GetAccount(account.Id);
             if (existingAccount != null)
             {
-                if (existingAccount.Pass.Equals(account.Pass)) {
+                if (existingAccount.Pass.Equals(account.Pass))
+                {
                     if (!VerifyPassword(account.Pass, existingAccount.Pass))
                     {
                         account.Pass = HashPassword(account.Pass);

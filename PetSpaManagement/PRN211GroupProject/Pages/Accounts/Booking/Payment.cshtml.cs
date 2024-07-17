@@ -19,6 +19,7 @@ using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Security.Claims;
 using System.Security.Principal;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -214,37 +215,39 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                             Account.VoucherId = null;
                             accountService.UpdateAccount(Account);
                         }
-                        HttpContext.Session.Clear();
                         successMessage = "Payment Success,Thanks for use our service";
-                        MailData mailData = new();
+                        MailData mailData = new MailData();
                         mailData.ReceiverEmail = Account.Email;
                         mailData.ReceiverName = Account.Name;
-                        mailData.Title = "Payment Success,Thanks for use our service";
-                        string body = $@"
-                                            </br>Dear {mailData.ReceiverName},</br>
-                                             Here are your recent Bookings:</br></br>";
+                        mailData.Title = "Payment Success, Thanks for using our service";
+
+                        StringBuilder bodyBuilder = new StringBuilder();
+                        bodyBuilder.AppendLine($"Dear {mailData.ReceiverName},</br>");
+                        bodyBuilder.AppendLine("Here are your recent Bookings:</br>");
 
                         foreach (var item in BillDetaileds)
                         {
-                            body += $@"
-                            <b>Service:</b> {item.Booking.Available.Service.Name}</br>
-                            <b>Spot:</b> {item.Booking.Available.Spot.Name}</br>
-                            <b>Started:</b> {item.Booking.Started}</br>
-                             <b>Duration:</b> ${item.Booking.Available.Service.Duration} Minutes</br>
-                             <b>Cost:</b> {item.Cost}</br>
-                          </br>";
+                            if (item != null && item.Booking != null && item.Booking.Available != null &&
+                                item.Booking.Available.Service != null && item.Booking.Available.Spot != null)
+                            {
+                                bodyBuilder.AppendLine($"<b>Service:</b> {item.Booking.Available.Service.Name}</br>");
+                                bodyBuilder.AppendLine($"<b>Spot:</b> {item.Booking.Available.Spot.Name}</br>");
+                                bodyBuilder.AppendLine($"<b>Started:</b> {item.Booking.Started}</br>");
+                                bodyBuilder.AppendLine($"<b>Duration:</b> ${item.Booking.Available.Service.Duration} Minutes</br>");
+                                bodyBuilder.AppendLine($"<b>Cost:</b> {item.Cost}</br>");
+                                bodyBuilder.AppendLine("</br>");
+                            }
                         }
-                        body += $@"
-                            <b>Discount:</b> {Discount}</br>
-                            <b>Total:</b> {bill.Total}</br>
-                            </br>";
-                        body += @"
-                         Please ensure timely payment of these bills. If you have any questions, feel free to contact us.</br>
-                         Best regards.
-                         ";
-                        mailData.Body = body;
-                        _mailService.SendMail(mailData);
 
+                        bodyBuilder.AppendLine($"<b>Discount:</b> {Discount}</br>");
+                        bodyBuilder.AppendLine($"<b>Total:</b> {Sum - Discount}</br>");
+                        bodyBuilder.AppendLine("</br>");
+                        bodyBuilder.AppendLine("Please ensure timely payment of these bills. If you have any questions, feel free to contact us.</br>");
+                        bodyBuilder.AppendLine("Best regards.");
+
+                        mailData.Body = bodyBuilder.ToString();
+                        _mailService.SendMail(mailData);
+                        HttpContext.Session.Clear();
                         return RedirectToPage("/Index");
                     }
                     else
@@ -258,8 +261,9 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                     return RedirectToPage("/Accounts/Login");
                 }
             }
-            catch
+            catch(Exception ex) 
             {
+                successMessage= null;
                 return BadRequest();
             }
         }

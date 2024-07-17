@@ -55,15 +55,22 @@ namespace PRN211GroupProject.Pages.Accounts.History
             {
                 if (billDetailedService == null)
                 {
-                    return NotFound("BillDetailedService not found");
+                    errorMessage = "BillDetailedService not found";
+                    return RedirectToPage("/Accounts/History/Index");
                 }
 
                 var billDetails = billDetailedService.GetBillDetailsByBillId(id);
+                billDetails[0].Bill = billService.GetBill(id); 
                 if (billDetails == null)
                 {
-                    return NotFound("Bill details not found");
+                    errorMessage = "Bill details not found";
+                    return RedirectToPage("/Accounts/History/Index");
                 }
-
+                if (billDetails[0].Bill.AccId != Account.Id) 
+                {
+                    errorMessage = "You dont have permission to view this bill";
+                    return RedirectToPage("/Accounts/History/Index");
+                }
                 foreach (var item in billDetails)
                 {
                     if (item != null)

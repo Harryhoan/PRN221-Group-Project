@@ -52,14 +52,12 @@ namespace PRN211GroupProject.Pages.Accounts.History
             Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
             if (Account != null)
             {
-                // Fetch list of bills associated with the account
                 Bill = billService.GetAccountBillList(Account.Id);
 
                 if (Bill == null || Bill.Count == 0)
                 {
                     errorMessage = "No bills found for the account.";
                 }
-
                 return Page();
             }
             else
