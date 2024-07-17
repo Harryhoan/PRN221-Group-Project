@@ -30,74 +30,83 @@ namespace PRN211GroupProject.Pages.Staff.BookingPage
             _accountService = accountService;
             _availableService = availableService;
             _spotService = spotService;
+            Booking = new();
         }
 
         [BindProperty]
-        public Booking Booking { get; set; } = default!;
-        public int SpotId { get; set; } = -1;
-        public async Task<IActionResult> OnGetAsync(int id, int? spotId)
+        public Booking Booking { get; set; }
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
+            try
             {
-                return Unauthorized();
-            }
-            var spotList = _spotService.GetActiveSpotList();
+				if (HttpContext == null || HttpContext.Session == null)
+				{
+					return BadRequest();
+				}
+				if (_availableService == null || _accountService == null || _bookingService == null || _spotService == null)
+				{
+					return BadRequest();
+				}
 
-            if (spotId == null || spotId < 1)
-            {
-                spotId = spotList[0].Id;
-            }
-            SpotId = (int)spotId;
+				if (AccountUtilities.Instance.GetAccount(HttpContext, _accountService) == null)
+				{
+					return RedirectToPage("/Accounts/Login");
+				}
 
-            ViewData["availableList"] = _availableService.GetAvailableListBySpot((int)spotId).Select(available => new SelectListItem
-            {
-                Value = available.Id.ToString(),
-                Text = available.Service.Name + " - " + available.Spot.Name
-            }).ToList();
-            ViewData["AccountId"] = new SelectList(_accountService.GetAllAccount(), "Id", "Name");
-            if (id == null || _bookingService.GetBookingList() == null)
-            {
-                return NotFound();
-            }
+				if (id == null || id <= 0)
+				{
+					return BadRequest();
+				}
 
-            var booking = _bookingService.GetBooking(id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
+				Booking = _bookingService.GetBooking((int)id);
 
-            else
-            {
-                Booking = booking;
-            }
+				if (Booking == null || Booking.Id <= 0 || Booking.AvailableId <= 0)
+				{
+					return NotFound();
+				}
 
-            return Page();
+				var available = _availableService.GetAvailable(Booking.AvailableId);
+
+				if (available == null || available.Id <= 0 || available.SpotId <= 0 || available.Service == null)
+				{
+					return NotFound();
+				}
+
+
+				ViewData["availableList"] = _availableService.GetAvailableListBySpot(available.SpotId).Select(available => new SelectListItem
+				{
+					Value = available.Id.ToString(),
+					Text = available.Service.Name + " - " + available.Spot.Name
+				}).ToList();
+
+				return Page();
+			}
+            catch
+            {
+                return BadRequest();
+            }
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             try
             {
-                if (User.Identity == null || String.IsNullOrEmpty(User.Identity.Name) || !User.Identity.IsAuthenticated)
-                {
-                    return Unauthorized();
-                }
-                if (HttpContext.Session == null)
-                {
-                    return BadRequest();
-                }
+				if (HttpContext == null || HttpContext.Session == null)
+				{
+					return BadRequest();
+				}
+
                 var currentUser = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
                 if (currentUser == null)
                 {
-                    return NotFound();
+                    return RedirectToPage("/Accounts/Login");
                 }
-                if (currentUser.RoleId == 1)
+
+                if (currentUser.RoleId == 1 || currentUser.RoleId == 2)
                 {
                     return Unauthorized();
                 }
+
                 if (Booking == null || Booking.Started == default || Booking.Started.Date <= DateTime.Today || Booking.Started.TimeOfDay < TimeSpan.FromHours(9) || Booking.Started.TimeOfDay > TimeSpan.FromHours(18))
                 {
                     return BadRequest();

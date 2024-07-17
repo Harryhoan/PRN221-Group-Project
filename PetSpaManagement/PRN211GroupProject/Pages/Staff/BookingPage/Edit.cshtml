@@ -20,23 +20,13 @@
                     <input type="hidden" asp-for="Booking.Id" />
                     <div class="form-group mb-3">
                         <label asp-for="Booking.Account" class="control-label"></label>
-                        <select asp-for="Booking.AccountId" class="form-control" asp-items="ViewBag.AccountId" disabled></select>
+                        <input asp-for="Booking.AccountId" class="form-control" disabled/>
                         <span asp-validation-for="Booking.AccountId" class="text-danger"></span>
                     </div>
                     <div class="form-group mb-3">
                         <label asp-for="Booking.Started" class="control-label"></label>
                         <input asp-for="Booking.Started" class="form-control" disabled/>
                         <span asp-validation-for="Booking.Started" class="text-danger"></span>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label asp-for="Booking.Ended" class="control-label"></label>
-                        <input asp-for="Booking.Ended" class="form-control" />
-                        <span asp-validation-for="Booking.Ended" class="text-danger"></span>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label asp-for="Booking.Created" class="control-label"></label>
-                        <input asp-for="Booking.Created" class="form-control" disabled/>
-                        <span asp-validation-for="Booking.Created" class="text-danger"></span>
                     </div>
                     <div class="form-group mb-3">
                         <label asp-for="Booking.Available" class="control-label"></label>
