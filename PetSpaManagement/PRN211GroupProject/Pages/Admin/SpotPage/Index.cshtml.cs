@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using PetSpaService.SpotService.SpotService;
 
-namespace PRN211GroupProject.Pages.Staff.SpotPage
+namespace PRN211GroupProject.Pages.Admin.SpotPage
 {
     public class IndexModel : PageModel
     {

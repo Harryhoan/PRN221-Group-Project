@@ -7,7 +7,7 @@ using PRN211GroupProject.Utilities;
 using System.Linq.Expressions;
 using System.Security.Claims;
 
-namespace PRN211GroupProject.Pages.Staff.SpotPage
+namespace PRN211GroupProject.Pages.Admin.SpotPage
 {
 	public class CreateModel : PageModel
 	{

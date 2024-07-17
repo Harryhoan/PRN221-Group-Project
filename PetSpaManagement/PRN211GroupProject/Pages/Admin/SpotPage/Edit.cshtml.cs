@@ -12,7 +12,7 @@ using PetSpaDaos;
 using PetSpaService.SpotService.SpotService;
 using PRN211GroupProject.Utilities;
 
-namespace PRN211GroupProject.Pages.Staff.SpotPage
+namespace PRN211GroupProject.Pages.Admin.SpotPage
 {
     public class EditModel : PageModel
     {

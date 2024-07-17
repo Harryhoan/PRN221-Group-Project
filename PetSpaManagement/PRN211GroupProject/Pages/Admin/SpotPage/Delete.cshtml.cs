@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using PetSpaBussinessObject;
 using PetSpaService.SpotService.SpotService;
 
-namespace PRN211GroupProject.Pages.Staff.SpotPage
+namespace PRN211GroupProject.Pages.Admin.SpotPage
 {
 	public class DeleteModel : PageModel
 	{
@@ -11,13 +11,12 @@ namespace PRN211GroupProject.Pages.Staff.SpotPage
 		public DeleteModel(ISpotService spotService)
 		{
 			_spotService = spotService;
-			Spot = new();
 		}
 
 		[BindProperty]
-		public Spot Spot { get; set; }
+		public Spot? Spot { get; set; }
 
-		public IActionResult OnGet(int? id)
+		public IActionResult OnGet(int spotId)
 		{
 			try
 			{
@@ -25,16 +24,13 @@ namespace PRN211GroupProject.Pages.Staff.SpotPage
 				{
 					return BadRequest();
 				}
-				if (id == null)
-				{
-					return BadRequest();
-				}
+
 				if (_spotService.GetSpotList() == null || _spotService.GetSpotList().Count == 0)
 				{
 					return BadRequest();
 				}
 
-				var existingSpot = _spotService.GetSpot((int)id);
+				var existingSpot = _spotService.GetSpot(spotId);
 				if (existingSpot == null)
 				{
 					return NotFound();
@@ -53,11 +49,12 @@ namespace PRN211GroupProject.Pages.Staff.SpotPage
 		{
 			try
 			{
-				if (_spotService == null)
+				if (!ModelState.IsValid)
 				{
-					return BadRequest();
+					return Page();
 				}
-				if (Spot == null || Spot.Id <= 0)
+
+				if (Spot == null)
 				{
 					return BadRequest();
 				}
