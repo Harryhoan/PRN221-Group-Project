@@ -10,9 +10,11 @@ using PetSpaService.AvailableService;
 using PetSpaService.BillDetailedService;
 using PetSpaService.BillService;
 using PetSpaService.BookingService;
+using PetSpaService.MailService;
 using PetSpaService.SpotService.SpotService;
 using PetSpaService.VoucherService.VoucherService;
 using PRN211GroupProject.Utilities;
+using PRN211GroupProject.ViewModel;
 using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Security.Claims;
@@ -32,6 +34,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
         private readonly IServiceService serviceService;
         private readonly ISpotService spotService;
         private readonly IVoucherService voucherService;
+        private readonly ISendMailService _mailService;
 
 
         public PaymentModel(IBillDetailedService billDetailed, IAccountService account, IBillService bill, IBookingService booking, IAvailableService available, IServiceService service, ISpotService spot, IVoucherService voucher)
@@ -161,7 +164,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             catch
             {
                 errorMessage = "An error occur ,Cant apply voucher";
-                    return Page();
+                return Page();
             }
         }
 
@@ -213,6 +216,35 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                         }
                         HttpContext.Session.Clear();
                         successMessage = "Payment Success,Thanks for use our service";
+                        MailData mailData = new();
+                        mailData.ReceiverEmail = Account.Email;
+                        mailData.ReceiverName = Account.Name;
+                        mailData.Title = "Payment Success,Thanks for use our service";
+                        string body = $@"
+                                            </br>Dear {mailData.ReceiverName},</br>
+                                             Here are your recent Bookings:</br></br>";
+
+                        foreach (var item in BillDetaileds)
+                        {
+                            body += $@"
+                            <b>Service:</b> {item.Booking.Available.Service.Name}</br>
+                            <b>Spot:</b> {item.Booking.Available.Spot.Name}</br>
+                            <b>Started:</b> {item.Booking.Started}</br>
+                             <b>Duration:</b> ${item.Booking.Available.Service.Duration} Minutes</br>
+                             <b>Cost:</b> {item.Cost}</br>
+                          </br>";
+                        }
+                        body += $@"
+                            <b>Discount:</b> {Discount}</br>
+                            <b>Total:</b> {bill.Total}</br>
+                            </br>";
+                        body += @"
+                         Please ensure timely payment of these bills. If you have any questions, feel free to contact us.</br>
+                         Best regards.
+                         ";
+                        mailData.Body = body;
+                        _mailService.SendMail(mailData);
+
                         return RedirectToPage("/Index");
                     }
                     else

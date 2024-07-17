@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Net.Mail;
 using PRN211GroupProject.Utilities;
+using MailKit;
+using PetSpaService.MailService;
 
 namespace PRN211GroupProject.Pages.Accounts
 {
@@ -24,11 +26,14 @@ namespace PRN211GroupProject.Pages.Accounts
         private IAccountService accountService;
         public Account? Account { get; set; }
 
+        private readonly ISendMailService _mailService;
 
-        public RegisterModel(IAccountService accountSer)
+        public RegisterModel(IAccountService accountSer, ISendMailService mail)
         {
             accountService = accountSer;
+            _mailService = mail;
         }
+
         public IActionResult Onget()
         {
             Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
@@ -53,6 +58,7 @@ namespace PRN211GroupProject.Pages.Accounts
                     ModelState.AddModelError("RegisterViewModel.Email", "Email already exists.");
                     return Page();
                 }
+
                 Account account = new Account
                 {
                     Email = RegisterViewModel.Email.Trim(),
@@ -61,14 +67,21 @@ namespace PRN211GroupProject.Pages.Accounts
                     Phone = RegisterViewModel.Phone,
                     RoleId = 2,
                     Status = true,
+                    Created = DateTime.Now,
                     CountVoucher = 0,
                     VoucherId = null
                 };
                 accountService.AddAccount(account);
                 successMessage = "Registered Successfully.Login to continue.";
+                MailData mailData = new();
+                mailData.ReceiverEmail = RegisterViewModel.Email;
+                mailData.ReceiverName = RegisterViewModel.Name;
+                mailData.Title = "Registered Successfully";
+                mailData.Body = $"</br>Dear {mailData.ReceiverName},</br>Thank you for registering with our system. We hope you enjoy using it!</br>Best regards.";
+                _mailService.SendMail(mailData);
                 return RedirectToPage("Login");
             }
-            catch 
+            catch
             {
                 return BadRequest();
             }

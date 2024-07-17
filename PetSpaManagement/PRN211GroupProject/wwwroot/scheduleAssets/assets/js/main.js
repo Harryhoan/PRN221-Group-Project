@@ -8,7 +8,6 @@
 		
 		this.topInfoElement = this.element.getElementsByClassName('cd-schedule__top-info')[0];
 		this.singleEvents = this.element.getElementsByClassName('cd-schedule__event');
-		
 		this.modal = this.element.getElementsByClassName('cd-schedule-modal')[0];
 		this.modalHeader = this.element.getElementsByClassName('cd-schedule-modal__header')[0];
 		this.modalHeaderBg = this.element.getElementsByClassName('cd-schedule-modal__header-bg')[0];
