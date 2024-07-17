@@ -1,0 +1,126 @@
+﻿@page
+@model PRN211GroupProject.Pages.Accounts.UserFeedback.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Feedback";
+    var popperJsUrl = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js";
+}
+
+<style>
+    .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    a {
+        color: black;
+        transition: color 0.3s;
+    }
+
+        a:hover {
+            color: red;
+        }
+</style>
+
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="~/assets/img/logo/logo.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="slider-area2 slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center pt-50">
+                        <h2>Delete Feedback</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card center-content">
+        <div class="form-container">
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <h4>Feedback</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Feedback.Information)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Feedback.Information)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Feedback.Rating)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Feedback.Rating)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Feedback.Created)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Feedback.Created)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Feedback.Updated)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Feedback.Updated)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Feedback.Acc)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Feedback.Acc.Name)
+                    </dd>
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Feedback.Service)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Feedback.Service.Name)
+                    </dd>
+                </dl>
+                <br />
+                <form method="post">
+                    <input type="hidden" asp-for="Feedback.Id" />
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="submit" value="Delete" class="btn btn-danger w-100" />
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-danger w-100" asp-page="./Index">Back to List</a>
+                        </div>
+                    </div>
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

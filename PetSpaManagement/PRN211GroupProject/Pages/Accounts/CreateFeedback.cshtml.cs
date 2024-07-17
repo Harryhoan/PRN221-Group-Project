@@ -67,7 +67,7 @@ namespace PRN211GroupProject.Pages.Accounts
                 {
                     Console.WriteLine(ex.Message);
                 }
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Accounts/UserFeedback/Index");
             }
             catch
             {
