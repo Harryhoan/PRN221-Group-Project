@@ -16,6 +16,7 @@ namespace PetSpaRepo.AccountRepository
 
         public Account GetAccountByEmail(string Email) => AccountDAO.Instance.GetAccountByEmail(Email);
         public List<Account> GetAllAccount() => AccountDAO.Instance.GetAllAccount();
+        public List<Account> GetAllAccountCreatedThisYear() => AccountDAO.Instance.GetAllAccountCreatedThisYear();
 
         public void UpdateAccount(int accountID, Account account) => AccountDAO.Instance.UpdateAccount(account);
         public void DeleteAccount(int accountID) => AccountDAO.Instance.DeleteAccount(accountID);

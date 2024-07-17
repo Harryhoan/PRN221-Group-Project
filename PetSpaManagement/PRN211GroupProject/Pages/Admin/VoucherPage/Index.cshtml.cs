@@ -34,25 +34,59 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
-            if (Account == null)
+            try 
             {
-                errorMessage = "You must login first";
-                return RedirectToPage("/Accounts/Login");
-            }
-            if (_voucherService != null)
-            {
+                var Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+                if (Account == null)
+                {
+                    errorMessage = "You must login first";
+                    return RedirectToPage("/Accounts/Login");
+                }
+                if (_voucherService == null)
+                {
+                    return BadRequest()l
+                }
                 Voucher = _voucherService.GetVoucherList();
+                return Page();
             }
-            return Page();
+            catch
+            {
+                return BadRequest();
+            }
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            if (NewVoucher != null)
+            try
             {
+                if (_voucherService == null)
+                {
+                    return BadRequest();
+                }
+                if (NewVoucher == null || NewVoucher.Id <= 0)
+                {
+                    return Page();
+                }
+                if (String.IsNullOrEmpty(NewVoucher.Name))
+                {
+                    return BadRequest();
+                }
+                if (NewVoucher.Expired.Date <= DateTime.Today.Date)
+                {
+                    return BadRequest();
+                }
+                if (NewVoucher.Discount < 1)
+                {
+                    return BadRequest();
+                }
+                NewVoucher.Name = FormatUtilities.TrimSpacesPreserveSingle(NewVoucher.Name);
+                NewVoucher.Status = false;
                 _voucherService.AddVoucher(NewVoucher);
+                return RedirectToPage();
             }
-            return RedirectToPage();
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

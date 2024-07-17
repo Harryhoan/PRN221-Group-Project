@@ -118,7 +118,7 @@
                             </div>
                             <div class="form-group form-group-default">
                                 <label asp-for="NewVoucher.Discount">Discount</label>
-                                <input asp-for="NewVoucher.Discount" class="form-control" placeholder="Fill Discount" required min="1" max="100" />
+                                <input asp-for="NewVoucher.Discount" class="form-control" placeholder="Fill Discount" required type="number" step="1" max="100" />
                                 <span asp-validation-for="NewVoucher.Discount" class="text-danger"></span>
                             </div>
                             <div class="form-group form-group-default">
@@ -128,7 +128,7 @@
                             </div>
                             <div class="form-group form-group-default">
                                 <label asp-for="NewVoucher.Reach">Reach</label>
-                                <input asp-for="NewVoucher.Reach" class="form-control" placeholder="Fill Reach" required min="1" max="100" />
+                                <input asp-for="NewVoucher.Reach" class="form-control" placeholder="Fill Reach" required type="number" step="1" max="100" />
                                 <span asp-validation-for="NewVoucher.Reach" class="text-danger"></span>
                             </div>
                             <div class="form-group form-group-default">

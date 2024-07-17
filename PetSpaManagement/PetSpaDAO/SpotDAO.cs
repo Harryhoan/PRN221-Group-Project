@@ -48,7 +48,7 @@ namespace PetSpaDAO
 		}
 		public Spot GetSpot(int spotId)
 		{
-			var spot = context.Spots.FirstOrDefault(s => s.Id.Equals(spotId));
+			var spot = context.Spots.FirstOrDefault(s => s.Id == spotId);
 			if (spot == null)
 				throw new Exception("Spot cannot be retrieved");
 			return spot;
@@ -57,14 +57,11 @@ namespace PetSpaDAO
 		{
 			try
 			{
-				if (spot != null)
+				if (spot != null&& spot.Id == default)
 				{
-					Spot existingSpot = GetSpot(spot.Id);
-					if (existingSpot == null)
-					{
-						context.Spots.Add(spot);
-						context.SaveChanges();
-					}
+					spot.Created = DateTime.Now;
+					context.Spots.Add(spot);
+					context.SaveChanges();
 				}
 			}
 			catch

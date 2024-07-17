@@ -106,7 +106,7 @@
 												<input asp-for="NewService.Duration"
 													   type="number"
 													   class="form-control"
-													   placeholder="Fill Duration" required />
+													   placeholder="Fill Duration" required min="1" step="1"/>
 												<span asp-validation-for="NewService.Duration" class="text-danger"></span>
 											</div>
 										</div>
@@ -116,7 +116,7 @@
 												<input asp-for="NewService.Price"
 													   type="number"
 													   class="form-control"
-													   placeholder="Fill Price" required />
+													   placeholder="Fill Price" required pattern="^(0*([1-9][0-9]*|0)(\.[0-9]*)?)$" />/>
 												<span asp-validation-for="NewService.Price" class="text-danger"></span>
 											</div>
 										</div>

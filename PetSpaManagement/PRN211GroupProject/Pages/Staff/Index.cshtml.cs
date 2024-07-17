@@ -8,7 +8,6 @@ using PetSpaService.BillService;
 using PetSpaService.BookingService;
 using PetSpaService.FeedbacksService;
 using PRN211GroupProject.Utilities;
-using System.Security.Claims;
 
 namespace PRN211GroupProject.Pages.Staff
 {
@@ -30,48 +29,54 @@ namespace PRN211GroupProject.Pages.Staff
             _serviceService = serviceService;
             _feedbackService = feedbackService;
         }
+        public Account? Account { get; set; }
+        [TempData]
+        public string errorMessage { get; set; }
+
         public IList<Bill> Bill { get; set; } = default!;
         public IList<Account> Accounts { get; set; } = default!;
         public int UserCount { get; set; }
         public int bookingCount { get; set; }
         public int serviceCount { get; set; }
         public int FeedbackCount { get; set; }
-        [TempData]
-        public string errorMessage { get; set; }
-
+        public double[] monthlySum { get; set; } = new double[12];
         public async Task<IActionResult> OnGetAsync()
         {
             try
             {
-                var Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
-                if (Account != null)
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+                if (Account == null)
                 {
+                    return RedirectToPage("/Error");
+                }
 
-                    if (_billService == null)
-                    {
-                        return BadRequest();
-                    }
-                    Bill = _billService.GetBillList();
-                    if (_accountService != null)
-                    {
-                        Accounts = _accountService.GetAllAccount();
-                        UserCount = _accountService.NumberOfUser();
-                        bookingCount = _bookingService.NumberOfBooking();
-                        serviceCount = _serviceService.NumberOfService();
-                        FeedbackCount = _feedbackService.NumberOfFeedback();
-                    }
-                }
-                else
+                if (_billService == null || _accountService == null)
                 {
-                    errorMessage = "You must login first";
-                    return RedirectToPage("/Accounts/Login");
+                    return BadRequest();
                 }
+
+                Accounts = _accountService.GetAllAccountCreatedThisYear();
+
+                Bill = _billService.GetBillCreatedThisYearList();
+                if (Bill != null && Bill.Count > 0)
+                {
+                    foreach (var item in Bill)
+                    {
+                        monthlySum[item.Created.Month - 1] += item.Total;
+                    }
+                }
+
+                UserCount = _accountService.NumberOfUser();
+                bookingCount = _bookingService.NumberOfBooking();
+                serviceCount = _serviceService.NumberOfService();
+                FeedbackCount = _feedbackService.NumberOfFeedback();
+                return Page();
             }
             catch
             {
-                return BadRequest();
+                errorMessage = "Something went wrong. Please try again.";
+                return RedirectToPage("/Error");
             }
-            return Page();
         }
     }
 }

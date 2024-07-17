@@ -56,6 +56,9 @@ namespace PetSpaService.AccountService
             return null;
         }
         public List<Account> GetAllAccount() => repo.GetAllAccount();
+
+        public List<Account> GetAllAccountCreatedThisYear() => repo.GetAllAccountCreatedThisYear();
+
         public void UpdateAccount(Account account)
         {
             if (account == null || account.Id == default)

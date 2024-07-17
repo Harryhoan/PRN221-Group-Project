@@ -57,6 +57,7 @@ namespace PetSpaDAO
             Voucher newVoucher = GetVoucher(voucher.Id);
             if(newVoucher == null)
             {
+                voucher.Created = DateTime.Now;
                 context.Vouchers.Add(voucher);
                 context.SaveChanges();
             }

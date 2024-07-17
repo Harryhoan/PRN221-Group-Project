@@ -16,22 +16,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Voucher.Name" class="control-label"></label>
-                <input asp-for="Voucher.Name" class="form-control" />
+                <input asp-for="Voucher.Name" class="form-control" required placeholder="Fill Name"/>
                 <span asp-validation-for="Voucher.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Voucher.Discount" class="control-label"></label>
-                <input asp-for="Voucher.Discount" class="form-control" />
+                <input type="number" asp-for="Voucher.Discount" class="form-control" required min="1"/>
                 <span asp-validation-for="Voucher.Discount" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Voucher.Expired" class="control-label"></label>
-                <input asp-for="Voucher.Expired" class="form-control" />
+                <input asp-for="Voucher.Expired" class="form-control" required/>
                 <span asp-validation-for="Voucher.Expired" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Voucher.Reach" class="control-label"></label>
-                <input asp-for="Voucher.Reach" class="form-control" />
+                <input asp-for="Voucher.Reach" class="form-control" required min="1" type="number"/>
                 <span asp-validation-for="Voucher.Reach" class="text-danger"></span>
             </div>
             <div class="form-group form-check">

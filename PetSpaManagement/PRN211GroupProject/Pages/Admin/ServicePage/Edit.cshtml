@@ -2,60 +2,64 @@
 @model PRN211GroupProject.Pages.ServicePage.EditModel
 
 @{
-    ViewData["Title"] = "Edit Service";
-    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+	ViewData["Title"] = "Edit Service";
+	Layout = "~/Pages/Shared/_AdminLayout.cshtml";
 }
 
 <h1 class="text-center">@ViewData["Title"]</h1>
 <hr />
 <div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h4 class="card-title mb-0">Edit Service</h4>
-            </div>
-            <div class="card-body">
-                <form method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-                    <input type="hidden" asp-for="Service.Id" />
+	<div class="col-md-8">
+		<div class="card">
+			<div class="card-header bg-primary text-white">
+				<h4 class="card-title mb-0">Edit Service</h4>
+			</div>
+			<div class="card-body">
+				<form method="post">
+					<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+					<input type="hidden" asp-for="Service.Id" />
+					<input type="hidden" asp-for="Service.Created" />
+					<div class="form-group mb-3">
+						<label asp-for="Service.Name" class="control-label"></label>
+						<input asp-for="Service.Name" class="form-control" required placeholder="Fill Name" />
+						<span asp-validation-for="Service.Name" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Service.Name" class="control-label"></label>
-                        <input asp-for="Service.Name" class="form-control" required/>
-                        <span asp-validation-for="Service.Name" class="text-danger"></span>
-                    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Service.Duration" class="control-label"></label>
+						<input asp-for="Service.Duration" class="form-control" required type="number" min="1" step="1" />
+						<span asp-validation-for="Service.Duration" class="text-danger"></span>
+					</div>
+					<div class="form-group mb-3">
+						<label asp-for="Service.Description" class="control-label"></label>
+						<input asp-for="Service.Description" class="form-control" required placeholder="Fill Descrption" />
+						<span asp-validation-for="Service.Description" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Service.Duration" class="control-label"></label>
-                        <input asp-for="Service.Duration" class="form-control" required />
-                        <span asp-validation-for="Service.Duration" class="text-danger"></span>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label asp-for="Service.Description" class="control-label"></label>
-                        <input asp-for="Service.Description" class="form-control" required />
-                        <span asp-validation-for="Service.Description" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label asp-for="Service.Price" class="control-label"></label>
-                        <input asp-for="Service.Price" class="form-control" required pattern="^(0*([1-9][0-9]*|0)(\.[0-9]*)?)$" />
-                        <span asp-validation-for="Service.Price" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group text-center">
-                        <input type="submit" value="Save" class="btn btn-primary" />
-                    </div>
-                </form>
-                <div class="form-group text-center">
-                    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
-                </div>
-            </div>
-        </div>
-    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Service.Price" class="control-label"></label>
+						<input asp-for="Service.Price" class="form-control" required pattern="^(0*([1-9][0-9]*|0)(\.[0-9]*)?)$" placeholder="Fill Price" />
+						<span asp-validation-for="Service.Price" class="text-danger"></span>
+					</div>
+					<div class="form-group form-check">
+						<label class="form-check-label">
+							<input class="form-check-input" asp-for="Service.Status" /> @Html.DisplayNameFor(model => model.Service.Status)
+						</label>
+					</div>
+					<div class="form-group text-center">
+						<input type="submit" value="Save" class="btn btn-primary" />
+					</div>
+				</form>
+				<div class="form-group text-center">
+					<a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }

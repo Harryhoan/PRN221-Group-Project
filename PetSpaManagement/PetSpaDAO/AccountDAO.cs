@@ -39,7 +39,11 @@ namespace PetSpaDAO
         public List<Account> GetAllAccount()
         {
             return context.Accounts.Include(a => a.Role).Include(a => a.Voucher).ToList();
+        }
 
+        public List<Account> GetAllAccountCreatedThisYear()
+        {
+            return context.Accounts.AsNoTracking().Include(a => a.Role).Where(a => a.Created.Year == DateTime.Now.Year).OrderByDescending(a => a.Created).ToList();
         }
         public Account GetAccount(int accountID)
         {
@@ -80,7 +84,7 @@ namespace PetSpaDAO
         }
         public int NumberOfUser()
         {
-            return context.Accounts.Count();
+            return context.Accounts.AsNoTracking().Count();
         }
     }
 }

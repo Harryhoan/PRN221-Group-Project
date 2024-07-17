@@ -11,6 +11,7 @@ namespace PetSpaRepo.AccountRepository
     {
         public Account GetAccountByEmail(string Email);
         public List<Account> GetAllAccount();
+        public List<Account> GetAllAccountCreatedThisYear();
         public Account GetAccount(int accountID);
         public void AddAccount(Account account);
         public void UpdateAccount(int accountID, Account account);

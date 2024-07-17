@@ -146,9 +146,10 @@
 								{
 									foreach (var item in dayBookings)
 									{
+										Random random = new Random();
 										<li class="cd-schedule__event" style="visibility:visible; opacity:100;">
-											<a data-start="@item.Started.ToString("HH:mm")" data-end="@item.Ended.ToString("HH:mm")" data-content="event-abs-circuit" data-event="event-1" href="#0">
-												<em class="cd-schedule__name">@item.Available.Service.Name <br /> @item.Available.Spot.Name</em>
+											<a data-start="@item.Started.ToString("HH:mm")" data-end="@item.Ended.ToString("HH:mm")" data-content="event-abs-circuit" data-event="event-@random.Next(1, 5)" href="#0">
+												<em style="font-size:0.7rem" class="cd-schedule__name">@item.Available.Service.Name - @item.Available.Spot.Name</em>
 											</a>
 										</li>
 									}

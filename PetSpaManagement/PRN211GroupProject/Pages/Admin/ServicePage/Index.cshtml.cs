@@ -10,6 +10,8 @@ using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaRepo.AdminServiceRepo;
 using PetSpaService.AdminServiceService;
+using PetSpaService.ServicesService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.ServicePage
 {
@@ -20,11 +22,13 @@ namespace PRN211GroupProject.Pages.ServicePage
         public IndexModel(IServiceService service)
         {
             _service = service;
+			Service = new List<Service>();
+			NewService = new();
         }
 
-        public IList<Service> Service { get; set; } = default!;
+        public IList<Service> Service { get; set; }
         [BindProperty]
-        public Service NewService { get; set; } = default!;
+        public Service NewService { get; set; }
         public async Task OnGetAsync()
         {
             if (_service.GetServiceList() != null)
@@ -34,16 +38,26 @@ namespace PRN211GroupProject.Pages.ServicePage
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
-            {
-                return Unauthorized();
-            }
-            if (NewService != null)
-            {
-                _service.AddService(NewService);
-            }
-            return RedirectToPage();
-        }
+			try
+			{
+				var roleClaim = User.FindFirst(ClaimTypes.Role);
+				if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+				{
+					return Unauthorized();
+				}
+				if (NewService != null && NewService.Id == default && !String.IsNullOrEmpty(NewService.Description) && !String.IsNullOrEmpty(NewService.Description) && NewService.Price > 0 && NewService.Duration >= 1)
+				{
+					NewService.Description = FormatUtilities.TrimSpacesPreserveSingle(NewService.Description);
+					NewService.Name = FormatUtilities.TrimSpacesPreserveSingle(NewService.Name);
+					_service.AddService(NewService);
+					return RedirectToPage("/Admin/ServicePage/Index");
+				}
+				return Page();
+			}
+			catch
+			{
+				return BadRequest();
+			}
+		}
     }
 }

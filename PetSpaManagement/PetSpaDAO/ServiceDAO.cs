@@ -1,4 +1,5 @@
-﻿using PetSpaBussinessObject;
+﻿using Microsoft.EntityFrameworkCore;
+using PetSpaBussinessObject;
 using PetSpaDaos;
 using System;
 using System.Collections.Generic;
@@ -65,10 +66,11 @@ namespace PetSpaDAO
             Service newService = GetService(service.Id);
             if (newService == null)
             {
+                service.Created = DateTime.Now;
                 _context.Services.Add(service);
                 _context.SaveChanges();
             }
         }
-        public int NumberOfService() => _context.Services.Count();
+        public int NumberOfService() => _context.Services.AsNoTracking().Count();
     }
 }

@@ -19,14 +19,16 @@ namespace PRN211GroupProject.Pages.AvailablePage
 			_availableService = availableService;
 			_serviceService = serviceService;
 			_spotService = spotService;
+			Available = new();
 		}
 
 		[BindProperty]
-		public Available? Available { get; set; }
+		public Available Available { get; set; }
 		public IList<Service>? Services { get; set; }
 		public IList<Spot>? Spots { get; set; }
 		public IActionResult OnGet()
 		{
+			
             try
 			{
 				if (!ModelState.IsValid)
@@ -58,16 +60,11 @@ namespace PRN211GroupProject.Pages.AvailablePage
 		{
 			try
 			{
-				if (!ModelState.IsValid)
-				{
-					return Page();
-				}
 
-				if (Available == null)
+				if (Available == null || Available.ServiceId <= 0 || Available.SpotId <= 0)
 				{
 					return BadRequest();
 				}
-
 				try
 				{
 					_availableService.AddAvailable(Available);

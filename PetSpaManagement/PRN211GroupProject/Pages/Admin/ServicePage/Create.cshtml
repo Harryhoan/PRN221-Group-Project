@@ -2,44 +2,56 @@
 @model PRN211GroupProject.Pages.ServicePage.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+	ViewData["Title"] = "Create";
 }
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Service.Name" class="control-label"></label>
-                <input asp-for="Service.Name" class="form-control" />
-                <span asp-validation-for="Service.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Service.Duration" class="control-label"></label>
-                <input asp-for="Service.Duration" class="form-control" />
-                <span asp-validation-for="Service.Duration" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Service.Price" class="control-label"></label>
-                <input asp-for="Service.Price" class="form-control" />
-                <span asp-validation-for="Service.Price" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Service.Status" /> @Html.DisplayNameFor(model => model.Service.Status)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="Service.Id"/>
+			<input type="hidden" asp-for="Service.Created" />
+
+			<div class="form-group">
+				<label asp-for="Service.Name" class="control-label"></label>
+				<input asp-for="Service.Name" class="form-control" required />
+				<span asp-validation-for="Service.Name" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Service.Duration" class="control-label"></label>
+				<input asp-for="Service.Duration" class="form-control" required min="1" type="number" step="1" />
+				<span asp-validation-for="Service.Duration" class="text-danger"></span>
+			</div>
+
+			<div class="form-group mb-3">
+				<label asp-for="Service.Description" class="control-label"></label>
+				<input asp-for="Service.Description" class="form-control" required />
+				<span asp-validation-for="Service.Description" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Service.Price" class="control-label"></label>
+				<input asp-for="Service.Price" class="form-control" required pattern="^(0*([1-9][0-9]*|0)(\.[0-9]*)?)$" />
+				<span asp-validation-for="Service.Price" class="text-danger"></span>
+			</div>
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" asp-for="Service.Status" /> @Html.DisplayNameFor(model => model.Service.Status)
+				</label>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+	<a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }

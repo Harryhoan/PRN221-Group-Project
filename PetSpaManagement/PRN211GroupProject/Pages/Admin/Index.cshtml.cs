@@ -8,7 +8,6 @@ using PetSpaService.BillService;
 using PetSpaService.BookingService;
 using PetSpaService.FeedbacksService;
 using PRN211GroupProject.Utilities;
-using System.Security.Claims;
 
 namespace PRN211GroupProject.Pages.Admin
 {
@@ -40,37 +39,43 @@ namespace PRN211GroupProject.Pages.Admin
         public int bookingCount { get; set; }
         public int serviceCount { get; set; }
         public int FeedbackCount { get; set; }
+        public double[] monthlySum { get; set; } = new double[12];
         public async Task<IActionResult> OnGetAsync()
         {
-            Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
-            if (Account != null)
-            { 
-                try
+            try
+            {
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+                if (Account == null)
                 {
-                    if (_billService == null)
-                    {
-                        return BadRequest();
-                    }
-                    Bill = _billService.GetBillList();
-                    if (_accountService != null)
-                    {
-                        Accounts = _accountService.GetAllAccount();
-                        UserCount = _accountService.NumberOfUser();
-                        bookingCount = _bookingService.NumberOfBooking();
-                        serviceCount = _serviceService.NumberOfService();
-                        FeedbackCount = _feedbackService.NumberOfFeedback();
-                    }
+                    return RedirectToPage("/Error");
                 }
-                catch
+                
+                if (_billService == null || _accountService == null)
                 {
                     return BadRequest();
                 }
+
+                Accounts = _accountService.GetAllAccountCreatedThisYear();
+
+                Bill = _billService.GetBillCreatedThisYearList();
+                if (Bill != null && Bill.Count > 0)
+                {
+                    foreach (var item in Bill)
+                    {
+                        monthlySum[item.Created.Month - 1] += item.Total;
+                    }
+                }
+
+                UserCount = _accountService.NumberOfUser();
+                bookingCount = _bookingService.NumberOfBooking();
+                serviceCount = _serviceService.NumberOfService();
+                FeedbackCount = _feedbackService.NumberOfFeedback();
                 return Page();
             }
-            else
+            catch
             {
-                errorMessage = "You must login first";
-                return RedirectToPage("/Accounts/Login");
+                errorMessage = "Something went wrong. Please try again.";
+                return RedirectToPage("/Error");
             }
         }
     }

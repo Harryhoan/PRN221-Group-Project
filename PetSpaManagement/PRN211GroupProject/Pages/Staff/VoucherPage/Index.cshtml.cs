@@ -32,25 +32,57 @@ namespace PRN211GroupProject.Pages.Staff.VoucherPage
 
         public async Task<IActionResult> OnGetAsync()
         {
-            var Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
-            if (Account == null)
+            try
             {
-                return Unauthorized();
+                var Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
+                if (Account == null)
+                {
+                    return Unauthorized();
+                }
+                if (_voucherService != null)
+                {
+                    Voucher = _voucherService.GetVoucherList();
+                }
+                return Page();
             }
-            if (_voucherService != null)
+            catch
             {
-                Voucher = _voucherService.GetVoucherList();
-            }
-            return Page();
+                return BadRequest();
+            }  
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            if (NewVoucher != null)
+            try
             {
+                if (_voucherService == null)
+                {
+                    return BadRequest();
+                }
+                if (NewVoucher == null)
+                {
+                    return Page();
+                }
+                if (String.IsNullOrEmpty(NewVoucher.Name))
+                {
+                    return BadRequest();
+                }
+                if (NewVoucher.Expired.Date <= DateTime.Today.Date)
+                {
+                    return BadRequest();
+                }
+                if (NewVoucher.Discount < 1)
+                {
+                    return BadRequest();
+                }
+                NewVoucher.Name = FormatUtilities.TrimSpacesPreserveSingle(NewVoucher.Name);
                 NewVoucher.Status = false;
                 _voucherService.AddVoucher(NewVoucher);
+                return RedirectToPage();
             }
-            return RedirectToPage();
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

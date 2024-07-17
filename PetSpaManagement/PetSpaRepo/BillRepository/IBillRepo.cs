@@ -14,7 +14,7 @@ namespace PetSpaRepo.BillRepository
         public void DeleteBill(int billId);
 
         public List<Bill> GetBillList();
-
+        public List<Bill> GetBillCreatedThisYearList();
         public List<Bill> GetAccountBillList(int accId);
 
         public Bill GetBill(int billId);

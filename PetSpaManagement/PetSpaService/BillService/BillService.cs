@@ -25,8 +25,11 @@ namespace PetSpaService.BillService
         {
             return billRepo.GetBillList();
         }
-
-		public List<Bill> GetAccountBillList(int accId)
+        public List<Bill> GetBillCreatedThisYearList()
+        {
+            return billRepo.GetBillCreatedThisYearList();
+        }
+        public List<Bill> GetAccountBillList(int accId)
 		{
 			return billRepo.GetAccountBillList(accId);
 		}

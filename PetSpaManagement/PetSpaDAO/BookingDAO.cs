@@ -146,7 +146,7 @@ namespace PetSpaDAO
 		}
 		public int NumberOfBooking()
 		{
-			return context.Bookings.Count();
+			return context.Bookings.AsNoTracking().Count();
 		}
 	}
 }

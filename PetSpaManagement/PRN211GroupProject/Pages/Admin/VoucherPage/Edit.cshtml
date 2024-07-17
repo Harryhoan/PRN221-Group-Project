@@ -21,13 +21,13 @@
 
                     <div class="form-group mb-3">
                         <label asp-for="Voucher.Name" class="control-label"></label>
-                        <input asp-for="Voucher.Name" class="form-control" required />
+                        <input asp-for="Voucher.Name" class="form-control" required placeholder="Fill Name" />
                         <span asp-validation-for="Voucher.Name" class="text-danger"></span>
                     </div>
 
                     <div class="form-group mb-3">
                         <label asp-for="Voucher.Discount" class="control-label"></label>
-                        <input asp-for="Voucher.Discount" class="form-control" required type="number" step="0.01" />
+                        <input asp-for="Voucher.Discount" class="form-control" required type="number" step="1" min="1" max="100" />
                         <span asp-validation-for="Voucher.Discount" class="text-danger"></span>
                     </div>
 
@@ -44,7 +44,7 @@
 
                     <div class="form-group mb-3">
                         <label asp-for="Voucher.Reach" class="control-label"></label>
-                        <input asp-for="Voucher.Reach" class="form-control" required />
+                        <input asp-for="Voucher.Reach" class="form-control" required type="number" step="1" min="1" max="100" />
                         <span asp-validation-for="Voucher.Reach" class="text-danger"></span>
                     </div>
 

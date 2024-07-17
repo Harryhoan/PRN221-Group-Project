@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using PetSpaBussinessObject;
 using PetSpaDaos;
 using PetSpaService.VoucherService.VoucherService;
+using PRN211GroupProject.Utilities;
 
 namespace PRN211GroupProject.Pages.Admin.VoucherPage
 {
@@ -18,26 +19,59 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
         public CreateModel(IVoucherService voucherService)
         {
             _voucherService = voucherService;
+            Voucher = new();
         }
 
         public IActionResult OnGet()
         {
-            return Page();
+            try
+            {
+                return Page();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         [BindProperty]
-        public Voucher Voucher { get; set; } = default!;
+        public Voucher Voucher { get; set; }
 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _voucherService.GetVoucherList() == null || Voucher == null)
+            try
             {
-                return Page();
+                if (_voucherService == null)
+                {
+                    return BadRequest();
+                }
+                if (Voucher == null || Voucher.Id <= 0)
+                {
+                    return Page();
+                }
+                if (String.IsNullOrEmpty(Voucher.Name))
+                {
+                    return BadRequest();
+                }
+                if (Voucher.Expired.Date <= DateTime.Today.Date)
+                {
+                    return BadRequest();
+                }
+                if (Voucher.Discount < 1)
+                {
+                    return BadRequest();
+                }
+                Voucher.Name = FormatUtilities.TrimSpacesPreserveSingle(Voucher.Name);
+                Voucher.Status = false;
+                _voucherService.AddVoucher(Voucher);
+                return RedirectToPage();
             }
-            _voucherService.AddVoucher(Voucher);
-            return RedirectToPage();
+            catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

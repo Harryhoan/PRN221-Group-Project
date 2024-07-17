@@ -38,6 +38,14 @@ namespace PetSpaDAO
             if (Bills == null)
                 throw new Exception("All Bills cannot be retrieved");
             return Bills;
+        }
+
+        public List<Bill> GetAllBillCreatedThisYear()
+        {
+            var Bills = context.Bills.AsNoTracking().Where(b => b.Created.Year == DateTime.Now.Year).Include(b => b.Acc).Include(b => b.Voucher).OrderByDescending(b => b.Created).ToList();
+            if (Bills == null)
+                throw new Exception("All Bills cannot be retrieved");
+            return Bills;
 
         }
 

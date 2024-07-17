@@ -28,23 +28,30 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            try
             {
-                return Unauthorized();
-            }
-            if (id == null || _voucherService.GetVoucherList() == null)
-            {
-                return NotFound();
-            }
+                var roleClaim = User.FindFirst(ClaimTypes.Role);
+                if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
+                {
+                    return Unauthorized();
+                }
+                if (id == null || _voucherService.GetVoucherList() == null)
+                {
+                    return NotFound();
+                }
 
-            var voucher = _voucherService.GetVoucher((int)id);
-            if (voucher == null)
-            {
-                return NotFound();
+                var voucher = _voucherService.GetVoucher((int)id);
+                if (voucher == null || voucher.Id <= 0)
+                {
+                    return NotFound();
+                }
+                Voucher = voucher;
+                return Page();
             }
-            Voucher = voucher;
-            return Page();
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -53,7 +60,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
         {
             try
             {
-                if (Voucher != null && !String.IsNullOrEmpty(Voucher.Name) && Voucher.Discount <= 100 && Voucher.Discount > 0 && Voucher.Reach > 0 && Voucher.Expired.Date > Voucher.Created.Date)
+                if (Voucher != null && !String.IsNullOrEmpty(Voucher.Name) && Voucher.Discount <= 100 && Voucher.Discount >= 1 && Voucher.Reach >= 1 && Voucher.Expired.Date > Voucher.Created.Date)
                 {
                     Voucher.Name = FormatUtilities.TrimSpacesPreserveSingle(Voucher.Name);
                     _voucherService.UpdateVoucher(Voucher);
@@ -66,8 +73,6 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
             {
                 return BadRequest();
             }
-
-            
         }
     }
 }

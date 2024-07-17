@@ -15,8 +15,9 @@ namespace PetSpaRepo.BillRepository
         public void DeleteBill(int billId) => BillDAO.Instance.DeleteBill(billId);
 
         public List<Bill> GetBillList() => BillDAO.Instance.GetAllBill();
+        public List<Bill> GetBillCreatedThisYearList() => BillDAO.Instance.GetAllBillCreatedThisYear();
 
-		public List<Bill> GetAccountBillList(int accId) => BillDAO.Instance.GetAccountBill(accId);
+        public List<Bill> GetAccountBillList(int accId) => BillDAO.Instance.GetAccountBill(accId);
 
 		public Bill GetBill(int billId) => BillDAO.Instance.GetBill(billId);
         public List<Bill> GetFilterdAccountBill(DateTime fromDate, DateTime toDate, int id) => BillDAO.Instance.GetFilterdAccountBill(fromDate, toDate, id);    

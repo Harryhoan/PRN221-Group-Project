@@ -1,4 +1,5 @@
 ﻿using PetSpaBussinessObject;
+using PetSpaDAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace PetSpaService.AccountService
         Account GetAccountByEmail(string Email);
         Account Login(string Email, string password);
         List<Account> GetAllAccount();
+        List<Account> GetAllAccountCreatedThisYear();
+
         Account GetAccount(int accountID);
         public void AddAccount(Account account);
         public void UpdateAccount(Account account);
