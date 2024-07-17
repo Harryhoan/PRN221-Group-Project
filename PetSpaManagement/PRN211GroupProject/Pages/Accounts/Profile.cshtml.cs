@@ -19,10 +19,11 @@ namespace PRN211GroupProject.Pages.Accounts
         public ProfileViewModel ProfileViewModel { get; set; }
         [BindProperty]
         public ChangePasswordViewModel ChangePasswordViewModel { get; set; }
-        [BindProperty]
         public Account? Account { get; set; }
         [TempData]
         public string errorMessage { get; set; }
+        [TempData]
+        public string successMessage { get; set; }
 
         public IActionResult OnGet()
         {
@@ -49,20 +50,19 @@ namespace PRN211GroupProject.Pages.Accounts
                 {
                     return BadRequest();
                 }
-                if (Account.Email == ProfileViewModel.Email)
+                if (Account.Email != ProfileViewModel.Email)
                 {
                     if (accountService.GetAccountByEmail(ProfileViewModel.Email) != null)
                     {
-                        ModelState.AddModelError("ProfileViewModel.Email", "Email already exists.");
+                        errorMessage = "Email already exists.";
                         return Page();
                     }
                 }
                 Account.Email = ProfileViewModel.Email.Trim();
                 Account.Name = FormatUtilities.TrimSpacesPreserveSingle(ProfileViewModel.Name);
                 Account.Phone = ProfileViewModel.Phone;
-                Account.Status = true;
                 accountService.UpdateAccount(Account);
-                errorMessage = "The profile is successfully updated.";
+                successMessage = "The profile is successfully updated.";
                 return Page();
             }
             catch
@@ -80,7 +80,7 @@ namespace PRN211GroupProject.Pages.Accounts
                     errorMessage = "You must login first";
                     return RedirectToPage("/Accounts/Login");
                 }
-                if (!accountService.VerifyPassword(ChangePasswordViewModel.OldPass,Account?.Pass))
+                if (!accountService.VerifyPassword(ChangePasswordViewModel.OldPass, Account?.Pass))
                 {
                     errorMessage = "Your password is incorrect";
                     return Page();
@@ -92,8 +92,7 @@ namespace PRN211GroupProject.Pages.Accounts
                 }
                 Account.Pass = ChangePasswordViewModel.NewPass;
                 accountService.UpdateAccount(Account);
-                Account.Status = true;
-                errorMessage = "Password successfully change";
+                successMessage = "Password successfully change";
                 return Page();
             }
             catch

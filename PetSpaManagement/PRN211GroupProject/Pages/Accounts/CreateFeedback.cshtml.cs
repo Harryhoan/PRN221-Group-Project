@@ -35,25 +35,30 @@ namespace PRN211GroupProject.Pages.Accounts
             Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
             return Page();
         }
+        [TempData]
+        public string errorMessage { get; set; }
+        [TempData]
+        public string successMessage { get; set; }
 
         [BindProperty]
         public Feedback Feedback { get; set; } = default!;
-
-		[BindProperty]
-		public Account? Account { get; set; }
-		// To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-		public async Task<IActionResult> OnPostAsync()
+        [BindProperty]
+        public Account? Account { get; set; }
+        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        public async Task<IActionResult> OnPostAsync()
         {
             try
             {
-				Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
+                Account = AccountUtilities.Instance.GetAccount(HttpContext, _accountService);
                 if (Account == null)
                 {
+                    errorMessage = "Login to continue";
                     return RedirectToPage("/Accounts/Login");
                 }
                 if (Feedback == null || String.IsNullOrEmpty(Feedback.Information) || Feedback.ServiceId == default || Feedback.Rating < 0)
                 {
-                    return BadRequest();
+                    errorMessage = "An error occur,Please try again!";
+                    return Page();
                 }
                 try
                 {
@@ -65,13 +70,15 @@ namespace PRN211GroupProject.Pages.Accounts
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    errorMessage = ex.Message;
                 }
-                return RedirectToPage("/Index");
+                successMessage = "Successfully send Feedback";
+                return Page();
             }
-            catch
+            catch (Exception ex)
             {
-                return BadRequest();
+                errorMessage= (ex.ToString());
+                return Page();
             }
         }
     }

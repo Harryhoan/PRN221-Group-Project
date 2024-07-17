@@ -10,10 +10,18 @@
 </div> *@
 
 <main>
+    <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
     @if (!string.IsNullOrEmpty(Model.errorMessage))
     {
         <script>
-            alert('@Model.errorMessage');
+            swal("Error!", '@Model.errorMessage', {
+                icon: "error",
+                buttons: {
+                    confirm: {
+                        className: "btn btn-error",
+                    },
+                },
+            });
         </script>
     }
     <div class="slider-area">
