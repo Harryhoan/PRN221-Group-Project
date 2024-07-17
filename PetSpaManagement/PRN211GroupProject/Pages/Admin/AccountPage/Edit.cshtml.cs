@@ -25,35 +25,43 @@ namespace PRN211GroupProject.Pages.AccountPage
             accountService = account;
             _voucher = voucher;
             _role = role;
+            Account = new();
         }
 
         [BindProperty]
-        public Account Account { get; set; } = default!;
-        public async Task<IActionResult> OnGetAsync(int id)
+        public Account Account { get; set; }
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            var roleClaim = User.FindFirst(ClaimTypes.Role);
-            if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+            try
             {
-                return Unauthorized();
-            }
-            if (id == 0 || accountService.GetAllAccount() == null)
-            {
-                return NotFound();
-            }
-            var account = accountService.GetAccount(id);
-            if (account == null)
-            {
-                return NotFound();
-            }
+				var roleClaim = User.FindFirst(ClaimTypes.Role);
+				if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+				{
+					return Unauthorized();
+				}
+				if (id == null || id <= 0 || accountService.GetAllAccount() == null)
+				{
+                    return NotFound();
+				}
+				var account = accountService.GetAccount((int)id);
+				if (account == null || account.Id <= 0)
+				{
+					return NotFound();
+				}
 
-            // Fetch and filter vouchers
-            var vouchers = _voucher.GetVoucherList();
-            var activeVouchers = vouchers.Where(v => v.Status == true).ToList();
-            ViewData["voucherlist"] = new SelectList(activeVouchers, "Id", "Name");
+				// Fetch and filter vouchers
+				var vouchers = _voucher.GetVoucherList();
+				var activeVouchers = vouchers.Where(v => v.Status == true).ToList();
+				ViewData["voucherlist"] = new SelectList(activeVouchers, "Id", "Name");
 
-            ViewData["rolelist"] = new SelectList(_role.GetAllRole(), "Id", "Name");
-            Account = account;
-            return Page();
+				ViewData["rolelist"] = new SelectList(_role.GetAllRole(), "Id", "Name");
+				Account = account;
+				return Page();
+			}
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -62,14 +70,29 @@ namespace PRN211GroupProject.Pages.AccountPage
         {
             try
             {
-                Account.Status = true;
+                if (accountService == null || Account == null || Account.Id <= 0)
+                {
+                    return BadRequest();
+                }
+                if (String.IsNullOrEmpty(Account.Name))
+                {
+                    return BadRequest();
+                }
+                if (String.IsNullOrEmpty(Account.Email))
+                {
+                    return BadRequest();
+                }
+                if (Account.CountVoucher < 0)
+                {
+                    return BadRequest();
+                }
                 accountService.UpdateAccount(Account);
-            }
+				return RedirectToPage();
+			}
             catch (Exception ex)
             {
+                return BadRequest();
             }
-
-            return RedirectToPage();
         }
     }
 }

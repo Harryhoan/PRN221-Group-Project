@@ -13,32 +13,32 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Account.Name" class="control-label"></label>
-                <input id="name"asp-for="Account.Name" class="form-control" />
+                <input id="name" asp-for="Account.Name" class="form-control" required placeholder="Fill Name"/>
                 <span asp-validation-for="Account.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.Email" class="control-label"></label>
-                <input id="email" asp-for="Account.Email" class="form-control" />
+                <input id="email" type="email" asp-for="Account.Email" class="form-control" required/>
                 <span asp-validation-for="Account.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.Phone" class="control-label"></label>
-                <input id="phone" asp-for="Account.Phone" class="form-control" />
+                <input id="phone" asp-for="Account.Phone" class="form-control" required pattern="^\d{10}$" placeholder="Fill Phone Number" />
                 <span asp-validation-for="Account.Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.Pass" class="control-label"></label>
-                <input asp-for="Account.Pass" class="form-control" />
+                <input asp-for="Account.Pass" class="form-control" placeholder="Fill Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,15}$" title="Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, one special character, and be between 8 to 15 characters long." required />
                 <span asp-validation-for="Account.Pass" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.CountVoucher" class="control-label"></label>
-                <input asp-for="Account.CountVoucher" class="form-control" />
+                <input asp-for="Account.CountVoucher" class="form-control" type="number" min="0" step="1"/>
                 <span asp-validation-for="Account.CountVoucher" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Account.RoleId" class="control-label"></label>
-                <select asp-for="Account.RoleId" class ="form-control" asp-items="ViewBag.RoleId"></select>
+                <select asp-for="Account.RoleId" class ="form-control" asp-items="ViewBag.RoleId" required></select>
             </div>
             <div class="form-group">
                 <label asp-for="Account.VoucherId" class="control-label"></label>

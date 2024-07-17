@@ -1,81 +1,86 @@
 ﻿@page
 @model PRN211GroupProject.Pages.AccountPage.EditModel
 @{
-    ViewData["Title"] = "Edit Account";
-    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+	ViewData["Title"] = "Edit Account";
+	Layout = "~/Pages/Shared/_AdminLayout.cshtml";
 }
 
 <h1 class="text-center">@ViewData["Title"]</h1>
 <hr />
 <div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h4 class="card-title mb-0">Edit Account</h4>
-            </div>
-            <div class="card-body">
-                <form method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-                    <input type="hidden" asp-for="Account.Id" />
+	<div class="col-md-8">
+		<div class="card">
+			<div class="card-header bg-primary text-white">
+				<h4 class="card-title mb-0">Edit Account</h4>
+			</div>
+			<div class="card-body">
+				<form method="post">
+					<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+					<input type="hidden" asp-for="Account.Id" />
+					<input type="hidden" asp-for="Account.Created" />
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Account.Name" class="control-label"></label>
-                        <input asp-for="Account.Name" class="form-control" required />
-                        <span asp-validation-for="Account.Name" class="text-danger"></span>
-                    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.Name" class="control-label"></label>
+						<input asp-for="Account.Name" class="form-control" required />
+						<span asp-validation-for="Account.Name" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Account.Email" class="control-label"></label>
-                        <input asp-for="Account.Email" class="form-control" required type="email" />
-                        <span asp-validation-for="Account.Email" class="text-danger"></span>
-                    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.Email" class="control-label"></label>
+						<input asp-for="Account.Email" class="form-control" required type="email" />
+						<span asp-validation-for="Account.Email" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Account.Pass" class="control-label"></label>
-                        <input asp-for="Account.Pass" class="form-control" required />
-                        <span asp-validation-for="Account.Pass" class="text-danger"></span>
-                    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.Pass" class="control-label"></label>
+						<input asp-for="Account.Pass" class="form-control" placeholder="Fill Password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,15}$" title="Password must contain at least one lowercase letter, one uppercase letter, one numeric digit, one special character, and be between 8 to 15 characters long." />
+						<span asp-validation-for="Account.Pass" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Account.CountVoucher" class="control-label"></label>
-                        <input asp-for="Account.CountVoucher" class="form-control" required type="number" />
-                        <span asp-validation-for="Account.CountVoucher" class="text-danger"></span>
-                    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.CountVoucher" class="control-label"></label>
+						<input asp-for="Account.CountVoucher" class="form-control" required type="number" min="0" step="1" />
+						<span asp-validation-for="Account.CountVoucher" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Account.Phone" class="control-label"></label>
-                        <input asp-for="Account.Phone" class="form-control" required />
-                        <span asp-validation-for="Account.Phone" class="text-danger"></span>
-                    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.Phone" class="control-label"></label>
+						<input asp-for="Account.Phone" class="form-control" required pattern="^\d{10}$" placeholder="Fill Phone Number" />
+						<span asp-validation-for="Account.Phone" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Account.RoleId" class="control-label"></label>
-                        <select asp-for="Account.RoleId" class="form-control" asp-items="ViewBag.rolelist" required></select>
-                        <span asp-validation-for="Account.RoleId" class="text-danger"></span>
-                    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.RoleId" class="control-label"></label>
+						<select asp-for="Account.RoleId" class="form-control" asp-items="ViewBag.rolelist" required></select>
+						<span asp-validation-for="Account.RoleId" class="text-danger"></span>
+					</div>
 
-                    <div class="form-group mb-3">
-                        <label asp-for="Account.VoucherId" class="control-label"></label>
-                        <select asp-for="Account.VoucherId" class="form-control" asp-items="ViewBag.voucherlist" required>
-                            <option selected value="null">None</option>
-                        </select>
-                        <span asp-validation-for="Account.VoucherId" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group text-center">
-                        <input type="submit" value="Save" class="btn btn-primary" />
-                    </div>
-                </form>
-                <div class="form-group text-center">
-                    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
-                </div>
-            </div>
-        </div>
-    </div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.VoucherId" class="control-label"></label>
+						<select asp-for="Account.VoucherId" class="form-control" asp-items="ViewBag.voucherlist" required>
+							<option selected value="null">None</option>
+						</select>
+						<span asp-validation-for="Account.VoucherId" class="text-danger"></span>
+					</div>
+					<div class="form-group mb-3">
+						<label asp-for="Account.Status" class="control-label"></label>
+						<input asp-for="Account.Status" class="form-control" />
+						<span asp-validation-for="Account.Status" class="text-danger"></span>
+					</div>
+					<div class="form-group text-center">
+						<input type="submit" value="Save" class="btn btn-primary" />
+					</div>
+				</form>
+				<div class="form-group text-center">
+					<a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }
