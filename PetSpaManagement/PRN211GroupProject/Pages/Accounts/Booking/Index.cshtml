@@ -4,10 +4,31 @@
 	ViewData["Title"] = "Booking";
 }
 
+<script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 @if (!string.IsNullOrEmpty(Model.errorMessage))
 {
 	<script>
-		alert('@Model.errorMessage');
+		swal("Error!", '@Model.errorMessage', {
+			icon: "error",
+			buttons: {
+				confirm: {
+					className: "btn btn-error",
+				},
+			},
+		});
+	</script>
+}
+@if (!string.IsNullOrEmpty(Model.successMessage))
+{
+	<script>
+		swal("Success!", '@Model.successMessage', {
+			icon: "success",
+			buttons: {
+				confirm: {
+					className: "btn btn-success",
+				},
+			},
+		});
 	</script>
 }
 

@@ -43,8 +43,10 @@ namespace PRN211GroupProject.Pages.Accounts
         public int SpotId { get; set; } = -1;
         [TempData]
         public string errorMessage { get; set; }
+		[TempData]
+		public string successMessage { get; set; }
 
-        public Account? Account { get; set; }
+		public Account? Account { get; set; }
         public IActionResult OnGet(int? spotId, int? offset)
         {
             try
@@ -131,9 +133,10 @@ namespace PRN211GroupProject.Pages.Accounts
                 }
                 if (currentUser.RoleId == 1)
                 {
-                    return Unauthorized();
-                }
-                if (NewBooking == null || NewBooking.Started == default || NewBooking.Started.Date <= DateTime.Today || NewBooking.Started.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Started.TimeOfDay > TimeSpan.FromHours(18))
+					errorMessage = "Admin or Staff cannot add Booking!";
+					return OnGet(SpotId, 0);
+				}
+				if (NewBooking == null || NewBooking.Started == default || NewBooking.Started.Date <= DateTime.Today || NewBooking.Started.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Started.TimeOfDay > TimeSpan.FromHours(18))
                 {
                     return BadRequest();
                 }
@@ -163,10 +166,9 @@ namespace PRN211GroupProject.Pages.Accounts
                         JsonSerializerOptions options = new JsonSerializerOptions
                         {
                             ReferenceHandler = ReferenceHandler.Preserve,
-                            WriteIndented = true // for readability
+                            WriteIndented = true 
                         };
                         bookingCart = JsonSerializer.Deserialize<List<PetSpaBussinessObject.Booking>>(json, options);
-
                 }
                 if (bookingCart != null)
                 {
@@ -182,18 +184,18 @@ namespace PRN211GroupProject.Pages.Accounts
                     JsonSerializerOptions options = new JsonSerializerOptions
                     {
                         ReferenceHandler = ReferenceHandler.Preserve,
-                        WriteIndented = true // for readability
+                        WriteIndented = true 
                     };
                     HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart, options));
                     BookingCount = bookingCart.Count;
                     HttpContext.Session.SetInt32("BookingCount", BookingCount);
-                    return OnGet(SpotId, 0);
+                    successMessage = "Book successfully added";
+					return OnGet(SpotId, 0);
                 }
-
                 errorMessage = "You already add this to cart!";
-                return Page();
-            }
-            catch
+				return OnGet(SpotId, 0);
+			}
+			catch
             {
                 return BadRequest();
             }

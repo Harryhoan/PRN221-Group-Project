@@ -21,7 +21,6 @@ namespace PRN211GroupProject.Pages.Accounts
     {
         [TempData]
         public string errorMessage { get; set; }
-
         [TempData]
         public string successMessage { get; set; }
 

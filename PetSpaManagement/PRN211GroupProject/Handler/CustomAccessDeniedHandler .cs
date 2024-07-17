@@ -49,7 +49,7 @@ namespace PRN211GroupProject.Handler
                 if (requiredRoles.Any(role => userRoles.Contains(role)))
                 {
                     errorMessage = "Unauthorized! You are forbidden access.";
-                    httpContext.Response.Redirect("/Errors/AccessDenied"); 
+                    httpContext.Response.Redirect("/Error"); 
                 }
                 
             }

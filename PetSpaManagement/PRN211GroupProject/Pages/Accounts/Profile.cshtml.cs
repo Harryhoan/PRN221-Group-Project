@@ -29,7 +29,6 @@ namespace PRN211GroupProject.Pages.Accounts
 		public ProfileViewModel ProfileViewModel { get; set; }
 		[BindProperty]
 		public ChangePasswordViewModel ChangePasswordViewModel { get; set; }
-		[BindProperty]
 		public Account? Account { get; set; }
 		[TempData]
 		public string errorMessage { get; set; }
@@ -104,7 +103,7 @@ namespace PRN211GroupProject.Pages.Accounts
 				Account.Phone = ProfileViewModel.Phone;
 				Account.Status = true;
 				accountService.UpdateAccount(Account);
-				errorMessage = "The profile is successfully updated.";
+				successMessage = "The profile is successfully updated.";
 				return Page();
 			}
 			catch
@@ -139,7 +138,7 @@ namespace PRN211GroupProject.Pages.Accounts
 				Account.Pass = ChangePasswordViewModel.NewPass;
 				accountService.UpdateAccount(Account);
 				Account.Status = true;
-				errorMessage = "Password successfully change";
+				successMessage = "The password has successfully been changed.";
 				return Page();
 			}
 			catch

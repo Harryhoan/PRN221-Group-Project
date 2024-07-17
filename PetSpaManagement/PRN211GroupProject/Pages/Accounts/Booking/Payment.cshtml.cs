@@ -47,6 +47,9 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
         }
         [TempData]
         public string errorMessage { get; set; }
+        [TempData]
+        public string successMessage { get; set; }
+
 
         [BindProperty]
         public List<BillDetailed>? BillDetaileds { get; set; } = new List<BillDetailed>();
@@ -65,12 +68,12 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             {
                 Sum = 0;
                 Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
-				if (Account != null)
+                if (Account != null)
                 {
                     if (Account.VoucherId != null)
                     {
                         Voucher voucher = voucherService.GetVoucher((int)Account.VoucherId);
-                        if (voucher.Expired >= DateTime.Now)
+                        if (voucher.Expired <= DateTime.Now)
                         {
                             Account.VoucherId = null;
                             Account.Voucher = null;
@@ -116,7 +119,8 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             }
             catch (JsonException ex)
             {
-                Console.WriteLine($"Error deserializing JSON: {ex.Message}");
+                errorMessage = ($"Error deserializing JSON: {ex.Message}");
+                return Page();
             }
             if (Bookings != null && BillDetaileds != null)
             {
@@ -156,7 +160,8 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             }
             catch
             {
-                return BadRequest();
+                errorMessage = "An error occur ,Cant apply voucher";
+                    return Page();
             }
         }
 
@@ -207,6 +212,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                             accountService.UpdateAccount(Account);
                         }
                         HttpContext.Session.Clear();
+                        successMessage = "Payment Success,Thanks for use our service";
                         return RedirectToPage("/Index");
                     }
                     else
@@ -225,7 +231,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
                 return BadRequest();
             }
         }
-        
+
 
     }
 }

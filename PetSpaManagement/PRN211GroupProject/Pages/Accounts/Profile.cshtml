@@ -25,11 +25,32 @@
 		</div>
 	</div>
 </div>
+<script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 @if (!string.IsNullOrEmpty(Model.errorMessage))
 {
-	<script>
-		alert('@Model.errorMessage');
-	</script>
+    <script>
+        swal("Error!", '@Model.errorMessage', {
+            icon: "error",
+            buttons: {
+                confirm: {
+                    className: "btn btn-error",
+                },
+            },
+        });
+    </script>
+}
+@if (!string.IsNullOrEmpty(Model.successMessage))
+{
+    <script>
+        swal("Success!", '@Model.successMessage', {
+            icon: "success",
+            buttons: {
+                confirm: {
+                    className: "btn btn-success",
+                },
+            },
+        });
+    </script>
 }
 <style>
 	body {
@@ -119,15 +140,6 @@
 				@if (Model.VoucherList != null && Model.VoucherList.Count > 0)
 				{
 					<form method="post" asp-page-handler="ApplyVoucher">
-						<input type="hidden" asp-for="Account.Created" value="@Model.Account.Created" />
-						<input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
-						<input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
-						<input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
-						<input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
-						<input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass" />
-						<input type="hidden" asp-for="Account.CountVoucher" value="@Model.Account.CountVoucher" />
-						<input type="hidden" asp-for="Account.RoleId" value="@Model.Account.RoleId" />
-						<input type="hidden" asp-for="Account.VoucherId" value="@Model.Account.VoucherId" />
 						<label for="voucherId">
 							Voucher
 							<br />
@@ -150,15 +162,6 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<form method="post" asp-page-handler="SaveProfile">
-						<input type="hidden" asp-for="Account.Created" value="@Model.Account.Created" />
-						<input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
-						<input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
-						<input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
-						<input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
-						<input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass" />
-						<input type="hidden" asp-for="Account.CountVoucher" value="@Model.Account.CountVoucher" />
-						<input type="hidden" asp-for="Account.RoleId" value="@Model.Account.RoleId" />
-						<input type="hidden" asp-for="Account.VoucherId" value="@Model.Account.VoucherId" />
 						<div class="modal-header">
 							<h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('editModal')">
@@ -172,48 +175,39 @@
 								<span asp-validation-for="ProfileViewModel.Email" class="text-danger"></span>
 							</div>
 
-							<div class="form-group">
-								<label asp-for="ProfileViewModel.Name"></label>
-								<input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" value="@Model.Account.Name" required />
-								<span asp-validation-for="ProfileViewModel.Name" class="text-danger"></span>
-							</div>
-							<div class="form-group">
-								<label asp-for="ProfileViewModel.Phone"></label>
-								<input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" type="number" min="1" required />
-								<span asp-validation-for="ProfileViewModel.Phone" class="text-danger"></span>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-small">Save Changes</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<form id="changePasswordForm" method="post" asp-page-handler="ChangePassword">
-						<div class="modal-header">
-							<h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('changePasswordModal')">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<input type="hidden" asp-for="Account.Created" value="@Model.Account.Created" />
-						<input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
-						<input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
-						<input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
-						<input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
-						<input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass" />
-						<input type="hidden" asp-for="Account.CountVoucher" value="@Model.Account.CountVoucher" />
-						<input type="hidden" asp-for="Account.RoleId" value="@Model.Account.RoleId" />
-						<input type="hidden" asp-for="Account.VoucherId" value="@Model.Account.VoucherId" />
-						<div class="modal-body">
-							<div class="form-group">
-								<input asp-for="ChangePasswordViewModel.OldPass" class="form-control" placeholder="Enter your password." type="password" required />
-								<span asp-validation-for="ChangePasswordViewModel.OldPass" class="text-danger"></span>
-							</div>
+                            <div class="form-group">
+                                <label asp-for="ProfileViewModel.Name"></label>
+                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" value="@Model.Account.Name" required/>
+                                <span asp-validation-for="ProfileViewModel.Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProfileViewModel.Phone"></label>
+                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" type="number" min="1" required />
+                                <span asp-validation-for="ProfileViewModel.Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-small">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="changePasswordForm" method="post" asp-page-handler="ChangePassword">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('changePasswordModal')">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input asp-for="ChangePasswordViewModel.OldPass" class="form-control" placeholder="Enter your password." type="password" required />
+                                <span asp-validation-for="ChangePasswordViewModel.OldPass" class="text-danger"></span>
+                            </div>
 
 							<div class="form-group">
 								<input asp-for="ChangePasswordViewModel.NewPass" class="form-control" placeholder="Enter your new password" type="password" required />
