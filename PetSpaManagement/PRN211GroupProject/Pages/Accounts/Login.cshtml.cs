@@ -21,7 +21,6 @@ namespace PRN211GroupProject.Pages.Accounts
     {
         [TempData]
         public string errorMessage { get; set; }
-
         [TempData]
         public string successMessage { get; set; }
 
@@ -62,7 +61,7 @@ namespace PRN211GroupProject.Pages.Accounts
                     if (account.VoucherId != null)
                     {
                         Voucher voucher = voucherService.GetVoucher((int)account.VoucherId);
-                        if (voucher.Expired >= DateTime.Now)
+                        if (voucher.Expired <= DateTime.Now)
                         {
                             account.VoucherId = null;
                             accountService.UpdateAccount(account);

@@ -1,128 +1,188 @@
 ﻿@page
 @model PRN211GroupProject.Pages.Accounts.ProfileModel
 @{
-    ViewData["Title"] = "Profile";
+	ViewData["Title"] = "Profile";
 
 }
 <div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-            <div class="preloader-circle"></div>
-            <div class="preloader-img pere-text">
-                <img src="~/assets/img/logo/logo.png" alt="">
-            </div>
-        </div>
-    </div>
+	<div class="preloader d-flex align-items-center justify-content-center">
+		<div class="preloader-inner position-relative">
+			<div class="preloader-circle"></div>
+			<div class="preloader-img pere-text">
+				<img src="~/assets/img/logo/logo.png" alt="">
+			</div>
+		</div>
+	</div>
 </div>
 <div class="slider-area2 slider-height2 d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="hero-cap text-center pt-50">
-                    <h2>Profile</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="hero-cap text-center pt-50">
+					<h2>Profile</h2>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 @if (!string.IsNullOrEmpty(Model.errorMessage))
 {
     <script>
-        alert('@Model.errorMessage');
+        swal("Error!", '@Model.errorMessage', {
+            icon: "error",
+            buttons: {
+                confirm: {
+                    className: "btn btn-error",
+                },
+            },
+        });
+    </script>
+}
+@if (!string.IsNullOrEmpty(Model.successMessage))
+{
+    <script>
+        swal("Success!", '@Model.successMessage', {
+            icon: "success",
+            buttons: {
+                confirm: {
+                    className: "btn btn-success",
+                },
+            },
+        });
     </script>
 }
 <style>
-    body {
-        background-color: #f8f9fa;
-    }
+	body {
+		background-color: #f8f9fa;
+	}
 
-    .profile-container {
-        max-width: 600px;
-        margin: auto;
-        background: #ffffff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    }
+	.profile-container {
+		max-width: 600px;
+		margin: auto;
+		background: #ffffff;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+	}
 
-    .profile-header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+	.profile-header {
+		text-align: center;
+		margin-bottom: 20px;
+	}
 
-        .profile-header h2 {
-            color: #333333;
-        }
+		.profile-header h2 {
+			color: #333333;
+		}
 
-    .profile-form .form-group {
-        margin-bottom: 20px;
-    }
+	.profile-form .form-group {
+		margin-bottom: 20px;
+	}
 
-    .profile-form label {
-        font-weight: bold;
-    }
-        .profile-form .btn:hover {
-            background-color: lightslategrey;
-        }
+	.profile-form label {
+		font-weight: bold;
+	}
+
+	.profile-form .btn:hover {
+		background-color: lightslategrey;
+	}
 </style>
 <main>
-    <body>
-        </br>
-        <div class="profile-container">
-            <div class="profile-header">
-                <h2>User Profile</h2>
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="Email" class="form-control" placeholder="Email" value="@Model.Account.Email" readonly>
-            </div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="Username" class="form-control" placeholder="Username" value="@Model.Account.Name" readonly>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="PhoneNumber" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" readonly>
-            </div>
-            <div class="text-center">
-                <button id="editProfileBtn" type="button" class="btn btn-primary">Edit Profile</button>
-                <button id="changePasswordBtn" type="button" class="btn btn-small">Change Password</button>
-            </div>
-        </div>
-        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form method="post" asp-page-handler="SaveProfile">
-                        <input type="hidden" asp-for="Account.Created" value="@Model.Account.Created" />
-                        <input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
-                        <input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
-                        <input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
-                        <input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
-                        <input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass" />
-                        <input type="hidden" asp-for="Account.CountVoucher" value="@Model.Account.CountVoucher"/>
-                        <input type="hidden" asp-for="Account.RoleId" value="@Model.Account.RoleId" />
-                        <input type="hidden" asp-for="Account.VoucherId" value="@Model.Account.VoucherId" />
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('editModal')">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label asp-for="ProfileViewModel.Email"></label>
-                                <input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" value="@Model.Account.Email" required />
-                                <span asp-validation-for="ProfileViewModel.Email" class="text-danger"></span>
-                            </div>
+
+	</br>
+	@if (Model.Account != null)
+	{
+		<div class="row">
+			<div class="profile-container col-md-4">
+				<div class="profile-header">
+					<h2>User Profile</h2>
+				</div>
+				<div class="form-group">
+					<label for="email">Email address</label>
+					<input type="email" id="email" name="Email" class="form-control" placeholder="Email" value="@Model.Account.Email" readonly>
+				</div>
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" id="username" name="Username" class="form-control" placeholder="Username" value="@Model.Account.Name" readonly>
+				</div>
+				<div class="form-group">
+					<label for="phone">Phone Number</label>
+					<input type="tel" id="phone" name="PhoneNumber" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" readonly>
+				</div>
+				<div class="text-center">
+					<button id="editProfileBtn" type="button" class="btn btn-primary">Edit Profile</button>
+					<button id="changePasswordBtn" type="button" class="btn btn-small">Change Password</button>
+				</div>
+			</div>
+
+			<div>
+				<br />
+			</div>
+			<div class="profile-container col-md-4">
+				<div class="profile-header">
+					<h2>Get Voucher</h2>
+				</div>
+				<div class="form-group">
+					<label for="current">Current Voucher</label>
+					@if (Model.Account.Voucher != null)
+					{
+						<input id="current" name="current" class="form-control" placeholder="N/A" value="@(Model.Account.Voucher.Name + " - " + Model.Account.Voucher.Reach + " points - Expired: " + Model.Account.Voucher.Expired.ToString())" readonly>
+					}
+					else
+					{
+						<input id="current" name="current" class="form-control" placeholder="N/A" value="N/A" readonly>
+					}
+				</div>
+				<div class="form-group">
+					<label for="voucherPoint">Voucher Point</label>
+					<input id="voucherPoint" name="voucherPoint" class="form-control" placeholder="0" value="@Model.Account.CountVoucher" readonly>
+				</div>
+				@if (Model.VoucherList != null && Model.VoucherList.Count > 0)
+				{
+					<form method="post" asp-page-handler="ApplyVoucher">
+						<label for="voucherId">
+							Voucher
+							<br />
+							@foreach (var voucher in Model.VoucherList)
+							{
+								<input type="radio" id="voucherId" name="voucherId" value="@voucher.Id" required/> @(voucher.Name + " - " + voucher.Reach + " points - Expired: " + voucher.Expired.ToString())
+								<br />
+							}
+						</label>
+
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary">Apply</button>
+						</div>
+					</form>
+				}
+			</div>
+		</div>
+
+		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<form method="post" asp-page-handler="SaveProfile">
+						<div class="modal-header">
+							<h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal('editModal')">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label asp-for="ProfileViewModel.Email"></label>
+								<input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" value="@Model.Account.Email" required  maxlength="100"/>
+								<span asp-validation-for="ProfileViewModel.Email" class="text-danger"></span>
+							</div>
 
                             <div class="form-group">
                                 <label asp-for="ProfileViewModel.Name"></label>
-                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" value="@Model.Account.Name" required/>
+                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" value="@Model.Account.Name" required maxlength="50"/>
                                 <span asp-validation-for="ProfileViewModel.Name" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="ProfileViewModel.Phone"></label>
-                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" type="number" min="1" required />
+                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" type="number" min="1" required maxlength="10"/>
                                 <span asp-validation-for="ProfileViewModel.Phone" class="text-danger"></span>
                             </div>
                         </div>
@@ -143,67 +203,59 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <input type="hidden" asp-for="Account.Created" value="@Model.Account.Created" />
-                        <input type="hidden" asp-for="Account.Id" value="@Model.Account.Id" />
-                        <input type="hidden" asp-for="Account.Email" value="@Model.Account.Email" />
-                        <input type="hidden" asp-for="Account.Name" value="@Model.Account.Name" />
-                        <input type="hidden" asp-for="Account.Phone" value="@Model.Account.Phone" />
-                        <input type="hidden" asp-for="Account.Pass" value="@Model.Account.Pass" />
-                        <input type="hidden" asp-for="Account.CountVoucher" value="@Model.Account.CountVoucher" />
-                        <input type="hidden" asp-for="Account.RoleId" value="@Model.Account.RoleId" />
-                        <input type="hidden" asp-for="Account.VoucherId" value="@Model.Account.VoucherId" />
                         <div class="modal-body">
                             <div class="form-group">
                                 <input asp-for="ChangePasswordViewModel.OldPass" class="form-control" placeholder="Enter your password." type="password" required />
                                 <span asp-validation-for="ChangePasswordViewModel.OldPass" class="text-danger"></span>
                             </div>
 
-                            <div class="form-group">
-                                <input asp-for="ChangePasswordViewModel.NewPass" class="form-control" placeholder="Enter your new password" type="password" required />
-                                <span asp-validation-for="ChangePasswordViewModel.NewPass" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <input asp-for="ChangePasswordViewModel.ConfirmPassword" class="form-control" placeholder="Enter your re-password" type="password" required />
-                                <span asp-validation-for="ChangePasswordViewModel.ConfirmPassword" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Change Password</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
+							<div class="form-group">
+								<input asp-for="ChangePasswordViewModel.NewPass" class="form-control" placeholder="Enter your new password" type="password" required />
+								<span asp-validation-for="ChangePasswordViewModel.NewPass" class="text-danger"></span>
+							</div>
+							<div class="form-group">
+								<input asp-for="ChangePasswordViewModel.ConfirmPassword" class="form-control" placeholder="Enter your re-password" type="password" required />
+								<span asp-validation-for="ChangePasswordViewModel.ConfirmPassword" class="text-danger"></span>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">Change Password</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	}
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
 
-            function openModal(modalId) {
-                $('#' + modalId).modal('show');
-            }
+		function openModal(modalId) {
+			$('#' + modalId).modal('show');
+		}
 
-            function closeModal(modalId) {
-                $('#' + modalId).modal('hide');
-            }
+		function closeModal(modalId) {
+			$('#' + modalId).modal('hide');
+		}
 
-            document.getElementById('editProfileBtn').addEventListener('click', function () {
-                openModal('editModal');
-            });
+		document.getElementById('editProfileBtn').addEventListener('click', function () {
+			openModal('editModal');
+		});
 
-            document.getElementById('changePasswordBtn').addEventListener('click', function () {
-                openModal('changePasswordModal');
-            });
+		document.getElementById('changePasswordBtn').addEventListener('click', function () {
+			openModal('changePasswordModal');
+		});
 
-            $(document).keydown(function (e) {
-                if (e.key === "Escape") {
-                    closeModal('editModal');
-                    closeModal('changePasswordModal');
-                }
-            });
-         
+		$(document).keydown(function (e) {
+			if (e.key === "Escape") {
+				closeModal('editModal');
+				closeModal('changePasswordModal');
+			}
+		});
 
-        </script>
-        @Html.Raw("<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js'></script>")
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-    </body>
+
+	</script>
+	@Html.Raw("<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js'></script>")
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
 </main>

@@ -39,7 +39,16 @@ namespace PetSpaDAO
             return vouchers;
 
         }
-        public Voucher GetVoucher(int id)
+
+		public List<Voucher> GetActiveVoucher()
+		{
+			var vouchers = context.Vouchers.Where(v => v.Expired > DateTime.Now).ToList();
+			if (vouchers == null)
+				throw new Exception("All vouchers cannot be retrieved");
+			return vouchers;
+
+		}
+		public Voucher GetVoucher(int id)
         {
             return context.Vouchers.SingleOrDefault(v => v.Id.Equals(id));
         }

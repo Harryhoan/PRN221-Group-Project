@@ -1,4 +1,4 @@
-﻿@page
+﻿    @page
 @model CreateFeedbackModel
 
 @{
@@ -26,6 +26,33 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+<script src="~/adminAssets/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+@if (!string.IsNullOrEmpty(Model.errorMessage))
+{
+    <script>
+        swal("Error!", '@Model.errorMessage', {
+            icon: "error",
+            buttons: {
+                confirm: {
+                    className: "btn btn-error",
+                },
+            },
+        });
+    </script>
+}
+@if (!string.IsNullOrEmpty(Model.successMessage))
+{
+    <script>
+        swal("Success!", '@Model.successMessage', {
+            icon: "success",
+            buttons: {
+                confirm: {
+                    className: "btn btn-success",
+                },
+            },
+        });
+    </script>
+}
 <body>
     <main>
         <!-- Hero Area Start -->

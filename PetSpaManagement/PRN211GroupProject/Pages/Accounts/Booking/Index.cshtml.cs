@@ -43,8 +43,10 @@ namespace PRN211GroupProject.Pages.Accounts
         public int SpotId { get; set; } = -1;
         [TempData]
         public string errorMessage { get; set; }
+		[TempData]
+		public string successMessage { get; set; }
 
-        public Account? Account { get; set; }
+		public Account? Account { get; set; }
         public IActionResult OnGet(int? spotId, int? offset)
         {
             try
@@ -131,9 +133,10 @@ namespace PRN211GroupProject.Pages.Accounts
                 }
                 if (currentUser.RoleId == 1)
                 {
-                    return Unauthorized();
-                }
-                if (NewBooking == null || NewBooking.Started == default || NewBooking.Started.Date <= DateTime.Today || NewBooking.Started.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Started.TimeOfDay > TimeSpan.FromHours(18))
+					errorMessage = "Admin or Staff cannot add Booking!";
+					return OnGet(SpotId, 0);
+				}
+				if (NewBooking == null || NewBooking.Started == default || NewBooking.Started.Date <= DateTime.Today || NewBooking.Started.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Started.TimeOfDay > TimeSpan.FromHours(18))
                 {
                     return BadRequest();
                 }
@@ -150,11 +153,11 @@ namespace PRN211GroupProject.Pages.Accounts
                 NewBooking.Ended = NewBooking.Started.AddMinutes(service.Duration);
                 if (NewBooking.Ended.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Ended.TimeOfDay > TimeSpan.FromHours(18) || _bookingService.IsActiveBookingConflictBySpot(NewBooking.Started, NewBooking.Ended, SpotId))
                 {
-                    errorMessage = "Booking already exist!";
-                    return Page();
-                }
+                    errorMessage = "This time of day is already booked!";
+					return OnGet(SpotId, 0);
+				}
 
-                List<PetSpaBussinessObject.Booking>? bookingCart = new();
+				List<PetSpaBussinessObject.Booking>? bookingCart = new();
                 var json = HttpContext.Session.GetString("BookingCart");
 
                     // Deserialize JSON to object
@@ -163,17 +166,17 @@ namespace PRN211GroupProject.Pages.Accounts
                         JsonSerializerOptions options = new JsonSerializerOptions
                         {
                             ReferenceHandler = ReferenceHandler.Preserve,
-                            WriteIndented = true // for readability
+                            WriteIndented = true 
                         };
                         bookingCart = JsonSerializer.Deserialize<List<PetSpaBussinessObject.Booking>>(json, options);
-
                 }
                 if (bookingCart != null)
                 {
-                    if (bookingCart.Count > 0 && bookingCart.Where(b => b.Started >= NewBooking.Started && b.Ended <= NewBooking.Ended).Any())
+                    if (bookingCart.Count > 0 && bookingCart.Where(b =>  b.Started < NewBooking.Ended && b.Ended > NewBooking.Started).Any())
                     {
-                        return BadRequest();
-                    }
+						errorMessage = "A scheduling conflict has occured.";
+						return OnGet(SpotId, 0);
+					}
                     NewBooking.AccountId = currentUser.Id;
                     NewBooking.Status = true;
                     NewBooking.Available = available;
@@ -181,18 +184,18 @@ namespace PRN211GroupProject.Pages.Accounts
                     JsonSerializerOptions options = new JsonSerializerOptions
                     {
                         ReferenceHandler = ReferenceHandler.Preserve,
-                        WriteIndented = true // for readability
+                        WriteIndented = true 
                     };
                     HttpContext.Session.Set("BookingCart", JsonSerializer.SerializeToUtf8Bytes(bookingCart, options));
                     BookingCount = bookingCart.Count;
                     HttpContext.Session.SetInt32("BookingCount", BookingCount);
-                    //_bookingService.AddBooking(NewBooking);
-                    return OnGet(SpotId, 0);
+                    successMessage = "Book successfully added";
+					return OnGet(SpotId, 0);
                 }
-
-                return BadRequest();
-            }
-            catch
+                errorMessage = "You already add this to cart!";
+				return OnGet(SpotId, 0);
+			}
+			catch
             {
                 return BadRequest();
             }

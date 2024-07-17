@@ -32,8 +32,9 @@ namespace PetSpaDAO
             }
         }
         public Account GetAccountByEmail(string Email)
-        {
-            return context.Accounts.Include(m=>m.Role).SingleOrDefault(m => m.Email.Equals(Email));
+        { 
+            var account = context.Accounts.Include(m=>m.Role).SingleOrDefault(m => m.Email.Equals(Email));
+            return account == null ? new() : account;
         }
         public List<Account> GetAllAccount()
         {

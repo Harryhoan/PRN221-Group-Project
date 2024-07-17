@@ -8,6 +8,8 @@ namespace PRN211GroupProject.Pages
         private readonly ILogger<IndexModel> _logger;
         [TempData]
         public string errorMessage { get; set; }
+        [TempData]
+        public string successMessage { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
