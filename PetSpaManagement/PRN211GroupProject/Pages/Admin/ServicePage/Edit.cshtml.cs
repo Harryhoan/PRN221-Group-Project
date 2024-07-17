@@ -27,25 +27,32 @@ namespace PRN211GroupProject.Pages.ServicePage
 		[BindProperty]
 		public Service Service { get; set; }
 
-		public async Task<IActionResult> OnGetAsync(int id)
+		public async Task<IActionResult> OnGetAsync(int? id)
 		{
-			var roleClaim = User.FindFirst(ClaimTypes.Role);
-			if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+			try
 			{
-				return Unauthorized();
-			}
-			if (id == null || _serviceService.GetServiceList() == null)
-			{
-				return NotFound();
-			}
+				var roleClaim = User.FindFirst(ClaimTypes.Role);
+				if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Admin")
+				{
+					return Unauthorized();
+				}
+				if (id == null || _serviceService.GetServiceList() == null)
+				{
+					return NotFound();
+				}
 
-			var service = _serviceService.GetService(id);
-			if (service == null)
-			{
-				return NotFound();
+				var service = _serviceService.GetService((int)id);
+				if (service == null)
+				{
+					return NotFound();
+				}
+				Service = service;
+				return Page();
 			}
-			Service = service;
-			return Page();
+			catch
+			{
+				return BadRequest();
+			}
 		}
 
 		// To protect from overposting attacks, enable the specific properties you want to bind to.

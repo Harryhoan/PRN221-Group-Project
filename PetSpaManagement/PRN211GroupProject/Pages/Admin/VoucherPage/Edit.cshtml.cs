@@ -69,7 +69,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
                 return BadRequest();
 
             }
-            catch (Exception ex)
+            catch
             {
                 return BadRequest();
             }

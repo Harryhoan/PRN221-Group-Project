@@ -44,7 +44,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
                 }
                 if (_voucherService == null)
                 {
-                    return BadRequest()l
+                    return BadRequest();
                 }
                 Voucher = _voucherService.GetVoucherList();
                 return Page();
