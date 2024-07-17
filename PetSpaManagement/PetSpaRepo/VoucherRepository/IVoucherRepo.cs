@@ -14,5 +14,7 @@ namespace PetSpaRepo.VoucherRepository
         public void AddVoucher(Voucher voucher);
         public void UpdateVoucher(Voucher voucher);
         public void DeleteVoucher(int voucherID);
+
+        public List<Voucher> GetActiveVoucherList();
     }
 }

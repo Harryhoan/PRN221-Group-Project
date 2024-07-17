@@ -18,5 +18,7 @@ namespace PetSpaRepo.VoucherRepository
         public void UpdateVoucher(Voucher voucher) => VoucherDAO.Instance.UpdateVoucher(voucher);
 
         public void DeleteVoucher(int voucherID) => VoucherDAO.Instance.DeleteVoucher(voucherID);
-    }
+
+        public List<Voucher> GetActiveVoucherList() => VoucherDAO.Instance.GetActiveVoucher();
+	}
 }

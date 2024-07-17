@@ -31,7 +31,12 @@ namespace PRN211GroupProject.Utilities
                 {
                     return null;
                 }
-                return accountService.GetAccountByEmail(emailClaim.Value);
+                var account = accountService.GetAccountByEmail(emailClaim.Value);
+                if (account == null || account.Id <= 0)
+                {
+                    return null;
+                }
+                return account;
             }
             catch
             {

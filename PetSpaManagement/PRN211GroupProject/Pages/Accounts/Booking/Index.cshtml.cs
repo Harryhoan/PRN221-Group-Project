@@ -150,11 +150,11 @@ namespace PRN211GroupProject.Pages.Accounts
                 NewBooking.Ended = NewBooking.Started.AddMinutes(service.Duration);
                 if (NewBooking.Ended.TimeOfDay < TimeSpan.FromHours(9) || NewBooking.Ended.TimeOfDay > TimeSpan.FromHours(18) || _bookingService.IsActiveBookingConflictBySpot(NewBooking.Started, NewBooking.Ended, SpotId))
                 {
-                    errorMessage = "Booking already exist!";
-                    return Page();
-                }
+                    errorMessage = "This time of day is already booked!";
+					return OnGet(SpotId, 0);
+				}
 
-                List<PetSpaBussinessObject.Booking>? bookingCart = new();
+				List<PetSpaBussinessObject.Booking>? bookingCart = new();
                 var json = HttpContext.Session.GetString("BookingCart");
 
                     // Deserialize JSON to object
@@ -170,10 +170,11 @@ namespace PRN211GroupProject.Pages.Accounts
                 }
                 if (bookingCart != null)
                 {
-                    if (bookingCart.Count > 0 && bookingCart.Where(b => b.Started >= NewBooking.Started && b.Ended <= NewBooking.Ended).Any())
+                    if (bookingCart.Count > 0 && bookingCart.Where(b =>  b.Started < NewBooking.Ended && b.Ended > NewBooking.Started).Any())
                     {
-                        return BadRequest();
-                    }
+						errorMessage = "A scheduling conflict has occured.";
+						return OnGet(SpotId, 0);
+					}
                     NewBooking.AccountId = currentUser.Id;
                     NewBooking.Status = true;
                     NewBooking.Available = available;

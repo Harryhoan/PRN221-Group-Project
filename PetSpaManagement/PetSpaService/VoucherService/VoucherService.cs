@@ -41,5 +41,10 @@ namespace PetSpaService.VoucherService.VoucherService
                 throw new Exception("Invalid voucher ID");
             voucherRepo.DeleteVoucher(voucherID);
         }
-    }
+
+		public List<Voucher> GetActiveVoucherList()
+        {
+            return voucherRepo.GetActiveVoucherList();
+        }
+	}
 }
