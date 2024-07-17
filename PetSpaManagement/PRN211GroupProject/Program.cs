@@ -17,6 +17,8 @@ using PetSpaService.VoucherService.VoucherService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using PRN211GroupProject.Handler;
+using MailKit;
+using PetSpaService.MailService;
 
 namespace PRN211GroupProject
 {
@@ -66,8 +68,8 @@ namespace PRN211GroupProject
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddMvc();
             builder.Services.AddDistributedMemoryCache();
-
-
+            builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+            builder.Services.AddTransient<ISendMailService, SendMailService>();
             var app = builder.Build();
             app.UseExceptionHandler("/Error");
             app.UseHsts();

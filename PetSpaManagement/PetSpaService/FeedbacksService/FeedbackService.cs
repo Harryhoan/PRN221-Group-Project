@@ -13,13 +13,10 @@ namespace PetSpaService.FeedbacksService
     public class FeedbackService : IFeedbackService
     {
         private readonly IFeedbackRepo feedbackRepo;
-
         public FeedbackService()
         {
             feedbackRepo = new FeedbackRepo();
         }
-
-
         public List<Feedback> GetAllFeedback() => feedbackRepo.GetAllFeedback();
         public Feedback GetFeedback(int feedbackId) => feedbackRepo.GetFeedback(feedbackId);
         public void NewFeedback(Feedback feedback) => feedbackRepo.NewFeedback(feedback);
