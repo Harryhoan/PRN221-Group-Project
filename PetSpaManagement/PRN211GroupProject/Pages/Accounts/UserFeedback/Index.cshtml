@@ -1,0 +1,119 @@
+﻿@page
+@model PRN211GroupProject.Pages.Accounts.UserFeedback.IndexModel
+
+@{
+    ViewData["Title"] = "Feedback";
+    var popperJsUrl = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js";
+}
+
+<style>
+    .center-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .center-table {
+        width: 100%;
+        text-align: center;
+    }
+
+        .center-table th, .center-table td {
+            text-align: center;
+        }
+
+    .form-inline {
+        justify-content: center;
+    }
+    a{
+        color: black;
+        transition: color 0.3s;
+    }
+    a:hover{
+        color:red;
+    }
+</style>
+
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="~/assets/img/logo/logo.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="slider-area2 slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center pt-50">
+                        <h2>Feedback</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card center-content">
+@*         <br />
+        <p>
+            <a asp-page="Create" class="btn btn-primary">Create New</a>
+        </p> *@
+        <div class="table-responsive">
+            <table class="table center-table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Feedback[0].Information)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Feedback[0].Rating)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Feedback[0].Created)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Feedback[0].Updated)
+                        </th>
+                        <th style="width: 10%">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Feedback)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Information)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rating)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Created)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Updated)
+                            </td>
+                            <td id="navigation">
+                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.errorMessage))
+                    {
+                        <tr>
+                            <td colspan="8" style="vertical-align: middle;">
+                                <h2 style="color:grey; text-align:center;">@Model.errorMessage</h2>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

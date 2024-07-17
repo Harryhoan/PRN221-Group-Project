@@ -33,7 +33,7 @@ namespace PRN211GroupProject.Pages.Staff.VoucherPage
         public async Task<IActionResult> OnGetAsync()
         {
             var Account = AccountUtilities.Instance.GetAccount(HttpContext, accountService);
-            if (Account != null)
+            if (Account == null)
             {
                 return Unauthorized();
             }
