@@ -24,6 +24,20 @@
             });
         </script>
     }
+    @if (!string.IsNullOrEmpty(Model.successMessage))
+    {
+        <script>
+            swal("Success!", '@Model.successMessage', {
+                icon: "success",
+                buttons: {
+                    confirm: {
+                        className: "btn btn-success",
+                    },
+                },
+            });
+        </script>
+    }
+
     <div class="slider-area">
         <div class="slider-active dot-style">
             <!-- Slider Single -->
