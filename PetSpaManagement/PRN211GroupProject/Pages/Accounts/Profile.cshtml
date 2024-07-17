@@ -171,18 +171,18 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label asp-for="ProfileViewModel.Email"></label>
-								<input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" value="@Model.Account.Email" required />
+								<input asp-for="ProfileViewModel.Email" id="edit-email" class="form-control" placeholder="Email" value="@Model.Account.Email" required  maxlength="100"/>
 								<span asp-validation-for="ProfileViewModel.Email" class="text-danger"></span>
 							</div>
 
                             <div class="form-group">
                                 <label asp-for="ProfileViewModel.Name"></label>
-                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" value="@Model.Account.Name" required/>
+                                <input asp-for="ProfileViewModel.Name" id="edit-username" class="form-control" placeholder="Username" value="@Model.Account.Name" required maxlength="50"/>
                                 <span asp-validation-for="ProfileViewModel.Name" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label asp-for="ProfileViewModel.Phone"></label>
-                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" type="number" min="1" required />
+                                <input asp-for="ProfileViewModel.Phone" id="edit-phone" class="form-control" placeholder="Phone Number" value="@Model.Account.Phone" type="number" min="1" required maxlength="10"/>
                                 <span asp-validation-for="ProfileViewModel.Phone" class="text-danger"></span>
                             </div>
                         </div>
