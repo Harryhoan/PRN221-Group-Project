@@ -192,8 +192,8 @@ namespace PRN211GroupProject.Pages.Accounts
 					return OnGet();
 				}
 				Account.CountVoucher -= voucher.Reach;
-				Account.Voucher = null;
 				Account.VoucherId = voucher.Id;
+				Account.Voucher = voucher;
 				accountService.UpdateAccount(Account);
 				successMessage = "Voucher added!";
 				return OnGet();
