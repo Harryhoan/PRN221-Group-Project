@@ -38,7 +38,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
         private readonly ISendMailService _mailService;
 
 
-        public PaymentModel(IBillDetailedService billDetailed, IAccountService account, IBillService bill, IBookingService booking, IAvailableService available, IServiceService service, ISpotService spot, IVoucherService voucher)
+        public PaymentModel(IBillDetailedService billDetailed, IAccountService account, IBillService bill, IBookingService booking, IAvailableService available, IServiceService service, ISpotService spot, IVoucherService voucher, ISendMailService mail)
         {
             billDetailedService = billDetailed;
             billService = bill;
@@ -48,6 +48,7 @@ namespace PRN211GroupProject.Pages.Accounts.Booking
             serviceService = service;
             spotService = spot;
             voucherService = voucher;
+            _mailService = mail;
         }
         [TempData]
         public string errorMessage { get; set; }
