@@ -31,10 +31,7 @@ namespace PRN211GroupProject.Pages.Admin.VoucherPage
             try
             {
                 var roleClaim = User.FindFirst(ClaimTypes.Role);
-                if (User.Identity == null || !User.Identity.IsAuthenticated || roleClaim == null || roleClaim.Value.ToString() != "Staff")
-                {
-                    return Unauthorized();
-                }
+                
                 if (id == null || _voucherService.GetVoucherList() == null)
                 {
                     return NotFound();
